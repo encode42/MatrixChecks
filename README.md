@@ -55,5 +55,5 @@ If you already know what the issue is or how to fix it, feel free to make a pull
 Issues: [Here](https://github.com/Encode42/MatrixConfig/issues)  
 Pull Requests: [Here](https://github.com/Encode42/MatrixConfig/pulls)  
 
-### 4. Can I modify the config?
+### 3. Can I modify the config?
 Yes! I encourage you do so. You can also distribute it all you want, just please don't claim it all as your own. (Credit the original authors.)
