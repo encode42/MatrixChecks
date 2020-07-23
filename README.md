@@ -53,7 +53,7 @@ This check also checks if the player isn't using Angle cheats, and the NPC check
 **FIRST:**  
 Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a config. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
 You can also try using the default config to see if the issue still stands. If so, it's not a problem with the config.  
-Matrix's Discord: [Here](https://discord.gg/wjheaRj)
+Matrix's Discord: [Here](https://discord.gg/wjheaRj)  
 Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
 **THEN:**  
