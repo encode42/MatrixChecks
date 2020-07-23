@@ -50,7 +50,7 @@ This config aims to mitigate those issues and improve what works well, but there
 This check also checks if the player isn't using Angle cheats, and the NPC checks if the player can hit people behind the player. To prevent lag and false positives from happening with this, the NPC will be spawned only if the player's ping is lower than 185ms. If I'm right, this should make the killaura detection more strict. [This has been approved by RE](https://github.com/jiangdashao/Matrix-Issues/commit/988e130f60559105cea7ec384e49357864b9f5b4).
 
 ### 2. How do I report a change or false positive?
-**FIRST:**
+**FIRST:**  
 Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a config.  
 Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
 You can also try using the default config to see if the issue still stands. If so, it's not a problem with the config.  
