@@ -56,9 +56,9 @@ Head over to Matrix's support Discord and ask about the issue, or report the iss
 You can also try using the default config to see if the issue still stands. If so, it's not a problem with the config.  
 Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
-**THEN:**
+**THEN:**  
 Make an issue at the issues page with the right template. If you describe what you want changed/fixed well, chances are it'll be taken care of quickly.  
-If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.
+If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
 Issues: [Here](https://github.com/Encode42/MatrixConfig/issues)  
 Pull Requests: [Here](https://github.com/Encode42/MatrixConfig/pulls)  
 
