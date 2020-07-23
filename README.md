@@ -51,14 +51,12 @@ This check also checks if the player isn't using Angle cheats, and the NPC check
 
 ### 2. How do I report a change or false positive?
 **FIRST:**  
-Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a config.  
-Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
+Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a config. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
 You can also try using the default config to see if the issue still stands. If so, it's not a problem with the config.  
 Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
 **THEN:**  
-Make an issue at the issues page with the right template. If you describe what you want changed/fixed well, chances are it'll be taken care of quickly.  
-If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
+Make an issue at the issues page with the right template. If you describe what you want changed/fixed well, chances are it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
 Issues: [Here](https://github.com/Encode42/MatrixConfig/issues)  
 Pull Requests: [Here](https://github.com/Encode42/MatrixConfig/pulls)  
 
