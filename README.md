@@ -5,8 +5,8 @@ The continuation of [MatrixConfig](https://git.disroot.org/lampenit/MatrixConfig
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999)
 ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixConfig/latest/master?label=Commits%20since%20release&style=flat-square)
 
-![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)
-![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)
+[![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)](https://discord.gg/wjheaRj)
+[![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
 
 ## About
 The optimized config for [Matrix Anticheat](https://www.mc-market.org/resources/13999/), a powerful anticheat for Minecraft.  
@@ -53,6 +53,7 @@ This check also checks if the player isn't using Angle cheats, and the NPC check
 **FIRST:**  
 Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a config. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
 You can also try using the default config to see if the issue still stands. If so, it's not a problem with the config.  
+Matrix's Discord: [Here](https://discord.gg/wjheaRj)
 Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
 **THEN:**  
