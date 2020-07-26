@@ -1,5 +1,5 @@
 # MatrixConfig
-[logo here]  
+<img src="https://repository-images.githubusercontent.com/282035636/6a824400-cf40-11ea-9426-c1f41f7f40d9" width="200px">  
 The continuation of [MatrixConfig](https://git.disroot.org/lampenit/MatrixConfig) by gowgotz.
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999)
