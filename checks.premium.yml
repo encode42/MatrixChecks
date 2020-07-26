@@ -1,17 +1,22 @@
-# LCD's optimized checks file
-# For Matrix 5.0.2
+# MatrixConfig
+# The optimized config for Matrix Anticheat,
+# a powerful anticheat for Minecraft.
+# For Matrix 5.1.0+
 #
-# This project aims to keep a balance between
-# preventing false positives and having a
-# strict anticheat that detects hacks quickly.
+# This config may not work perfectly with your server.
+# Plugins, software, performance can all effect how well this config and the anticheat in general will work.
+# This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.
 #
-# Tested and meant for survival and minigame
+# Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
+# This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
+#
+# Tested and configurated for survival and minigame
 # servers. Tweak the config for your own server!
 #
-# -------------------------------------------------------------
-#                       Issues?
-# Report them on one of the Discord servers (see README.md)
-# -------------------------------------------------------------
+# --------------------------------------------
+#                  Issues?
+# Follow the FAQ's in README.md. (Question #2)
+# --------------------------------------------
 
 ## KillAura
 # Prevents the player from using the KillAura/AimBot hack
@@ -94,7 +99,7 @@ killaura:
       # Should the player see this NPC? (true = visible)
       # I would say the NPC's visibility is important as it blocks killaura hacks that mostly everyone uses.
       # Most hacked/cheat clients don't attack invisible entities.
-      # TLDR; Don't disable unless you really need to!
+      # TL;DR Don't disable unless you really need to!
       visible: true
 
       # Force random name (default: false)
@@ -201,13 +206,20 @@ killaura:
       # How much VL should the player get after being flagged by this module?
       vl_weight: 3
 
+    # Smooth check, check if the player's aim is smooth
+    smooth:
+      # Enable this module?
+      enable: true
+      # How much VL should the player get after being flagged by this module?
+      vl_weight: 15
+
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
     8: 'matrix npc %player% 125'
     20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &61/3'
     35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c2/3'
-    42: 'matrix kick %player% KillAura'
+    42: 'matrix delay 12 matrix kick %player% KillAura'
 
 ## HitBox
 # Description: This check prevents players from using HitBox, Angle, Reach hacks.
@@ -331,9 +343,12 @@ fly:
   setback_to_void: true
 
   # NoFall check
+  # Recommended to disable these for minigame servers that don't have fall damage enabled.
   nofall:
+    # Should Matrix setback the player who use NoFall?
+    setback: true
+  
     # Force deal damage after setback?
-    # Recommended to disable this for minigame servers that don't have fall damage enabled.
     damage: true
 
   # Trident Boost violation level weight
@@ -493,6 +508,7 @@ scaffold:
         expand: 3
         limit: 2
         head: 5
+        simple: 3
         direction: 4
     # It can detect player towering up faster
     tower:
@@ -508,7 +524,6 @@ scaffold:
 
 ## Jesus
 # Check prevents the player from moving too too quickly in liquids, or walking on liquid.
-# Causes false positives in 1.13+ when player is quickly swimming/sprinting in water in a 1x1 water thing (my english sucks!)
 # ^^ I wouldn't disable the check anyway - that false positive is rare in most cases.
 jesus:
   # Enable this check?
@@ -516,6 +531,10 @@ jesus:
 
   # Violations needed to cancel illegal movements (-1 = never cancel)
   cancel_vl: 15
+
+  # Should Matrix ignore whether player is in swimming?
+  # This feature can prevent swimming status desync
+  ignore_swim_pose: true
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -575,17 +594,10 @@ velocity:
   # is lagging or changing resource pack.
   ignore_lag: true
 
-  # Violation Weights
-  # -1 = disable that module
-  vl_weights:
-    P1: 10
-    P2: 5
-    P3: 7
-    P4: 4
-    P5: 4
-    P6: 2
-    P7: 3
-    P8: 2
+	# The VL weight of velocity check modules (-1 = disable)
+  modules:
+    respond: 5
+    analyser: 3
 
   # Violation Thresholds
   # number_of_violations: '<command>'
