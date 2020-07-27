@@ -594,7 +594,7 @@ velocity:
   # is lagging or changing resource pack.
   ignore_lag: true
 
-	# The VL weight of velocity check modules (-1 = disable)
+  # The VL weight of velocity check modules (-1 = disable)
   modules:
     respond: 5
     analyser: 3
