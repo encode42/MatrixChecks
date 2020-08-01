@@ -1,7 +1,8 @@
 # MatrixConfig
-# The optimized config for Matrix Anticheat,
-# a powerful anticheat for Minecraft.
-# For Matrix 5.1.0+
+# The optimized config for Matrix Anticheat, a powerful anticheat for Minecraft.
+# For Matrix 5.1.1+
+#
+# Authors: Encode42, gowgotz.
 #
 # This config may not work perfectly with your server.
 # Plugins, software, performance can all effect how well this config and the anticheat in general will work.
@@ -212,6 +213,21 @@ killaura:
       enable: true
       # How much VL should the player get after being flagged by this module?
       vl_weight: 15
+
+    # Combine check
+    # Adds additional violations if multiple checks are triggered at once
+    combine:
+      test:
+        # How long to check for conditions
+        time: 5000
+        
+        # What conditions to combine
+        condition:
+          - 'ka.one.11'
+          - 'ka.smt'
+          
+        # Add X amount of violations if all conditions are triggered
+        action: 8
 
   # Violation Thresholds
   # number_of_violations: '<command>'
@@ -491,7 +507,7 @@ block:
 
 ## Scaffold check
 # Check prevents player bridging blocks or towering up faster than normal speed
-scaffold:
+place:
   # Enable this check
   enable: true
 
@@ -503,13 +519,22 @@ scaffold:
     # It can detect player bridging faster
     scaffold:
       enable: true
-      vl_weights:
-        safewalk: 4
-        expand: 3
-        limit: 2
-        head: 5
-        simple: 3
-        direction: 4
+      vl_weight: 9
+      
+    # Preventing player bridging too fast
+    delay:
+      enable: true
+      vl_weight: 6
+      cancel_place: true
+      
+      # Turn this down if legit players are getting violations
+      min_delay: 7
+
+    # Preventing player right clicking fast
+    right_cps:
+      enable: true
+      vl_weight: 5
+      
     # It can detect player towering up faster
     tower:
       enable: true
@@ -518,7 +543,7 @@ scaffold:
   # Violation Thresholds
   # number_of_violations: '<command>'
   commands:
-    7: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/3'
+    10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/3'
     15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &c2/3'
     32: 'matrix kick %player% Scaffold/Tower'
 
@@ -598,6 +623,7 @@ velocity:
   modules:
     respond: 5
     analyser: 3
+    vertical: 1
 
   # Violation Thresholds
   # number_of_violations: '<command>'
