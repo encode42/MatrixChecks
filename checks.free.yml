@@ -44,7 +44,7 @@ killaura:
     autoclicker:
       # Players can click 22 times per second if they jitter clicking.
       # The average player clicks at 8 CPS, and only a very small amount of people get to 16 CPS.
-      # 
+      #
       # Decrease if players are bypassing, increase if legit players are getting flagged.
       # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
       max_cps: 18
@@ -198,7 +198,7 @@ killaura:
     # Smooth check: Checks if the player's aim is too smooth.
     smooth:
       enable: true
-      
+
       # How many violations will be added when triggered?
       vl_weight: 15
 
@@ -207,12 +207,12 @@ killaura:
       test:
         # How long to check for conditions.
         time: 5000
-        
+
         # What conditions to combine.
         condition:
           - 'ka.one.11'
           - 'ka.smt'
-          
+
         # How many violations will be added when triggered?
         action: 8
 
@@ -330,7 +330,7 @@ fly:
   nofall:
     # Teleports players back to original position.
     setback: true
-  
+
     # Deals the same amount of damage after detection.
     damage: true
 
@@ -348,7 +348,6 @@ fly:
     50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a1/3'
     100: 'matrix notify %player% tried to fly &8| &7Fly &8| &c2/3'
     180: 'matrix kick %player% Fly Related Hacks'
-
 
 ## BadPackets
 # Prevents players from sending too many movement packets or sending illegal packets.
@@ -380,172 +379,186 @@ badpackets:
     240: 'matrix kick %player% Sending Unusual Packets'
 
 ## FastUse
-# Check prevents player from eating or using an item too quickly.
+# Stops players from eating or using items too quickly.
 fastuse:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal item use (-1 = never cancel)
+  # How many violations are needed to cancel illegal item use?
   cancel_vl: 1
 
-  # Violation weight
+  # How many violations will be added when triggered?
   vl_weight: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/2'
-    24: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, or increase if causes false positives.
+    21: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, increase if causes false positives.
 
 ## FastBow
-# Check prevents player from shooting a bow too quickly.
+# Prevents players from shooting bows too quickly.
 fastbow:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal bow use (-1 = never cancel)
-  cancel_vl: 7
+  # How many violations are needed to cancel illegal bow use?
+  cancel_vl: 5
 
-  # Violation Weight
+  # How many violations will be added when triggered?
   vl_weight: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/2'
     15: 'matrix kick %player% FastBow Hacks'
 
 ## FastHeal
-# Check prevents player from regaining health too quickly.
-# May cause false positives, but RE says the check has been improved.
-# Disable this if it causes false positives.
-# Also blocked by BadPackets
+# Prevents players from regaining health too quickly.
 fastheal:
-  # Enable this check?
   enable: true
 
-  # Violation Weight
+  # How many violations will be added when triggered?
   vl_weight: 2
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/2'
     48: 'matrix kick %player% FastHeal Hacks'
 
 ## Block
-# Check prevents the player from breaking, placing block quickly
+# Stops players from breaking and placing blocks too fast.
 block:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
-  # Set to 8 to prevent falling to void in case of things like SkyWars matches and others.
-  cancel_vl: 8
+  # How many violations are needed to cancel illegal breaking/placing blocks?
+  # Set to 8 for sky based gamemodes to prevent bridging players from falling.
+  cancel_vl: 6
 
-  # Modules List
-  # You can turn off some modules here
+  # Modules used in the block checks
   modules:
-    # It can detect player breaking block faster
+    # FastBreak check: Stops players breaking blocks too fast.
     fastbreak:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 4
-    # It can detect player placing block faster
+
+    # FastPlace check: Stops players placing blocks too fast.
     fastplace:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 1
-      max_place_per_second: 16 # Some players can place 18 blocks per second; feel free to decrease or increase that.
-    # It can detect player placing block without swing hand
+
+      # This is like the AutoClicker/macro check.
+      # The average player clicks at 8 CPS, and only a very small amount of people get to 16 CPS.
+      # 
+      # Decrease if players are bypassing, increase if legit players are getting flagged.
+      # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
+      max_place_per_second: 14
+
+    # NoSwing check: Makes sure player has a swing animation.
     noswing:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 1
-    # detect player not send abort breaking packet
+
+    # Abort check: Detects players not sending abort breaking packet.
     abort:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 0
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/2'
     32: 'matrix kick %player% FastPlace/FastBreak Hacks'
 
 ## Scaffold check
-# Check prevents player bridging blocks or towering up faster than normal speed
+# Prevents player bridging or towering faster than average.
 place:
-  # Enable this check
   enable: true
 
-  # Cancel VL
+  # How many violations are needed to cancel illegal bridging/towering?
   cancel_vl: 15
 
-  # Modules
+  # Modules used in the scafoold checks
   modules:
-    # It can detect player bridging faster
+    # Scaffold check: Detects players bridging too fast.
     scaffold:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 9
-      
-    # Preventing player bridging too fast
+
+    # Delay check: Detects players bridging too fast.
     delay:
       enable: true
-      vl_weight: 6
-      cancel_place: true
-      
-      # Turn this down if legit players are getting violations
-      min_delay: 7
 
-    # Preventing player right clicking fast
+      # How many violations will be added when triggered?
+      vl_weight: 6
+
+      # Cancels illegal block placement.
+      cancel_place: true
+
+      # Minimum amount of time between bridge block placement (ticks)
+      # Turn this down if legit players are getting violations
+      min_delay: 8
+
+    # Right CPS check: Same as AutoClicker/macro check but for right click.
     right_cps:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 5
-      
-    # It can detect player towering up faster
+
+    # Tower check: Detects players towering too fast.
     tower:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 2
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/3'
     15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &c2/3'
     32: 'matrix kick %player% Scaffold/Tower'
 
 ## Jesus
-# Check prevents the player from moving too too quickly in liquids, or walking on liquid.
-# ^^ I wouldn't disable the check anyway - that false positive is rare in most cases.
+# Prevents the player from moving too too quickly or walking in/on liquids.
 jesus:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
+  # How many violations are needed to cancel illegal movements?
   cancel_vl: 15
 
-  # Should Matrix ignore whether player is in swimming?
-  # This feature can prevent swimming status desync
+  # Should Matrix ignore whether player is in the swimming animation?
+  # This feature can prevent swimming status desync, but cause issues with player position.
   ignore_swim_pose: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     20: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a1/3'
     40: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &c2/3'
     64: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
 
 ## Inventory
-# Check prevents the player from using illegal inventory modifications such as Steal.
-# Also prevents quick inventory movement hacks.
+# Stops players from using illegal inventory modifications such as ChestSteal.
 inventory:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal movements of items (-1 = never cancel)
-  # Strict for SkyWars matches
+  # How many violations are needed to cancel illegal inventory movement?
+  # Keep strict for gamemodes that involve many chests.
   cancel_vl: 8
 
-  # Enable ChestStealer check?
-  # It can detect player taking items out of chest faster
+  # ChestStealer check: Detects instantly taking items out of chests.
   chest_stealer: true
 
   # Ignore items/inventory which has colorful name
