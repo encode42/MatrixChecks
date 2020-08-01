@@ -45,6 +45,7 @@ This config aims to mitigate those issues and improve what works well, but there
 4. `inventory.cancel_vl: 8` -> `inventory.cancel_vl: (number from 8 to 14)` (Increase if the check causes false positives)
 5. `fastuse.commands.24: ...` -> `fastuse.commands.(number): ...` (Decrease if players should be kicked quicker, increase if causes false positives)
 6. `block.fastplace.max_place_per_second: 16` -> `block.fastplace.max_place_per_second: (number from 9 to 19)` (Decrease if you think there are bypasses, increase if the check causes false positives)
+7. `place.modules.delay.min_delay: 7` -> `place.modules.delay.min_delay: (number 5 to 9)` (Decrease if legit players are getting too many violations, increase if bypassed)
 
 ### 1. Why is the anti-killaura NPC spawned in the HitBox check?  
 This check also checks if the player isn't using Angle cheats, and the NPC checks if the player can hit people behind the player. To prevent lag and false positives from happening with this, the NPC will be spawned only if the player's ping is lower than 185ms. If I'm right, this should make the killaura detection more strict. [This has been approved by RE](https://github.com/jiangdashao/Matrix-Issues/commit/988e130f60559105cea7ec384e49357864b9f5b4).
