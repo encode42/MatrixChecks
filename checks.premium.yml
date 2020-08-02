@@ -43,7 +43,7 @@ killaura:
     # AutoClicker check: Prevents players using an AutoClicker/macro.
     autoclicker:
       # Players can click 22 times per second if they jitter clicking.
-      The average player clicks at 8 CPS, and only a very small number of people get to 16 CPS.
+      # The average player clicks at 8 CPS, and only a very small number of people get to 16 CPS.
       #
       # Decrease if players are bypassing, increase if legit players are getting flagged.
       # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
@@ -231,7 +231,7 @@ hitbox:
   enable: true
 
   # Maximum reach distance.
-  The max reach distance in Minecraft is 3.5 blocks; however, it's calculated in a strange way so most players won't reach that far.
+  # The max reach distance in Minecraft is 3.5 blocks; however, it's calculated in a strange way so most players won't reach that far.
   # Anything farther than 3.4 blocks should be considered hacks; however, players may still reach that far.
   max_reach: 3.2
 
