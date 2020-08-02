@@ -10,108 +10,100 @@
 #
 # Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
 # This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
-#
-# Tested and configurated for survival and minigame
-# servers. Tweak the config for your own server!
+# Tested and configurated for survival and minigame servers. Tweak the config for your own server!
 #
 # --------------------------------------------
 #                  Issues?
 # Follow the FAQ's in README.md. (Question #2)
 # --------------------------------------------
+#
+# GitHub: https://github.com/Encode42/MatrixConfig
+# Discord: https://discord.gg/rjSkFyj
 
 ## KillAura
-# Prevents the player from using the KillAura/AimBot hack
+# Prevents the player from using the KillAura/AimBot hack.
 killaura:
-  # Enable KillAura check?
   enable: true
 
-  # List of the various KillAura check modules of Matrix
+  # Modules used in the KillAura checks
   modules:
-    # "OneHit" check can detect some blatant KillAura cheats in short time
+    # OneHit check: Detects some blatant KillAura cheats in short time.
     onehit:
-      # Should this module be enabled?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 4
 
-      # Do you want to disable the Packet Order check as it may cause false positives when players have high latency
+      # Disable if there are false positives when players have high latency.
       disable_packet_order_check: false
 
-      # Do you want to disable the "dead entity hit" check?
-      # This may cause false positives for some players who click fast
+      # Disable if there are false positives for some players who click fast.
       disable_dead_hit_check: false
 
-    # AutoClicker check setting, prevent player use AutoClicker cheat
+    # AutoClicker check: Prevents players using an AutoClicker/macro.
     autoclicker:
-      # Player can click 24 times (default config) per second if they jitter clicking
-      # Most people click at 6 CPS, and only a very small amount of people get to 16 CPS.
-      # This should make the AutoClicker detection more strict without causing much issues.
-      # Why 18? Because it's sometimes possible to get higher for people who click at 16cps.
+      # Players can click 22 times per second if they jitter clicking.
+      # The average player clicks at 8 CPS, and only a very small amount of people get to 16 CPS.
+      #
+      # Decrease if players are bypassing, increase if legit players are getting flagged.
+      # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
       max_cps: 18
 
-      # If you enable this option, the auto clicker check will not work when you attack mobs.
+      # Enable if you don't care about AutoClicker/macros working on mobs.
       not_check_attacking_mobs: false
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weights:
         cps: 8
-        delay: 4 # This module might cause some false flags when player jitter clicking, disable it if you want (-1)
+        delay: 4 # Might cause false flags when jitter clicking. (-1 = disable)
         cps_long: 6
         v19plus: 6
 
-    # click accuracy check
+    # Click check: Makes sure players don't have impossible accuracy.
     click:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 30
 
-      # You can customize the sensitivity of click Check, which is divided into three levels (0, 1, 2)
-      # 0: It can detect many types of KillAura, but there are many false alarms. It is generally not recommended to use it
-      # 1: Medium sensitivity, with a small number of false positives, it can detect most types of killaura
-      # 2: The most lenient mode can detect most types of killaura, but it is slow
-      sensitivity: 2
+      # How sensitive this check will be (0, 1, 2)
+      # 0: High sensitivity. Detects many types of KillAura, but there are many false flags. (Not recommended)
+      # 1: Medium sensitivity. Detects most types of KillAura with low false positives.
+      # 2: Low sensitivity. Detects most types of KillAura, but is slow.
+      sensitivity: 1
 
-    # KillAura NPC check, it will generate a fake player behind the player to detect
-    # if the player is using KillAura, and don't worry, the player can only see his own NPC
+    # NPC check: Generates a fake player behind the player to detect if the player can swing at it.
+    # Only the targeted player can see the NPC!
     npc:
-      # Enable this check?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
-      # I assume the VL is added when the player hits the NPC.
-      # This can be bigger than the default because only dumb people would attack NPC's, right?
+      # How many violations will be added when triggered?
+      # This should be a higher number because nobody should be able to swing 180 degress behind them.
       vl_weight: 12
 
-      # Should the position calculation of the NPC run asynchronously, as this may consume some resources
+      # This decreases server load, but there may be a delay if the player turns quickly.
       async: true
 
       # Should NPCs use real entity IDs instead of randomly generating them?
-      # Some cheating clients can bypass random entity ID
+      # Some cheating clients can bypass random entity ID.
       real_entity_id: true
 
-      # Has the NPC been generated by command only? If set to false, the NPC will be automatically
-      # generated when the player fights. If set to true, you can only generate an NPC for a player
-      # via the "matrix npc" command. (default: true)
+      # Disables automatic spawing of NPCs. Disable this if you want Matrix to handle NPC spawing.
+      # NPC command: "/matrix npc <player> <duration>"
       only_command_trigger: true
 
-      # Should the player see this NPC? (true = visible)
-      # I would say the NPC's visibility is important as it blocks killaura hacks that mostly everyone uses.
-      # Most hacked/cheat clients don't attack invisible entities.
-      # TL;DR Don't disable unless you really need to!
+      # Makes the NPC visible. Most clients do not attack invisible entities.
+      # Disabling will make less players confused, but the check less reliable.
       visible: true
 
-      # Force random name (default: false)
-      # If this option is turned on, the NPC generated by Matrix will force the use of a random name
-      # instead of the random name of the online player, which can solve the problem of some clients
-      # bypassing the "duplicate" name NPC. But Matrix will NOT apply teams to the NPC with random name
-      # you may need to use the API to apply the NPC team by yourself, Otherwise, some clients will
-      # bypass based on whether the NPC name has color
+      # Force a random name instead of the name of an online player.
+      # Some clients detect duplicate online players.
+      #
+      # Enabling may cause issues if you have modified teams set up.
+      # To make the NPCs support random names with teams, you must use the API.
       force_random_name: false
 
-      # NPC existence time setting (ticks)
+      # NPC existence time (ticks)
       check_ticks:
         base: 100
         attack_add: 30
@@ -124,113 +116,108 @@ killaura:
         distance_attack_base: 3.0
         move_up_after_attack: false
 
-    # KillAura / AimBot check based on machine learning clustering
-    # Matrix provides a trained model by default. Of course, you can also train a model yourself.
-    # Head to the wiki page to learn how to train:
-    #  -> https://github.com/jiangdashao/Matrix-Issues/wiki/Machine-Learning-KillAura-check-Training-Tutorial
-    # It is worth noting that this check is more useful for version 1.8. If you are a 1.9+ server, you can choose to disable this check
-    # note: the check still works in 1.9+ servers
+    # Machine Learning check: Uses machine learning clustering to better detect hacks.
+    # Matrix provides a trained model by default. You can also train a model yourself for better server-specific checks.
+    # Training tutorial: https://github.com/jiangdashao/Matrix-Issues/wiki/Machine-Learning-KillAura-check-Training-Tutorial
+    #
+    # Note: This check is more useful on 1.8.X servers. It still works on 1.9+, but with less effectiveness.
     machine_learning:
-      # Enable this check?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 8
 
-      # Which ML samples you need to disable?
-      # Format: - '#XXX'. For example: - '#66'
+      # Which samples to disable.
+      #
+      # Example:
+      # disable_patterns:
+      #  - "#66"
+      #  - "#67"
       disable_patterns: {}
 
-      # The duration of data collection, the longer the time, the slower the detection, but the more accurate (unit: milliseconds, default: 7000)
-      collect_data_duration: 7000
+      # Duration of data collection (ms)
+      # Longer collection time means slower detection but better accurucy.
+      collect_data_duration: 6000
 
-      # Data set availability threshold, if the collected data set is below
-      # the threshold, discard the data set without analysis
+      # Data set availability threshold
+      # If the collected data set is below the threshold, discard the data set.
       availability_threshold:
-        hits: 3 # In the dataset, the player must attack the entity 3 times.
-        clicks: 30  # In the dataset, the player must click the mouse 30 times
-        rotations: 90 # In the dataset, the player must rotate the head 90 times
+        hits: 5 # The player must attack the entity X times.
+        clicks: 30  # The player must click the mouse X times
+        rotations: 90 # The player must rotate the head X times
 
-    # NoSwing check
+    # NoSwing check: Makes sure player has a swing animation.
     noswing:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 4
 
-    # Critical Hit check prevents players from making abnormal crit attacks
+    # Critical check: Prevents players from making abnormal crit attacks.
     critical:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 5
 
-    # Snap check, it check players for abnormal fast aiming actions
+    # Snap check: Checks players for abnormal fast aiming actions.
     snap:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 5
 
-    # click aim bot check, it can detect ClickAimBot of some clients
+    # Click AimBot check: Detects players keeping 100% accuracy when clicking.
     clickaimbot:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 5
 
-    # The AimAssist check detects simple Aim hacks.
+    # AimAssist check: Detects simple aim hacks.
     aimassist:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 10
 
-    # Aim check, check if player aiming is normal based on math check
+    # Aim check: Detects if player aiming is normal based on an algorithm.
     aim:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 15
 
-    # Direction check, detect if aiming in player battle is normal based on motion prediction
+    # Direction check: Detects if aiming in player battle is normal based on motion prediction.
     direction:
-      # Enable this module?
       enable: true
 
-      # How much VL should the player get after being flagged by this module?
+      # How many violations will be added when triggered?
       vl_weight: 3
 
-    # Smooth check, check if the player's aim is smooth
+    # Smooth check: Checks if the player's aim is too smooth.
     smooth:
-      # Enable this module?
       enable: true
-      # How much VL should the player get after being flagged by this module?
+
+      # How many violations will be added when triggered?
       vl_weight: 15
 
-    # Combine check
-    # Adds additional violations if multiple checks are triggered at once
+    # Combine check: Adds additional violations if multiple checks are triggered at once
     combine:
       test:
-        # How long to check for conditions
+        # How long to check for conditions.
         time: 5000
-        
-        # What conditions to combine
+
+        # What conditions to combine.
         condition:
           - 'ka.one.11'
           - 'ka.smt'
-          
-        # Add X amount of violations if all conditions are triggered
+
+        # How many violations will be added when triggered?
         action: 8
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     8: 'matrix npc %player% 125'
     20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &61/3'
@@ -238,53 +225,44 @@ killaura:
     42: 'matrix delay 12 matrix kick %player% KillAura'
 
 ## HitBox
-# Description: This check prevents players from using HitBox, Angle, Reach hacks.
-# Note: This check is strict ONLY when you attack other PLAYERS, but it's very loose
-# when you attack non-player creatures. So, if you find that you can use HixBox
-# hack on non-player creatures, it's very normal, don't report it.
+# Prevents players from using HitBox, Angle, and Reach hacks.
+# Note: This check is only strict when you attack other players, and loose when you attack other entities.
 hitbox:
-  # Enable HitBox check?
   enable: true
 
-  # Maximum reach distance (default config: 3.1)
-  # The standard/max Minecraft reach is 3.5 blocks, however it's still calculated in a mysterious way so most people won't even get near that.
-  # So, based on all of this info, anything bigger then 3.4 blocks is considered hacks.
-  # A lot of people requested to make this more strict; 3.2 is good enough based on what I've heard from people.
+  # Maximum reach distance.
+  # The max reach distance in Minecraft is 3.5 blocks, however it's calculated in a strange way so most player's won't reach that far.
+  # Anything farther than 3.4 blocks should be considered hacks, however players may still reach that far.
   max_reach: 3.2
 
-  # How many moves should the Matrix trace back to the player? (default: 5)
-  # You can set this higher to reduce false positives, but this will weaken HitBox detection
-  # My suggestion is 3 to 10, please don't make it more than 10, because it is useless
-
-  # With the max reach this should be more stable, so the detection can be more strict.
+  # How many moves should the Matrix trace back to the player?
+  # You can set this higher to reduce false positives, but this will weaken HitBox detection.
+  # Do not set higher than 10, as that'll make this check useless.
   trace_back_length: 3
 
-  # How much should Matrix ignore players with greater network latency?
-  # When the player's network latency is greater than this value, some
-  # HitBox checks will stop working to prevent false positives. You can
-  # set this value to -1 to disable this feature. (default: 250)
+  # When should this check ignore players with high ping?
+  # Players with high ping may trigger false flags.
   max_ping: 250
 
-  # Violation weights
+  # How many violations will be added when triggered?
   vl_weights:
     miss_player_hitbox: 2
     reach_target_standing: 10
     reach_target_moving: 3
     reach_simple: 3
 
-  # Should dynamic VL weight be enabled?
-  # If enabled, the VL weight will be calculated based on the player's reach
-  # For example, players get 1vl when using 3.5 reach, and 19vl when players use 5.0 reach
-  # If this function is enabled, then "reach_target_standing" and "reach_target_moving" will no longer take effect
-  # Note: dynamic VL = (current_reach - max_reach) * expander
+  # Dynamic violations changes the VL weights based on the amount of reach.
+  # Flayers get X vl when using 3.5 reach, and X + 10 vl when using 5.0 reach.
+  # If enabled, "reach_target_standing" and "reach_target_moving" will no longer be used.
+  # Note: Dynamic VL = "(current_reach - max_reach) * expander"
   dynamic_vl:
     enable: true
     expander: 10
-    min_vl: 5 # experimental, should work fine with the max reach?
+    min_vl: 5
     max_vl: 19
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &a1/3'
     13: 'coc %player% if -tps->18.5&-ping-<185 do matrix npc %player% 125' # Spawns an anti-killaura NPC if the ping doesn't exceed 185ms and the server isn't lagging.
@@ -292,41 +270,37 @@ hitbox:
     22: 'matrix kick %player% Reach/HitBox Hacks'
 
 ## Movement Speed Check
-# This checks how fast a player moves, and prevents the player from moving too fast.
+# Prevents players from moving too fast.
 speed:
-  # Enable this check?
-  # Warning: Will also disable
-  # flight detection.
   enable: true
 
-  # Should Matrix ignore the unloaded chunks when checking? (default config: true)
+  # Ignores unloaded chunks.
   ignore_unloaded_chunks: true
 
-  # Speed prediction tolerance
+  # Speed prediction tolerance.
   tolerance: 0.01
 
-  # Setting this allows Matrix not to check the blocks and collision boxes around the
-  # player on every tick, but to use cached results (0 = not skip, default value = 2)
-  # Please do not set this value too large, it will cause too many skips and cause false positives.
+  # Allows Matrix to not check the blocks and collision boxes around the player every tick and instead use cached results.
+  # Do not set this too big! Too many skips will occur and cause false positives. (0 = no skips)
   skip_rate: 2
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
-  cancel_vl: 48
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
+  cancel_vl: 45
 
-  # Enable sprint direction check?
+  # Ensures correct sprint direction.
   sprint_direction: true
 
-  # Enable strafe check?
+  # Ensures correct strafe movement.
   strafe: true
 
-  # Enable FastClimb/FastLadder check?
+  # Checks for FastClimb/FastLadder
   fastclimb: true
 
-  # Should Matrix check NoSlowDown cheat?
+  # Checks for NoSlow.
   check_noslow: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     55: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a1/3'
     90: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &c2/3'
@@ -335,461 +309,463 @@ speed:
 ## Fly
 # Prevents the player from using both vanilla and non-vanilla fly hacks.
 fly:
-  # Enable this check?
-  # Warning: Speed check must also be enabled.
+  # Note: Speed check must also be enabled.
   enable: true
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
-  cancel_vl: 50
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
+  cancel_vl: 48
 
-  # Fly ability check
-  # It might be not compatible with some plugins, test it yourself
+  # Checks if players are allowed to fly.
+  # Note: Might be not compatible with some plugins.
   ability:
     enable: true
     vl_weight: 20
 
-  # If the player is very close to the void, should Matrix teleport
-  # it to the void after detecting that player is cheating? (default: true)
-  # If you disable this, it might cause some NoFall / BugUp bypass, but
-  # it's a nice option for skyblock server if you don't want your players
-  # get teleported into the void
-
-  # Good for minigame servers (BedWars, SkyWars and others)
-  # Usually pointless for survival servers.
+  # Teleports players to the void if they are close to it.
+  # May cause NoFall/BugUp bypasses if disabled and won't teleport players in sky based gamemodes.
   setback_to_void: true
 
-  # NoFall check
+  # NoFall check: Makes sure players receive damage when falling.
   # Recommended to disable these for minigame servers that don't have fall damage enabled.
   nofall:
-    # Should Matrix setback the player who use NoFall?
+    # Teleports players back to original position.
     setback: true
-  
-    # Force deal damage after setback?
+
+    # Deals the same amount of damage after detection.
     damage: true
 
-  # Trident Boost violation level weight
+  # How many violations will be added when trident boost hacks are triggered?
   trident_boost_vl_weight: 20
 
   # Setback method (back/ground)
-  # back: teleport the player to the last legit location
-  # ground: teleport the player to the ground under the player
+  # back: Teleport to the last legit location
+  # ground: Teleports to the ground under the player
   setback: back
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a1/3'
     100: 'matrix notify %player% tried to fly &8| &7Fly &8| &c2/3'
     180: 'matrix kick %player% Fly Related Hacks'
 
-
 ## BadPackets
-# Prevents player from sending too many movement packets or sending illegal packets
+# Prevents players from sending too many movement packets or sending illegal packets.
 badpackets:
-  # Enable this check?
   enable: true
 
   # Buffer Size (ticks)
-  # The larger the value, the slower the detection, but the more stable
-  # Don't set it lower than 10
+  # The larger the value, the slower the detection, but the more stable.
+  # Don't set this less than 10.
   buffer_size: 32
 
-  # Freeze time (millisecond, 1second=1000 millisecond)
-  # The time to freeze player if they try to send too
-  # many moving packets at the same time
+  # Freeze time (ms)
+  # How long to freeze player if they try to send too many movement packets.
   freeze_time: 500
 
   # How many extra packets can the player send?
-  max_extra_packets: 15
+  max_extra_packets: 20
 
-  # Violation weight
+  # How many violations will be added when triggered?
   vl_weights:
     limit: 10
     timer: 10
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     100: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/3'
     150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c2/3'
     240: 'matrix kick %player% Sending Unusual Packets'
 
 ## FastUse
-# Check prevents player from eating or using an item too quickly.
+# Stops players from eating or using items too quickly.
 fastuse:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal item use (-1 = never cancel)
+  # How many violations are needed to cancel illegal item use? (-1 = don't cancel)
   cancel_vl: 1
 
-  # Violation weight
+  # How many violations will be added when triggered?
   vl_weight: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/2'
-    24: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, or increase if causes false positives.
+    21: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, increase if causes false positives.
 
 ## FastBow
-# Check prevents player from shooting a bow too quickly.
+# Prevents players from shooting bows too quickly.
 fastbow:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal bow use (-1 = never cancel)
-  cancel_vl: 7
+  # How many violations are needed to cancel illegal bow use? (-1 = don't cancel)
+  cancel_vl: 5
 
-  # Violation Weight
+  # How many violations will be added when triggered?
   vl_weight: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/2'
     15: 'matrix kick %player% FastBow Hacks'
 
 ## FastHeal
-# Check prevents player from regaining health too quickly.
-# May cause false positives, but RE says the check has been improved.
-# Disable this if it causes false positives.
-# Also blocked by BadPackets
+# Prevents players from regaining health too quickly.
 fastheal:
-  # Enable this check?
   enable: true
 
-  # Violation Weight
+  # How many violations will be added when triggered?
   vl_weight: 2
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/2'
     48: 'matrix kick %player% FastHeal Hacks'
 
 ## Block
-# Check prevents the player from breaking, placing block quickly
+# Stops players from breaking and placing blocks too fast.
 block:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal breaking/placing of blocks (-1 = never cancel)
-  # Set to 8 to prevent falling to void in case of things like SkyWars matches and others.
-  cancel_vl: 8
+  # How many violations are needed to cancel illegal breaking/placing blocks? (-1 = don't cancel)
+  # Set to 8 for sky based gamemodes to prevent bridging players from falling.
+  cancel_vl: 6
 
-  # Modules List
-  # You can turn off some modules here
+  # Modules used in the block checks
   modules:
-    # It can detect player breaking block faster
+    # FastBreak check: Stops players breaking blocks too fast.
     fastbreak:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 4
-    # It can detect player placing block faster
+
+    # FastPlace check: Stops players placing blocks too fast.
     fastplace:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 1
-      max_place_per_second: 16 # Some players can place 18 blocks per second; feel free to decrease or increase that.
-    # It can detect player placing block without swing hand
+
+      # This is like the AutoClicker/macro check.
+      # The average player clicks at 8 CPS, and only a very small amount of people get to 16 CPS.
+      # 
+      # Decrease if players are bypassing, increase if legit players are getting flagged.
+      # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
+      max_place_per_second: 14
+
+    # NoSwing check: Makes sure player has a swing animation.
     noswing:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 1
-    # detect player not send abort breaking packet
+
+    # Abort check: Detects players not sending abort breaking packet.
     abort:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 0
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/2'
     32: 'matrix kick %player% FastPlace/FastBreak Hacks'
 
 ## Scaffold check
-# Check prevents player bridging blocks or towering up faster than normal speed
+# Prevents player bridging or towering faster than average.
 place:
-  # Enable this check
   enable: true
 
-  # Cancel VL
+  # How many violations are needed to cancel illegal bridging/towering? (-1 = don't cancel)
   cancel_vl: 15
 
-  # Modules
+  # Modules used in the scafold checks
   modules:
-    # It can detect player bridging faster
+    # Scaffold check: Detects players bridging too fast.
     scaffold:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 9
-      
-    # Preventing player bridging too fast
+
+    # Delay check: Detects players bridging too fast.
     delay:
       enable: true
-      vl_weight: 6
-      cancel_place: true
-      
-      # Turn this down if legit players are getting violations
-      min_delay: 7
 
-    # Preventing player right clicking fast
+      # How many violations will be added when triggered?
+      vl_weight: 6
+
+      # Cancels illegal block placement.
+      cancel_place: true
+
+      # Minimum amount of time between bridge block placement (ticks)
+      # Turn this down if legit players are getting violations
+      min_delay: 8
+
+    # Right CPS check: Same as AutoClicker/macro check but for right click.
     right_cps:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 5
-      
-    # It can detect player towering up faster
+
+    # Tower check: Detects players towering too fast.
     tower:
       enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 2
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/3'
     15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &c2/3'
     32: 'matrix kick %player% Scaffold/Tower'
 
 ## Jesus
-# Check prevents the player from moving too too quickly in liquids, or walking on liquid.
-# ^^ I wouldn't disable the check anyway - that false positive is rare in most cases.
+# Prevents the player from moving too too quickly or walking in/on liquids.
 jesus:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal movements (-1 = never cancel)
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   cancel_vl: 15
 
-  # Should Matrix ignore whether player is in swimming?
-  # This feature can prevent swimming status desync
+  # Should Matrix ignore whether player is in the swimming animation?
+  # This feature can prevent swimming status desync, but cause issues with player position.
   ignore_swim_pose: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     20: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a1/3'
     40: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &c2/3'
     64: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
 
 ## Inventory
-# Check prevents the player from using illegal inventory modifications such as Steal.
-# Also prevents quick inventory movement hacks.
+# Stops players from using illegal inventory modifications such as ChestSteal.
 inventory:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel illegal movements of items (-1 = never cancel)
-  # Strict for SkyWars matches
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
+  # Keep strict for gamemodes that involve many chests.
   cancel_vl: 8
 
-  # Enable ChestStealer check?
-  # It can detect player taking items out of chest faster
+  # ChestStealer check: Detects instantly taking items out of chests.
   chest_stealer: true
 
-  # Ignore items/inventory which has colorful name
-  # This feature can prevent false positive when you
-  # click some GUI such as the Bedwars Shop
+  # Ignores items that have color in the name.
+  # This can prevent a false positive for GUIs and shops.
   ignore_color: false
 
-  # Disable InventoryMove check
-  # If you don't need InventoryMove check, you can set this to 'true' to disable it
-  # This option ONLY works for 1.12/1.13/+ server
+  # InventoryMove check: Makes sure a player cannot move while in their inventory.
+  # Note: Only works in 1.12+
   disable_invmove: false
 
-  # Check AutoTotem cheat?
+  # AutoTotem check: Stops automatically moving totems to the offhand.
   auto_totem: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a1/2'
     24: 'matrix kick %player% ChestSteal/Inventory Hacks'
 
 ## Velocity
-# Check prevents the player from using any type of anti-knockback hacks.
+# Prevents players from using any type of AntiKnockback hacks.
 velocity:
-  # Enable this check?
   enable: true
 
-  # The time to wait for players to respond to velocity (ticks)
-  # If the player does not respond to velocity after that
-  # time, the player will be detected.
-
+  # The amount of time to wait for players to respond to velocity (ticks)
   # Set to 40 to not cause false positives for laggy players.
-  wait_time: 40
+  wait_time: 35
 
-  # Ignore lag player, this feature can ignore the player who
-  # is lagging or changing resource pack.
+  # Ignore players who are lagging or changing resource packs.
   ignore_lag: true
 
-  # The VL weight of velocity check modules (-1 = disable)
+  # How many violations will be added when triggered? (-1 = disable)
   modules:
     respond: 5
     analyser: 3
     vertical: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &a1/3'
     15: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &c2/3'
     22: 'matrix kick %player% Velocity/Anti-Knockback'
 
 ## Spam
-# Check prevents a player from spamming messages in the servers chat.
+# Kicks players spamming messages in chat.
 chat:
-  # Enable this check?
   enable: true
 
-  # Minimum amount of time between messages (Seconds)
+  # Minimum amount of time between messages (seconds)
   min_time: 2
 
-  # Violations needed to cancel sent messages (-1 = never cancel)
+  # How many violations are needed to cancel spam? (-1 = don't cancel)
   cancel_vl: 4
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     4: 'matrix notify %player% is spamming the chat &8| &7ChatSpam &8| &a1/2'
     10: 'matrix kick %player% Spammer/ChatBot'
 
 ## Interact
-# Check prevents the player from illegally interacting with entities and blocks.
+# Prevents the player from illegally interacting with entities and blocks.
 interact:
-  # Enable this check?
   enable: true
 
-  # Modules List
+   # Modules used in the interact checks
   modules:
-    # It can detect player breaking blocks through walls
+    # Break block check: Detects players breaking blocks throug walls.
     break_block:
       enable: true
-      vl_weight: 1
-    # It can detect player attacking other entities through walls
-    attack:
-      enable: true
-      vl_weight: 1
-    # It can detect player interacting blocks too far away
-    block_reach:
-      enable: true
+
+      # How many violations will be added when triggered?
       vl_weight: 1
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+    # Attack check: Detects players attacking entities through walls.
+    attack:
+      enable: true
+
+      # How many violations will be added when triggered?
+      vl_weight: 1
+
+    # Block reach check: Detects players interacting with blocks too far away.
+    block_reach:
+      enable: true
+
+      # How many violations will be added when triggered?
+      vl_weight: 1
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a1/2'
     24: 'matrix kick %player% Illegally Interacting with Block/Entity'
 
 ## AutoFish
-# Check prevents the player from using an Auto-Fishing mod or hack.
+# Disables AutoFish hacks.
 autofish:
-  # Enable this check?
   enable: true
 
-  # Violations needed to cancel auto fishing (-1 = never cancel)
-  cancel_vl: 5
+  # How many violations are needed to cancel auto fishing? (-1 = don't cancel)
+  cancel_vl: 3
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     6: 'matrix notify %player% is using auto fish mods &8| &7AutoFish &8| &a1/2'
     14: 'matrix kick %player% AutoFish'
 
 ## Phase
-# Check prevents the player people glitching through blocks.
+# Disallows players glitching through blocks.
 phase:
-  # Enable this check?
   enable: true
 
-  # How much time should Matrix prevent the player from moving if
-  # the player frequently tries to move the block? (milliseconds)
+  # Freeze time (ms)
+  # How long to freeze player if they keep moving into blocks.
   freeze_time: 400
 
-  # Violations needed to cancel illegal movements
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   cancel_vl: 5
 
-  # Should Matrix prevent players from using Ender Pearl for close range teleportation?
+  # Stops players from using ender pearls to phase into blocks.
   prevent_close_range_enderpearl: true
 
-  # Exclude specific block types
+  # Exclude specific block types.
+  #
+  # Example:
+  # exclude_types:
+  #   - OBSIDIAN
+  #   - BEDROCK
   exclude_types: []
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     7: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &a1/2'
     13: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &c2/2'
-    # No kick action; the check is not stable yet.
+    # Note: There is no kick action yet as the check is not stable yet.
 
 ## AutoBot
-# Check prevents player use some Bot mods like Baritone
-# NOTE: THIS CHECK IS ONLY WORK FOR PREMIUM USERS
-# Doesn't work for 1.8 (maybe?)
+# Checks for mods such as Baritone.
+# Note: This check only works for premium users.
 autobot:
-  # Enable this check?
   enable: true
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &a1/3'
     10: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &c2/3'
     15: 'matrix kick %player% Auto-Bot'
 
 ## Elytra
-# Checks prevents player using Elytra+, ElytraFlight, etc
-# Only works for 1.9+
+# Stops players using elytra related hacks.
 elytra:
-  # Enable this check?
   enable: true
 
-  # Should Matrix be forced to pull back players who are particularly
-  # cheating? Even if they do not reach cancel_vl (default: true)
+  # Teleports players back to original position.
   force_setback: true
 
-  # Setback violation level (-1 = never setback)
+  # How many violations are needed to teleport players back? (-1 = don't setback)
   setback_vl: 8
 
-  # unequip elytra VL
-  # If player reached this VL, Matrix will make it out of the gliding state (-1 = disable this feature)
+  # How many violations are needed to take players out of gliding? (-1 = don't cancel)
   unequip_vl: 20
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a1/3'
     20: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &c2/3'
     48: 'matrix kick %player% Elytra Flight'
 
 ## Vehicle
-# Checks prevents player using VehicleFlight, VehicleSpeed, EntitySpeed..
-# Only works for 1.9+
+# Prevents players from using vehicle related hacks.
+# Note: Only works for 1.9+
 vehicle:
-  # Enable this check?
   enable: true
 
   # Prevent players from using certain creatures as vehicles
   # All entity types: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
-  deny_entity_types_as_vehicle:
+  #
+  # Example:
+  # deny_entity_types_as_vehicle:
+  #   - HORSE
+  #   - PIG
+  deny_entity_types_as_vehicle: []
 
-  # Vehicle Speed/ Entity Speed
+  # Vehicle speed check: Prevents vehicles from moving too fast.
   speed:
-    # Enable this modules?
     enable: true
 
-    # setback VL (-1 = disable setback)
+    # How many violations are needed to teleport players back? (-1 = don't setback)
     setback_vl: 2
 
-  # Vehicle Flight / Boat Flight
+  # Vehicle flight check: Prevents vehicles from using fly hacks.
   flight:
-    # Enable this modules?
     enable: true
 
-    # setback vl (-1 = never setback)
+    # How many violations are needed to teleport players back? (-1 = don't setback)
     setback_vl: 4
 
-    # leave vehicle vl (-1 = never leave vehicle)
+    # How many violations are needed to kick players off vehicles? (-1 = don't kick)
     leave_vehicle: 8
 
-  # Violation Thresholds
-  # number_of_violations: '<command>'
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &a1/3'
     10: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &c2/3'
