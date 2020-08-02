@@ -10,9 +10,9 @@
 
 // Define and require modules
 const { stripIndents } = require("common-tags");
-const log			   = require("./logger").log;
-const yaml			   = require("js-yaml");
-const fs			   = require("fs");
+const log              = require("./logger").log;
+const yaml             = require("js-yaml");
+const fs               = require("fs");
 
 // Defaults
 let args = process.argv.splice(2, process.argv.length + 1);
