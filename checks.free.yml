@@ -630,21 +630,21 @@ interact:
     # Break block check: Detects players breaking blocks throug walls.
     break_block:
       enable: true
-      
+
       # How many violations will be added when triggered?
       vl_weight: 1
-      
+
     # Attack check: Detects players attacking entities through walls.
     attack:
       enable: true
-      
+
       # How many violations will be added when triggered?
       vl_weight: 1
-      
+
     # Block reach check: Detects players interacting with blocks too far away.
     block_reach:
       enable: true
-      
+
       # How many violations will be added when triggered?
       vl_weight: 1
 
