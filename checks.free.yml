@@ -5,7 +5,7 @@
 # Authors: Encode42, gowgotz.
 #
 # This config may not work perfectly with your server.
-# Plugins, software, performance can all effect how well this config and the anticheat in general will work.
+# Plugins, software, performance can all affect how well this config and the anticheat, in general, will work.
 # This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.
 #
 # Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
@@ -27,7 +27,7 @@ killaura:
 
   # Modules used in the KillAura checks
   modules:
-    # OneHit check: Detects some blatant KillAura cheats in short time.
+    # OneHit check: Detects some blatant KillAura cheats in a short time.
     onehit:
       enable: true
 
@@ -43,7 +43,7 @@ killaura:
     # AutoClicker check: Prevents players using an AutoClicker/macro.
     autoclicker:
       # Players can click 22 times per second if they jitter clicking.
-      # The average player clicks at 8 CPS, and only a very small amount of people get to 16 CPS.
+      The average player clicks at 8 CPS, and only a very small number of people get to 16 CPS.
       #
       # Decrease if players are bypassing, increase if legit players are getting flagged.
       # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
@@ -78,7 +78,7 @@ killaura:
       enable: true
 
       # How many violations will be added when triggered?
-      # This should be a higher number because nobody should be able to swing 180 degress behind them.
+      # This should be a higher number because nobody should be able to swing 180 degrees behind them.
       vl_weight: 12
 
       # This decreases server load, but there may be a delay if the player turns quickly.
@@ -88,12 +88,12 @@ killaura:
       # Some cheating clients can bypass random entity ID.
       real_entity_id: true
 
-      # Disables automatic spawing of NPCs. Disable this if you want Matrix to handle NPC spawing.
+      # Disables automatic spawning of NPCs. Disable this if you want Matrix to handle NPC spawning.
       # NPC command: "/matrix npc <player> <duration>"
       only_command_trigger: true
 
       # Makes the NPC visible. Most clients do not attack invisible entities.
-      # Disabling will make less players confused, but the check less reliable.
+      # Disabling will make fewer players confused, but the check less reliable.
       visible: true
 
       # Force a random name instead of the name of an online player.
@@ -146,7 +146,7 @@ killaura:
         clicks: 30  # The player must click the mouse X times
         rotations: 90 # The player must rotate the head X times
 
-    # NoSwing check: Makes sure player has a swing animation.
+    # NoSwing check: Makes sure players have a swing animation.
     noswing:
       enable: true
 
@@ -226,13 +226,13 @@ killaura:
 
 ## HitBox
 # Prevents players from using HitBox, Angle, and Reach hacks.
-# Note: This check is only strict when you attack other players, and loose when you attack other entities.
+# Note: This check is only strict when you attack other players and loose when you attack other entities.
 hitbox:
   enable: true
 
   # Maximum reach distance.
-  # The max reach distance in Minecraft is 3.5 blocks, however it's calculated in a strange way so most player's won't reach that far.
-  # Anything farther than 3.4 blocks should be considered hacks, however players may still reach that far.
+  The max reach distance in Minecraft is 3.5 blocks; however, it's calculated in a strange way so most players won't reach that far.
+  # Anything farther than 3.4 blocks should be considered hacks; however, players may still reach that far.
   max_reach: 3.2
 
   # How many moves should the Matrix trace back to the player?
@@ -251,7 +251,7 @@ hitbox:
     reach_target_moving: 3
     reach_simple: 3
 
-  # Dynamic violations changes the VL weights based on the amount of reach.
+  # Dynamic violations change the VL weights based on the amount of reach.
   # Flayers get X vl when using 3.5 reach, and X + 10 vl when using 5.0 reach.
   # If enabled, "reach_target_standing" and "reach_target_moving" will no longer be used.
   # Note: Dynamic VL = "(current_reach - max_reach) * expander"
@@ -328,7 +328,7 @@ fly:
   # NoFall check: Makes sure players receive damage when falling.
   # Recommended to disable these for minigame servers that don't have fall damage enabled.
   nofall:
-    # Teleports players back to original position.
+    # Teleports players back to the original position.
     setback: true
 
     # Deals the same amount of damage after detection.
@@ -458,7 +458,7 @@ block:
       # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
       max_place_per_second: 14
 
-    # NoSwing check: Makes sure player has a swing animation.
+    # NoSwing check: Makes sure players have a swing animation.
     noswing:
       enable: true
 
@@ -486,7 +486,7 @@ place:
   # How many violations are needed to cancel illegal bridging/towering? (-1 = don't cancel)
   cancel_vl: 15
 
-  # Modules used in the scafold checks
+  # Modules used in the scaffold checks
   modules:
     # Scaffold check: Detects players bridging too fast.
     scaffold:
@@ -509,7 +509,7 @@ place:
       # Turn this down if legit players are getting violations
       min_delay: 8
 
-    # Right CPS check: Same as AutoClicker/macro check but for right click.
+    # Right CPS check: Same as AutoClicker/macro check but for right-click.
     right_cps:
       enable: true
 
@@ -531,14 +531,14 @@ place:
     32: 'matrix kick %player% Scaffold/Tower'
 
 ## Jesus
-# Prevents the player from moving too too quickly or walking in/on liquids.
+# Prevents the player from moving too quickly or walking in/on liquids.
 jesus:
   enable: true
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   cancel_vl: 15
 
-  # Should Matrix ignore whether player is in the swimming animation?
+  # Should Matrix ignore whether players are in the swimming animation?
   # This feature can prevent swimming status desync, but cause issues with player position.
   ignore_swim_pose: true
 
@@ -604,7 +604,7 @@ velocity:
     22: 'matrix kick %player% Velocity/Anti-Knockback'
 
 ## Spam
-# Kicks players spamming messages in chat.
+# Kicks players spamming messages in the chat.
 chat:
   enable: true
 
@@ -627,7 +627,7 @@ interact:
 
    # Modules used in the interact checks
   modules:
-    # Break block check: Detects players breaking blocks throug walls.
+    # Break block check: Detects players breaking blocks through walls.
     break_block:
       enable: true
 
@@ -716,7 +716,7 @@ autobot:
 elytra:
   enable: true
 
-  # Teleports players back to original position.
+  # Teleports players back to the original position.
   force_setback: true
 
   # How many violations are needed to teleport players back? (-1 = don't setback)
@@ -733,7 +733,7 @@ elytra:
     48: 'matrix kick %player% Elytra Flight'
 
 ## Vehicle
-# Prevents players from using vehicle related hacks.
+# Prevents players from using vehicle-related hacks.
 # Note: Only works for 1.9+
 vehicle:
   enable: true
