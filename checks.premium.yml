@@ -480,7 +480,7 @@ block:
 
 ## Scaffold check
 # Prevents player bridging or towering faster than average.
-place:
+scaffold:
   enable: true
 
   # How many violations are needed to cancel illegal bridging/towering? (-1 = don't cancel)
@@ -489,7 +489,7 @@ place:
   # Modules used in the scaffold checks
   modules:
     # Scaffold check: Detects players bridging too fast.
-    scaffold:
+    place:
       enable: true
 
       # How many violations will be added when triggered?
