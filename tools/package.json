@@ -1,0 +1,21 @@
+{
+  "name": "matrixconfig-tools",
+  "version": "1.0.0",
+  "description": "Tools used for MatrixConfig tasks.",
+  "main": "minify-yaml.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Encode42/MatrixConfig.git"
+  },
+  "author": "Encode42",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Encode42/MatrixConfig/issues"
+  },
+  "homepage": "https://encode42.dev/MatrixConfig/tools",
+  "dependencies": {
+    "common-tags": "^1.8.0",
+    "js-yaml": "^3.14.0",
+    "winston": "^3.3.3"
+  }
+}
