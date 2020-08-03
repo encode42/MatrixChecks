@@ -12,6 +12,7 @@ The optimized config for [Matrix Anticheat](https://www.mc-market.org/resources/
 
 This config works for both the free and premium versions of Matrix.  
 **Make sure to use the config meant for the version of Matrix you use!**  
+<sub>Sometimes Matrix premium updates faster than free, there will be another config file if so.</sub>
 
 #### Features
 - Less false positives.
