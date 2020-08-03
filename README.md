@@ -45,8 +45,6 @@ Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fi
 This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
 
 ### 1. Config file types
-This repo has multiple config files for different uses.
-
 #### checks.yml
 The main config file. Includes the standard checks and everything advertised.
 
