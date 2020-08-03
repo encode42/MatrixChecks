@@ -33,7 +33,7 @@ This config works for both the free and premium versions of Matrix.
 
 ### Cloud Usage
 1. Open `config.yml` in your Matrix plugin folder. (`<server>/plugins/matrix`)
-2. Change the line "`- 'your configuration file link'`" (cloud_config.links) to "https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud.checks.free.yml" or "https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud.checks.premium.yml" depending on what version of Matrix you own.  
+2. Change the line "`- 'your configuration file link'`" (cloud_config.links) to "https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud.checks.yml" or any other checks file depending on on what you want.  
 <sub>For specific Matrix versions, replace `master` with the config version number.
 
 ## FAQ
