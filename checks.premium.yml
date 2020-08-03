@@ -278,7 +278,9 @@ speed:
   ignore_unloaded_chunks: true
 
   # Speed prediction tolerance.
-  tolerance: 0.01
+  # Turn this down if players are bypassing, up if players are getting false flags.
+  # Don't go below 0.0075! There should always be some slack.
+  tolerance: 0.0225
 
   # Allows Matrix to not check the blocks and collision boxes around the player every tick and instead use cached results.
   # Do not set this too big! Too many skips will occur and cause false positives. (0 = no skips)
