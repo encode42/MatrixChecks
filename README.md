@@ -1,5 +1,5 @@
 # MatrixConfig
-<img src="https://repository-images.githubusercontent.com/282035636/6a824400-cf40-11ea-9426-c1f41f7f40d9" width="200px">  
+<img src="https://repository-images.githubusercontent.com/282035636/0858ae80-d4ff-11ea-87bb-052579b5239c" width="200px">  
 
 The continuation of the [MatrixConfig](https://git.disroot.org/lampenit/MatrixConfig) by gowgotz.
 
