@@ -16,7 +16,7 @@ const fs               = require("fs");
 
 // Defaults
 let args = process.argv.splice(2, process.argv.length + 1);
-if (args.length === 0) args = ["../checks.free.yml", "../checks.premium.yml"];
+if (args.length === 0) args = ["../checks.yml", "../error.checks.yml"];
 
 // Minify files
 log.info(stripIndents`
