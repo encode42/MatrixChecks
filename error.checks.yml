@@ -222,7 +222,7 @@ killaura:
     8: 'matrix npc %player% 125'
     20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &61/3'
     35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c2/3'
-    42: 'matrix delay 12 matrix kick %player% KillAura'
+    42: 'matrix delay 12 matrix kick %player% Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
 
 ## HitBox
 # Prevents players from using HitBox, Angle, and Reach hacks.
@@ -267,7 +267,7 @@ hitbox:
     10: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &a1/3'
     13: 'coc %player% if -tps->18.5&-ping-<185 do matrix npc %player% 125' # Spawns an anti-killaura NPC if the ping doesn't exceed 185ms and the server isn't lagging.
     15: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &c2/3'
-    22: 'matrix kick %player% Reach/HitBox Hacks'
+    22: 'matrix kick %player% java.net.SocketException: Connection reset'
 
 ## Movement Speed Check
 # Prevents players from moving too fast.
@@ -306,7 +306,7 @@ speed:
   commands:
     55: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a1/3'
     90: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &c2/3'
-    220: 'matrix kick %player% Speed Hacks'
+    220: 'matrix kick %player% Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
 
 ## Fly
 # Prevents the player from using both vanilla and non-vanilla fly hacks.
@@ -349,7 +349,7 @@ fly:
   commands:
     50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a1/3'
     100: 'matrix notify %player% tried to fly &8| &7Fly &8| &c2/3'
-    180: 'matrix kick %player% Fly Related Hacks'
+    180: 'matrix kick %player% Disconnected'
 
 ## BadPackets
 # Prevents players from sending too many movement packets or sending illegal packets.
@@ -378,7 +378,7 @@ badpackets:
   commands:
     100: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/3'
     150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c2/3'
-    240: 'matrix kick %player% Sending Unusual Packets'
+    240: 'matrix kick %player% java.net.SocketException: Connection reset'
 
 ## FastUse
 # Stops players from eating or using items too quickly.
@@ -395,7 +395,7 @@ fastuse:
   # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/2'
-    21: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, increase if causes false positives.
+    21: 'matrix kick %player% Internal Exception: io.netty.handler.codec.DecoderException: java.lang.IndexOutOfBoundsException: readerIndex(4) + length(1) exceeds writer Index(4): UnpooledHeapByteBuf(ridx: 4. widx: 4, cap: 4)' # Decrease if it takes a long time to detect, increase if causes false positives.
 
 ## FastBow
 # Prevents players from shooting bows too quickly.
@@ -412,7 +412,7 @@ fastbow:
   # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/2'
-    15: 'matrix kick %player% FastBow Hacks'
+    15: 'matrix kick %player% Internal Exception: io.netty.handler.codec.DecoderException: java.lang.IndexOutOfBoundsException: readerIndex(4) + length(1) exceeds writer Index(4): UnpooledHeapByteBuf(ridx: 4. widx: 4, cap: 4)'
 
 ## FastHeal
 # Prevents players from regaining health too quickly.
@@ -426,7 +426,7 @@ fastheal:
   # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/2'
-    48: 'matrix kick %player% FastHeal Hacks'
+    48: 'matrix kick %player% Internal Server Error'
 
 ## Block
 # Stops players from breaking and placing blocks too fast.
@@ -478,7 +478,7 @@ block:
   # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/2'
-    32: 'matrix kick %player% FastPlace/FastBreak Hacks'
+    32: 'matrix kick %player% java.net.ConnectException: Connection timed out: no further information:'
 
 ## Scaffold check
 # Prevents player bridging or towering faster than average.
@@ -530,7 +530,7 @@ scaffold:
   commands:
     10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/3'
     15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &c2/3'
-    32: 'matrix kick %player% Scaffold/Tower'
+    32: 'matrix kick %player% java.net.SocketException: Connection reset'
 
 ## Jesus
 # Prevents the player from moving too quickly or walking in/on liquids.
@@ -549,7 +549,7 @@ jesus:
   commands:
     20: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a1/3'
     40: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &c2/3'
-    64: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
+    64: 'matrix kick %player% java.net.ConnectException: Connection timed out: no further information:'
 
 ## Inventory
 # Stops players from using illegal inventory modifications such as ChestSteal.
@@ -578,7 +578,7 @@ inventory:
   # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a1/2'
-    24: 'matrix kick %player% ChestSteal/Inventory Hacks'
+    24: 'matrix kick %player% Failed to connect to server. io.netty.channel.AbstractChannel $AnnotatedConnectException: Connection timed out.'
 
 ## Velocity
 # Prevents players from using any type of AntiKnockback hacks.
@@ -620,7 +620,7 @@ chat:
   # Run commands once X amount of violations are reached.
   commands:
     4: 'matrix notify %player% is spamming the chat &8| &7ChatSpam &8| &a1/2'
-    10: 'matrix kick %player% Spammer/ChatBot'
+    10: 'matrix kick %player% Failed to connect to server. io.netty.channel.AbstractChannel $AnnotatedConnectException: Connection timed out.'
 
 ## Interact
 # Prevents the player from illegally interacting with entities and blocks.
@@ -654,7 +654,7 @@ interact:
   # Run commands once X amount of violations are reached.
   commands:
     10: 'matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a1/2'
-    24: 'matrix kick %player% Illegally Interacting with Block/Entity'
+    24: 'matrix kick %player% java.lang.OutOfMemoryError: Java heap space'
 
 ## AutoFish
 # Disables AutoFish hacks.
@@ -668,7 +668,7 @@ autofish:
   # Run commands once X amount of violations are reached.
   commands:
     6: 'matrix notify %player% is using auto fish mods &8| &7AutoFish &8| &a1/2'
-    14: 'matrix kick %player% AutoFish'
+    14: 'matrix kick %player% Failed to connect to server. io.netty.channel.AbstractChannel $AnnotatedConnectException: Connection timed out.'
 
 ## Phase
 # Disallows players glitching through blocks.
@@ -711,7 +711,7 @@ autobot:
   commands:
     5: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &a1/3'
     10: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &c2/3'
-    15: 'matrix kick %player% Auto-Bot'
+    15: 'matrix kick %player% java.net.SocketException: Connection reset'
 
 ## Elytra
 # Stops players using elytra related hacks.
@@ -732,7 +732,7 @@ elytra:
   commands:
     10: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a1/3'
     20: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &c2/3'
-    48: 'matrix kick %player% Elytra Flight'
+    48: 'matrix kick %player% java.net.SocketException: Connection reset'
 
 ## Vehicle
 # Prevents players from using vehicle-related hacks.
@@ -771,4 +771,4 @@ vehicle:
   commands:
     5: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &a1/3'
     10: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &c2/3'
-    32: 'matrix kick %player% Suspicious vehicle movement'
+    32: 'matrix kick %player% java.lang.OutOfMemoryError: Java heap space'
