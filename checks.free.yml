@@ -337,7 +337,7 @@ fly:
     damage: true
 
   # How many violations will be added when trident boost hacks are triggered?
-  trident_boost_vl_weight: 20
+  trident_boost_vl_weight: 17
 
   # Setback method (back/ground)
   # back: Teleport to the last legit location
