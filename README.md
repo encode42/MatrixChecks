@@ -19,11 +19,12 @@ This config works for both the free and premium versions of Matrix.
 - Less false positives.
 - Better warning messages.
 - More strict checks. *(Better detection)*
+- Multiple config types to suit your needs.
 - Up to date!
 
 ## Setup
 ### Server Usage
-1. Download either [checks.free.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.free.yml) or [checks.premium.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.premium.yml) depending on what version of Matrix you use.  
+1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.yml), [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/error.checks.yml), or [cloud.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud.checks.yml) depending on what you want.
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixConfig/releases).</sub>
 2. Upload/move the checks file to your Matrix plugin folder. (`<server>/plugins/matrix/`)
 3. Rename the original `checks.yml` to something else. `checks.old.yml` will work.
@@ -43,7 +44,22 @@ Plugins, software, performance can all effect how well this config and the antic
 Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.  
 This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
 
-### 0. Suggested changes
+### 1. Config file types
+This repo has multiple config files for different uses.
+
+#### checks.yml
+The main config file. Includes the standard checks and everything advertised.
+
+#### cloud.checks.yml
+Same as `checks.yml` but minified. It is a lot smaller in file size, but is nearly impossible to read. 
+Because of its small file size though, it can be automatically updated fast on server startup.   
+This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixConfig#cloud-usage).
+
+#### error.checks.yml
+Same as `checks.yml` but with different kick messages.  
+The messages are from classic Minecraft server disconenct messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`."
+
+### 2. Suggested changes
 1. `nofall.damage: true` -> `nofall.damage: false` (For servers with fall-damage disabled)
 2. `hitbox.max-reach: 3.2` -> `hitbox.max_reach: 3.3` (If you have issues with the hitbox check)  
 <sub>**NOTE**: Makes hitbox detection more lenient! Only change this if you *have* to.</sub>
@@ -54,10 +70,10 @@ This config aims to mitigate those issues and improve what works well, but there
 6. `block.fastplace.max_place_per_second: 16` -> `block.fastplace.max_place_per_second: (number from 9 to 19)` (Decrease if you think there are bypasses, increase if the check causes false positives)
 7. `place.modules.delay.min_delay: 7` -> `place.modules.delay.min_delay: (number 5 to 9)` (Decrease if legit players are getting too many violations, increase if bypassed)
 
-### 1. Why is the anti-killaura NPC spawned in the HitBox check?  
+### 3. Why is the anti-killaura NPC spawned in the HitBox check?  
 This check also checks if the player isn't using Angle cheats, and the NPC checks if the player can hit people behind the player. To prevent lag and false positives from happening with this, the NPC will be spawned only if the player's ping is lower than 185ms. If I'm right, this should make the killaura detection more strict. [This has been approved by RE](https://github.com/jiangdashao/Matrix-Issues/commit/988e130f60559105cea7ec384e49357864b9f5b4).
 
-### 2. How do I report a change or false positive?
+### 4. How do I report a change or false positive?
 **FIRST:**  
 Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a config. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
 You can also try using the default config to see if the issue still stands. If so, it's not a problem with the config.  
@@ -69,5 +85,5 @@ Make an issue at the issues page with the right template. If you describe what y
 Issues: [Here](https://github.com/Encode42/MatrixConfig/issues)  
 Pull Requests: [Here](https://github.com/Encode42/MatrixConfig/pulls)  
 
-### 3. Can I modify the config?
+### 5. Can I modify the config?
 Yes! I encourage you do so. You can also distribute it all you want, just please don't claim it all as your own. (Credit the original authors.)
