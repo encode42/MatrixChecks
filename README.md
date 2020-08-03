@@ -26,9 +26,9 @@ This config works for both the free and premium versions of Matrix.
 ### Server Usage
 1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.yml), [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/error.checks.yml), or [cloud.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud.checks.yml) depending on what you want.
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixConfig/releases).</sub>
-2. Upload/move the checks file to your Matrix plugin folder. (`<server>/plugins/matrix/`)
-3. Rename the original `checks.yml` to something else. `checks.old.yml` will work.
-4. Rename the new `checks.free.yml` or `checks.premium.yml` to `checks.yml`.
+2. Rename the original `checks.yml` to something else. `checks.old.yml` will work.
+3. Upload/move the checks file to your Matrix plugin folder. (`<server>/plugins/matrix/`)
+4. If you downloaded a checks file becides `checks.yml`, rename the new `*.checks.yml` to `checks.yml`.
 5. Restart your server!
 
 ### Cloud Usage
