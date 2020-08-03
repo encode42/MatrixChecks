@@ -1,8 +1,6 @@
 # MatrixConfig
 <img src="https://repository-images.githubusercontent.com/282035636/0858ae80-d4ff-11ea-87bb-052579b5239c" width="200px">  
 
-The continuation of the [MatrixConfig](https://git.disroot.org/lampenit/MatrixConfig) by gowgotz.
-
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999)
 ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixConfig/latest/master?label=Commits%20since%20release&style=flat-square)
 
