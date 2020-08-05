@@ -184,7 +184,7 @@ killaura:
       enable: true
 
       # How many violations will be added when triggered?
-      vl_weight: 15
+      vl_weight: 14
 
     # Direction check: Detects if aiming in player battle is normal based on motion prediction.
     direction:
@@ -198,7 +198,7 @@ killaura:
       enable: true
 
       # How many violations will be added when triggered?
-      vl_weight: 15
+      vl_weight: 14
 
     # Combine check: Adds additional violations if multiple checks are triggered at once
     combine:
@@ -218,9 +218,11 @@ killaura:
   # Run commands once X amount of violations are reached.
   commands:
     8: 'matrix npc %player% 125'
-    20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &61/3'
-    35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c2/3'
-    42: 'matrix delay 12 matrix kick %player% KillAura'
+    14: 'coc %player% if -tps->18.5&-ping-<125 do matrix notify %player% might be using combat hacks &8| &7KillAura &8| &61/4 (14VL)'
+    20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &62/4'
+    35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c3/4'
+    42: 'coc %player% if -tps->18.0&-ping-<130 do matrix kick %player% KillAura'
+    50: 'matrix delay 12 matrix kick %player% KillAura'
 
 ## HitBox
 # Prevents players from using HitBox, Angle, and Reach hacks.
@@ -262,10 +264,12 @@ hitbox:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
+    6: 'coc %player% if -tps->18.5&-ping-<125 do matrix npc %player% 120'
     10: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &a1/3'
-    13: 'coc %player% if -tps->18.5&-ping-<185 do matrix npc %player% 125' # Spawns an anti-killaura NPC if the ping doesn't exceed 185ms and the server isn't lagging.
+    13: 'coc %player% if -tps->18.5&-ping-<185 do matrix npc %player% 125'
     15: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &c2/3'
-    22: 'matrix kick %player% Reach/HitBox Hacks'
+    22: 'coc %player% if -tps->18.5&-ping-<130 do matrix kick %player% Reach/HitBox Hacks'
+    27: 'matrix kick %player% Reach/HitBox Hacks'
 
 ## Movement Speed Check
 # Prevents players from moving too fast.
@@ -302,8 +306,10 @@ speed:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    55: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a1/3'
-    90: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &c2/3'
+    40: 'coc %player% if -tps->17.5&-ping-<175 do matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a1/4'
+    55: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a2/4'
+    90: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &c3/4'
+    175: 'coc %player% if -tps->17.5&-ping-<150 do matrix kick %player% Speed Hacks'
     220: 'matrix kick %player% Speed Hacks'
 
 ## Fly
@@ -345,8 +351,10 @@ fly:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a1/3'
-    100: 'matrix notify %player% tried to fly &8| &7Fly &8| &c2/3'
+    40: 'coc %player% if -tps->17.5&-ping-<175 do matrix notify %player% tried to fly &8| &7Fly &8| &a1/4'
+    50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a2/4'
+    100: 'matrix notify %player% tried to fly &8| &7Fly &8| &c3/4'
+    150: 'coc %player% if -tps->17.5&-ping-<150 do matrix kick %player% Fly Related Hacks'
     180: 'matrix kick %player% Fly Related Hacks'
 
 ## BadPackets
@@ -374,8 +382,10 @@ badpackets:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    100: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/3'
-    150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c2/3'
+    80: 'coc %player% if ping-<200 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/4'
+    115: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a2/4'
+    150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c3/4'
+    185: 'coc %player% if -tps->17.5&-ping-<200 do matrix kick %player% Sending Unusual Packets'
     240: 'matrix kick %player% Sending Unusual Packets'
 
 ## FastUse
@@ -392,7 +402,9 @@ fastuse:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/2'
+    5: 'coc %player% if -ping-<120 do matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/3'
+    10: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a2/3'
+    15: 'coc %player% if -ping-<125 do matrix kick %player% FastUse Hacks'
     21: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, increase if causes false positives.
 
 ## FastBow
@@ -409,7 +421,8 @@ fastbow:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/2'
+    5: 'coc %player% if -ping-<120 do matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/3'
+    10: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a2/3'
     15: 'matrix kick %player% FastBow Hacks'
 
 ## FastHeal
@@ -423,8 +436,10 @@ fastheal:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/2'
-    48: 'matrix kick %player% FastHeal Hacks'
+    10: 'coc %player% if -ping-<140&-tps->18 do matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/3'
+    20: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a2/3'
+    30: 'coc %player% if -ping-<140&-tps->18 do matrix kick %player% FastHeal Hacks'
+    45: 'matrix kick %player% FastHeal Hacks'
 
 ## Block
 # Stops players from breaking and placing blocks too fast.
@@ -475,7 +490,9 @@ block:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/2'
+    10: 'coc %player% if -ping-<120&-tps->18 do matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/3'
+    15: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a2/3'
+    20: 'coc %player% if -ping-<120&-tps->18 do matrix kick %player% FastPlace/FastBreak Hacks'
     32: 'matrix kick %player% FastPlace/FastBreak Hacks'
 
 ## Scaffold check
