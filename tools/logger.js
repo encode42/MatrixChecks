@@ -4,16 +4,16 @@ const winston = require("winston");
 // Make the Winston logger
 const levels = {
 	"levels": {
-		"ok": 0,
-		"info": 1,
+		"ok":      0,
+		"info":    1,
 		"warning": 2,
-		"error": 3
+		"error":   3
 	},
 	"colors": {
-		"ok": "green",
-		"info": "blue",
+		"ok":      "green",
+		"info":    "blue",
 		"warning": "yellow",
-		"error": "red"
+		"error":   "red"
 	}
 };
 
@@ -32,8 +32,8 @@ const format = {
 
 // eslint-disable-next-line new-cap
 const log = new winston.createLogger({
-	"level":	   "error",
-	"levels":	   levels.levels,
+	"level":       "error",
+	"levels":      levels.levels,
 	"exitOnError": false,
 	"transports":  [new winston.transports.Console({ "format": format.console })]
 });
