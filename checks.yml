@@ -236,11 +236,17 @@ hitbox:
   # How many moves should the Matrix trace back to the player?
   # You can set this higher to reduce false positives, but this will weaken HitBox detection.
   # Do not set higher than 10, as that'll make this check useless.
-  trace_back_length: 3
+  trace_back_length: 4
 
   # When should this check ignore players with high ping?
   # Players with high ping may trigger false flags.
   max_ping: 250
+  
+  # How the cheat will be cancelled (none, silent, cancel)
+  # none: Doesn't do anything to the player. (Not recommended)
+  # silent: Damage the opposing player, but set the damage to 0.
+  # cancel: Cancel the hit event entirely.
+  cancel_way: cancel
 
   # How many violations will be added when triggered?
   vl_weights:
