@@ -26,35 +26,47 @@ This config works for both the free and premium versions of Matrix.
 1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.yml), [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/error.checks.yml), or [cloud.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud.checks.yml) depending on what you want.  
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixConfig/releases).</sub>
 2. Rename the original `checks.yml` to something else. `checks.old.yml` will work.
-3. Upload/move the checks file to your Matrix plugin folder. (`<server>/plugins/matrix/`)
-4. If you downloaded a checks file becides `checks.yml`, rename the new `*.checks.yml` to `checks.yml`.
+3. Upload/move the checks file to your Matrix plugin folder. (`/plugins/Matrix/`)
+4. If you downloaded a checks file besides `checks.yml`, rename the new `*.checks.yml` to `checks.yml`.
 5. Restart your server!
 
 ### Cloud Usage
-1. Open `config.yml` in your Matrix plugin folder. (`<server>/plugins/matrix`)
-2. Change the line "`- 'your configuration file link'`" (cloud_config.links) to "https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud.checks.yml" or any other checks file depending on what you want.  
-<sub>For specific Matrix versions, replace `master` with the config version number.
+#### Method 1
+1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/config.yml) and replace your original `config.yml` with the downloaded file.
+2. Change `cloud_config.enable: false` to `cloud_config.enable: true`.
+3. Restart your server! It will now update the file every reboot.
+
+#### Method 2
+1. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
+2. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
+2. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud/checks.yml`" or any other checks file depending on what you want.  
+<sub>For specific Matrix versions, replace `master` with the Matrix version number.
 
 ## FAQ
-This config may not work perfectly with your server.  
-Plugins, software, performance can all effect how well this config and the anticheat in general will work.  
-**This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.**  
 
-Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.  
+This config may not work perfectly with your server.
+Plugins, software, and performance can all affect how well this config and the anticheat, in general, will work.
+**This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.**
+
+Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
 This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
+Tested and configurated for survival and minigame servers. Tweak the config for your own server!
 
 ### 1. Config file types
 #### checks.yml
 The main config file. Includes the standard checks and everything advertised.
 
-#### cloud.checks.yml
-Same as `checks.yml` but minified. It is a lot smaller in file size, but is nearly impossible to read. 
+#### error.checks.yml
+Same as `checks.yml` but with different kick messages.  
+The messages are from classic Minecraft server disconnect messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`."
+
+#### /cloud/*.checks.yml
+Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read. 
 Because of its small file size though, it can be automatically updated fast on server startup.   
 This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixConfig#cloud-usage).
 
-#### error.checks.yml
-Same as `checks.yml` but with different kick messages.  
-The messages are from classic Minecraft server disconenct messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`."
+#### legacy.checks.yml
+Temporary checks file from before the conditional commands update. Will be deleted soon.
 
 ### 2. Suggested changes
 1. `nofall.damage: true` -> `nofall.damage: false` (For servers with fall-damage disabled)
@@ -84,4 +96,4 @@ Issues: [Here](https://github.com/Encode42/MatrixConfig/issues)
 Pull Requests: [Here](https://github.com/Encode42/MatrixConfig/pulls)  
 
 ### 5. Can I modify the config?
-Yes! I encourage you do so. You can also distribute it all you want, just please don't claim it all as your own. (Credit the original authors.)
+Yes! I encourage you to do so. You can also distribute it all you want, just please don't claim it all as your own. (Credit the original authors)
