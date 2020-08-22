@@ -49,11 +49,6 @@ kick_strike_lightning: false
 # If enabled, Matrix will never do any setbacks/cancels. (Silent/Ghost mode)
 ghost_mode: false
 
-# Premium User
-# This is an authentication system that provides better service to paying users.
-# If you are premium user, you will get more additional KillAura checks
-# You can learn more on our Discord server!
-
 # Premium user credentials.
 # These are obtained after DMing RE with proof of purchase. (Don't share these!)
 premium_user:
