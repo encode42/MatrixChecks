@@ -28,7 +28,7 @@ let minifiedAmount = 0;
 
 args.forEach(e => {
 	const filePath = e.split("/");
-	const fileName = `cloud.${filePath.pop()}`;
+	const fileName = `cloud/${filePath.pop()}`;
 
 	log.info(`Minifying ${e}...`);
 
