@@ -388,7 +388,7 @@ badpackets:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    80: 'coc %player% if lp-<28 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/4'
+    80: 'coc %player% if -lp-<28 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/4'
     125: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a2/4'
     150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c3/4'
     185: 'coc %player% if -tps->17.5&-lp-<22 do matrix kick %player% Sending Unusual Packets'
