@@ -38,7 +38,7 @@ cloud_config:
   # The links to download from.
   # You can have multiple links here, in case a server goes down. (Only the first valid link is used)
   links:
-    - 'https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.yml'
+    - 'https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud/checks.yml'
 
 # Time between permission cache refresh. (seconds)
 permission_refresh_interval: 60
