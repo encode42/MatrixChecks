@@ -1,0 +1,105 @@
+# MatrixConfig
+# The optimized config for Matrix Anticheat, a powerful anticheat for Minecraft.
+# For Matrix 5.1.1+
+#
+# NOTE: THIS FILE HAS NONE OF THE MAJOR CHEAT DETECTION CHANGES
+# THIS ONLY INCLUDES THE BASE CONFIG FOR THE ANTICHEAT
+# If you want to enable Geyser support, go to the last line in this file.
+#
+# This config may not work perfectly with your server.
+# Plugins, software, performance can all affect how well this config and the anticheat, in general, will work.
+# This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.
+#
+# Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
+# This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
+# Tested and configurated for survival and minigame servers. Tweak the config for your own server!
+#
+# --------------------------------------------
+#                  Issues?
+# Follow the FAQ's in README.md. (Question #4)
+# --------------------------------------------
+#
+# GitHub: https://github.com/Encode42/MatrixConfig
+# Discord: https://discord.gg/rjSkFyj
+
+# Check for updates on server start.
+check_update: true
+
+# Reduce violations/flags triggered by players with high ping.
+player_latency_protection:
+  enable: true
+
+# Downloads checks.yml from an external web server on server start.
+# Of course, I recommend using the cloud-config for MatrixConfig, which is already provided.
+# To enable this feature, just set "enable" to true. This will ignore your local checks.yml.
+cloud_config:
+  enable: false
+
+  # The links to download from.
+  # You can have multiple links here, in case a server goes down. (Only the first valid link is used)
+  links:
+    - 'https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.yml'
+
+# Time between permission cache refresh. (seconds)
+permission_refresh_interval: 60
+
+# Shows a lightning strike on players who are kicked via /matrix kick.
+kick_strike_lightning: false
+
+# If enabled, Matrix will never do any setbacks/cancels. (Silent/Ghost mode)
+ghost_mode: false
+
+# Premium User
+# This is an authentication system that provides better service to paying users.
+# If you are premium user, you will get more additional KillAura checks
+# You can learn more on our Discord server!
+
+# Premium user credentials.
+# These are obtained after DMing RE with proof of purchase. (Don't share these!)
+premium_user:
+  user: ''
+  password: ''
+
+# Automatically disables some checks when the server TPS drops.
+# This prevents some false positives for checks that require little lag.
+tps_protection:
+  enable: true
+
+  # Disable checks below this number.
+  min_tps: 17.5
+
+  # If the server doesn't respond within this amount of time, cancel the check.
+  lag_threshold: 1250
+
+# Logs all violations to /plugins/Matrix/logs.
+# Recommended to enable if you are debugging/monitoring checks.
+log_file: true
+
+# Delete old Matrix log files. (days)
+delete_time: 7
+
+# Disables the "matrix.bypass" permission.
+# Enable if you want EVERYONE to be checked.
+disable_bypass_permission: false
+
+# Prevents players from relogging after being kicked. (seconds)
+relog_time: 15
+
+# Disable specific components used in checks.
+# Example:
+# disabled_components:
+#   - 'vel.ana'
+disabled_components: []
+
+# Sets a custom vl_weight for specific components.
+# Example:
+# custom_vl_weight:
+#   - 'vel.ana:4'
+custom_vl_weight: []
+
+# Hide the prefix in kick messages.
+hide_prefix_in_kick: true
+
+# Lets Bedrock users bypass all checks since Bedrock calculates physics differently.
+# NOTE: You must have the plugin "Floodgate" installed for this to work.
+# geyser_prefix: "*" # Uncomment this line to enable. (Remove the first "#")
