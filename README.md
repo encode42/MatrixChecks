@@ -39,7 +39,7 @@ This config works for both the free and premium versions of Matrix.
 #### Method 2
 1. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
 2. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
-2. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud/checks.yml`" or any other checks file depending on what you want.  
+3. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud/checks.yml`" or any other checks file depending on what you want.  
 <sub>For specific Matrix versions, replace `master` with the Matrix version number.
 
 ## FAQ
@@ -50,7 +50,7 @@ Plugins, software, and performance can all affect how well this config and the a
 
 Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
 This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
-Tested and configurated for survival and minigame servers. Tweak the config for your own server!
+Tested and configured for survival and minigame servers. Tweak the config for your own server!
 
 ### 1. Config file types
 #### checks.yml
@@ -61,8 +61,8 @@ Same as `checks.yml` but with different kick messages.
 The messages are from classic Minecraft server disconnect messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`."
 
 #### /cloud/*.checks.yml
-Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read. 
-Because of its small file size though, it can be automatically updated fast on server startup.   
+Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read.  
+Because of its small file size though, it can be automatically updated fast on server startup.  
 This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixConfig#cloud-usage).
 
 #### legacy.checks.yml
