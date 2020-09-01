@@ -4,7 +4,6 @@
 #
 # NOTE: THIS FILE HAS NONE OF THE MAJOR CHEAT DETECTION CHANGES
 # THIS ONLY INCLUDES THE BASE CONFIG FOR THE ANTICHEAT
-# If you want to enable Geyser support, go to the last line in this file.
 #
 # This config may not work perfectly with your server.
 # Plugins, software, performance can all affect how well this config and the anticheat, in general, will work.
@@ -92,6 +91,6 @@ disabled_components: []
 #   - 'vel.ana:4'
 custom_vl_weight: []
 
-# Lets Bedrock users bypass all checks since Bedrock calculates physics differently.
-# NOTE: You must have the plugin "Floodgate" installed for this to work.
-# geyser_prefix: "*" # Uncomment this line to enable. (Remove the first "#")
+# Changes the prefix for Bedrock players.
+# NOTE: Must use Floodgate to change this.
+#geyser_prefix: "*" # Uncomment this line to enable. (Remove the first "#")
