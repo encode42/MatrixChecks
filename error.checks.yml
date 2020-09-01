@@ -264,10 +264,10 @@ hitbox:
   # none: Doesn't do anything to the player. (Not recommended)
   # silent: Damage the opposing player, but set the damage to 0.
   # cancel: Cancel the hit event entirely.
-  cancel_way: cancel
+  cancel_way: silent
 
   # How many violations are needed to cancel illegal hits? (-1 = don't cancel)
-  cancel_vl: 6
+  cancel_vl: 20
 
   # How many violations will be added when triggered?
   vl_weights:
@@ -314,7 +314,7 @@ speed:
   skip_rate: 2
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 41
+  cancel_vl: 100
 
   # Ensures correct sprint direction.
   sprint_direction: true
@@ -344,7 +344,7 @@ fly:
   enable: true
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 48
+  cancel_vl: 100
 
   # Checks if players are allowed to fly.
   # Note: Might be not compatible with some plugins.
@@ -419,7 +419,7 @@ fastuse:
   enable: true
 
   # How many violations are needed to cancel illegal item use? (-1 = don't cancel)
-  cancel_vl: 1
+  cancel_vl: 10
 
   # How many violations will be added when triggered?
   vl_weight: 1
@@ -438,7 +438,7 @@ fastbow:
   enable: true
 
   # How many violations are needed to cancel illegal bow use? (-1 = don't cancel)
-  cancel_vl: 5
+  cancel_vl: 10
 
   # How many violations will be added when triggered?
   vl_weight: 1
@@ -473,7 +473,7 @@ block:
 
   # How many violations are needed to cancel illegal breaking/placing blocks? (-1 = don't cancel)
   # Set to 8 for sky based gamemodes to prevent bridging players from falling.
-  cancel_vl: 6
+  cancel_vl: 15
 
   # Modules used in the block checks
   modules:
@@ -526,7 +526,7 @@ scaffold:
   enable: true
 
   # How many violations are needed to cancel illegal bridging/towering? (-1 = don't cancel)
-  cancel_vl: 15
+  cancel_vl: 20
 
   # Modules used in the scaffold checks
   modules:
@@ -580,7 +580,7 @@ jesus:
   enable: true
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 15
+  cancel_vl: 50
 
   # Should Matrix ignore whether players are in the swimming animation?
   # This feature can prevent swimming status desync, but cause issues with player position.
@@ -602,7 +602,7 @@ inventory:
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   # Keep strict for gamemodes that involve many chests.
-  cancel_vl: 8
+  cancel_vl: 15
 
   # ChestStealer check: Detects instantly taking items out of chests.
   chest_stealer: true
@@ -660,7 +660,7 @@ chat:
   min_time: 2
 
   # How many violations are needed to cancel spam? (-1 = don't cancel)
-  cancel_vl: 4
+  cancel_vl: 6
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -710,7 +710,7 @@ autofish:
   enable: true
 
   # How many violations are needed to cancel auto fishing? (-1 = don't cancel)
-  cancel_vl: 3
+  cancel_vl: 8
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -728,7 +728,7 @@ phase:
   freeze_time: 400
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 5
+  cancel_vl: 25
 
   # Stops players from using ender pearls to phase into blocks.
   prevent_close_range_enderpearl: true
