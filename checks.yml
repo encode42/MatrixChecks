@@ -250,6 +250,9 @@ hitbox:
   # cancel: Cancel the hit event entirely.
   cancel_way: cancel
 
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
+  cancel_vl: 6
+
   # How many violations will be added when triggered?
   vl_weights:
     miss_player_hitbox: 2
