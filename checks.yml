@@ -222,7 +222,7 @@ killaura:
     20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &62/4'
     35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c3/4'
     42: 'coc %player% if -tps->18.0&-lp-<25 do matrix kick %player% KillAura'
-    54: 'matrix delay 12 matrix kick %player% KillAura'
+    54: 'matrix kick %player% KillAura'
 
 ## HitBox
 # Prevents players from using HitBox, Angle, and Reach hacks.
