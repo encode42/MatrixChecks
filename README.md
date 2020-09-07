@@ -21,6 +21,10 @@ This config works for both the free and premium versions of Matrix.
 - Multiple config types to suit your needs.
 - Up to date!
 
+#### NOTE:
+`config.yml` **does not** include any of the optimized checks!  
+The file with the checks and changes is `checks.yml`.
+
 ## Setup
 ### Server Usage
 1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/error.checks.yml) depending on what you want.  
@@ -43,7 +47,6 @@ This config works for both the free and premium versions of Matrix.
 <sub>For specific Matrix versions, replace `master` with the Matrix version number.
 
 ## FAQ
-
 This config may not work perfectly with your server.
 Plugins, software, and performance can all affect how well this config and the anticheat, in general, will work.
 **This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.**
@@ -64,9 +67,6 @@ The messages are from classic Minecraft server disconnect messages such as "`jav
 Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read.  
 Because of its small file size though, it can be automatically updated fast on server startup.  
 This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixConfig#cloud-usage).
-
-#### legacy.checks.yml
-Temporary checks file from before the conditional commands update. Will be deleted soon.
 
 ### 2. Suggested changes
 1. `nofall.damage: true` -> `nofall.damage: false` (For servers with fall-damage disabled)
