@@ -27,7 +27,7 @@ The file with the checks and changes is `checks.yml`.
 
 ## Setup
 ### Server Usage
-1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/error.checks.yml) depending on what you want.  
+1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/main/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/main/error.checks.yml) depending on what you want.  
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixConfig/releases).</sub>
 2. Rename the original `checks.yml` to something else. `checks.old.yml` will work.
 3. Upload/move the checks file to your Matrix plugin folder. (`/plugins/Matrix/`)
@@ -36,15 +36,15 @@ The file with the checks and changes is `checks.yml`.
 
 ### Cloud Usage
 #### Method 1
-1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/master/config.yml) and replace your original `config.yml` with the downloaded file.
+1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/main/config.yml) and replace your original `config.yml` with the downloaded file.
 2. Change `cloud_config.enable: false` to `cloud_config.enable: true`.
 3. Restart your server! It will now update the file every reboot.
 
 #### Method 2
 1. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
 2. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
-3. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud/checks.yml`" or any other checks file depending on what you want.  
-<sub>For specific Matrix versions, replace `master` with the Matrix version number.
+3. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixConfig/main/cloud/checks.yml`" or any other checks file depending on what you want.  
+<sub>For specific Matrix versions, replace `main` with the Matrix version number.</sub>
 
 ## FAQ
 This config may not work perfectly with your server.
