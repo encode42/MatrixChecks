@@ -2,7 +2,7 @@
 <img src="https://repository-images.githubusercontent.com/282035636/0858ae80-d4ff-11ea-87bb-052579b5239c" width="200px">  
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999)
-![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixConfig/latest/master?label=Commits%20since%20release&style=flat-square)
+![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixConfig/latest/main?label=Commits%20since%20release&style=flat-square)
 
 [![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)](https://discord.gg/rjSkFyj)
 [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
