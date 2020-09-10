@@ -1,5 +1,5 @@
 # MatrixChecks
-<img src="https://repository-images.githubusercontent.com/282035636/0858ae80-d4ff-11ea-87bb-052579b5239c" width="200px">  
+<img src="https://repository-images.githubusercontent.com/282035636/0f82a000-f37a-11ea-8fb2-9aa79ad4123e" width="200px">  
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999)
 ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)
