@@ -6,16 +6,17 @@
 <br/>
 </div>
 
-<div align="right">
-<strong>Make sure to use the checks meant for the version of Matrix you use!</strong>
+<table align="center">
+<tr>
+<td>
 
+**Make sure to use the checks meant for the version of Matrix you use!**  
 <sub>Sometimes Matrix premium updates faster than free, there will be another file if so.</sub>
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
 [![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
-</div>
-
-
+</td>
+<td>
 
 #### Features
 - Less false positives.
@@ -23,6 +24,9 @@
 - More strict checks. *(Better detection)*
 - Multiple checks types to suit your needs.
 - Up to date!
+</td>
+</tr>
+</table>
 
 #### NOTE:
 `config.yml` **does not** include any checks!  
