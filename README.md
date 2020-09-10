@@ -1,7 +1,7 @@
 <img src="https://repository-images.githubusercontent.com/282035636/0f82a000-f37a-11ea-8fb2-9aa79ad4123e" width="200px" align="right">
 <div align="center">
 <h1>MatrixChecks</h1>
-<h3>The optimized checks for <a href="https://www.mc-market.org/resources/13999">Matrix Anticheat</a>, a powerful anticheat for Minecraft.</h3>
+<h3>The optimized checks for <a href="https://www.mc-market.org/resources/13999">Matrix Anticheat</a>, a powerful and lightweight anticheat for Minecraft.</h3>
 <h4>These checks work for both the free and premium versions of Matrix.</h4>
 <br/>
 </div>
