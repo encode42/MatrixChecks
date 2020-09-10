@@ -3,16 +3,15 @@
 <h1>MatrixChecks</h1>
 <h3>The optimized checks for <a href="https://www.mc-market.org/resources/13999">Matrix Anticheat</a>, a powerful anticheat for Minecraft.</h3>
 <h4>These checks work for both the free and premium versions of Matrix.</h4>
-<br/>
+</div>
 
-**Make sure to use the checks meant for the version of Matrix you use!**  
+<div align="right">
+<strong>Make sure to use the checks meant for the version of Matrix you use!</strong>
+
 <sub>Sometimes Matrix premium updates faster than free, there will be another file if so.</sub>
 
-<a href="https://www.mc-market.org/resources/13999"><img src="https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square"></a>
-<a href="https://github.com/Encode42/MatrixChecks/releases"><img src="https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square"></a>
-
-<a href="https://discord.gg/rjSkFyj"><img src="https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square"></a>
-<a href="https://discord.gg/rGhYma6"><img src="https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square"></a>
+[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
+[![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
 </div>
 
 
