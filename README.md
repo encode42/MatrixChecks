@@ -1,23 +1,21 @@
-# MatrixChecks
-<table style="border:none">
-<tr>
-<td><img src="https://repository-images.githubusercontent.com/282035636/0f82a000-f37a-11ea-8fb2-9aa79ad4123e" width="200px"></td>
-<td>
+<img src="https://repository-images.githubusercontent.com/282035636/0f82a000-f37a-11ea-8fb2-9aa79ad4123e" width="200px" align="right">
+<div align="center">
+<h1>MatrixChecks</h1>
+<h3>The optimized checks for <a href="https://www.mc-market.org/resources/13999">Matrix Anticheat</a>, a powerful anticheat for Minecraft.</h3>
+<h4>These checks work for both the free and premium versions of Matrix.</h4>
+<br/>
 
-[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)
-
-[![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)](https://discord.gg/rjSkFyj)[![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
-
-</td>
-</tr>
-</table>
-
-## About
-The optimized checks for [Matrix Anticheat](https://www.mc-market.org/resources/13999/), a powerful anticheat for Minecraft.  
-
-These checks work for both the free and premium versions of Matrix.  
 **Make sure to use the checks meant for the version of Matrix you use!**  
 <sub>Sometimes Matrix premium updates faster than free, there will be another file if so.</sub>
+
+<a href="https://www.mc-market.org/resources/13999"><img src="https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square"></a>
+<a href="https://github.com/Encode42/MatrixChecks/releases"><img src="https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square"></a>
+
+<a href="https://discord.gg/rjSkFyj"><img src="https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square"></a>
+<a href="https://discord.gg/rGhYma6"><img src="https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square"></a>
+</div>
+
+
 
 #### Features
 - Less false positives.
@@ -105,4 +103,3 @@ Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)
 ### 5. Can I modify the files in MatrixChecks?
 Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyways.  
 You can also distribute it all you want or use it on a large network, just please don't claim it all as your own. (Credit the original authors)
-
