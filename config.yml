@@ -1,24 +1,26 @@
-# MatrixConfig
-# The optimized config for Matrix Anticheat, a powerful anticheat for Minecraft.
+# MatrixChecks (CONFIG)
+# The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
 # For Matrix 5.1.1+
 #
-# NOTE: THIS FILE HAS NONE OF THE MAJOR CHEAT DETECTION CHANGES
-# THIS ONLY INCLUDES THE BASE CONFIG FOR THE ANTICHEAT
+# !! NOTE !!
+# THIS FILE DOES _NOT_ INCLUDE ANY CHECKS
+# INSTALL "checks.yml" TO MAKE USE OF OPTIMIZATIONS
+# THIS FILE ONLY INCLUDES MINOR CHANGES TO THE BASE CONFIG! 
 #
-# This config may not work perfectly with your server.
-# Plugins, software, performance can all affect how well this config and the anticheat, in general, will work.
+# These checks may not work perfectly with your server.
+# Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
 # This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.
 #
 # Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
-# This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
-# Tested and configurated for survival and minigame servers. Tweak the config for your own server!
+# These checks aim to mitigate those issues and improve what works well, but there's only so much we can do.
+# Tested and configured for survival and minigame servers. Tweak the checks for your own server!
 #
 # --------------------------------------------
 #                  Issues?
 # Follow the FAQ's in README.md. (Question #4)
 # --------------------------------------------
 #
-# GitHub: https://github.com/Encode42/MatrixConfig
+# GitHub: https://github.com/Encode42/MatrixChecks
 # Discord: https://discord.gg/rjSkFyj
 
 # Check for updates on server start.

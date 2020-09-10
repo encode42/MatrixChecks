@@ -1,8 +1,8 @@
-# MatrixConfig
+# MatrixChecks
 <img src="https://repository-images.githubusercontent.com/282035636/0858ae80-d4ff-11ea-87bb-052579b5239c" width="200px">  
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999)
-![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixConfig/latest/main?label=Commits%20since%20release&style=flat-square)
+![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)
 
 [![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)](https://discord.gg/rjSkFyj)
 [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
@@ -27,8 +27,8 @@ The file with the checks and changes is `checks.yml`.
 
 ## Setup
 ### Server Usage
-1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/main/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/main/error.checks.yml) depending on what you want.  
-<sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixConfig/releases).</sub>
+1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/error.checks.yml) depending on what you want.  
+<sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
 2. Rename the original `checks.yml` to something else. `checks.old.yml` will work.
 3. Upload/move the checks file to your Matrix plugin folder. (`/plugins/Matrix/`)
 4. If you downloaded a checks file besides `checks.yml`, rename the new `*.checks.yml` to `checks.yml`.
@@ -36,14 +36,14 @@ The file with the checks and changes is `checks.yml`.
 
 ### Cloud Usage
 #### Method 1
-1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixConfig/main/config.yml) and replace your original `config.yml` with the downloaded file.
+1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and replace your original `config.yml` with the downloaded file.
 2. Change `cloud_config.enable: false` to `cloud_config.enable: true`.
 3. Restart your server! It will now update the file every reboot.
 
 #### Method 2
 1. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
 2. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
-3. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixConfig/main/cloud/checks.yml`" or any other checks file depending on what you want.  
+3. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml`" or any other checks file depending on what you want.  
 <sub>For specific Matrix versions, replace `main` with the Matrix version number.</sub>
 
 ## FAQ
@@ -55,7 +55,7 @@ Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fi
 This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
 Tested and configured for survival and minigame servers. Tweak the config for your own server!
 
-### 1. Config file types
+### 1. Checks file types
 #### checks.yml
 The main config file. Includes the standard checks and everything advertised.
 
@@ -66,7 +66,7 @@ The messages are from classic Minecraft server disconnect messages such as "`jav
 #### /cloud/*.checks.yml
 Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read.  
 Because of its small file size though, it can be automatically updated fast on server startup.  
-This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixConfig#cloud-usage).
+This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
 
 ### 2. Suggested changes
 1. `nofall.damage: true` -> `nofall.damage: false` (For servers with fall-damage disabled)
@@ -92,8 +92,8 @@ Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
 **THEN:**  
 Make an issue at the issues page with the right template. If you describe what you want changed/fixed well, chances are it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
-Issues: [Here](https://github.com/Encode42/MatrixConfig/issues)  
-Pull Requests: [Here](https://github.com/Encode42/MatrixConfig/pulls)  
+Issues: [Here](https://github.com/Encode42/MatrixChecks/issues)  
+Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)  
 
 ### 5. Can I modify the config?
 Yes! I encourage you to do so. You can also distribute it all you want, just please don't claim it all as your own. (Credit the original authors)
