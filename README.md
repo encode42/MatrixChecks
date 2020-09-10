@@ -28,12 +28,12 @@
 </tr>
 </table>
 
-#### NOTE:
+⚠ **NOTE:**  
 `config.yml` **does not** include any checks!  
 Install `checks.yml` to make use of the optimizations.  
 The config file only includes minor changes to the base config!
 
-## Setup
+## 🔧 Setup
 ### Server Usage
 1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/error.checks.yml) depending on what you want.  
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
@@ -54,7 +54,7 @@ The config file only includes minor changes to the base config!
 3. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml`" or any other checks file depending on what you want.  
 <sub>For specific Matrix versions, replace `main` with the Matrix version number.</sub>
 
-## FAQ
+## ❔ FAQ
 These checks may not work perfectly with your server.
 Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
 **This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.**
