@@ -8,22 +8,23 @@
 [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
 
 ## About
-The optimized config for [Matrix Anticheat](https://www.mc-market.org/resources/13999/), a powerful anticheat for Minecraft.  
+The optimized checks for [Matrix Anticheat](https://www.mc-market.org/resources/13999/), a powerful anticheat for Minecraft.  
 
-This config works for both the free and premium versions of Matrix.  
-**Make sure to use the config meant for the version of Matrix you use!**  
-<sub>Sometimes Matrix premium updates faster than free, there will be another config file if so.</sub>
+These checks work for both the free and premium versions of Matrix.  
+**Make sure to use the checks meant for the version of Matrix you use!**  
+<sub>Sometimes Matrix premium updates faster than free, there will be another file if so.</sub>
 
 #### Features
 - Less false positives.
 - Better warning messages.
 - More strict checks. *(Better detection)*
-- Multiple config types to suit your needs.
+- Multiple checks types to suit your needs.
 - Up to date!
 
 #### NOTE:
-`config.yml` **does not** include any of the optimized checks!  
-The file with the checks and changes is `checks.yml`.
+`config.yml` **does not** include any checks!  
+Install `checks.yml` to make use of the optimizations.  
+The config file only includes minor changes to the base config!
 
 ## Setup
 ### Server Usage
@@ -47,23 +48,24 @@ The file with the checks and changes is `checks.yml`.
 <sub>For specific Matrix versions, replace `main` with the Matrix version number.</sub>
 
 ## FAQ
-This config may not work perfectly with your server.
-Plugins, software, and performance can all affect how well this config and the anticheat, in general, will work.
+These checks may not work perfectly with your server.
+Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
 **This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.**
 
 Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
-This config aims to mitigate those issues and improve what works well, but there's only so much we can do.
-Tested and configured for survival and minigame servers. Tweak the config for your own server!
+These checks aims to mitigate those issues and improve what works well, but there's only so much we can do.
+Tested and configured for survival and minigame servers. Tweak the checks for your own server!
 
 ### 1. Checks file types
 #### checks.yml
-The main config file. Includes the standard checks and everything advertised.
+The main checks file. Includes the standard checks and everything advertised.  
+Conditional commands, optimized checks, increased speed, etc.
 
 #### error.checks.yml
 Same as `checks.yml` but with different kick messages.  
 The messages are from classic Minecraft server disconnect messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`."
 
-#### /cloud/*.checks.yml
+#### /cloud/\*.checks.yml
 Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read.  
 Because of its small file size though, it can be automatically updated fast on server startup.  
 This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
@@ -85,8 +87,8 @@ This check also checks if the player isn't using Angle cheats, and the NPC check
 
 ### 4. How do I report a change or false positive?
 **FIRST:**  
-Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a config. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
-You can also try using the default config to see if the issue still stands. If so, it's not a problem with the config.  
+Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a checks/config file. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
+You can also try using the default checks + config to see if the issue still stands. If so, it's not a problem with MatrixChecks.  
 Matrix's Discord: [Here](https://discord.gg/wjheaRj)  
 Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
@@ -95,5 +97,7 @@ Make an issue at the issues page with the right template. If you describe what y
 Issues: [Here](https://github.com/Encode42/MatrixChecks/issues)  
 Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)  
 
-### 5. Can I modify the config?
-Yes! I encourage you to do so. You can also distribute it all you want, just please don't claim it all as your own. (Credit the original authors)
+### 5. Can I modify the files in MatrixChecks?
+Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyways.  
+You can also distribute it all you want or use it on a large network, just please don't claim it all as your own. (Credit the original authors)
+
