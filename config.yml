@@ -7,13 +7,8 @@
 # INSTALL "checks.yml" TO MAKE USE OF OPTIMIZATIONS
 # THIS FILE ONLY INCLUDES MINOR CHANGES TO THE BASE CONFIG! 
 #
-# These checks may not work perfectly with your server.
-# Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
-# This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.
-#
-# Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
-# These checks aim to mitigate those issues and improve what works well, but there's only so much we can do.
-# Tested and configured for survival and minigame servers. Tweak the checks for your own server!
+# The changes in "config.yml" only include some organization,
+# minor tweaks, and cloud-config already set up for MatrixChecks.
 #
 # --------------------------------------------
 #                  Issues?
@@ -39,7 +34,7 @@ cloud_config:
   # The links to download from.
   # You can have multiple links here, in case a server goes down. (Only the first valid link is used)
   links:
-    - 'https://raw.githubusercontent.com/Encode42/MatrixConfig/master/cloud/checks.yml'
+    - 'https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml'
 
 # Time between permission cache refresh. (seconds)
 permission_refresh_interval: 60
