@@ -1,5 +1,5 @@
 # MatrixChecks
-<table border="none">
+<table style="border:none">
 <tr>
 <td><img src="https://repository-images.githubusercontent.com/282035636/0f82a000-f37a-11ea-8fb2-9aa79ad4123e" width="200px"></td>
 <td>
