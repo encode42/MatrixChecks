@@ -219,8 +219,8 @@ killaura:
   commands:
     8: 'matrix npc %player% 125'
     14: 'coc %player% if -tps->18.5&-lp-<30 do matrix notify %player% might be using combat hacks &8| &7KillAura &8| &61/4 (14VL)'
-    20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &62/4'
-    35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c3/4'
+    20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &62/4 (20VL)'
+    35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c3/4 (35VL)'
     42: 'coc %player% if -tps->18.0&-lp-<25 do matrix kick %player% KillAura'
     54: 'matrix kick %player% KillAura'
 
@@ -274,9 +274,9 @@ hitbox:
   # Run commands once X amount of violations are reached.
   commands:
     6: 'coc %player% if -tps->18.5&-lp-<30 do matrix npc %player% 120'
-    10: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &a1/3'
+    10: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &a1/3 (10VL)'
     13: 'coc %player% if -tps->18.5&-lp-<35 do matrix npc %player% 125'
-    15: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &c2/3'
+    15: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &c2/3 (15VL)'
     22: 'coc %player% if -tps->18.5&-lp-<30 do matrix kick %player% Reach/HitBox Hacks'
     28: 'matrix kick %player% Reach/HitBox Hacks'
 
@@ -315,11 +315,58 @@ speed:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -tps->17.5&-lp-<25 do matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a1/4'
-    55: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a2/4'
-    82: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &c3/4'
+    40: 'coc %player% if -tps->17.5&-lp-<25 do matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a1/4 (40VL)'
+    55: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a2/4 (55VL)'
+    82: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &c3/4 (82VL)'
     104: 'coc %player% if -tps->17.5&-lp-<30 do matrix kick %player% Speed Hacks'
     130: 'matrix kick %player% Speed Hacks'
+
+## Jesus
+# Prevents the player from moving too quickly or walking in/on liquids.
+jesus:
+  enable: true
+
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
+  cancel_vl: 15
+
+  # Should Matrix ignore whether players are in the swimming animation?
+  # This feature can prevent swimming status desync, but cause issues with player position.
+  ignore_swim_pose: true
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    14: 'coc %player% if -tps->18&-lp-<36 do matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a1/4 (14VL)'
+    20: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a2/4 (20VL)'
+    40: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &c3/4 (40VL)'
+    50: 'coc %player% if -tps->18&-lp-<33 do matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
+    64: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
+
+## Velocity
+# Prevents players from using any type of AntiKnockback hacks.
+velocity:
+  enable: true
+
+  # The amount of time to wait for players to respond to velocity (ticks)
+  # Set to 40 to not cause false positives for laggy players.
+  wait_time: 35
+
+  # Ignore players who are lagging or changing resource packs.
+  ignore_lag: true
+
+  # How many violations will be added when triggered? (-1 = disable)
+  modules:
+    respond: 5
+    analyser: 3
+    vertical: 1
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    10: 'coc %player% if -lp-<25 matrix notify %player% tried to not take knockback &8| &7Velocity &8| &a1/4 (10VL)'
+    15: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &a2/4 (15VL)'
+    20: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &c3/4 (20VL)'
+    24: 'matrix kick %player% Velocity/Anti-Knockback'
 
 ## Fly
 # Prevents the player from using both vanilla and non-vanilla fly hacks.
@@ -360,11 +407,141 @@ fly:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -tps->17.5&-lp-<25 do matrix notify %player% tried to fly &8| &7Fly &8| &a1/4'
-    50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a2/4'
-    80: 'matrix notify %player% tried to fly &8| &7Fly &8| &c3/4'
+    40: 'coc %player% if -tps->17.5&-lp-<25 do matrix notify %player% tried to fly &8| &7Fly &8| &a1/4 (40VL)'
+    50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a2/4 (50VL)'
+    80: 'matrix notify %player% tried to fly &8| &7Fly &8| &c3/4 (80VL)'
     98: 'coc %player% if -tps->17.5&-lp-<30 do matrix kick %player% Fly Related Hacks'
     125: 'matrix kick %player% Fly Related Hacks'
+
+## Elytra
+# Stops players using elytra related hacks.
+elytra:
+  enable: true
+
+  # Teleports players back to the original position.
+  force_setback: true
+
+  # How many violations are needed to teleport players back? (-1 = don't setback)
+  setback_vl: 8
+
+  # How many violations are needed to take players out of gliding? (-1 = don't cancel)
+  unequip_vl: 20
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    10: 'coc %player% if -lp-<18 do matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a1/4 (10VL)'
+    16: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a2/4 (16VL)'
+    24: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &c3/4 (24VL)'
+    30: 'coc %player% if -lp-<22 do matrix kick %player% Elytra Flight'
+    48: 'matrix kick %player% Elytra Flight'
+
+## Vehicle
+# Prevents players from using vehicle-related hacks.
+# Note: Only works for 1.9+
+vehicle:
+  enable: true
+
+  # Prevent players from using certain creatures as vehicles
+  # All entity types: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
+  #
+  # Example:
+  # deny_entity_types_as_vehicle:
+  #   - HORSE
+  #   - PIG
+  deny_entity_types_as_vehicle: []
+
+  # Vehicle speed check: Prevents vehicles from moving too fast.
+  speed:
+    enable: true
+
+    # How many violations are needed to teleport players back? (-1 = don't setback)
+    setback_vl: 2
+
+  # Vehicle flight check: Prevents vehicles from using fly hacks.
+  flight:
+    enable: true
+
+    # How many violations are needed to teleport players back? (-1 = don't setback)
+    setback_vl: 4
+
+    # How many violations are needed to kick players off vehicles? (-1 = don't kick)
+    leave_vehicle: 8
+
+ # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    5: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &a1/3 (5VL)'
+    10: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &c2/3 (10VL)'
+    32: 'matrix kick %player% Suspicious vehicle movement'
+
+## Phase
+# Disallows players glitching through blocks.
+phase:
+  enable: true
+
+  # Freeze time (ms)
+  # How long to freeze player if they keep moving into blocks.
+  freeze_time: 400
+
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
+  cancel_vl: 5
+
+  # Stops players from using ender pearls to phase into blocks.
+  prevent_close_range_enderpearl: true
+
+  # Exclude specific block types.
+  #
+  # Example:
+  # exclude_types:
+  #   - OBSIDIAN
+  #   - BEDROCK
+  exclude_types: []
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    7: 'coc %player% if -lp-<28 do matrix notify %player% is glitching through blocks &8| &7Phase &8| &a1/4 (7VL)'
+    13: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &a2/4 (13VL)'
+    21: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &c3/4 (21VL)'
+    28: 'coc %player% if -lp-<22 do matrix kick %player% Glitching through blocks'
+    38: 'matrix kick %player% Glitching through blocks'
+
+## Interact
+# Prevents the player from illegally interacting with entities and blocks.
+interact:
+  enable: true
+
+   # Modules used in the interact checks
+  modules:
+    # Break block check: Detects players breaking blocks through walls.
+    break_block:
+      enable: true
+
+      # How many violations will be added when triggered?
+      vl_weight: 1
+
+    # Attack check: Detects players attacking entities through walls.
+    attack:
+      enable: true
+
+      # How many violations will be added when triggered?
+      vl_weight: 1
+
+    # Block reach check: Detects players interacting with blocks too far away.
+    block_reach:
+      enable: true
+
+      # How many violations will be added when triggered?
+      vl_weight: 1
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    8: 'coc %player% if -lp-<28 do matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a1/3 (8VL)'
+    12: 'matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a2/3 (12VL)'
+    16: 'coc %player% if -lp-<21 do matrix kick %player% Illegally Interactive with Block/Entity'
+    21: 'matrix kick %player% Illegally Interacting with Block/Entity'
 
 ## BadPackets
 # Prevents players from sending too many movement packets or sending illegal packets.
@@ -391,64 +568,41 @@ badpackets:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    80: 'coc %player% if -lp-<28 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/4'
-    125: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a2/4'
-    150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c3/4'
+    80: 'coc %player% if -lp-<28 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/4 (80VL)'
+    125: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a2/4 (125VL)'
+    150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c3/4 (150VL)'
     185: 'coc %player% if -tps->17.5&-lp-<22 do matrix kick %player% Sending Unusual Packets'
     240: 'matrix kick %player% Sending Unusual Packets'
 
-## FastUse
-# Stops players from eating or using items too quickly.
-fastuse:
+## Inventory
+# Stops players from using illegal inventory modifications such as ChestSteal.
+inventory:
   enable: true
 
-  # How many violations are needed to cancel illegal item use? (-1 = don't cancel)
-  cancel_vl: 1
+  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
+  # Keep strict for gamemodes that involve many chests.
+  cancel_vl: 8
 
-  # How many violations will be added when triggered?
-  vl_weight: 1
+  # ChestStealer check: Detects instantly taking items out of chests.
+  chest_stealer: true
+
+  # Ignores items that have color in the name.
+  # This can prevent a false positive for GUIs and shops.
+  ignore_color: false
+
+  # InventoryMove check: Makes sure a player cannot move while in their inventory.
+  # Note: Only works in 1.12+
+  disable_invmove: false
+
+  # AutoTotem check: Stops automatically moving totems to the offhand.
+  auto_totem: true
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'coc %player% if -lp-<25 do matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/3'
-    10: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a2/3'
-    15: 'coc %player% if -lp-<21 do matrix kick %player% FastUse Hacks'
-    21: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, increase if causes false positives.
-
-## FastBow
-# Prevents players from shooting bows too quickly.
-fastbow:
-  enable: true
-
-  # How many violations are needed to cancel illegal bow use? (-1 = don't cancel)
-  cancel_vl: 5
-
-  # How many violations will be added when triggered?
-  vl_weight: 1
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    5: 'coc %player% if -lp-<25 do matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/3'
-    10: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a2/3'
-    15: 'matrix kick %player% FastBow Hacks'
-
-## FastHeal
-# Prevents players from regaining health too quickly.
-fastheal:
-  enable: true
-
-  # How many violations will be added when triggered?
-  vl_weight: 2
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    10: 'coc %player% if -tps->18&-lp-<25 do matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/3'
-    20: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a2/3'
-    30: 'coc %player% if -tps->18&-lp-<20 do matrix kick %player% FastHeal Hacks'
-    45: 'matrix kick %player% FastHeal Hacks'
+    10: 'coc %player% if -lp-<34 do matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a1/3 (10VL)'
+    15: 'matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a2/3 (15VL)'
+    24: 'matrix kick %player% ChestSteal/Inventory Hacks'
 
 ## Block
 # Stops players from breaking and placing blocks too fast.
@@ -499,8 +653,8 @@ block:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -tps->18&-lp-<33 do matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/3'
-    15: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a2/3'
+    10: 'coc %player% if -tps->18&-lp-<33 do matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/3 (10VL)'
+    15: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a2/3 (15VL)'
     20: 'coc %player% if -tps->18&-lp-<25 do matrix kick %player% FastPlace/FastBreak Hacks'
     32: 'matrix kick %player% FastPlace/FastBreak Hacks'
 
@@ -552,88 +706,91 @@ scaffold:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    8: 'coc %player% if -tps->18&-lp-<33 do matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/4'
-    10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a2/4'
-    15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &c3/4'
+    8: 'coc %player% if -tps->18&-lp-<33 do matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/4 (8VL)'
+    10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a2/4 (10VL)'
+    15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &c3/4 (15VL)'
     20: 'coc %player% if -tps->18&-lp-<30 do matrix kick %player% Scaffold/Tower'
     32: 'matrix kick %player% Scaffold/Tower'
 
-## Jesus
-# Prevents the player from moving too quickly or walking in/on liquids.
-jesus:
+## FastUse
+# Stops players from eating or using items too quickly.
+fastuse:
   enable: true
 
-  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 15
+  # How many violations are needed to cancel illegal item use? (-1 = don't cancel)
+  cancel_vl: 1
 
-  # Should Matrix ignore whether players are in the swimming animation?
-  # This feature can prevent swimming status desync, but cause issues with player position.
-  ignore_swim_pose: true
+  # How many violations will be added when triggered?
+  vl_weight: 1
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    14: 'coc %player% if -tps->18&-lp-<36 do matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a1/4'
-    20: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a2/4'
-    40: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &c3/4'
-    50: 'coc %player% if -tps->18&-lp-<33 do matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
-    64: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
+    5: 'coc %player% if -lp-<25 do matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/3 (5VL)'
+    10: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a2/3 (10VL)'
+    15: 'coc %player% if -lp-<21 do matrix kick %player% FastUse Hacks'
+    21: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, increase if causes false positives.
 
-## Inventory
-# Stops players from using illegal inventory modifications such as ChestSteal.
-inventory:
+## FastBow
+# Prevents players from shooting bows too quickly.
+fastbow:
   enable: true
 
-  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  # Keep strict for gamemodes that involve many chests.
-  cancel_vl: 8
+  # How many violations are needed to cancel illegal bow use? (-1 = don't cancel)
+  cancel_vl: 5
 
-  # ChestStealer check: Detects instantly taking items out of chests.
-  chest_stealer: true
-
-  # Ignores items that have color in the name.
-  # This can prevent a false positive for GUIs and shops.
-  ignore_color: false
-
-  # InventoryMove check: Makes sure a player cannot move while in their inventory.
-  # Note: Only works in 1.12+
-  disable_invmove: false
-
-  # AutoTotem check: Stops automatically moving totems to the offhand.
-  auto_totem: true
+  # How many violations will be added when triggered?
+  vl_weight: 1
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<34 do matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a1/3'
-    15: 'matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a2/3'
-    24: 'matrix kick %player% ChestSteal/Inventory Hacks'
+    5: 'coc %player% if -lp-<25 do matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/3 (5VL)'
+    10: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a2/3 (10VL)'
+    15: 'matrix kick %player% FastBow Hacks'
 
-## Velocity
-# Prevents players from using any type of AntiKnockback hacks.
-velocity:
+## FastHeal
+# Prevents players from regaining health too quickly.
+fastheal:
   enable: true
 
-  # The amount of time to wait for players to respond to velocity (ticks)
-  # Set to 40 to not cause false positives for laggy players.
-  wait_time: 35
-
-  # Ignore players who are lagging or changing resource packs.
-  ignore_lag: true
-
-  # How many violations will be added when triggered? (-1 = disable)
-  modules:
-    respond: 5
-    analyser: 3
-    vertical: 1
+  # How many violations will be added when triggered?
+  vl_weight: 2
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<25 matrix notify %player% tried to not take knockback &8| &7Velocity &8| &a1/4'
-    15: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &a2/4'
-    20: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &c3/4'
-    24: 'matrix kick %player% Velocity/Anti-Knockback'
+    10: 'coc %player% if -tps->18&-lp-<25 do matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/3 (10VL)'
+    20: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a2/3 (20VL)'
+    30: 'coc %player% if -tps->18&-lp-<20 do matrix kick %player% FastHeal Hacks'
+    45: 'matrix kick %player% FastHeal Hacks'
+
+## AutoFish
+# Disables AutoFish hacks.
+autofish:
+  enable: true
+
+  # How many violations are needed to cancel auto fishing? (-1 = don't cancel)
+  cancel_vl: 3
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    5: 'matrix notify %player% is using auto fish mods &8| &7AutoFish &8| &a1/2 (5VL)'
+    10: 'matrix kick %player% AutoFish'
+
+## AutoBot
+# Checks for mods such as Baritone.
+# Note: This check only works for premium users.
+autobot:
+  enable: true
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    5: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &a1/3 (5VL)'
+    10: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &c2/3 (10VL)'
+    15: 'matrix kick %player% Auto-Bot'
 
 ## Spam
 # Kicks players spamming messages in the chat.
@@ -649,162 +806,5 @@ chat:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    4: 'matrix notify %player% is spamming the chat &8| &7ChatSpam &8| &a1/2'
+    4: 'matrix notify %player% is spamming the chat &8| &7ChatSpam &8| &a1/2 (4VL)'
     10: 'matrix kick %player% Spammer/ChatBot'
-
-## Interact
-# Prevents the player from illegally interacting with entities and blocks.
-interact:
-  enable: true
-
-   # Modules used in the interact checks
-  modules:
-    # Break block check: Detects players breaking blocks through walls.
-    break_block:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 1
-
-    # Attack check: Detects players attacking entities through walls.
-    attack:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 1
-
-    # Block reach check: Detects players interacting with blocks too far away.
-    block_reach:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 1
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    8: 'coc %player% if -lp-<28 do matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a1/3'
-    12: 'matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a2/3'
-    16: 'coc %player% if -lp-<21 do matrix kick %player% Illegally Interactive with Block/Entity'
-    21: 'matrix kick %player% Illegally Interacting with Block/Entity'
-
-## AutoFish
-# Disables AutoFish hacks.
-autofish:
-  enable: true
-
-  # How many violations are needed to cancel auto fishing? (-1 = don't cancel)
-  cancel_vl: 3
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    5: 'matrix notify %player% is using auto fish mods &8| &7AutoFish &8| &a1/2'
-    10: 'matrix kick %player% AutoFish'
-
-## Phase
-# Disallows players glitching through blocks.
-phase:
-  enable: true
-
-  # Freeze time (ms)
-  # How long to freeze player if they keep moving into blocks.
-  freeze_time: 400
-
-  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 5
-
-  # Stops players from using ender pearls to phase into blocks.
-  prevent_close_range_enderpearl: true
-
-  # Exclude specific block types.
-  #
-  # Example:
-  # exclude_types:
-  #   - OBSIDIAN
-  #   - BEDROCK
-  exclude_types: []
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    7: 'coc %player% if -lp-<28 do matrix notify %player% is glitching through blocks &8| &7Phase &8| &a1/4'
-    13: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &a2/4'
-    21: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &c3/4'
-    28: 'coc %player% if -lp-<22 do matrix kick %player% Glitching through blocks'
-    38: 'matrix kick %player% Glitching through blocks'
-
-## AutoBot
-# Checks for mods such as Baritone.
-# Note: This check only works for premium users.
-autobot:
-  enable: true
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    5: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &a1/3'
-    10: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &c2/3'
-    15: 'matrix kick %player% Auto-Bot'
-
-## Elytra
-# Stops players using elytra related hacks.
-elytra:
-  enable: true
-
-  # Teleports players back to the original position.
-  force_setback: true
-
-  # How many violations are needed to teleport players back? (-1 = don't setback)
-  setback_vl: 8
-
-  # How many violations are needed to take players out of gliding? (-1 = don't cancel)
-  unequip_vl: 20
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    10: 'coc %player% if -lp-<18 do matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a1/4'
-    16: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a2/4'
-    24: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &c3/4'
-    30: 'coc %player% if -lp-<22 do matrix kick %player% Elytra Flight'
-    48: 'matrix kick %player% Elytra Flight'
-
-## Vehicle
-# Prevents players from using vehicle-related hacks.
-# Note: Only works for 1.9+
-vehicle:
-  enable: true
-
-  # Prevent players from using certain creatures as vehicles
-  # All entity types: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
-  #
-  # Example:
-  # deny_entity_types_as_vehicle:
-  #   - HORSE
-  #   - PIG
-  deny_entity_types_as_vehicle: []
-
-  # Vehicle speed check: Prevents vehicles from moving too fast.
-  speed:
-    enable: true
-
-    # How many violations are needed to teleport players back? (-1 = don't setback)
-    setback_vl: 2
-
-  # Vehicle flight check: Prevents vehicles from using fly hacks.
-  flight:
-    enable: true
-
-    # How many violations are needed to teleport players back? (-1 = don't setback)
-    setback_vl: 4
-
-    # How many violations are needed to kick players off vehicles? (-1 = don't kick)
-    leave_vehicle: 8
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    5: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &a1/3'
-    10: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &c2/3'
-    32: 'matrix kick %player% Suspicious vehicle movement'
