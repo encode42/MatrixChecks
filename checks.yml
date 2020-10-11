@@ -771,13 +771,13 @@ autofish:
   enable: true
 
   # How many violations are needed to cancel auto fishing? (-1 = don't cancel)
-  cancel_vl: 3
+  cancel_vl: 15
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'matrix notify %player% is using auto fish mods &8| &7AutoFish &8| &a1/2 &4(5VL)'
-    10: 'matrix kick %player% AutoFish'
+    15: 'matrix notify %player% may be autofishing. &8| &7AutoFish &8| &b1/2 &e(15VL)'
+    30: 'matrix kick %player% Kicked for autofishing!%break%If this is a false positive, please report the kick to the server''s managers.'
 
 ## AutoBot
 # Checks for mods such as Baritone.
