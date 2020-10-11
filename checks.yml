@@ -218,11 +218,11 @@ killaura:
   # Run commands once X amount of violations are reached.
   commands:
     8: 'matrix npc %player% 125'
-    14: 'coc %player% if -tps->18.5&-lp-<30 do matrix notify %player% might be using combat hacks &8| &7KillAura &8| &61/4 &a(14VL)'
-    20: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &62/4 &e(20VL)'
-    35: 'matrix notify %player% might be using combat hacks &8| &7KillAura &8| &c3/4 &4(35VL)'
-    42: 'coc %player% if -tps->18.0&-lp-<25 do matrix kick %player% KillAura'
-    54: 'matrix kick %player% KillAura'
+    14: 'coc %player% if -lp-<30 do matrix notify %player% may be using combat hacks &8| &7KillAura &8| &b1/4 &e(14VL)'
+    20: 'matrix notify %player% may be using combat hacks &8| &7KillAura &8| &b2/4 &6(20VL)'
+    35: 'matrix notify %player% may be using combat hacks &8| &7KillAura &8| &b3/4 &4(35VL)'
+    42: 'coc %player% if -lp-<25 do matrix kick %player% &cKicked for using combat related hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    54: 'matrix kick %player% &cKicked for using combat related hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## HitBox
 # Prevents players from using HitBox, Angle, and Reach hacks.
@@ -273,12 +273,12 @@ hitbox:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    6: 'coc %player% if -tps->18.5&-lp-<30 do matrix npc %player% 120'
-    10: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &a1/3 &e(10VL)'
-    13: 'coc %player% if -tps->18.5&-lp-<35 do matrix npc %player% 125'
-    15: 'matrix notify %player% tried to reach entity outside max reach distance &8| &7HitBox &8| &c2/3 &4(15VL)'
-    22: 'coc %player% if -tps->18.5&-lp-<30 do matrix kick %player% Reach/HitBox Hacks'
-    28: 'matrix kick %player% Reach/HitBox Hacks'
+    6: 'coc %player% if -lp-<30 do matrix npc %player% 120'
+    10: 'matrix notify %player% may be using combat hacks &8| &7HitBox &8| &b1/3 &6(10VL)'
+    13: 'coc %player% if -lp-<35 do matrix npc %player% 125'
+    15: 'matrix notify %player% may be using combat hacks &8| &7HitBox &8| &b2/3 &4(15VL)'
+    22: 'coc %player% if -lp-<30 do matrix kick %player% &cKicked for using combat related hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    28: 'matrix kick %player% &cKicked for using combat related hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Movement Speed Check
 # Prevents players from moving too fast.
@@ -315,11 +315,11 @@ speed:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -tps->17.5&-lp-<25 do matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a1/4 &a(40VL)'
-    55: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &a2/4 &e(55VL)'
-    82: 'matrix notify %player% tried to move faster than usual &8| &7Speed &8| &c3/4 &4(82VL)'
-    104: 'coc %player% if -tps->17.5&-lp-<30 do matrix kick %player% Speed Hacks'
-    130: 'matrix kick %player% Speed Hacks'
+    40: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b1/4 &a(40VL)'
+    55: 'coc %player% if -lp-<35 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b2/4 &e(55VL)'
+    82: 'coc %player% if -lp-<45 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b3/4 &6(82VL)'
+    104: 'coc %player% if -lp-<30 do matrix kick %player% &cKicked for using speed related hacks!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
+    130: 'matrix kick %player% &cKicked for using speed related hacks!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Jesus
 # Prevents the player from moving too quickly or walking in/on liquids.
@@ -336,11 +336,11 @@ jesus:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    14: 'coc %player% if -tps->18&-lp-<36 do matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a1/4 &e(14VL)'
-    20: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &a2/4 &e(20VL)'
-    40: 'matrix notify %player% tried to move illegally in liquid &8| &7Jesus &8| &c3/4 &4(40VL)'
-    50: 'coc %player% if -tps->18&-lp-<33 do matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
-    64: 'matrix kick %player% Jesus/WaterSpeed/WaterFly Hacks'
+    14: 'coc %player% if -lp-<34 do matrix notify %player% illegally moved in liquid &8| &7Jesus &8| &b1/4 &e(14VL)'
+    20: 'coc %player% if -lp-<48 do matrix notify %player% illegally moved in liquid &8| &7Jesus &8| &b2/4 &6(20VL)'
+    40: 'matrix notify %player% illegally moved in liquid &8| &7Jesus &8| &b3/4 &4(40VL)'
+    50: 'coc %player% if -lp-<33 do matrix kick %player% &cKicked for using water related hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    64: 'matrix kick %player% &cKicked for using water related hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Velocity
 # Prevents players from using any type of AntiKnockback hacks.
@@ -348,7 +348,7 @@ velocity:
   enable: true
 
   # The amount of time to wait for players to respond to velocity (ticks)
-  # Set to 40 to not cause false positives for laggy players.
+  # Set to 35 to not cause false positives for laggy players.
   wait_time: 35
 
   # Ignore players who are lagging or changing resource packs.
@@ -363,10 +363,10 @@ velocity:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<25 matrix notify %player% tried to not take knockback &8| &7Velocity &8| &a1/4 &e(10VL)'
-    15: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &a2/4 &4(15VL)'
-    20: 'matrix notify %player% tried to not take knockback &8| &7Velocity &8| &c3/4 &4(20VL)'
-    24: 'matrix kick %player% Velocity/Anti-Knockback'
+    10: 'coc %player% if -lp-<25 matrix notify %player% did not take knockback &8| &7Velocity &8| &b1/4 &e(10VL)'
+    15: 'matrix notify %player% did not take knockback &8| &7Velocity &8| &b2/4 &6(15VL)'
+    20: 'matrix notify %player% did not take knockback &8| &7Velocity &8| &b3/4 &4(20VL)'
+    24: 'matrix kick %player% &cKicked for using knockback related hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Fly
 # Prevents the player from using both vanilla and non-vanilla fly hacks.
@@ -407,11 +407,11 @@ fly:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -tps->17.5&-lp-<25 do matrix notify %player% tried to fly &8| &7Fly &8| &a1/4 &a(40VL)'
-    50: 'matrix notify %player% tried to fly &8| &7Fly &8| &a2/4 &e(50VL)'
-    80: 'matrix notify %player% tried to fly &8| &7Fly &8| &c3/4 &e(80VL)'
-    98: 'coc %player% if -tps->17.5&-lp-<30 do matrix kick %player% Fly Related Hacks'
-    125: 'matrix kick %player% Fly Related Hacks'
+    40: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally fly &8| &7Fly &8| &b1/4 &a(40VL)'
+    50: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b2/4 &e(50VL)'
+    80: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b3/4 &e(80VL)'
+    98: 'coc %player% if -lp-<30 do matrix kick %player% &cKicked for using fly related hacks!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
+    125: 'matrix kick %player% &cKicked for using fly related hacks!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Elytra
 # Stops players using elytra related hacks.
@@ -430,11 +430,11 @@ elytra:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<18 do matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a1/4 &a(10VL)'
-    16: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &a2/4 &e(16VL)'
-    24: 'matrix notify %player% suspected using elytra-related cheats &8| &7Elytra &8| &c3/4 &e(24VL)'
-    30: 'coc %player% if -lp-<22 do matrix kick %player% Elytra Flight'
-    48: 'matrix kick %player% Elytra Flight'
+    10: 'coc %player% if -lp-<18 do matrix notify %player% might be using elytra hacks &8| &7Elytra &8| &b1/4 &a(10VL)'
+    16: 'matrix notify %player% might be using elytra hacks &8| &7Elytra &8| &b2/4 &e(16VL)'
+    24: 'matrix notify %player% might be using elytra hacks &8| &7Elytra &8| &b3/4 &6(24VL)'
+    30: 'coc %player% if -lp-<22 do matrix kick %player% &cKicked for using elytra flight hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    48: 'matrix kick %player% &cKicked for using elytra flight hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Vehicle
 # Prevents players from using vehicle-related hacks.
@@ -471,9 +471,9 @@ vehicle:
  # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &a1/3 &e(5VL)'
-    10: 'matrix notify %player% suspected using vehicle-related cheats &8| &7Vehicle &8| &c2/3 &4(10VL)'
-    32: 'matrix kick %player% Suspicious vehicle movement'
+    5: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Vehicle &8| &b1/3 &6(5VL)'
+    10: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Vehicle &8| &b2/3 &4(10VL)'
+    32: 'matrix kick %player% &cKicked for unusually interacting with entity vehicles!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Phase
 # Disallows players glitching through blocks.
@@ -501,11 +501,11 @@ phase:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    7: 'coc %player% if -lp-<28 do matrix notify %player% is glitching through blocks &8| &7Phase &8| &a1/4 &a(7VL)'
-    13: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &a2/4 &e(13VL)'
-    21: 'matrix notify %player% is glitching through blocks &8| &7Phase &8| &c3/4 &4(21VL)'
-    28: 'coc %player% if -lp-<22 do matrix kick %player% Glitching through blocks'
-    38: 'matrix kick %player% Glitching through blocks'
+    7: 'coc %player% if -lp-<28 do matrix notify %player% illegally interacted with blocks/entities &8| &7Phase &8| &b1/4 &a(7VL)'
+    13: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Phase &8| &b2/4 &e(13VL)'
+    21: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Phase &8| &b3/4 &4(21VL)'
+    28: 'coc %player% if -lp-<22 do matrix kick %player% &cKicked for phasing through blocks!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
+    38: 'matrix kick %player% &cKicked for phasing through blocks!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Interact
 # Prevents the player from illegally interacting with entities and blocks.
@@ -538,10 +538,10 @@ interact:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    8: 'coc %player% if -lp-<28 do matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a1/3 &e(8VL)'
-    12: 'matrix notify %player% tried to illegally interact with an entity or block &8| &7Interact &8| &a2/3 &4(12VL)'
-    16: 'coc %player% if -lp-<21 do matrix kick %player% Illegally Interactive with Block/Entity'
-    21: 'matrix kick %player% Illegally Interacting with Block/Entity'
+    8: 'coc %player% if -lp-<28 do matrix notify %player% illegally interacted with blocks/entities &8| &7Interact &8| &b1/3 &e(8VL)'
+    12: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Interact &8| &b2/3 &4(12VL)'
+    16: 'coc %player% if -lp-<21 do matrix kick %player% &cKicked for unusually interacting with blocks or entities!%break%&7If this is a false kick, please report this to the server''s admins.'
+    21: 'matrix kick %player% &cKicked for unusually interacting with blocks or entities!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## BadPackets
 # Prevents players from sending too many movement packets or sending illegal packets.
@@ -568,11 +568,10 @@ badpackets:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    80: 'coc %player% if -lp-<28 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a1/4 &e(80VL)'
-    125: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &a2/4 &4(125VL)'
-    150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &c3/4 &4(150VL)'
-    185: 'coc %player% if -tps->17.5&-lp-<22 do matrix kick %player% Sending Unusual Packets'
-    240: 'matrix kick %player% Sending Unusual Packets'
+    80: 'coc %player% if -lp-<28 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &b1/3 &e(80VL)'
+    150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &b2/3 &6(150VL)'
+    185: 'coc %player% if -lp-<22 do matrix kick %player% &cKicked for sending unusual packets to the server!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
+    240: 'matrix kick %player% &cKicked for sending unusual packets to the server!%break%&7This may be caused by an unstable internet connection.%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Inventory
 # Stops players from using illegal inventory modifications such as ChestSteal.
@@ -600,9 +599,9 @@ inventory:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<34 do matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a1/3 &4(10VL)'
-    15: 'matrix notify %player% moved items in inventory too quickly &8| &7Inventory/ChestSteal &8| &a2/3 &4(15VL)'
-    24: 'matrix kick %player% ChestSteal/Inventory Hacks'
+    10: 'coc %player% if -lp-<34 do matrix notify %player% moved items in an inventory quickly &8| &7ChestSteal &8| &b1/3 &6(10VL)'
+    15: 'matrix notify %player% moved items in an inventory quickly &8| &7ChestSteal &8| &b2/3 &4(15VL)'
+    24: 'matrix kick %player% &cKicked for manipulating inventories too fast!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Block
 # Stops players from breaking and placing blocks too fast.
@@ -653,10 +652,10 @@ block:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -tps->18&-lp-<33 do matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a1/3 &a(10VL)'
-    15: 'matrix notify %player% tried to place/break a block too quickly &8| &7Block &8| &a2/3 &e(15VL)'
-    20: 'coc %player% if -tps->18&-lp-<25 do matrix kick %player% FastPlace/FastBreak Hacks'
-    32: 'matrix kick %player% FastPlace/FastBreak Hacks'
+    10: 'coc %player% if -lp-<33 do matrix notify %player% tried to place/break blocks quickly &8| &7Block &8| &b1/3 &e(10VL)'
+    15: 'matrix notify %player% tried to place/break blocks quickly &8| &7Block &8| &b2/3 &6(15VL)'
+    20: 'coc %player% if -lp-<25 do matrix kick %player% &cKicked for using FastPlace or FastBreak hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    32: 'matrix kick %player% &cKicked for using FastPlace or FastBreak hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Scaffold check
 # Prevents player bridging or towering faster than average.
@@ -706,11 +705,11 @@ scaffold:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    8: 'coc %player% if -tps->18&-lp-<33 do matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a1/4 &a(8VL)'
-    10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &a2/4 &e(10VL)'
-    15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &c3/4 &e(15VL)'
-    20: 'coc %player% if -tps->18&-lp-<30 do matrix kick %player% Scaffold/Tower'
-    32: 'matrix kick %player% Scaffold/Tower'
+    8: 'coc %player% if -lp-<33 do matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &b1/4 &a(8VL)'
+    10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &b2/4 &e(10VL)'
+    15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &b3/4 &6(15VL)'
+    20: 'coc %player% if -lp-<30 do matrix kick %player% &cKicked for using Scaffold hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    32: 'matrix kick %player% &cKicked for using Scaffold hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## FastUse
 # Stops players from eating or using items too quickly.
@@ -726,10 +725,10 @@ fastuse:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'coc %player% if -lp-<25 do matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a1/3 &e(5VL)'
-    10: 'matrix notify %player% tried to use an item faster than usual &8| &7FastUse &8| &a2/3 &4(10VL)'
-    15: 'coc %player% if -lp-<21 do matrix kick %player% FastUse Hacks'
-    21: 'matrix kick %player% FastUse Hacks' # Decrease if it takes a long time to detect, increase if causes false positives.
+    5: 'coc %player% if -lp-<25 do matrix notify %player% tried to use an item quickly &8| &7FastUse &8| &b1/3 &6(5VL)'
+    10: 'matrix notify %player% tried to use an item quickly &8| &7FastUse &8| &b2/3 &4(10VL)'
+    15: 'coc %player% if -lp-<21 do matrix kick %player% &cKicked for using FastUse hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    21: 'matrix kick %player% &cKicked for using FastUse hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## FastBow
 # Prevents players from shooting bows too quickly.
@@ -745,9 +744,9 @@ fastbow:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'coc %player% if -lp-<25 do matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a1/3 &4(5VL)'
-    10: 'matrix notify %player% is trying to shoot a bow too quickly &8| &7FastBow &8| &a2/3 &4(10VL)'
-    15: 'matrix kick %player% FastBow Hacks'
+    5: 'coc %player% if -lp-<25 do matrix notify %player% tried to use an item quickly &8| &7FastBow &8| &b1/3 &4(5VL)'
+    10: 'matrix notify %player% tried to use an item quickly &8| &7FastBow &8| &b2/3 &4(10VL)'
+    15: 'matrix kick %player% &cKicked for using FastBow hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## FastHeal
 # Prevents players from regaining health too quickly.
@@ -760,10 +759,10 @@ fastheal:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -tps->18&-lp-<25 do matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a1/3 &4(10VL)'
-    20: 'matrix notify %player% tried to regain health too quickly &8| &7FastHeal &8| &a2/3 &4(20VL)'
-    30: 'coc %player% if -tps->18&-lp-<20 do matrix kick %player% FastHeal Hacks'
-    45: 'matrix kick %player% FastHeal Hacks'
+    10: 'coc %player% if -lp-<25 do matrix notify %player% tried to regain health quickly &8| &7FastHeal &8| &b1/3 &6(10VL)'
+    20: 'matrix notify %player% tried to regain health quickly &8| &7FastHeal &8| &b2/3 &4(20VL)'
+    30: 'coc %player% if -lp-<20 do matrix kick %player% &cKicked for using FastHeal hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
+    45: 'matrix kick %player% &cKicked for using FastHeal hacks!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## AutoFish
 # Disables AutoFish hacks.
@@ -777,7 +776,7 @@ autofish:
   # Run commands once X amount of violations are reached.
   commands:
     15: 'matrix notify %player% may be autofishing. &8| &7AutoFish &8| &b1/2 &e(15VL)'
-    30: 'matrix kick %player% Kicked for autofishing!%break%If this is a false positive, please report the kick to the server''s managers.'
+    30: 'matrix kick %player% &cKicked for autofishing!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## AutoBot
 # Checks for mods such as Baritone.
@@ -788,9 +787,9 @@ autobot:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &a1/3 &e(5VL)'
-    10: 'matrix notify %player% suspected use of automatic robots &8| &7AutoBot &8| &c2/3 &4(10VL)'
-    15: 'matrix kick %player% Auto-Bot'
+    5: 'matrix notify %player% may be using a bot &8| &7AutoBot &8| &b1/3 &6(5VL)'
+    10: 'matrix notify %player% may be using a bot &8| &7AutoBot &8| &b2/3 &4(10VL)'
+    15: 'matrix kick %player% &cKicked for using an auto bot!%break%&7If this is a false kick, please report this to the server''s admins.'
 
 ## Spam
 # Kicks players spamming messages in the chat.
@@ -806,5 +805,5 @@ chat:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    4: 'matrix notify %player% is spamming the chat &8| &7ChatSpam &8| &a1/2 &4(4VL)'
-    10: 'matrix kick %player% Spammer/ChatBot'
+    4: 'matrix notify %player% is spamming the chat &8| &7ChatSpam &8| &b1/2 &4(4VL)'
+    10: 'matrix kick %player% &cKicked for spamming the chat!%break%&7Slow down a bit. Nobody wants their chat to be flooded.'
