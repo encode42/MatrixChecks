@@ -89,8 +89,9 @@ This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud
 7. `block.fastplace.max_place_per_second: 16` -> `block.fastplace.max_place_per_second: (number from 9 to 19)` (Decrease if you think there are bypasses, increase if the check causes false positives)
 8. `place.modules.delay.min_delay: 7` -> `place.modules.delay.min_delay: (number 5 to 9)` (Decrease if legit players are getting too many violations, increase if bypassed)
 
-### 3. Why is the anti-killaura NPC spawned in the HitBox check?  
-This check also checks if the player isn't using Angle cheats, and the NPC checks if the player can hit people behind the player. To prevent lag and false positives from happening with this, the NPC will be spawned only if the player's ping is lower than 185ms. If I'm right, this should make the killaura detection more strict. [This has been approved by RE](https://github.com/jiangdashao/Matrix-Issues/commit/988e130f60559105cea7ec384e49357864b9f5b4).
+### 3. Can I modify the files in MatrixChecks?
+Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyways.  
+You can also distribute it all you want or use it on a large network, just please don't claim it all as your own. (Credit the original authors)
 
 ### 4. How do I report a change or false positive?
 **FIRST:**  
@@ -102,8 +103,4 @@ Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 **THEN:**  
 Make an issue at the issues page with the right template. If you describe what you want changed/fixed well, chances are it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
 Issues: [Here](https://github.com/Encode42/MatrixChecks/issues)  
-Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)  
-
-### 5. Can I modify the files in MatrixChecks?
-Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyways.  
-You can also distribute it all you want or use it on a large network, just please don't claim it all as your own. (Credit the original authors)
+Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)
