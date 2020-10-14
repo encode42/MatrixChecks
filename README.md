@@ -33,6 +33,11 @@
 Install `checks.yml` to make use of the optimizations.  
 The config file only includes minor changes to the base config!
 
+⚠ **NOTE:**  
+You **must** install `language.yml` to use placeholders!
+Otherwise, many messages will be unreadable! Every kick
+message contains placeholders that require `language.yml`.
+
 ## 🔧 Setup
 ### Server Usage
 1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/error.checks.yml) depending on what you want.  
@@ -45,13 +50,15 @@ The config file only includes minor changes to the base config!
 ### Cloud Usage
 #### Method 1
 1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and replace your original `config.yml` with the downloaded file.
-2. Change `cloud_config.enable: false` to `cloud_config.enable: true`.
-3. Restart your server! It will now update the file every reboot.
+2. Download [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) and replace your original `language.yml`, like above.
+3. Change `cloud_config.enable: false` to `cloud_config.enable: true`.
+4. Restart your server! It will now update the file every reboot.
 
 #### Method 2
-1. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
-2. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
-3. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml`" or any other checks file depending on what you want.  
+1. Download [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) and replace your original `language.yml` with the downloaded file.
+2. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
+3. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
+4. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml`" or any other checks file depending on what you want.  
 <sub>For specific Matrix versions, replace `main` with the Matrix version number.</sub>
 
 ## ❔ FAQ
@@ -68,14 +75,14 @@ Tested and configured for survival and minigame servers. Tweak the checks for yo
 The main checks file. Includes the standard checks and everything advertised.  
 Conditional commands, optimized checks, increased speed, etc.
 
-#### error.checks.yml
-Same as `checks.yml` but with different kick messages.  
-The messages are from classic Minecraft server disconnect messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`."
-
-#### /cloud/\*.checks.yml
+#### /cloud/checks.yml
 Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read.  
 Because of its small file size though, it can be automatically updated fast on server startup.  
 This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
+
+#### /optional/error.language.yml
+Same as `language.yml` but with different kick messages.  
+The messages are from Minecraft's server disconnect messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`", as well as a few made-up ones to throw people off.
 
 ### 2. Suggested changes
 1. `nofall.damage: true` -> `nofall.damage: false` (For servers with fall-damage disabled)
