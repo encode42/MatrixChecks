@@ -84,6 +84,10 @@ This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud
 Same as `language.yml` but with different kick messages.  
 The messages are from Minecraft's server disconnect messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`", as well as a few made-up ones to throw people off.
 
+#### /optional/unknown.language.yml
+Same as `language.yml` but with different kick messages.  
+The messages remove the reason for the kick, replacing it with a generic message. A number is added to the end of the message for admins to check what check caused the kick, and to fix false positives.
+
 ### 2. Suggested changes
 1. `nofall.damage: true` -> `nofall.damage: false` (For servers with fall-damage disabled)
 2. `speed.tolerance: 0.0225` -> `speed.tolerance: (number from 0.0125 to 0.035)` (Decrease if players are bypassing speed checks)
