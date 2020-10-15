@@ -40,11 +40,11 @@ message contains placeholders that require `language.yml`.
 
 ## 🔧 Setup
 ### Server Usage
-1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) or [error.checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/error.checks.yml) depending on what you want.  
+1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
-2. Rename the original `checks.yml` to something else. `checks.old.yml` will work.
-3. Upload/move the checks file to your Matrix plugin folder. (`/plugins/Matrix/`)
-4. If you downloaded a checks file besides `checks.yml`, rename the new `*.checks.yml` to `checks.yml`.
+2. Rename the original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
+3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
+4. If you downloaded a file besides `checks.yml` or `language.yml`, rename the new file to `checks.yml` or `language.yml`.
 5. Restart your server!
 
 ### Cloud Usage
@@ -58,7 +58,7 @@ message contains placeholders that require `language.yml`.
 1. Download [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) and replace your original `language.yml` with the downloaded file.
 2. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
 3. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
-4. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml`" or any other checks file depending on what you want.  
+4. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml`" or other checks files in the repository.  
 <sub>For specific Matrix versions, replace `main` with the Matrix version number.</sub>
 
 ## ❔ FAQ
@@ -100,11 +100,7 @@ The messages remove the reason for the kick, replacing it with a generic message
 7. `block.fastplace.max_place_per_second: 16` -> `block.fastplace.max_place_per_second: (number from 9 to 19)` (Decrease if you think there are bypasses, increase if the check causes false positives)
 8. `place.modules.delay.min_delay: 7` -> `place.modules.delay.min_delay: (number 5 to 9)` (Decrease if legit players are getting too many violations, increase if bypassed)
 
-### 3. Can I modify the files in MatrixChecks?
-Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyways.  
-You can also distribute it all you want or use it on a large network, just please don't claim it all as your own. (Credit the original authors)
-
-### 4. How do I report a change or false positive?
+### 3. How do I report a change or false positive?
 **FIRST:**  
 Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a checks/config file. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
 You can also try using the default checks + config to see if the issue still stands. If so, it's not a problem with MatrixChecks.  
@@ -115,3 +111,11 @@ Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 Make an issue at the issues page with the right template. If you describe what you want changed/fixed well, chances are it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
 Issues: [Here](https://github.com/Encode42/MatrixChecks/issues)  
 Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)
+
+### 4. There's weird things in my kick messages!
+Do the "weird things" look like "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
+This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/Encode42/MatrixChecks#server-usage)
+
+### 5. Can I modify the files in MatrixChecks?
+Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyways.  
+You can also distribute it all you want or use it on a large network, just please don't claim it all as your own. (Credit the original authors)
