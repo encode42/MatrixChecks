@@ -12,7 +12,7 @@
 
 // Define and require modules
 const yaml             = require("js-yaml");
-const files            = ["../checks.yml"];
+const files            = ["./checks.yml"];
 const fs               = require("fs");
 
 // Minify each file
