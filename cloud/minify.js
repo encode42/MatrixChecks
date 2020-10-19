@@ -19,7 +19,7 @@ const fs               = require("fs");
 let minifiedAmount = 0;
 files.forEach(e => {
 	const filePath = e.split("/");
-	const fileName = `${filePath.pop()}`;
+	const fileName = `./cloud/${filePath.pop()}`;
 
 	console.log(`Minifying ${e}...`);
 
