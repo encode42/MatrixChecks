@@ -303,7 +303,7 @@ speed:
   skip_rate: 2
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 41
+  cancel_vl: 48
 
   # Ensures correct sprint direction.
   sprint_direction: true
