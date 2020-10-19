@@ -11,23 +11,30 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 14
-      
+
       - name: Get required modules
         run: |
           cd cloud
           npm i js-yaml
-      
+
       - name: Run script
         run: node cloud/minify.js
-      
+
       - name: Commit files
         run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add *.yml
-          git commit -m "Minify files"
+          if git diff --quiet cloud/checks.yml; then
+            echo "NO_CHANGES=0" >> $GITHUB_ENV
+            git config --local user.email "action@github.com"
+            git config --local user.name "GitHub Action"
+            git add *.yml
+            git commit -m "Minify files"
+          else
+            echo "NO_CHANGES=1" >> $GITHUB_ENV
+            echo "There were no changes to the cloud config.";
+          fi
 
       - name: Push changes
+        if: ${{ env.OUTPUT_NAME == 0 }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
