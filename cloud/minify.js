@@ -17,7 +17,7 @@ const fs               = require("fs");
 
 // Minify each file
 let minifiedAmount = 0;
-args.forEach(e => {
+files.forEach(e => {
 	const filePath = e.split("/");
 	const fileName = `${filePath.pop()}`;
 
