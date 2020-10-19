@@ -12,16 +12,11 @@
 
 // Define and require modules
 const yaml             = require("js-yaml");
+const files            = ["../checks.yml"];
 const fs               = require("fs");
 
-// Defaults
-let args = process.argv.splice(2, process.argv.length + 1);
-if (args.length === 0) args = ["../checks.yml"];
-
-// Minify files
-console.log(`Files to minify: ${args.join(", ")}`);
+// Minify each file
 let minifiedAmount = 0;
-
 args.forEach(e => {
 	const filePath = e.split("/");
 	const fileName = `${filePath.pop()}`;
