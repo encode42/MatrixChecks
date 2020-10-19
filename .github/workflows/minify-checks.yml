@@ -22,19 +22,13 @@ jobs:
 
       - name: Commit files
         run: |
-          if git diff --quiet cloud/checks.yml; then
-            echo "NO_CHANGES=0" >> $GITHUB_ENV
-            git config --local user.email "action@github.com"
-            git config --local user.name "GitHub Action"
-            git add *.yml
-            git commit -m "Minify files"
-          else
-            echo "NO_CHANGES=1" >> $GITHUB_ENV
-            echo "There were no changes to the cloud config.";
-          fi
+          echo "NO_CHANGES=0" >> $GITHUB_ENV
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.yml
+          git commit -m "Minify files" || echo "No changes were found."
 
       - name: Push changes
-        if: ${{ env.OUTPUT_NAME == 0 }}
         uses: ad-m/github-push-action@master
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
