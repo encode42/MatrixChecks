@@ -22,7 +22,6 @@ jobs:
 
       - name: Commit files
         run: |
-          echo "NO_CHANGES=0" >> $GITHUB_ENV
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add *.yml
