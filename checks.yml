@@ -321,7 +321,7 @@ speed:
   # Run commands once X amount of violations are reached.
   commands:
     40: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b1/4 &a(40VL)'
-    55: 'coc %player% if -lp-<35 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b2/4 &e(55VL)'
+    64: 'coc %player% if -lp-<35 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b2/4 &e(64VL)'
     82: 'coc %player% if -lp-<45 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b3/4 &6(82VL)'
     104: 'coc %player% if -lp-<30 do matrix kick %player% %gh_o_pr%%gh_h_sp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
     130: 'matrix kick %player% %gh_o_pr%%gh_h_sp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
@@ -413,7 +413,7 @@ fly:
   # Run commands once X amount of violations are reached.
   commands:
     40: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally fly &8| &7Fly &8| &b1/4 &a(40VL)'
-    50: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b2/4 &e(50VL)'
+    64: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b2/4 &e(64VL)'
     80: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b3/4 &e(80VL)'
     98: 'coc %player% if -lp-<30 do matrix kick %player% %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
     125: 'matrix kick %player% %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
