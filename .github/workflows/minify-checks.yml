@@ -24,7 +24,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add *.yml
+          git add cloud/*.yml
           git commit -m "Minify files" || echo "No changes were found."
 
       - name: Push changes
