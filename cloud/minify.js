@@ -25,7 +25,7 @@ files.forEach(e => {
 
 	const yamlFile = fs.readFileSync(e, "utf-8");
 	const yamlMini = yaml.safeDump(yaml.safeLoad(yamlFile), { "flowLevel": 0 }).trim();
-	fs.writeFileSync(`${filePath.join("/")}/${fileName}`, yamlMini);
+	fs.writeFileSync(`${fileName}`, yamlMini);
 
 	console.log(`Minified ${e}! Before: ${yamlFile.length} | After: ${yamlMini.length}\n`);
 	minifiedAmount = minifiedAmount + (yamlFile.length - yamlMini.length);
