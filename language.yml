@@ -52,7 +52,7 @@ relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seco
 
 ## Global Placeholders
 # Phrases that will be replaced with what they're set to.
-# These placeholders work in "checks.yml" (Prefixed with "gh_")
+# These placeholders work in "checks.yml" (Prefixed with "gp_")
 #
 # Example:
 # global_placeholder:
