@@ -12,8 +12,6 @@ jobs:
         with:
           node-version: 14
 
-      - name: Get required modules
-
       - name: Run script
         run: node optional/patch.js
 
