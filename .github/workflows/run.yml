@@ -32,6 +32,11 @@ jobs:
     needs: patch
     runs-on: ubuntu-latest
     steps:
+      - name: Wait for Git to update
+        uses: jakejarvis/wait-action@master
+        with:
+          time: '6s'
+    
       - name: Checkout
         uses: actions/checkout@v2
 
