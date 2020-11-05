@@ -12,8 +12,14 @@
 
 // Define and require modules
 const yaml             = require("js-yaml");
-const files            = ["./checks.yml", "./optional/kickless.checks.yml"];
 const fs               = require("fs");
+
+const files = [
+	"./checks.yml",
+	"./optional/kickless.checks.yml",
+	"./optional/error.language.yml",
+	"./optional/unknown.language.yml"
+];
 
 // Minify each file
 let minifiedAmount = 0;
