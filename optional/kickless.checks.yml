@@ -226,8 +226,8 @@ killaura:
     14: 'coc %player% if -lp-<30 do matrix notify %player% may be using combat hacks &8| &7KillAura &8| &b1/4 &e(14VL)'
     20: 'matrix notify %player% may be using combat hacks &8| &7KillAura &8| &b2/4 &6(20VL)'
     35: 'matrix notify %player% may be using combat hacks &8| &7KillAura &8| &b3/4 &4(35VL)'
-    42: 'coc %player% if -lp-<25 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_ka%%gh_o_su%%gh_n_fp%'
-    54: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_ka%%gh_o_su%%gh_n_fp%'
+    42: 'coc %player% if -lp-<25 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_ka%%gp_o_su%%gp_n_fp%'
+    54: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_ka%%gp_o_su%%gp_n_fp%'
 
 ## HitBox
 # Prevents players from using HitBox, Angle, and Reach hacks.
@@ -282,8 +282,8 @@ hitbox:
     10: 'matrix notify %player% may be using combat hacks &8| &7HitBox &8| &b1/3 &6(10VL)'
     13: 'coc %player% if -lp-<35 do matrix npc %player% 125'
     15: 'matrix notify %player% may be using combat hacks &8| &7HitBox &8| &b2/3 &4(15VL)'
-    22: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_hb%%gh_o_su%%gh_n_fp%'
-    28: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_hb%%gh_o_su%%gh_n_fp%'
+    22: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_hb%%gp_o_su%%gp_n_fp%'
+    28: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_hb%%gp_o_su%%gp_n_fp%'
 
 ## Movement Speed Check
 # Prevents players from moving too fast.
@@ -323,8 +323,8 @@ speed:
     40: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b1/4 &a(40VL)'
     64: 'coc %player% if -lp-<35 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b2/4 &e(64VL)'
     82: 'coc %player% if -lp-<45 do matrix notify %player% tried to illegally move &8| &7Speed &8| &b3/4 &6(82VL)'
-    104: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_sp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
-    130: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_sp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    104: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_sp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    130: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_sp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Jesus
 # Prevents the player from moving too quickly or walking in/on liquids.
@@ -344,8 +344,8 @@ jesus:
     14: 'coc %player% if -lp-<34 do matrix notify %player% illegally moved in liquid &8| &7Jesus &8| &b1/4 &e(14VL)'
     20: 'coc %player% if -lp-<48 do matrix notify %player% illegally moved in liquid &8| &7Jesus &8| &b2/4 &6(20VL)'
     40: 'matrix notify %player% illegally moved in liquid &8| &7Jesus &8| &b3/4 &4(40VL)'
-    50: 'coc %player% if -lp-<33 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_js%%gh_o_su%%gh_n_fp%'
-    64: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_js%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    50: 'coc %player% if -lp-<33 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_js%%gp_o_su%%gp_n_fp%'
+    64: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_js%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Velocity
 # Prevents players from using any type of AntiKnockback hacks.
@@ -371,7 +371,7 @@ velocity:
     10: 'coc %player% if -lp-<25 matrix notify %player% did not take knockback &8| &7Velocity &8| &b1/4 &e(10VL)'
     15: 'matrix notify %player% did not take knockback &8| &7Velocity &8| &b2/4 &6(15VL)'
     20: 'matrix notify %player% did not take knockback &8| &7Velocity &8| &b3/4 &4(20VL)'
-    24: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_vc%%gh_o_su%%gh_n_fp%'
+    24: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_vc%%gp_o_su%%gp_n_fp%'
 
 ## Fly
 # Prevents the player from using both vanilla and non-vanilla fly hacks.
@@ -412,11 +412,11 @@ fly:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally fly &8| &7Fly &8| &b1/4 &a(40VL)'
-    64: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b2/4 &e(64VL)'
-    80: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b3/4 &e(80VL)'
-    98: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
-    125: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    50: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally fly &8| &7Fly &8| &b1/4 &a(50VL)'
+    75: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b2/4 &e(75VL)'
+    92: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b3/4 &e(92VL)'
+    110: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    138: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Elytra
 # Stops players using elytra related hacks.
@@ -438,8 +438,8 @@ elytra:
     10: 'coc %player% if -lp-<18 do matrix notify %player% might be using elytra hacks &8| &7Elytra &8| &b1/4 &a(10VL)'
     16: 'matrix notify %player% might be using elytra hacks &8| &7Elytra &8| &b2/4 &e(16VL)'
     24: 'matrix notify %player% might be using elytra hacks &8| &7Elytra &8| &b3/4 &6(24VL)'
-    30: 'coc %player% if -lp-<22 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_el%%gh_o_su%%gh_n_fp%'
-    48: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_el%%gh_o_su%%gh_n_fp%'
+    30: 'coc %player% if -lp-<22 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_el%%gp_o_su%%gp_n_fp%'
+    48: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_el%%gp_o_su%%gp_n_fp%'
 
 ## Vehicle
 # Prevents players from using vehicle-related hacks.
@@ -478,7 +478,7 @@ vehicle:
   commands:
     5: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Vehicle &8| &b1/3 &6(5VL)'
     10: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Vehicle &8| &b2/3 &4(10VL)'
-    32: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_vl%%gh_o_su%%gh_n_fp%'
+    32: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_vl%%gp_o_su%%gp_n_fp%'
 
 ## Interact
 # Prevents the player from illegally interacting with entities and blocks.
@@ -513,8 +513,8 @@ interact:
   commands:
     8: 'coc %player% if -lp-<28 do matrix notify %player% illegally interacted with blocks/entities &8| &7Interact &8| &b1/3 &e(8VL)'
     12: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Interact &8| &b2/3 &4(12VL)'
-    16: 'coc %player% if -lp-<21 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_in%%gh_o_su%%gh_n_fp%'
-    21: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_in%%gh_o_su%%gh_n_fp%'
+    16: 'coc %player% if -lp-<21 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_in%%gp_o_su%%gp_n_fp%'
+    21: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_in%%gp_o_su%%gp_n_fp%'
 
 ## Phase
 # Disallows players glitching through blocks.
@@ -545,8 +545,8 @@ phase:
     7: 'coc %player% if -lp-<28 do matrix notify %player% illegally interacted with blocks/entities &8| &7Phase &8| &b1/4 &a(7VL)'
     13: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Phase &8| &b2/4 &e(13VL)'
     21: 'matrix notify %player% illegally interacted with blocks/entities &8| &7Phase &8| &b3/4 &4(21VL)'
-    28: 'coc %player% if -lp-<22 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_ph%%gh_o_su%%gh_n_ui%%gh_n_fp%'
-    38: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_ph%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    28: 'coc %player% if -lp-<22 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_ph%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    38: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_ph%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## BadPackets
 # Prevents players from sending too many movement packets or sending illegal packets.
@@ -575,8 +575,8 @@ badpackets:
   commands:
     80: 'coc %player% if -lp-<28 do matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &b1/3 &e(80VL)'
     150: 'matrix notify %player% is sending unusual packets to the server &8| &7BadPackets &8| &b2/3 &6(150VL)'
-    185: 'coc %player% if -lp-<22 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_bp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
-    240: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_bp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    185: 'coc %player% if -lp-<22 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    240: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Inventory
 # Stops players from using illegal inventory modifications such as ChestSteal.
@@ -606,7 +606,7 @@ inventory:
   commands:
     10: 'coc %player% if -lp-<34 do matrix notify %player% moved items in an inventory quickly &8| &7ChestSteal &8| &b1/3 &6(10VL)'
     15: 'matrix notify %player% moved items in an inventory quickly &8| &7ChestSteal &8| &b2/3 &4(15VL)'
-    24: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_iv%%gh_o_su%%gh_n_fp%'
+    24: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_iv%%gp_o_su%%gp_n_fp%'
 
 ## Block
 # Stops players from breaking and placing blocks too fast.
@@ -659,8 +659,8 @@ block:
   commands:
     10: 'coc %player% if -lp-<33 do matrix notify %player% tried to place/break blocks quickly &8| &7Block &8| &b1/3 &e(10VL)'
     15: 'matrix notify %player% tried to place/break blocks quickly &8| &7Block &8| &b2/3 &6(15VL)'
-    20: 'coc %player% if -lp-<25 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
-    32: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fp%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    20: 'coc %player% if -lp-<25 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    32: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Scaffold check
 # Prevents player bridging or towering faster than average.
@@ -713,8 +713,8 @@ scaffold:
     8: 'coc %player% if -lp-<33 do matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &b1/4 &a(8VL)'
     10: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &b2/4 &e(10VL)'
     15: 'matrix notify %player% tried to bridge blocks quickly &8| &7Scaffold &8| &b3/4 &6(15VL)'
-    20: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_sc%%gh_o_su%%gh_n_ui%%gh_n_fp%'
-    32: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_sc%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    20: 'coc %player% if -lp-<30 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    32: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## FastUse
 # Stops players from eating or using items too quickly.
@@ -732,8 +732,8 @@ fastuse:
   commands:
     5: 'coc %player% if -lp-<25 do matrix notify %player% tried to use an item quickly &8| &7FastUse &8| &b1/3 &6(5VL)'
     10: 'matrix notify %player% tried to use an item quickly &8| &7FastUse &8| &b2/3 &4(10VL)'
-    15: 'coc %player% if -lp-<21 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fu%%gh_o_su%%gh_n_fp%'
-    21: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fu%%gh_o_su%%gh_n_fp%'
+    15: 'coc %player% if -lp-<21 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fu%%gp_o_su%%gp_n_fp%'
+    21: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fu%%gp_o_su%%gp_n_fp%'
 
 ## FastBow
 # Prevents players from shooting bows too quickly.
@@ -751,7 +751,7 @@ fastbow:
   commands:
     5: 'coc %player% if -lp-<25 do matrix notify %player% tried to use an item quickly &8| &7FastBow &8| &b1/3 &4(5VL)'
     10: 'matrix notify %player% tried to use an item quickly &8| &7FastBow &8| &b2/3 &4(10VL)'
-    15: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fb%%gh_o_su%%gh_n_fp%'
+    15: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fb%%gp_o_su%%gp_n_fp%'
 
 ## FastHeal
 # Prevents players from regaining health too quickly.
@@ -766,8 +766,8 @@ fastheal:
   commands:
     10: 'coc %player% if -lp-<25 do matrix notify %player% tried to regain health quickly &8| &7FastHeal &8| &b1/3 &6(10VL)'
     20: 'matrix notify %player% tried to regain health quickly &8| &7FastHeal &8| &b2/3 &4(20VL)'
-    30: 'coc %player% if -lp-<20 do matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fh%%gh_o_su%%gh_n_fp%'
-    45: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_fh%%gh_o_su%%gh_n_fp%'
+    30: 'coc %player% if -lp-<20 do matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
+    45: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
 
 ## AutoFish
 # Disables AutoFish hacks.
@@ -781,7 +781,7 @@ autofish:
   # Run commands once X amount of violations are reached.
   commands:
     15: 'matrix notify %player% may be autofishing. &8| &7AutoFish &8| &b1/2 &e(15VL)'
-    30: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_af%%gh_o_su%%gh_n_fp%'
+    30: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_af%%gp_o_su%%gp_n_fp%'
 
 ## AutoBot
 # Checks for mods such as Baritone.
@@ -794,7 +794,7 @@ autobot:
   commands:
     5: 'matrix notify %player% may be using a bot &8| &7AutoBot &8| &b1/3 &6(5VL)'
     10: 'matrix notify %player% may be using a bot &8| &7AutoBot &8| &b2/3 &4(10VL)'
-    15: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_ab%%gh_o_su%%gh_n_fp%'
+    15: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_ab%%gp_o_su%%gp_n_fp%'
 
 ## Spam
 # Kicks players spamming messages in the chat.
@@ -811,4 +811,4 @@ chat:
   # Run commands once X amount of violations are reached.
   commands:
     4: 'matrix notify %player% is spamming the chat &8| &7ChatSpam &8| &b1/2 &4(4VL)'
-    10: 'matrix notify %player% would have been kicked for: %gh_o_pr%%gh_h_sm%%gh_o_su%%gh_n_fp%'
+    10: 'matrix notify %player% would have been kicked: %gp_o_pr%%gp_h_sm%%gp_o_su%%gp_n_fp%'
