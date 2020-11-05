@@ -60,7 +60,7 @@ relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seco
 #
 # // checks.yml
 # commands:
-#   25: 'matrix kick %player% Kicked for hacks! %gh_fp%'
+#   25: 'matrix kick %player% Kicked for hacks! %gp_fp%'
 global_placeholder:
   ## Kick Reasons
   # What a kicked player sees in the kick message.
