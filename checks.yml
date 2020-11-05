@@ -412,11 +412,11 @@ fly:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally fly &8| &7Fly &8| &b1/4 &a(40VL)'
-    64: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b2/4 &e(64VL)'
-    80: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b3/4 &e(80VL)'
-    98: 'coc %player% if -lp-<30 do matrix kick %player% %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
-    125: 'matrix kick %player% %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    50: 'coc %player% if -lp-<25 do matrix notify %player% tried to illegally fly &8| &7Fly &8| &b1/4 &a(50VL)'
+    75: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b2/4 &e(75VL)'
+    92: 'matrix notify %player% tried to illegally fly &8| &7Fly &8| &b3/4 &e(92VL)'
+    110: 'coc %player% if -lp-<30 do matrix kick %player% %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
+    138: 'matrix kick %player% %gh_o_pr%%gh_h_fl%%gh_o_su%%gh_n_ui%%gh_n_fp%'
 
 ## Elytra
 # Stops players using elytra related hacks.
