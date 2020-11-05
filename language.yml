@@ -116,6 +116,26 @@ global_placeholder:
   o_pr: '&cKicked for '
   o_su: '!%break%'
 
+  ## Customization
+  # Changes to commands, colors, etc.
+  # 
+  # c_pr: Primary color
+  # c_se: Secondary color
+  # C_me: Message color
+  # c_lw: "Low"    chance color
+  # c_lt: "Some"   chance color
+  # c_md: "Medium" chance color
+  # c_hg: "High"   chance color
+  # c_ba: Separation bar character
+  c_pr: "&b"
+  c_se: "&7"
+  c_me: "&r"
+  c_lw: "&a"
+  c_sm: "&e"
+  c_md: "&6"
+  c_hg: "&4"
+  c_ba: "&8|"
+
 ## Commands description
 # Used in the help command.
 commands:
