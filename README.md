@@ -28,15 +28,15 @@
 </tr>
 </table>
 
-⚠ **NOTE:**  
-`config.yml` **does not** include any checks!  
-Install `checks.yml` to make use of the optimizations.  
-The config file only includes minor changes to the base config!
-
-⚠ **NOTE:**  
+⚠ **REQUIRED INSTALLATION NOTE:**  
 You **must** install `language.yml` to use placeholders!
 Otherwise, many messages will be unreadable! Every kick
 message contains placeholders that require `language.yml`.
+
+⚠ **GENERAL NOTE:**  
+`config.yml` **does not** include any checks!  
+Install `checks.yml` to make use of the optimizations.  
+The config file only includes minor changes to the base config!
 
 ## 🔧 Setup
 ### Server Usage
