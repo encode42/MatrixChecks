@@ -12,53 +12,22 @@ jobs:
         with:
           node-version: 14
 
-      - name: Run script
-        run: node optional/patch.js
-
-      - name: Commit files
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add optional/*.yml
-          git commit -m "Patch files" || echo "No changes were found."
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
-
-  minify:
-    needs: patch
-    runs-on: ubuntu-latest
-    steps:
-      - name: Wait for Git to update
-        uses: jakejarvis/wait-action@master
-        with:
-          time: '15s'
-    
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js 14
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
-
-      - name: Get required modules
+      - name: Download required modules
         run: |
           cd cloud
           npm i js-yaml
 
-      - name: Run script
-        run: node cloud/minify.js
+      - name: Run scripts
+        run: |
+          node optional/patch.js
+          node cloud/minify.js
 
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add cloud/*.yml
-          git commit -m "Minify files" || echo "No changes were found."
+          git add optional/*.yml cloud/*.yml
+          git commit -m "Patch and minify files" || echo "No changes were found."
 
       - name: Push changes
         uses: ad-m/github-push-action@master
