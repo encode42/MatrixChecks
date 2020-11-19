@@ -2,10 +2,12 @@
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
 # For Matrix 5.3+
 #
-# !! NOTE !!
+#
+#### !!  NOTE  !! 
 # YOU _MUST_ INSTALL "language.yml" TO USE PLACEHOLDERS!
 # OTHERWISE, MANY MESSAGES WILL BE UNREADABLE! EVERY KICK
 # MESSAGE CONTAINS PLACEHOLDERS THAT REQUIRE "language.yml"
+#
 #
 # These checks may not work perfectly with your server.
 # Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
