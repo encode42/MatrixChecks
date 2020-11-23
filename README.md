@@ -1,7 +1,7 @@
 <img src="https://repository-images.githubusercontent.com/282035636/0f82a000-f37a-11ea-8fb2-9aa79ad4123e" width="200px" align="right">
 <div align="center">
 <h1>MatrixChecks</h1>
-<h3>The optimized checks for <a href="https://www.mc-market.org/resources/13999">Matrix Anticheat</a>, a powerful and lightweight anticheat for Minecraft.</h3>
+<h3>The optimized checks for <a href="https://www.mc-market.org/resources/13999">Matrix Anticheat</a>, a powerful, modern, and lightweight anticheat for Minecraft.</h3>
 <h4>These checks work for both the free and premium versions of Matrix.</h4>
 <br/>
 </div>
@@ -11,7 +11,7 @@
 <td>
 
 **Make sure to use the checks meant for the version of Matrix you use!**  
-<sub>Sometimes Matrix premium updates faster than free, there will be another file if so.</sub>
+<sub>Sometimes Matrix premium updates faster than free; there will be another file if so.</sub>
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![GitHub commits since latest release (by date)](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
 [![Support Discord](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
@@ -19,103 +19,106 @@
 <td>
 
 #### Features
-- Less false positives.
-- Better warning messages.
-- More strict checks. *(Better detection)*
-- Multiple checks types to suit your needs.
-- Up to date!
+- Reduced false positives.
+- Improved warning messages.
+- Lots of customization.
+- Stricter checks. *(Faster detection)*
+- Multiple file types to suit your needs.
 </td>
 </tr>
 </table>
 
 ⚠ **REQUIRED INSTALLATION NOTE:**  
-You **must** install `language.yml` to use placeholders!
-Otherwise, many messages will be unreadable! Every kick
-message contains placeholders that require `language.yml`.
+You **must** install [`language.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) to use placeholders!  
+Otherwise, many messages will be unreadable! Every message  
+contains placeholders that require the language file.
 
 ⚠ **GENERAL NOTE:**  
-`config.yml` **does not** include any checks!  
-Install `checks.yml` to make use of the optimizations.  
-The config file only includes minor changes to the base config!
+`config.yml` and `language.yml` **do not** include any checks!  
+Install [`checks.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) to utilize the main detection changes.
 
 ## 🔧 Setup
 ### Server Usage
 1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
-2. Rename the original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
+2. Rename Matrix's original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
 4. If you downloaded a file besides `checks.yml` or `language.yml`, rename the new file to `checks.yml` or `language.yml`.
-5. Restart your server!
+5. Run `/matrix reload`!
 
 ### Cloud Usage
-#### Method 1
-1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and replace your original `config.yml` with the downloaded file.
-2. Download [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) and replace your original `language.yml`, like above.
-3. Change `cloud_config.enable: false` to `cloud_config.enable: true`.
-4. Restart your server! It will now update the file every reboot.
-
-#### Method 2
-1. Download [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) and replace your original `language.yml` with the downloaded file.
-2. Open `config.yml` in your Matrix plugin folder. (`/plugins/Matrix/config.yml`)
-3. Set `cloud_config.enable: false` to `cloud_config.enable: true`.
-4. Change the line "`your configuration file link`" (cloud_config.links) to "`https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml`" or other checks files in the repository.  
-<sub>For specific Matrix versions, replace `main` with the Matrix version number.</sub>
+1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
+2. Rename Matrix's original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
+3. Change `cloud_config.enable: false` to `cloud_config.enable: true` in `config.yml`.
+4. Run `/matrix reload`! Matrix will now update the checks file on every reboot.  
+<sub>For specific Matrix versions, replace `MatrixChecks/main/` with the compatible Matrix version number.</sub>
 
 ## ❔ FAQ
-These checks may not work perfectly with your server.
-Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
-**This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.**
+These checks may not work perfectly with your server.  
+Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.  
+**This is not a drag-and-drop solution!** Some values may need to be changed to work best with your setup.
 
-Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
-These checks aims to mitigate those issues and improve what works well, but there's only so much we can do.
+Matrix Anticheat, like most, isn't a perfect anticheat. It itself has bugs that we cannot fix.  
+These checks aim to mitigate those issues and improve what works well, but there's only so much we can do.  
 Tested and configured for survival and minigame servers. Tweak the checks for your own server!
 
 ### 1. Checks file types
 #### checks.yml
-The main checks file. Includes the standard checks and everything advertised.  
+The main checks file. Includes all of the advertised features.  
 Conditional commands, optimized checks, increased speed, etc.
 
-#### /cloud/checks.yml
-Same as `checks.yml` but minified. It is a lot smaller in file size, but it is nearly impossible to read.  
-Because of its small file size though, it can be automatically updated fast on server startup.  
-This is optimized for cloud usage in `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
+#### language.yml
+The main language file. This file must be installed on every Matrix instance.  
+It contains all of the global placeholders used in `checks.yml`.
 
-#### /optional/error.language.yml
-Same as `language.yml` but with different kick messages.  
-The messages are from Minecraft's server disconnect messages such as "`java.net.SocketException: Connection reset`" and "`java.net.ConnectException: Connection timed out: no further information:`", as well as a few made-up ones to throw people off.
+#### config.yml
+An optional file that only changes a few things from the original config.  
+Includes organization, minor tweaks, and a pre-set cloud config for MatrixChecks.
+
+#### /optional/kickless.checks.yml
+Same as `checks.yml` but with all kick commands removed.  
+This is helpful for debugging or modifying checks without getting kicked.
 
 #### /optional/unknown.language.yml
-Same as `language.yml` but with different kick messages.  
-The messages remove the reason for the kick, replacing it with a generic message. A number is added to the end of the message for admins to check what check caused the kick, and to fix false positives.
+Same as `language.yml` but with different kick messages based on confusion.  
+All kick messages are replaced with a generic message and a number for staff.  
+This allows staff to know why a player was kicked without letting the player knowing which hacks to disable.
+
+#### /optional/error.language.yml
+Same as `language.yml` but with different kick messages based on confusion.  
+All kick messages are replaced with existing and made-up error messages.
+This confuses hackers since they have no idea what they were kicked for.
+
+#### /cloud/*
+The same as the files above, but minified. These are a lot smaller in file size but are nearly impossible to read.  
+Because of the small file sizes, the files can be automatically updated quickly on server startup.  
+These are optimized for cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
 
 ### 2. Suggested changes
-1. `nofall.damage: true` -> `nofall.damage: false` (For servers with fall-damage disabled)
-2. `speed.tolerance: 0.0225` -> `speed.tolerance: (number from 0.0125 to 0.035)` (Decrease if players are bypassing speed checks)
-3. `hitbox.max-reach: 3.2` -> `hitbox.max_reach: 3.3` (If you have issues with the hitbox check)  
-<sub>**NOTE**: Makes hitbox detection more lenient! Only change this if you *have* to.</sub>
-4. `killaura.modules.autoclicker.max_cps: 18` -> `killaura.modules.autoclicker.max_cps: (number from 8 to 24)` (Lower means less CPS, higher means more CPS)  
-<sub>**NOTE**: The highest possible human CPS is 24. This means the number should not be above that as that indicates a macro.</sub>
-5. `inventory.cancel_vl: 8` -> `inventory.cancel_vl: (number from 8 to 14)` (Increase if the check causes false positives)
-6. `fastuse.commands.24: ...` -> `fastuse.commands.(number): ...` (Decrease if players should be kicked quicker, increase if causes false positives)
-7. `block.fastplace.max_place_per_second: 16` -> `block.fastplace.max_place_per_second: (number from 9 to 19)` (Decrease if you think there are bypasses, increase if the check causes false positives)
-8. `place.modules.delay.min_delay: 7` -> `place.modules.delay.min_delay: (number 5 to 9)` (Decrease if legit players are getting too many violations, increase if bypassed)
+1. `autoclicker.max_cps: 18` → `16 - 24`: The highest human CPS is 24.
+2. `hitbox.max-reach: 3.2` → `3.3`: If you have issues with the hitbox check.
+3. `speed.tolerance: 0.0225` → `0.015 - 0.0325`: Decrease if players are bypass speed checks.
+4. `nofall.damage: true` → `false`: For servers with fall-damage disabled.
+5. `inventory.cancel_vl: 8` → `8 - 12`: Laggy connections can cause issues with low numbers.
+6. `delay.min_delay: 7` → `5 - 9`: Decrease if there are bypasses.
+7. `fastplace.max_place_per_second: 16` → `9 - 19`: Decrease if there are bypasses.
 
 ### 3. How do I report a change or false positive?
 **FIRST:**  
 Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a checks/config file. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
-You can also try using the default checks + config to see if the issue still stands. If so, it's not a problem with MatrixChecks.  
+You can also try using the default checks to see if the issue still stands. If so, it's not a problem with MatrixChecks.  
 Matrix's Discord: [Here](https://discord.gg/wjheaRj)  
 Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
 **THEN:**  
-Make an issue at the issues page with the right template. If you describe what you want changed/fixed well, chances are it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
+Make an issue at the issues page with the right template. If you describe what you want to be changed/fixed well, chances are it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
 Issues: [Here](https://github.com/Encode42/MatrixChecks/issues)  
 Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)
 
-### 4. There's weird things in my kick messages!
+### 4. There are weird things in my kick messages!
 Do the "weird things" look like "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
 This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/Encode42/MatrixChecks#server-usage)
 
 ### 5. Can I modify the files in MatrixChecks?
-Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyways.  
-You can also distribute it all you want or use it on a large network, just please don't claim it all as your own. (Credit the original authors)
+Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.  
+You can also distribute it all you want or use it on a large network; just please don't claim it all as your own. (Credit the original authors)
