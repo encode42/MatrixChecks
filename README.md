@@ -46,8 +46,9 @@ Install [`checks.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/m
 4. If you downloaded a file besides `checks.yml` or `language.yml`, rename the new file to `checks.yml` or `language.yml`.
 5. Run `/matrix reload`!
 
-Alternatively, you can just run `/matrix dlcfg PXJRHHQJNE` in-game  
-to download the latest stable build of MatrixChecks. (This ID changes!)
+Alternatively, you can just run `/matrix dlcfg POWZQTPWMD` in-game  
+to download the latest stable build of MatrixChecks. (This ID changes!)  
+The downside is that all comments are removed and the file size is reduced.
 
 ### Cloud Usage
 1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
