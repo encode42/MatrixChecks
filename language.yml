@@ -8,21 +8,18 @@
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
 # Made for and tested on Matrix 5.3.1+
 #
+#─── !!  NOTE  !! ────────────────────────────╮
+# THIS FILE DOES NOT INCLUDE ANY CHECKS!      │
+# INSTALL "checks.yml" TO UTILIZE THE CHANGES │
+#─────────────────────────────────────────────╯
 #
-#### !!  NOTE  !! 
-# THIS FILE DOES _NOT_ INCLUDE ANY CHECKS
-# INSTALL "checks.yml" TO MAKE USE OF OPTIMIZATIONS
-# THIS FILE ONLY INCLUDES THE MESSAGES PLACEHOLDERS!
+# The changes in this file are required by checks.yml.
+# It contains the global placeholders used in commands.
 #
-# The changes in "languages.yml" include all of the
-# placeholders required in violation/kick messages.
-#
-#
-# --------------------------------------------
-#                  Issues?
-# Follow the FAQs in README.md. (Question #3)
-# --------------------------------------------
-#
+# ┌─────────────────────────────────────────────┐
+# │                  Issues?                    │
+# │ Follow the FAQs in README.md. (Question #3) │
+# └─────────────────────────────────────────────┘
 # GitHub: https://github.com/Encode42/MatrixChecks
 # Discord: https://discord.gg/rjSkFyj
 
