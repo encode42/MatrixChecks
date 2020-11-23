@@ -99,7 +99,7 @@ killaura:
 
       # Makes the NPC visible. Most clients do not attack invisible entities.
       # Disabling will make fewer players confused, but the check less reliable.
-      visible: true
+      visible: false
 
       # Force a random name instead of the name of an online player.
       # Some clients detect duplicate online players.
@@ -801,7 +801,7 @@ autobot:
 ## Spam
 # Kicks players spamming messages in the chat.
 chat:
-  enable: true
+  enable: false
 
   # Minimum amount of time between messages (seconds)
   min_time: 2
