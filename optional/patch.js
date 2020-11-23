@@ -1,18 +1,18 @@
 /*
      ___
- __ /   \    _____  ___
-/   \___/   |     ||  _|
-\___/   \   | |_| || |_
-    \___/   |_| |_||___|
+ ___╱   ╲   ┌─────┐┌───╮
+╱   ╲___╱   │     ││  ┌╯
+╲___╱   ╲   │ │─│ ││  └╮
+    ╲___╱   └─┘ └─┘└───╯
             MatrixChecks
+
+        Tools for developers
+  This file isn't related to Matrix.
 */
 
-// This file doesn't include anything for the end-user.
-// It is only for development purposes.
+const fs = require("fs");
 
-// Define and require modules
-const fs               = require("fs");
-
+// Files where "matrix kick" is replaced
 const kickless = ["./optional/kickless.checks.yml"];
 
 // Replace all "matrix kick" commands

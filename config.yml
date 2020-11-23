@@ -1,6 +1,12 @@
-# MatrixChecks
+#      ___
+#  ___╱   ╲   ┌─────┐┌───╮
+# ╱   ╲___╱   │     ││  ┌╯
+# ╲___╱   ╲   │ │─│ ││  └╮
+#     ╲___╱   └─┘ └─┘└───╯
+#             MatrixChecks
+#
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
-# For Matrix 5.3.1+
+# Made for and tested on Matrix 5.3.1+
 #
 #
 #### !!  NOTE  !! 
@@ -14,7 +20,7 @@
 #
 # --------------------------------------------
 #                  Issues?
-# Follow the FAQ's in README.md. (Question #3)
+# Follow the FAQs in README.md. (Question #3)
 # --------------------------------------------
 #
 # GitHub: https://github.com/Encode42/MatrixChecks
@@ -34,7 +40,7 @@ cloud_config:
   enable: false
 
   # The links to download from.
-  # You can have multiple links here, in case a server goes down. (Only the first valid link is used)
+  # You can have multiple links in case a server goes down. (Only the first valid link is used)
   links:
     - 'https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml'
 
@@ -88,7 +94,7 @@ delete_time: 7
 # Enable if you want EVERYONE to be checked.
 disable_bypass_permission: false
 
-# Prevents players from relogging after being kicked. (seconds)
+# Prevents players from re-logging after being kicked. (seconds)
 relog_time: 15
 
 # Disable specific components used in checks.

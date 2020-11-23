@@ -1,6 +1,12 @@
-# MatrixChecks
+#      ___
+#  ___╱   ╲   ┌─────┐┌───╮
+# ╱   ╲___╱   │     ││  ┌╯
+# ╲___╱   ╲   │ │─│ ││  └╮
+#     ╲___╱   └─┘ └─┘└───╯
+#             MatrixChecks
+#
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
-# For Matrix 5.3.1+
+# Made for and tested on Matrix 5.3.1+
 #
 #
 #### !!  NOTE  !! 
@@ -14,7 +20,7 @@
 #
 # --------------------------------------------
 #                  Issues?
-# Follow the FAQ's in README.md. (Question #3)
+# Follow the FAQs in README.md. (Question #3)
 # --------------------------------------------
 #
 # GitHub: https://github.com/Encode42/MatrixChecks
@@ -119,7 +125,7 @@ global_placeholder:
   o_su: ')%break%'
   
   ## Customization
-  # Changes to commands, colors, etc.
+  # Changes for commands, colors, etc.
   # 
   # c_pr: Primary color
   # c_se: Secondary color

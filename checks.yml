@@ -1,6 +1,12 @@
-# MatrixChecks
+#      ___
+#  ___╱   ╲   ┌─────┐┌───╮
+# ╱   ╲___╱   │     ││  ┌╯
+# ╲___╱   ╲   │ │─│ ││  └╮
+#     ╲___╱   └─┘ └─┘└───╯
+#             MatrixChecks
+#
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
-# For Matrix 5.3.1+
+# Made for and tested on Matrix 5.3.1+
 #
 #
 #### !!  NOTE  !! 
@@ -13,13 +19,13 @@
 # Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
 # This is not a drag-and-drop solution! Some values may need to be changed to work best with your setup.
 #
-# Matrix Anticheat isn't a perfect anticheat. It itself has bugs that we cannot fix.
+# Matrix Anticheat, like most, isn't a perfect anticheat. It itself has bugs that we cannot fix.
 # These checks aim to mitigate those issues and improve what works well, but there's only so much we can do.
 # Tested and configured for survival and minigame servers. Tweak the checks for your own server!
 #
 # --------------------------------------------
 #                  Issues?
-# Follow the FAQ's in README.md. (Question #3)
+# Follow the FAQs in README.md. (Question #3)
 # --------------------------------------------
 #
 # GitHub: https://github.com/Encode42/MatrixChecks
@@ -33,7 +39,7 @@ killaura:
 
   # Modules used in the KillAura checks
   modules:
-    # OneHit check: Detects some blatant KillAura cheats in a short time.
+    # OneHit check: Detects some blatant KillAura hacks in a short time.
     onehit:
       enable: true
 
@@ -49,10 +55,10 @@ killaura:
     # AutoClicker check: Prevents players using an AutoClicker/macro.
     autoclicker:
       # Players can click 22 times per second if they jitter clicking.
-      # The average player clicks at 8 CPS, and only a very small number of people get to 16 CPS.
+      # The average player clicks at 8 CPS, and only a minuscule amount of people get to 16 CPS.
       #
       # Decrease if players are bypassing, increase if legit players are getting flagged.
-      # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
+      # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
       max_cps: 18
 
       # Enable if you don't care about AutoClicker/macros working on mobs.
@@ -91,7 +97,7 @@ killaura:
       async: true
 
       # Should NPCs use real entity IDs instead of randomly generating them?
-      # Some cheating clients can bypass random entity ID.
+      # Some hacked clients can bypass random entity ID.
       real_entity_id: true
 
       # Disables automatic spawning of NPCs. Disable this if you want Matrix to handle NPC spawning.
@@ -122,7 +128,7 @@ killaura:
         distance_attack_base: 3.0
         move_up_after_attack: false
 
-    # Machine Learning check: Uses machine learning clustering to better detect hacks.
+    # Machine Learning check: Uses machine learning clustering to detect hacks better.
     # Matrix provides a trained model by default. You can also train a model yourself for better server-specific checks.
     # Training tutorial: https://github.com/jiangdashao/Matrix-Issues/wiki/Machine-Learning-KillAura-check-Training-Tutorial
     #
@@ -133,7 +139,7 @@ killaura:
       # How many violations will be added when triggered?
       vl_weight: 8
 
-      # Which samples to disable.
+      # Which samples to disable
       #
       # Example:
       # disable_patterns:
@@ -187,14 +193,14 @@ killaura:
       # How many violations will be added when triggered?
       vl_weight: 10
 
-    # Aim check: Detects if player aiming is normal based on an algorithm.
+    # Aim check: Detects if player aiming is expected based on an algorithm.
     aim:
       enable: true
 
       # How many violations will be added when triggered?
       vl_weight: 14
 
-    # Direction check: Detects if aiming in player battle is normal based on motion prediction.
+    # Direction check: Detects if aiming in player battle is expected based on motion prediction.
     direction:
       enable: true
 
@@ -214,7 +220,7 @@ killaura:
         # How long to check for conditions.
         time: 5000
 
-        # What conditions to combine.
+        # What conditions to combine
         condition:
           - 'ka.one.11'
           - 'ka.smt'
@@ -240,8 +246,8 @@ hitbox:
   disable_worlds: []
 
   # Maximum reach distance.
-  # The max reach distance in Minecraft is 3.5 blocks; however, it's calculated in a strange way so most players won't reach that far.
-  # Anything farther than 3.4 blocks should be considered hacks; however, players may still reach that far.
+  # The max reach is 3.5 blocks; however, it's calculated strangely so that most players won't reach that far.
+  # Anything farther than 3.4 blocks should be considered hacks, but some players may reach that distance.
   max_reach: 3.2
 
   # How many moves should the Matrix trace back to the player?
@@ -253,7 +259,7 @@ hitbox:
   # Players with high ping may trigger false flags.
   max_ping: 250
   
-  # How the cheat will be cancelled (none, silent, cancel)
+  # How the hack will be canceled (none, silent, cancel)
   # none: Doesn't do anything to the player. (Not recommended)
   # silent: Damage the opposing player, but set the damage to 0.
   # cancel: Cancel the hit event entirely.
@@ -270,7 +276,7 @@ hitbox:
     reach_simple: 3
 
   # Dynamic violations change the VL weights based on the amount of reach.
-  # Flayers get X vl when using 3.5 reach, and X + 10 vl when using 5.0 reach.
+  # Flayers get X vl when using 3.5 reach, and X + 10 vl when using 5.0.
   # If enabled, "reach_target_standing" and "reach_target_moving" will no longer be used.
   # Note: Dynamic VL = "(current_reach - max_reach) * expander"
   dynamic_vl:
@@ -341,7 +347,7 @@ jesus:
   cancel_vl: 15
 
   # Should Matrix ignore whether players are in the swimming animation?
-  # This feature can prevent swimming status desync, but cause issues with player position.
+  # This feature can prevent swimming status desync but cause issues with player position.
   ignore_swim_pose: false
 
   # Violation Thresholds.
@@ -363,7 +369,7 @@ velocity:
   # Set to 35 to not cause false positives for laggy players.
   wait_time: 35
 
-  # Ignore players who are lagging or changing resource packs.
+  # Ignore players who are lagging or changing resource packs
   ignore_lag: true
 
   # How many violations will be added when triggered? (-1 = disable)
@@ -391,7 +397,7 @@ fly:
   cancel_vl: 48
 
   # Checks if players are allowed to fly.
-  # Note: Might be not compatible with some plugins.
+  # Note: Might not be compatible with some plugins.
   ability:
     enable: true
     vl_weight: 20
@@ -534,7 +540,7 @@ phase:
   disable_worlds: []
 
   # Freeze time (ms)
-  # How long to freeze player if they keep moving into blocks.
+  # How long to freeze players if they keep moving into blocks.
   freeze_time: 400
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
@@ -572,7 +578,7 @@ badpackets:
   buffer_size: 32
 
   # Freeze time (ms)
-  # How long to freeze player if they try to send too many movement packets.
+  # How long to freeze players if they try to send too many movement packets.
   freeze_time: 500
 
   # How many extra packets can the player send?
@@ -649,10 +655,10 @@ block:
       vl_weight: 1
 
       # This is like the AutoClicker/macro check.
-      # The average player clicks at 8 CPS, and only a very small amount of people get to 16 CPS.
+      # The average player clicks at 8 CPS, and only a minuscule amount of people get to 16 CPS.
       # 
       # Decrease if players are bypassing, increase if legit players are getting flagged.
-      # Lag may influence the detected CPS, set this number 1-2 higher than what you want.
+      # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
       max_place_per_second: 14
 
     # NoSwing check: Makes sure players have a swing animation.
@@ -709,7 +715,7 @@ scaffold:
       # Turn this down if legit players are getting violations
       min_delay: 8
 
-    # Right CPS check: Same as AutoClicker/macro check but for right-click.
+    # Right CPS check: Same as AutoClicker/macro check but for right-clicks.
     right_cps:
       enable: true
 
@@ -804,7 +810,7 @@ autofish:
     30: 'matrix kick %player% %gp_o_pr%%gp_h_af%%gp_o_su%%gp_n_fp%'
 
 ## AutoBot
-# Checks for mods such as Baritone.
+# Checks for mods such as Baritone
 # Note: This check only works for premium users.
 autobot:
   enable: true
