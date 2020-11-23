@@ -16,6 +16,8 @@ const fs   = require("fs");
 // Files that get minified
 const files = [
 	"./checks.yml",
+	"./language.yml",
+	"./config.yml",
 	"./optional/kickless.checks.yml",
 	"./optional/error.language.yml",
 	"./optional/unknown.language.yml"
