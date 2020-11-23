@@ -8,12 +8,11 @@
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
 # Made for and tested on Matrix 5.3.1+
 #
-#
-#### !!  NOTE  !! 
-# YOU _MUST_ INSTALL "language.yml" TO USE PLACEHOLDERS!
-# OTHERWISE, MANY MESSAGES WILL BE UNREADABLE! EVERY KICK
-# MESSAGE CONTAINS PLACEHOLDERS THAT REQUIRE "language.yml"
-#
+#─── !!  NOTE  !! ───────────────────────────────────────────╮
+# YOU *MUST* INSTALL "language.yml" TO USE PLACEHOLDERS!     │
+# OTHERWISE, MANY MESSAGES WILL BE UNREADABLE! EVERY MESSAGE │
+# CONTAINS PLACEHOLDERS THAT REQUIRE THE LANGUAGE FILE.      │
+#────────────────────────────────────────────────────────────╯
 #
 # These checks may not work perfectly with your server.
 # Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.
@@ -23,11 +22,10 @@
 # These checks aim to mitigate those issues and improve what works well, but there's only so much we can do.
 # Tested and configured for survival and minigame servers. Tweak the checks for your own server!
 #
-# --------------------------------------------
-#                  Issues?
-# Follow the FAQs in README.md. (Question #3)
-# --------------------------------------------
-#
+# ┌─────────────────────────────────────────────┐
+# │                  Issues?                    │
+# │ Follow the FAQs in README.md. (Question #3) │
+# └─────────────────────────────────────────────┘
 # GitHub: https://github.com/Encode42/MatrixChecks
 # Discord: https://discord.gg/rjSkFyj
 
