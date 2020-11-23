@@ -89,7 +89,3 @@ disabled_components: []
 # custom_vl_weight:
 #   - 'vel.ana:4'
 custom_vl_weight: []
-
-# Changes the prefix for Bedrock players.
-# NOTE: Must use Floodgate to change this.
-#geyser_prefix: "*" # Uncomment this line to enable. (Remove the first "#")
