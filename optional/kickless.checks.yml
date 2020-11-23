@@ -29,6 +29,7 @@
 # Prevents the player from using the KillAura/AimBot hack.
 killaura:
   enable: true
+  disable_worlds: []
 
   # Modules used in the KillAura checks
   modules:
@@ -99,7 +100,7 @@ killaura:
 
       # Makes the NPC visible. Most clients do not attack invisible entities.
       # Disabling will make fewer players confused, but the check less reliable.
-      visible: true
+      visible: false
 
       # Force a random name instead of the name of an online player.
       # Some clients detect duplicate online players.
@@ -236,6 +237,7 @@ killaura:
 # Note: This check is only strict when you attack other players and loose when you attack other entities.
 hitbox:
   enable: true
+  disable_worlds: []
 
   # Maximum reach distance.
   # The max reach distance in Minecraft is 3.5 blocks; however, it's calculated in a strange way so most players won't reach that far.
@@ -291,6 +293,7 @@ hitbox:
 # Prevents players from moving too fast.
 speed:
   enable: true
+  disable_worlds: []
 
   # Ignores unloaded chunks.
   ignore_unloaded_chunks: true
@@ -332,6 +335,7 @@ speed:
 # Prevents the player from moving too quickly or walking in/on liquids.
 jesus:
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   cancel_vl: 15
@@ -353,6 +357,7 @@ jesus:
 # Prevents players from using any type of AntiKnockback hacks.
 velocity:
   enable: true
+  disable_worlds: []
 
   # The amount of time to wait for players to respond to velocity (ticks)
   # Set to 35 to not cause false positives for laggy players.
@@ -380,6 +385,7 @@ velocity:
 fly:
   # Note: Speed check must also be enabled.
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   cancel_vl: 48
@@ -424,6 +430,7 @@ fly:
 # Stops players using elytra related hacks.
 elytra:
   enable: true
+  disable_worlds: []
 
   # Teleports players back to the original position.
   force_setback: true
@@ -448,6 +455,7 @@ elytra:
 # Note: Only works for 1.9+
 vehicle:
   enable: true
+  disable_worlds: []
 
   # Prevent players from using certain creatures as vehicles
   # All entity types: https://hub.spigotmc.org/javadocs/spigot/org/bukkit/entity/EntityType.html
@@ -486,6 +494,7 @@ vehicle:
 # Prevents the player from illegally interacting with entities and blocks.
 interact:
   enable: true
+  disable_worlds: []
 
    # Modules used in the interact checks
   modules:
@@ -522,6 +531,7 @@ interact:
 # Disallows players glitching through blocks.
 phase:
   enable: true
+  disable_worlds: []
 
   # Freeze time (ms)
   # How long to freeze player if they keep moving into blocks.
@@ -554,6 +564,7 @@ phase:
 # Prevents players from sending too many movement packets or sending illegal packets.
 badpackets:
   enable: true
+  disable_worlds: []
 
   # Buffer Size (ticks)
   # The larger the value, the slower the detection, but the more stable.
@@ -584,6 +595,7 @@ badpackets:
 # Stops players from using illegal inventory modifications such as ChestSteal.
 inventory:
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   # Keep strict for gamemodes that involve many chests.
@@ -614,6 +626,7 @@ inventory:
 # Stops players from breaking and placing blocks too fast.
 block:
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal breaking/placing blocks? (-1 = don't cancel)
   # Set to 8 for sky based gamemodes to prevent bridging players from falling.
@@ -668,6 +681,7 @@ block:
 # Prevents player bridging or towering faster than average.
 scaffold:
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal bridging/towering? (-1 = don't cancel)
   cancel_vl: 15
@@ -722,6 +736,7 @@ scaffold:
 # Stops players from eating or using items too quickly.
 fastuse:
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal item use? (-1 = don't cancel)
   cancel_vl: 1
@@ -741,6 +756,7 @@ fastuse:
 # Prevents players from shooting bows too quickly.
 fastbow:
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal bow use? (-1 = don't cancel)
   cancel_vl: 5
@@ -759,6 +775,7 @@ fastbow:
 # Prevents players from regaining health too quickly.
 fastheal:
   enable: true
+  disable_worlds: []
 
   # How many violations will be added when triggered?
   vl_weight: 2
@@ -775,6 +792,7 @@ fastheal:
 # Disables AutoFish hacks.
 autofish:
   enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel auto fishing? (-1 = don't cancel)
   cancel_vl: 15
@@ -790,6 +808,7 @@ autofish:
 # Note: This check only works for premium users.
 autobot:
   enable: true
+  disable_worlds: []
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -801,7 +820,8 @@ autobot:
 ## Spam
 # Kicks players spamming messages in the chat.
 chat:
-  enable: true
+  enable: false
+  disable_worlds: []
 
   # Minimum amount of time between messages (seconds)
   min_time: 2
