@@ -1,14 +1,16 @@
 # MatrixChecks
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
-# For Matrix 5.3+
+# For Matrix 5.3.1+
 #
-# !! NOTE !!
+#
+#### !!  NOTE  !! 
 # THIS FILE DOES _NOT_ INCLUDE ANY CHECKS
 # INSTALL "checks.yml" TO MAKE USE OF OPTIMIZATIONS
 # THIS FILE ONLY INCLUDES THE MESSAGES PLACEHOLDERS!
 #
 # The changes in "languages.yml" include all of the
 # placeholders required in violation/kick messages.
+#
 #
 # --------------------------------------------
 #                  Issues?
