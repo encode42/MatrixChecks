@@ -71,16 +71,16 @@ global_placeholder:
   # What a kicked player sees in the kick message.
   # These are shown as the first line of the kick.
   #
-  # h_ka: KillAura  | h_bp: BadPackets
-  # h_hb: HitBox    | h_iv: Inventory/ChestSteal
-  # h_sp: Speed     | h_fp: FastPlace/FastBreak
-  # h_js: Jesus     | h_sc: Scaffold
-  # h_vc: Velocity  | h_fu: FastUse
-  # h_fl: Fly       | h_fb: FastBow
-  # h_el: ElytraFly | h_fh: FastHeal
-  # h_vl: Vehicle   | h_af: Autofishing
-  # h_in: Interact  | h_ab: AutoBot
-  # h_ph: Phase     | h_sm: Spamming
+  # h_ka: KillAura  │ h_bp: BadPackets
+  # h_hb: HitBox    │ h_iv: Inventory/ChestSteal
+  # h_sp: Speed     │ h_fp: FastPlace/FastBreak
+  # h_js: Jesus     │ h_sc: Scaffold
+  # h_vc: Velocity  │ h_fu: FastUse
+  # h_fl: Fly       │ h_fb: FastBow
+  # h_el: ElytraFly │ h_fh: FastHeal
+  # h_vl: Vehicle   │ h_af: Autofishing
+  # h_in: Interact  │ h_ab: AutoBot
+  # h_ph: Phase     │ h_sm: Spamming
   h_ka: 'using combat related hacks'
   h_hb: 'using combat related hacks'
   h_sp: 'using speed related hacks'
@@ -127,10 +127,10 @@ global_placeholder:
   # c_pr: Primary color
   # c_se: Secondary color
   # C_me: Message color
-  # c_lw: "Low"    chance color
-  # c_lt: "Some"   chance color
+  # c_lw: "Low" chance color
+  # c_lt: "Some" chance color
   # c_md: "Medium" chance color
-  # c_hg: "High"   chance color
+  # c_hg: "High" chance color
   # c_ba: Separation bar character
   c_pr: "&b"
   c_se: "&7"
