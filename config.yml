@@ -38,6 +38,19 @@ cloud_config:
   links:
     - 'https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml'
 
+# Log all violations to a MySQL database
+database:
+  enable: false
+
+  # Database IP
+  address: 'localhost'
+
+  # Entry name
+  db: 'matrix'
+
+  username: 'root'
+  password: ''
+
 # Time between permission cache refresh. (seconds)
 permission_refresh_interval: 60
 
