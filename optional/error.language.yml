@@ -26,7 +26,7 @@
 ## Message Prefix
 # The prefix of all Matrix messages.
 # Shows up in violations, broadcasts, and commands.
-prefix: '&7[&bMatrix&7]&r '
+prefix: '&7[&6Matrix&7]&r '
 
 ## Kick Message
 # Message sent to players with the "matrix.notify" permission.
@@ -132,7 +132,7 @@ global_placeholder:
   # c_md: "Medium" chance color
   # c_hg: "High" chance color
   # c_ba: Separation bar character
-  c_pr: "&b"
+  c_pr: "&6"
   c_se: "&7"
   c_me: "&r"
   c_lw: "&a"
