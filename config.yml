@@ -55,7 +55,7 @@ database:
   password: ''
 
 # Time between permission cache refresh. (seconds)
-permission_refresh_interval: 60
+permission_refresh_interval: 120
 
 # Shows a lightning strike on players who are kicked via /matrix kick.
 kick_strike_lightning: false
@@ -75,10 +75,10 @@ tps_protection:
   enable: true
 
   # Disable checks below this number.
-  min_tps: 17.5
+  min_tps: 17.0
 
   # If the server doesn't respond within this amount of time, cancel the check.
-  lag_threshold: 1250
+  lag_threshold: 750
 
 # Logs all violations to /plugins/Matrix/logs.
 # Recommended to enable if you are debugging/monitoring checks.

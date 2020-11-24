@@ -152,8 +152,8 @@ killaura:
       # Data set availability threshold
       # If the collected data set is below the threshold, discard the data set.
       availability_threshold:
-        hits: 5 # The player must attack the entity X times.
-        clicks: 30  # The player must click the mouse X times
+        hits: 5       # The player must attack the entity X times.
+        clicks: 30    # The player must click the mouse X times
         rotations: 90 # The player must rotate the head X times
 
     # NoSwing check: Makes sure players have a swing animation.
@@ -175,7 +175,7 @@ killaura:
       enable: true
 
       # How many violations will be added when triggered?
-      vl_weight: 5
+      vl_weight: 6
 
     # Click AimBot check: Detects players keeping 100% accuracy when clicking.
     clickaimbot:
@@ -255,7 +255,7 @@ hitbox:
 
   # When should this check ignore players with high ping?
   # Players with high ping may trigger false flags.
-  max_ping: 250
+  max_ping: 275
   
   # How the hack will be canceled (none, silent, cancel)
   # none: Doesn't do anything to the player. (Not recommended)
