@@ -43,7 +43,7 @@ Install [`checks.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/m
 <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
 2. Rename Matrix's original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
-4. If you downloaded a file besides `checks.yml` or `language.yml`, rename the new file to `checks.yml` or `language.yml`.
+4. If you downloaded a file besides `checks.yml` or `language.yml`, rename the file to `checks.yml`/`language.yml`.
 5. Run `/matrix reload`!
 
 Alternatively, you can just run `/matrix dlcfg POWZQTPWMD` in-game  
@@ -53,9 +53,9 @@ The downside is that all comments are removed and the file size is reduced.
 ### Cloud Usage
 1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
 2. Rename Matrix's original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
-3. Change `cloud_config.enable: false` to `cloud_config.enable: true` in `config.yml`.
-4. Run `/matrix reload`! Matrix will now update the checks file on every reboot.  
-<sub>For specific Matrix versions, replace `MatrixChecks/main/` with the compatible Matrix version number.</sub>
+3. Change `cloud_config.enable: false` to `true` in `config.yml`.
+4. Run `/matrix reload`! The checks will now update on every reboot/reload.  
+<sub>For specific Matrix versions, replace `main` in the link with the compatible checks branch.</sub>
 
 ## ❔ FAQ
 These checks may not work perfectly with your server.  
@@ -102,22 +102,22 @@ These are optimized for cloud usage with `config.yml`. For instructions, read [C
 1. `autoclicker.max_cps: 18` → `16 - 24`: The highest human CPS is 24.
 2. `hitbox.max-reach: 3.2` → `3.3`: If you have issues with the hitbox check.
 3. `speed.tolerance: 0.0225` → `0.015 - 0.0325`: Decrease if players are bypass speed checks.
-4. `nofall.damage: true` → `false`: For servers with fall-damage disabled.
-5. `inventory.cancel_vl: 8` → `8 - 12`: Laggy connections can cause issues with low numbers.
-6. `delay.min_delay: 7` → `5 - 9`: Decrease if there are bypasses.
-7. `fastplace.max_place_per_second: 16` → `9 - 19`: Decrease if there are bypasses.
+4. `fly.setback_to_void: true` → `false`: For sky-based servers when players are being teleported to the void.
+5. `nofall.damage: true` → `false`: For servers with fall-damage disabled.
+6. `inventory.cancel_vl: 8` → `8 - 12`: Laggy connections can cause issues with low numbers.
+7. `delay.min_delay: 7` → `5 - 9`: Decrease if there are bypasses.
+8. `fastplace.max_place_per_second: 16` → `9 - 19`: Decrease if there are bypasses.
 
 ### 3. How do I report a change or false positive?
 **FIRST:**  
-Make sure this isn't an issue with the anticheat itself. Not all issues can be fixed with a checks/config file. Head over to Matrix's support Discord and ask about the issue, or report the issue at their issue tracker.  
-You can also try using the default checks to see if the issue still stands. If so, it's not a problem with MatrixChecks.  
-Matrix's Discord: [Here](https://discord.gg/wjheaRj)  
-Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
+Make sure this isn't an issue with the anticheat itself. Test with the [default Matrix config files](https://github.com/jiangdashao/Matrix-Issues) to see if it's an issue with MatrixChecks. If the issue persists, it's most likely an issue with Matrix. Not all issues can be fixed with a checks file tweak. Head over to [Matrix's support Discord](https://discord.gg/wjheaRj) and ask about the issue, or report the issue at their [issue tracker](https://github.com/jiangdashao/Matrix-Issues/issues).  
+- Matrix's Discord: [Here](https://discord.gg/wjheaRj)  
+- Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
 
 **THEN:**  
-Make an issue at the issues page with the right template. If you describe what you want to be changed/fixed well, chances are it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a pull request containing the change and why you made it.  
-Issues: [Here](https://github.com/Encode42/MatrixChecks/issues)  
-Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)
+Make an issue at the [issue page](https://github.com/Encode42/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/Encode42/MatrixChecks/pulls) containing the change and why you made it.  
+- Issue Page: [Here](https://github.com/Encode42/MatrixChecks/issues)  
+- Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)
 
 ### 4. There are weird things in my kick messages!
 Do the "weird things" look like "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
