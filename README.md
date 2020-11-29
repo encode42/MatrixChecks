@@ -52,7 +52,7 @@ The downside is that all comments are removed and the file size is reduced.
 
 ### Cloud Usage
 1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
-2. Rename Matrix's original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
+2. Rename Matrix's original `config.yml` and `language.yml` to something else. `config.old.yml`/`language.old.yml` will work.
 3. Change `cloud_config.enable: false` to `true` in `config.yml`.
 4. Run `/matrix reload`! The checks will now update on every reboot/reload.  
 <sub>For specific Matrix versions, replace `main` in the link with the compatible checks branch.</sub>
