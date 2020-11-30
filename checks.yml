@@ -96,7 +96,7 @@ killaura:
       async: true
 
       # Should NPCs use real entity IDs instead of randomly generating them?
-      # Some hacked clients can bypass random entity ID.
+      # Some hacked clients can bypass random entity IDs.
       real_entity_id: true
 
       # Disables automatic spawning of NPCs. Disable this if you want Matrix to handle NPC spawning.
