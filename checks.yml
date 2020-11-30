@@ -89,6 +89,7 @@ killaura:
 
       # How many violations will be added when triggered?
       # This should be a higher number because nobody should be able to swing 180 degrees behind them.
+      # Though network delay and asynchronous mode may allow vanilla players to hit the NPC while turning.
       vl_weight: 12
 
       # This decreases server load, but there may be a delay if the player turns quickly.
