@@ -665,7 +665,8 @@ block:
       # 
       # Decrease if players are bypassing, increase if legit players are getting flagged.
       # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
-      max_place_per_second: 14
+      # The max blocks placed per second when holding right-click is five BPS.
+      max_place_per_second: 13
 
     # NoSwing check: Makes sure players have a swing animation.
     noswing:
