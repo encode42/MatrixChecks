@@ -32,7 +32,7 @@ player_latency_protection:
   enable: true
 
 # Downloads checks.yml from an external web server on server start.
-# Of course, I recommend using this with MatrixConfig#cloud, the minified files in the repository.
+# Of course, I recommend using this with MatrixChecks#cloud, the minified files in the repository.
 # To enable this feature, just change "cloud_config.enable: false" to "true".
 # This will ignore your local checks.yml and update every reboot/reload!
 cloud_config:
