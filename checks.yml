@@ -252,12 +252,12 @@ hitbox:
   disable_worlds: []
 
   # Maximum reach distance.
-  # The max reach is 3.5 blocks; however, it's calculated strangely so that most players won't reach that far.
-  # Anything farther than 3.4 blocks should be considered hacks, but some players may reach that distance.
+  # The max reach is 4 blocks; however, with latency and strange calculations, most players won't reach that far.
+  # Anything farther than 3.4 blocks should be considered hacks, but some high ping players may reach that distance.
   max_reach: 3.2
 
-  # How many moves should the Matrix trace back to the player?
-  # You can set this higher to reduce false positives, but this will weaken HitBox detection.
+  # How many moves should Matrix trace back to the player?
+  # Set this higher to reduce false positives but weaken detection.
   # Do not set higher than 10, as that'll make this check useless.
   trace_back_length: 4
 
