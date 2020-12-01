@@ -27,21 +27,24 @@
 check_update: true
 
 # Reduce violations/flags triggered by players with high ping.
+# This can be disabled to prevent PingSpoof and rely on conditional commands.
 player_latency_protection:
   enable: true
 
 # Downloads checks.yml from an external web server on server start.
-# Of course, I recommend using the cloud-config for MatrixConfig, which is already provided.
-# To enable this feature, just set "enable" to true. This will ignore your local checks.yml.
+# Of course, I recommend using this with MatrixConfig#cloud, the minified files in the repository.
+# To enable this feature, just change "cloud_config.enable: false" to "true".
+# This will ignore your local checks.yml and update every reboot/reload!
 cloud_config:
   enable: false
 
-  # The links to download from.
-  # You can have multiple links in case a server goes down. (Only the first valid link is used)
+  # The links to download checks from.
+  # You can have multiple links in case one goes down. (Only the first valid link is used)
   links:
     - 'https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml'
 
-# Log all violations to a MySQL database
+# Log all violations to a MySQL database.
+# This allows you to view violations across servers.
 database:
   enable: false
 
@@ -55,16 +58,18 @@ database:
   password: ''
 
 # Time between permission cache refresh. (seconds)
+# Setting this too high can cause issues with "matrix.bypass".
 permission_refresh_interval: 120
 
-# Shows a lightning strike on players who are kicked via /matrix kick.
+# Summon a lightning strike on players who are kicked via /matrix kick.
 kick_strike_lightning: false
 
-# If enabled, Matrix will never do any setbacks/cancels. (Silent/Ghost mode)
+# If enabled, Matrix will never do any setbacks/cancels.
+# Staff will still be notified of violations.
 ghost_mode: false
 
 # Premium user credentials.
-# These are obtained after DMing RE with proof of purchase. (Don't share these!)
+# These are obtained after DMing RE, the owner, with proof of purchase. (Don't share this!)
 premium_user:
   user: ''
   password: ''
@@ -77,10 +82,10 @@ tps_protection:
   # Disable checks below this number.
   min_tps: 17.0
 
-  # If the server doesn't respond within this amount of time, cancel the check.
+  # If the server doesn't respond within this amount of time, cancel the check. (ms)
   lag_threshold: 750
 
-# Logs all violations to /plugins/Matrix/logs.
+# Logs all violations to the Matrix/logs directory.
 # Recommended to enable if you are debugging/monitoring checks.
 log_file: true
 
@@ -91,7 +96,7 @@ delete_time: 7
 # Enable if you want EVERYONE to be checked.
 disable_bypass_permission: false
 
-# Prevents players from re-logging after being kicked. (seconds)
+# Stops players from re-logging right after being kicked. (seconds)
 relog_time: 15
 
 # Disable specific components used in checks.

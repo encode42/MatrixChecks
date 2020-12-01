@@ -23,21 +23,22 @@
 # GitHub: https://github.com/Encode42/MatrixChecks
 # Discord: https://discord.gg/rjSkFyj
 
-## Message Prefix
-# The prefix of all Matrix messages.
+# Message Prefix
+# The prefix of most Matrix messages.
 # Shows up in violations, broadcasts, and commands.
 prefix: '&7[&6Matrix&7]&r '
 
-## Kick Message
-# Message sent to players with the "matrix.notify" permission.
-kick-format: '%player% has been kicked for hacking!'
-
-# Send a message to said players.
-kick-broadcast: true
-
-## Spam Warning Message
 # Message sent to players who are spamming.
 spam-warning: '&cPlease stop spamming the chat!'
+
+## Kick Message
+kick-broadcast: true
+
+# Message sent to staff when a player is kicked.
+kick-format: '%player% has been kicked for hacking!'
+
+# Relog message
+relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seconds.'
 
 ## Verbose Messages
 # How "/matrix verbose" messages are formatted.
@@ -51,9 +52,6 @@ spam-warning: '&cPlease stop spamming the chat!'
 # %ping%: The player's ping
 # %tps%: The server's TPS
 verbose-format: '&7%player% failed &b%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl% &7ping:%ping% lp:%lp% tps:%tps%'
-
-## Relog message
-relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seconds.'
 
 ## Global Placeholders
 # Phrases that will be replaced with what they're set to.
@@ -141,7 +139,7 @@ global_placeholder:
   c_hg: "&4"
   c_ba: "&8|"
 
-## Commands description
+## Commands help description
 # Used in the help command.
 commands:
   verbose: 'Toggle verbose messages (Show every suspicion)'
