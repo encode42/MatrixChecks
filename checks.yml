@@ -112,7 +112,7 @@ killaura:
       #
       # Enabling may cause issues if you have modified teams set up.
       # To make the NPCs support random names with teams, you must use the API.
-      force_random_name: false
+      force_random_name: true
 
       # NPC existence time (ticks)
       # base: The base existence time.
