@@ -2,7 +2,7 @@
 <div align="center">
 
 # MatrixChecks
-### The organized and optimized checks configuration for [Matrix Anticheat](https://www.mc-market.org/resources/13999), a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
+### The highly customizable, organized, and optimized checks configuration for [Matrix Anticheat](https://www.mc-market.org/resources/13999), a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
 <br/>
 </div>
 
@@ -10,8 +10,11 @@
 <tr>
 <td>
 
-**Make sure to use the checks meant for the version of Matrix you use!**  
-<sub>Sometimes Matrix premium updates faster than free; there will be another file if so.</sub>
+**Make sure to use files compatible with your Matrix version!**  
+<sub>
+  Sometimes Matrix Premium updates faster than Free; there will be a directory if so.  
+  Legacy releases compatible with older versions of Matrix have their own branches.
+</sub>
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
 [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
@@ -20,9 +23,9 @@
 
 #### Features
 - Works on free & premium Matrix.
-- Reduced false positives.
-- Improved warning messages.
-- Lots of customization.
+- Tons of customization.
+- Improved violation & kick messages.
+- Lower amount of false positives.
 - Stricter checks. *(Faster detection)*
 - Multiple file types to suit your needs.
 </td>
