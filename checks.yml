@@ -373,7 +373,7 @@ velocity:
 
   # The amount of time to wait for players to respond to velocity (ticks)
   # Set to 35 to not cause false positives for laggy players.
-  wait_time: 35
+  wait_time: 33
 
   # Ignore players who are lagging or changing resource packs
   ignore_lag: true
