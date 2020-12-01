@@ -89,13 +89,14 @@ killaura:
 
       # How many violations will be added when triggered?
       # This should be a higher number because nobody should be able to swing 180 degrees behind them.
+      # Though network delay and asynchronous mode may allow vanilla players to hit the NPC while turning.
       vl_weight: 12
 
       # This decreases server load, but there may be a delay if the player turns quickly.
       async: true
 
       # Should NPCs use real entity IDs instead of randomly generating them?
-      # Some hacked clients can bypass random entity ID.
+      # Some hacked clients can bypass random entity IDs.
       real_entity_id: true
 
       # Disables automatic spawning of NPCs. Disable this if you want Matrix to handle NPC spawning.
@@ -114,12 +115,19 @@ killaura:
       force_random_name: false
 
       # NPC existence time (ticks)
+      # base: The base existence time.
+      # attack_add: Time added when attacked.
+      # hit_box_add: Time added when hit.
       check_ticks:
         base: 100
         attack_add: 30
         hit_bot_add: 55
 
       # NPC motion settings
+      # distance_base: The base player distance.
+      # distance_random_size: RNG applied to the base distance.
+      # distance_attack_base: Distance from the player to attack.
+      # move_up_after_attack: Moves the NPC upwards after attacks.
       movement:
         distance_base: 3.2
         distance_random_size: 0.75
