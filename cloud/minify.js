@@ -34,7 +34,10 @@ files.forEach(e => {
 
 	// Read and write the file
 	const yamlFile = fs.readFileSync(e, "utf-8");
-	const yamlMini = yaml.safeDump(yaml.safeLoad(yamlFile), { "flowLevel": 0 }).trim();
+	const yamlMini = yaml.safeDump(yaml.safeLoad(yamlFile), { "flowLevel": 0 })
+		.replace(/'(\d*)'/g, "$1") // Remove '' around numbers
+		.replace(/, /g, ",")       // Remove space after ,
+		.trim();
 	fs.writeFileSync(`${fileName}`, yamlMini);
 
 	console.log(`Minified ${e}! Before: ${yamlFile.length} | After: ${yamlMini.length}\n`);
