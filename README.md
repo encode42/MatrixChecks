@@ -1,8 +1,8 @@
 <img src="https://repository-images.githubusercontent.com/282035636/2f414480-2e50-11eb-838b-ef0822e416bb" width="200px" align="right">
 <div align="center">
-<h1>MatrixChecks</h1>
-<h3>The optimized checks for <a href="https://www.mc-market.org/resources/13999">Matrix Anticheat</a>, a powerful, modern, and lightweight anticheat for Minecraft.</h3>
-<h4>These checks work for both the free and premium versions of Matrix.</h4>
+
+# MatrixChecks
+### The optimized checks for [Matrix Anticheat](https://www.mc-market.org/resources/13999), a powerful, modern, and lightweight anticheat for Minecraft.
 <br/>
 </div>
 
@@ -19,6 +19,7 @@
 <td>
 
 #### Features
+- Works on free & premium Matrix.
 - Reduced false positives.
 - Improved warning messages.
 - Lots of customization.
