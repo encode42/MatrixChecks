@@ -2,7 +2,7 @@
 <div align="center">
 
 # MatrixChecks
-### The optimized checks for [Matrix Anticheat](https://www.mc-market.org/resources/13999), a powerful, modern, and lightweight anticheat for Minecraft.
+### The organized and optimized checks configuration for [Matrix Anticheat](https://www.mc-market.org/resources/13999), a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
 <br/>
 </div>
 
