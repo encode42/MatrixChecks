@@ -119,6 +119,14 @@ global_placeholder:
   o_pr: '&cKicked for '
   o_su: '!%break%'
 
+  ## Commands
+  # Choose which commands are ran.
+  #
+  # r_no: Staff notify command
+  # r_ki: Kick/punishment command.
+  r_no: "matrix notify"
+  r_ki: "matrix kick"
+
   ## Customization
   # Changes for commands, colors, etc.
   # 
