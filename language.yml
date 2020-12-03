@@ -132,7 +132,7 @@ global_placeholder:
   # 
   # c_pr: Primary color
   # c_se: Secondary color
-  # C_me: Message color
+  # c_me: Message color
   # c_lw: "Low" chance color
   # c_sm: "Some" chance color
   # c_md: "Medium" chance color
