@@ -134,7 +134,7 @@ global_placeholder:
   # c_se: Secondary color
   # C_me: Message color
   # c_lw: "Low" chance color
-  # c_lt: "Some" chance color
+  # c_sm: "Some" chance color
   # c_md: "Medium" chance color
   # c_hg: "High" chance color
   # c_ba: Separation bar character
