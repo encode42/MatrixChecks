@@ -56,6 +56,7 @@ verbose-format: '&7%player% failed &b%check% &8(%component%) | &7%message% &8| &
 ## Global Placeholders
 # Phrases that will be replaced with what they're set to.
 # These placeholders work in "checks.yml" (Prefixed with "gp_")
+# PlaceholderAPI placeholders are supported in every global placeholder.
 #
 # Example:
 # global_placeholder:
@@ -65,6 +66,15 @@ verbose-format: '&7%player% failed &b%check% &8(%component%) | &7%message% &8| &
 # commands:
 #   25: 'matrix kick %player% Kicked for hacks! %gp_fp%'
 global_placeholder:
+  ## Optional
+  # Small changes that will be added to every kick message.
+  # Set these values to '' if you do not want to use them.
+  #
+  # o_pr: Kick message prefix
+  # o_su: Kick reason suffix
+  o_pr: '&cKicked for detected hacks! &7('
+  o_su: ')%break%'
+
   ## Kick Reasons
   # What a kicked player sees in the kick message.
   # These are shown as the first line of the kick.
@@ -110,31 +120,14 @@ global_placeholder:
   n_ui: '%break%&7This may be caused by an unstable internet connection.'
   n_sp: ''
 
-  ## Optional
-  # Small changes that will be added to every kick message.
-  # Set these values to '' if you do not want to use them.
-  #
-  # o_pr: Reason prefix
-  # o_su: Reason suffix
-  o_pr: '&cKicked for detected hacks! &7('
-  o_su: ')%break%'
-  
-  ## Commands
-  # Choose which commands are ran.
-  #
-  # r_no: Staff notify command
-  # r_ki: Kick/punishment command.
-  r_no: "matrix notify"
-  r_ki: "matrix kick"
-
   ## Customization
   # Changes for commands, colors, etc.
   # 
   # c_pr: Primary color
   # c_se: Secondary color
-  # C_me: Message color
+  # c_me: Message color
   # c_lw: "Low" chance color
-  # c_lt: "Some" chance color
+  # c_sm: "Some" chance color
   # c_md: "Medium" chance color
   # c_hg: "High" chance color
   # c_ba: Separation bar character
@@ -146,6 +139,14 @@ global_placeholder:
   c_md: "&6"
   c_hg: "&4"
   c_ba: "&8|"
+
+  ## Commands
+  # Choose which commands are run.
+  #
+  # r_no: Staff notify command
+  # r_ki: Kick/punishment command
+  r_no: "matrix notify"
+  r_ki: "matrix kick"
 
 ## Commands help description
 # Used in the help command.
