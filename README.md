@@ -17,7 +17,8 @@
 </sub>
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
-[![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)
+[![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)  
+[![Sponsored By TropicBYTE](https://img.shields.io/badge/Sponsored%20By-TropicBYTE-0b6898?style=flat-square)](https://www.tropicbyte.net) [![Information Below](https://img.shields.io/badge/Information%20Below-53b8dd?style=flat-square)]()
 </td>
 <td>
 
@@ -130,3 +131,6 @@ This file is required to replace those placeholders with what they're meant to b
 ### 5. Can I modify the files in MatrixChecks?
 Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.  
 You can also distribute it all you want or use it on a large network; just please don't claim it all as your own. (Credit the original authors)
+
+## 🖥️ TropicBYTE Hosting
+<img src="https://www.tropicbyte.net/assets/images/logo/logo.gif" width="200px" align="center">  **This project hosts a test server sponsored by [TropicByte](https://www.tropicbyte.net).**
