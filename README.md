@@ -135,5 +135,5 @@ You can also distribute it all you want or use it on a large network; just pleas
 ## 🖥️ TropicBYTE Hosting
 <img src="https://www.tropicbyte.net/assets/images/logo/logo.gif" width="200px" align="left">
 
-**This project hosts a test server sponsored by [TropicByte](https://www.tropicbyte.net).**
+**This project hosts a test server sponsored by [TropicByte](https://www.tropicbyte.net).**  
 Hosting on a new level. Powerful, fast, friendly, reliable and secure!  
