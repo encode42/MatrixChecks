@@ -133,4 +133,7 @@ Yes! I encourage you to do so. Since all servers are different, you most likely 
 You can also distribute it all you want or use it on a large network; just please don't claim it all as your own. (Credit the original authors)
 
 ## 🖥️ TropicBYTE Hosting
-<img src="https://www.tropicbyte.net/assets/images/logo/logo.gif" width="200px" align="center">  **This project hosts a test server sponsored by [TropicByte](https://www.tropicbyte.net).**
+<img src="https://www.tropicbyte.net/assets/images/logo/logo.gif" width="200px" align="left">
+
+**This project hosts a test server sponsored by [TropicByte](https://www.tropicbyte.net).**
+Hosting on a new level. Powerful, fast, friendly, reliable and secure!  
