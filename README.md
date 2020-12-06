@@ -18,7 +18,7 @@
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
 [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)  
-[![Sponsored By TropicBYTE](https://img.shields.io/badge/Sponsored%20By-TropicBYTE-53b8dd?style=flat-square)](https://www.tropicbyte.net)[![More Information Below](https://img.shields.io/badge/More%20Information%20Below-0b6898?style=flat-square)](https://github.com/Encode42/MatrixChecks/blob/tropicbyte/README.md#%EF%B8%8F-tropicbyte-hosting)
+[![Sponsored By TropicBYTE](https://img.shields.io/badge/Sponsored%20By-TropicBYTE-53b8dd?style=flat-square)](https://www.tropicbyte.net)[![More Information Below](https://img.shields.io/badge/More%20Information%20Below-0b6898?style=flat-square)](https://github.com/Encode42/MatrixChecks/blob/tropicbyte/README.md#%EF%B8%8F-tropicbyte
 </td>
 <td>
 
@@ -136,6 +136,6 @@ You can also distribute it all you want or use it on a large network; just pleas
 <img src="https://www.tropicbyte.net/assets/images/logo/logo.gif" width="200px" align="left">
 
 ### This project hosts a test server sponsored by [TropicBYTE Hosting](https://www.tropicbyte.net).
-#### Hosting on a new level. Powerful, fast, friendly, reliable and secure!
+### Hosting on a new level. Powerful, fast, friendly, reliable and secure!
 **Use your own panel, software, tools and more with vServers for as low as €4.89/mo,**  
 **or host your own website with DDOS protection for 0.79€/mo.**
