@@ -132,8 +132,10 @@ This file is required to replace those placeholders with what they're meant to b
 Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.  
 You can also distribute it all you want or use it on a large network; just please don't claim it all as your own. (Credit the original authors)
 
-## 🖥️ TropicBYTE Hosting
+## 🖥️ TropicBYTE
 <img src="https://www.tropicbyte.net/assets/images/logo/logo.gif" width="200px" align="left">
 
-**This project hosts a test server sponsored by [TropicByte](https://www.tropicbyte.net).**  
-Hosting on a new level. Powerful, fast, friendly, reliable and secure!  
+### This project hosts a test server sponsored by [TropicBYTE Hosting](https://www.tropicbyte.net).
+**Hosting on a new level. Powerful, fast, friendly, reliable and secure!**  
+Use your own panel, software, tools and more with vServers for as low as €4.89/mo,  
+or host your own website with DDOS protection for 0.79€/mo.
