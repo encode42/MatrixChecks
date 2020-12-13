@@ -35,7 +35,7 @@ spam-warning: '&cPlease stop spamming the chat!'
 kick-broadcast: true
 
 # Message sent to staff when a player is kicked.
-kick-format: '%player% has been kicked for hacking!'
+kick-format: '%player% has been kicked for potentially hacking!'
 
 # Relog message
 relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seconds.'
