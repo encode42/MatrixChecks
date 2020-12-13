@@ -11,7 +11,7 @@
 */
 
 
-// Ignored due to redundancy
+// Not used due to redundancy
 
 
 const fs = require("fs");

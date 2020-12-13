@@ -1,4 +1,4 @@
-name: Patch and minify files
+name: Minify files
 on: [push]
 jobs:
   patch:
@@ -19,14 +19,14 @@ jobs:
 
       - name: Run scripts
         run: |
-          node cloud/minify.js
+          node ./github/scripts/minify.js
 
       - name: Commit files
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add optional/*.yml cloud/*.yml
-          git commit -m "Patch and minify files" || echo "No changes were found."
+          git commit -m "Minify files" || echo "No changes were found."
 
       - name: Push changes
         uses: ad-m/github-push-action@master
