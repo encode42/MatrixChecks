@@ -1,0 +1,22 @@
+{
+  "name": "matrixchecks",
+  "version": "1.0.0",
+  "description": "Tools for MatrixChecks",
+  "main": "matrixchecks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Encode42/MatrixChecks.git"
+  },
+  "author": "Encode42",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Encode42/MatrixChecks/issues"
+  },
+  "homepage": "https://github.com/Encode42/MatrixChecks#readme",
+  "dependencies": {
+    "js-yaml": "^3.14.1"
+  }
+}

@@ -14,8 +14,8 @@ jobs:
 
       - name: Download required modules
         run: |
-          cd cloud
-          npm i js-yaml
+          cd .github/scripts
+          npm i
 
       - name: Run scripts
         run: |
