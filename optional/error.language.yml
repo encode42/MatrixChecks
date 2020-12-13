@@ -131,6 +131,11 @@ global_placeholder:
   # c_md: "Medium" chance color
   # c_hg: "High" chance color
   # c_ba: Separation bar character
+  # c_he: Whether or not to include hover flag
+  #   Set this to "-h" for true, "" for false.
+  #   This is useful for different notification commands.
+  # c_hm: Hover messages on notifications
+  #   Only works when "c_he" is set to "-h"!
   c_pr: "&6"
   c_se: "&7"
   c_me: "&r"
@@ -139,14 +144,23 @@ global_placeholder:
   c_md: "&6"
   c_hg: "&4"
   c_ba: "&8|"
+  c_he: "-h"
+  c_hm: "%gp_c_pr%%component% %gp_c_ba% %gp_c_pr%%ping% Ping %gp_c_ba% %gp_c_pr%%tps% TPS"
 
   ## Commands
   # Choose which commands are run.
   #
   # r_no: Staff notify command
   # r_ki: Kick/punishment command
+  # r_ce: Whether or not to include command flag
+  #   Set this to "-c" for true, "" for false.
+  #   This is useful for different notification commands.
+  # r_cc: Notification click command
+  #   Only works when "r_ce" is set to "-c"!
   r_no: "matrix notify"
   r_ki: "matrix kick"
+  r_ce: "-c"
+  r_cc: "/tp %player%"
 
 ## Commands help description
 # Used in the help command.
