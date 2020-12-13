@@ -1,0 +1,178 @@
+#      ___
+#  ___╱   ╲   ┌─────┐┌───╮
+# ╱   ╲___╱   │     ││ ┌─╯
+# ╲___╱   ╲   │ ├─┤ ││ └─╮
+#     ╲___╱   └─┘ └─┘└───╯
+#             MatrixChecks
+#
+# The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
+# Made for and tested on Matrix 5.3.1+
+#
+#─── !!  NOTE  !! ────────────────────────────╮
+# THIS FILE DOES NOT INCLUDE ANY CHECKS!      │
+# INSTALL "checks.yml" TO UTILIZE THE CHANGES │
+#─────────────────────────────────────────────╯
+#
+# The changes in this file are required by checks.yml.
+# It contains the global placeholders used in commands.
+#
+# ┌─────────────────────────────────────────────┐
+# │                  Issues?                    │
+# │ Follow the FAQs in README.md. (Question #3) │
+# └─────────────────────────────────────────────┘
+# GitHub: https://github.com/Encode42/MatrixChecks
+# Discord: https://discord.gg/rjSkFyj
+
+# Message Prefix
+# The prefix of most Matrix messages.
+# Shows up in violations, broadcasts, and commands.
+prefix: '&7[&6Matrix&7]&r '
+
+# Message sent to players who are spamming.
+spam-warning: '&cPlease stop spamming the chat!'
+
+## Kick Message
+kick-broadcast: true
+
+# Message sent to staff when a player is kicked.
+kick-format: '%player% has been kicked for hacking!'
+
+# Relog message
+relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seconds.'
+
+## Verbose Messages
+# How "/matrix verbose" messages are formatted.
+# %check%: Check that was triggered
+# %message%: Information on the check
+# %component%: Exact check that was triggered
+# %player%: Player that triggered the check
+# %vl%: Amount of violations the player has
+# %add_vl%: How many violations were added
+# %lp%: The player's LagPoint
+# %ping%: The player's ping
+# %tps%: The server's TPS
+verbose-format: '&7%player% failed &b%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl% &7ping:%ping% lp:%lp% tps:%tps%'
+
+## Global Placeholders
+# Phrases that will be replaced with what they're set to.
+# These placeholders work in "checks.yml" (Prefixed with "gp_")
+# PlaceholderAPI placeholders are supported in every global placeholder.
+#
+# Example:
+# global_placeholder:
+#   fp: "Contact an admin."
+#
+# // checks.yml
+# commands:
+#   25: 'matrix kick %player% Kicked for hacks! %gp_fp%'
+global_placeholder:
+  ## Optional
+  # Small changes that will be added to every kick message.
+  # Set these values to '' if you do not want to use them.
+  #
+  # o_pr: Kick message prefix
+  # o_su: Kick reason suffix
+  o_pr: 'would''ve been kicked for '
+  o_su: '!'
+
+  ## Kick Reasons
+  # What a kicked player sees in the kick message.
+  # These are shown as the first line of the kick.
+  #
+  # h_ka: KillAura  │ h_bp: BadPackets
+  # h_hb: HitBox    │ h_iv: Inventory/ChestSteal
+  # h_sp: Speed     │ h_fp: FastPlace/FastBreak
+  # h_js: Jesus     │ h_sc: Scaffold
+  # h_vc: Velocity  │ h_fu: FastUse
+  # h_fl: Fly       │ h_fb: FastBow
+  # h_el: ElytraFly │ h_fh: FastHeal
+  # h_vl: Vehicle   │ h_af: Autofishing
+  # h_in: Interact  │ h_ab: AutoBot
+  # h_ph: Phase     │ h_sm: Spamming
+  h_ka: 'using combat related hacks'
+  h_hb: 'using combat related hacks'
+  h_sp: 'using speed related hacks'
+  h_js: 'using water related hacks'
+  h_vc: 'using knockback related hacks'
+  h_fl: 'using fly related hacks'
+  h_el: 'using fly related hacks'
+  h_vl: 'unusually interacting with entity vehicles'
+  h_in: 'unusually interacting with blocks or entities'
+  h_ph: 'phasing through blocks'
+  h_bp: 'sending unusual packets to the server'
+  h_iv: 'manipulating inventories too fast'
+  h_fp: 'placing or breaking blocks too fast'
+  h_sc: 'placing or breaking blocks too fast'
+  h_fu: 'using items too fast'
+  h_fb: 'using items too fast'
+  h_fh: 'sending unusual packets to the server'
+  h_af: 'autofishing'
+  h_ab: 'using an auto bot'
+  h_sm: 'spamming the chat'
+
+  ## Kick Notes
+  # These placeholders appear after certain kick reasons.
+  #
+  # n_fp: Report false-kick message
+  # n_ui: Kicks based on bad ping
+  # n_sp: Chat spamming message
+  n_fp: ''
+  n_ui: ''
+  n_sp: ''
+
+  ## Customization
+  # Changes for commands, colors, etc.
+  # 
+  # c_pr: Primary color
+  # c_se: Secondary color
+  # c_me: Message color
+  # c_lw: "Low" chance color
+  # c_sm: "Some" chance color
+  # c_md: "Medium" chance color
+  # c_hg: "High" chance color
+  # c_ba: Separation bar character
+  # c_he: Whether or not to include hover flag
+  #   Set this to "-h" for true, "" for false.
+  #   This is useful for different notification commands.
+  # c_hm: Hover messages on notifications
+  #   Only works when "c_he" is set to "-h"!
+  c_pr: "&6"
+  c_se: "&7"
+  c_me: "&r"
+  c_lw: "&a"
+  c_sm: "&e"
+  c_md: "&6"
+  c_hg: "&4"
+  c_ba: "&8|"
+  c_he: "-h"
+  c_hm: "%gp_c_pr%%component% %gp_c_ba% %gp_c_pr%%ping% Ping %gp_c_ba% %gp_c_pr%%tps% TPS"
+
+  ## Commands
+  # Choose which commands are run.
+  #
+  # r_no: Staff notify command
+  # r_ki: Kick/punishment command
+  # r_ce: Whether or not to include command flag
+  #   Set this to "-c" for true, "" for false.
+  #   This is useful for different notification commands.
+  # r_cc: Notification click command
+  #   Only works when "r_ce" is set to "-c"!
+  r_no: "matrix notify"
+  r_ki: "matrix notify"
+  r_ce: "-c"
+  r_cc: "/tp %player%"
+
+## Commands help description
+# Used in the help command.
+commands:
+  verbose: 'Toggle verbose messages (Show every suspicion)'
+  reload: 'Reload all configs'
+  notify: 'Send a message to players with the notify permission'
+  toggle-notify: 'Toggle the notify output'
+  gui: 'Open the control panel'
+  violations: 'Open the violations GUI'
+  npc: 'Spawn a hack detection NPC behind a player'
+  kick: 'Use Matrix to kick a player'
+  ping: 'Get a player''s latency value'
+  cps: 'Monitor a player''s CPS for X seconds'
+  msg: 'Send warning messages to a player'
