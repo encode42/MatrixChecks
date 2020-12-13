@@ -1,7 +1,7 @@
 name: Minify files
 on: [push]
 jobs:
-  patch:
+  minify:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -19,7 +19,7 @@ jobs:
 
       - name: Run scripts
         run: |
-          node ./github/scripts/minify.js
+          node .github/scripts/minify.js
 
       - name: Commit files
         run: |
