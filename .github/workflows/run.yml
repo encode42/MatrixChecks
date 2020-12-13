@@ -19,7 +19,6 @@ jobs:
 
       - name: Run scripts
         run: |
-          node optional/patch.js
           node cloud/minify.js
 
       - name: Commit files
