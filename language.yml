@@ -51,7 +51,7 @@ relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seco
 # %lp%: The player's LagPoint
 # %ping%: The player's ping
 # %tps%: The server's TPS
-verbose-format: '&7%player% failed &b%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl% &7ping:%ping% lp:%lp% tps:%tps%'
+verbose-format: '&6%player% failed &b%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl% &7ping:%ping% lp:%lp% tps:%tps%'
 
 ## Global Placeholders
 # Phrases that will be replaced with what they're set to.
