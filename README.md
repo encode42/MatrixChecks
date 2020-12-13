@@ -83,8 +83,8 @@ It contains all of the global placeholders used in `checks.yml`.
 An optional file that only changes a few things from the original config.  
 Includes organization, minor tweaks, and a pre-set cloud config for MatrixChecks.
 
-#### /optional/kickless.checks.yml
-Same as `checks.yml` but with all kick commands removed.  
+#### /optional/kickless.language.yml
+Same as `language.yml` but with the kick command disabled.
 This is helpful for debugging or modifying checks without getting kicked.
 
 #### /optional/unknown.language.yml
