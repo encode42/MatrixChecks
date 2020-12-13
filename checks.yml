@@ -133,36 +133,12 @@ killaura:
         distance_attack_base: 3.0
         move_up_after_attack: false
 
-    # Machine Learning check: Uses machine learning clustering to detect hacks better.
-    # Matrix provides a trained model by default. You can also train a model yourself for better server-specific checks.
-    # Training tutorial: https://github.com/jiangdashao/Matrix-Issues/wiki/Machine-Learning-KillAura-check-Training-Tutorial
-    #
-    # Note: This check is more useful on 1.8.X servers. It still works on 1.9+, but with less effectiveness.
-    # This check will be removed soon due to ineffectiveness, most likely in the next Matrix release.
-    machine_learning:
+    # Analysis check: Observes patterns in combat that are seen in hacks
+    analysis:
       enable: true
 
       # How many violations will be added when triggered?
-      vl_weight: 8
-
-      # Which samples to disable
-      #
-      # Example:
-      # disable_patterns:
-      #  - "#66"
-      #  - "#67"
-      disable_patterns: {}
-
-      # Duration of data collection (ms)
-      # Longer collection time means slower detection but better accuracy.
-      collect_data_duration: 6000
-
-      # Data set availability threshold
-      # If the collected data set is below the threshold, discard the data set.
-      availability_threshold:
-        hits: 5       # Players must attack the entity X times.
-        clicks: 30    # Players must click the mouse X times
-        rotations: 90 # Players must rotate the head X times
+      vl_weight: 20
 
     # NoSwing check: Makes sure players have a swing animation.
     noswing:
@@ -173,20 +149,6 @@ killaura:
 
     # Critical check: Prevents players from making abnormal crit attacks.
     critical:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 5
-
-    # Snap check: Checks players for abnormally fast player aim.
-    snap:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 6
-
-    # Click AimBot check: Detects players with 100% click accuracy.
-    clickaimbot:
       enable: true
 
       # How many violations will be added when triggered?
@@ -205,13 +167,6 @@ killaura:
 
       # How many violations will be added when triggered?
       vl_weight: 14
-
-    # Direction check: Similar to the Aim check but with a motion algorithm.
-    direction:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 3
 
     # Smooth check: Checks if a player's aim is too smooth.
     smooth:
