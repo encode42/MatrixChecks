@@ -16,9 +16,10 @@ const fs   = require("fs");
 // Files that get minified
 const files = [
 	"./checks.yml",
+	"./free.checks.yml",
 	"./language.yml",
 	"./config.yml",
-	"./optional/kickless.checks.yml",
+	"./optional/kickless.language.yml",
 	"./optional/error.language.yml",
 	"./optional/unknown.language.yml"
 ];
@@ -26,6 +27,8 @@ const files = [
 // Minify each file
 let minifiedAmount = 0;
 files.forEach(e => {
+	if (!fs.existsSync(e)) return console.log(`${e} does not exist! Skipping...\n`);
+
 	// Get the path and destination
 	const filePath = e.split("/");
 	const fileName = `./cloud/${filePath.pop()}`;
