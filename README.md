@@ -138,4 +138,4 @@ You can also distribute it all you want or use it on a large network; just pleas
 ### This project hosts a test server sponsored by [TropicBYTE Hosting](https://www.tropicbyte.net).
 ### Hosting on a new level. Powerful, fast, friendly, reliable and secure!
 **Use your own panel, software, tools and more with vServers for as low as €4.89/mo,**  
-**or host your own website with DDOS protection for 0.79€/mo.**
+**or host your own website with DDOS protection for €0.79/mo.**
