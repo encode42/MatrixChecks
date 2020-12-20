@@ -42,16 +42,18 @@ relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seco
 
 ## Verbose Messages
 # How "/matrix verbose" messages are formatted.
+#
 # %check%: Check that was triggered
 # %message%: Information on the check
 # %component%: Exact check that was triggered
 # %player%: Player that triggered the check
 # %vl%: Amount of violations the player has
 # %add_vl%: How many violations were added
-# %lp%: The player's LagPoint
+# %version%: The player's client version
 # %ping%: The player's ping
+# %lp%: The player's LagPoint
 # %tps%: The server's TPS
-verbose-format: '&7%player% failed &b%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl% &7client:%version %ping:%ping% lp:%lp% tps:%tps%'
+verbose-format: '&7%player% failed &6%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl% &7client:%version% ping:%ping% lp:%lp% tps:%tps%'
 
 ## Global Placeholders
 # Phrases that will be replaced with what they're set to.
