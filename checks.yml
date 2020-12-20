@@ -6,7 +6,7 @@
 #             MatrixChecks
 #
 # The optimized checks for Matrix Anticheat, a powerful anticheat for Minecraft.
-# Made for and tested on Matrix 5.3.1+
+# Made for and tested on Matrix 5.6+
 #
 #─── !!  NOTE  !! ───────────────────────────────────────────╮
 # YOU *MUST* INSTALL "language.yml" TO USE PLACEHOLDERS!     │
@@ -37,61 +37,62 @@ killaura:
 
   # Modules used in the KillAura checks
   modules:
-    # OneHit check: Detects some blatant KillAura hacks in a short time.
-    onehit:
-      enable: true
+    # OneHit check: Detects some bla
+    # Protocol check: Ensure combat is following vanilla styles.
+    protocol:
+      # Cancel the hit if detected.
+      cancel_illegal_hit: true
+
+      # The protocols that are used.
+      # All of these are unknown and secret.
+      check_protocol_1: true
+      check_protocol_2: true
+      check_protocol_3: true
+      check_protocol_4: true
+      check_protocol_5: true
+      check_protocol_6: true
 
       # How many violations will be added when triggered?
-      vl_weight: 4
+      vl_weight: 5
 
-      # Disable if there are false positives when players have high latency.
-      disable_packet_order_check: false
+    # Aimbot check: Compare combat to aimbot combat.
+    aimbot:
+      # The checks that are compared.
+      # These are best-guesses as they are undocumented.
+      check_aimbot_sync: true         # Unknown and "secret" checks
+      check_aimbot_shake: true        # Sporadic and uncontrollable shaking
+      check_aimbot_snap: true         # Aim suddenly snapping to entities
+      check_aimbot_sensitivity: true  # High aim accuracy/sensitivity
+      check_aimbot_acceleration: true # Sudden or unexpected aim acceleration
+      check_aimbot_magic_a: true      # Unknown and "secret" checks
+      check_aimbot_magic_b: true      # Unknown and "secret" checks
 
-      # Disable if there are false positives for some players who click fast.
-      disable_dead_hit_check: false
+      # How many violations will be added when triggered?
+      vl_weight: 10
 
-    # AutoClicker check: Prevents players using an AutoClicker/macro.
-    autoclicker:
+    # Click check: Detects abnormal clicking.
+    click:
+      buffer_size: 20 # Do not modify!
       # Players can click 22 times per second if they jitter clicking.
       # The average player clicks at 8 CPS, and only a minuscule amount of people get to 16 CPS.
       #
       # Decrease if players are bypassing, increase if legit players are getting flagged.
       # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
+      check_cps: true
       max_cps: 18
 
-      # Enable if you don't care about AutoClicker/macros working on mobs.
-      not_check_attacking_mobs: false
+      # Timing-related checks
+      check_swing: true
+      check_timing: true
 
       # How many violations will be added when triggered?
-      vl_weights:
-        cps: 8
-        delay: 4 # Might cause false flags when jitter clicking. (-1 = disable)
-        cps_long: 6
-        v19plus: 6
-
-    # Click check: Makes sure players don't have impossible accuracy.
-    click:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 30
-
-      # How sensitive this check will be (0, 1, 2)
-      # 0: High sensitivity. Detects many types of KillAura, but there are many false flags. (Not recommended)
-      # 1: Medium sensitivity. Detects most types of KillAura with low false positives.
-      # 2: Low sensitivity. Detects most types of KillAura, but is slow.
-      sensitivity: 1
+      vl_weight: 8
 
     # NPC check: Generates a fake player directly behind players.
     # This detects if the player can swing 180° behind them instantly.
     # Only the target can see the NPC! It is invisible to everyone else.
     npc:
       enable: true
-
-      # How many violations will be added when triggered?
-      # This should be a higher number because nobody should be able to swing 180 degrees behind them.
-      # Though network delay and asynchronous mode may allow vanilla players to hit the NPC while turning.
-      vl_weight: 12
 
       # This decreases server load, but there may be a delay if players turn quickly.
       async: true
@@ -133,19 +134,10 @@ killaura:
         distance_attack_base: 3.0
         move_up_after_attack: false
 
-    # Analysis check: Observes patterns in combat that are seen in hacks
-    analysis:
-      enable: true
-
       # How many violations will be added when triggered?
-      vl_weight: 20
-
-    # NoSwing check: Makes sure players have a swing animation.
-    noswing:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 4
+      # This should be a higher number because nobody should be able to swing 180 degrees behind them.
+      # Though network delay and asynchronous mode may allow vanilla players to hit the NPC while turning.
+      vl_weight: 12
 
     # Critical check: Prevents players from making abnormal crit attacks.
     critical:
@@ -154,37 +146,17 @@ killaura:
       # How many violations will be added when triggered?
       vl_weight: 5
 
-    # AimAssist check: Detects simple aim hacks.
-    aimassist:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 10
-
-    # Aim check: Compares player aim based on an expected algorithm.
-    aim:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 14
-
-    # Smooth check: Checks if a player's aim is too smooth.
-    smooth:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 14
-
-    # Combine check: Adds additional violations if multiple checks are triggered at once
+    # Combine check: Additional violations if multiple checks are triggered at once.
     combine:
-      test:
+      # Name of the combination
+      aimbot_with_reach:
         # How long to check for conditions.
         time: 5000
 
-        # What conditions to combine
+        # What conditions to combine.
         condition:
-          - 'ka.one.11'
-          - 'ka.smt'
+          - 'ka.abt.ma'
+          - 'hb.reach'
 
         # How many violations will be added when triggered?
         action: 8
@@ -755,21 +727,6 @@ fastheal:
     20: '%gp_r_no% %gp_c_me%%player% tried to regain health quickly %gp_c_ba% %gp_c_se%FastHeal %gp_c_ba% %gp_c_pr%2/3 %gp_c_hg%(20VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
     30: 'coc %player% if -lp-<20 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
     45: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
-
-## AutoFish
-# Stops auto fishing builds and AutoFish hacks.
-autofish:
-  enable: true
-  disable_worlds: []
-
-  # How many violations are needed to cancel auto fishing? (-1 = don't cancel)
-  cancel_vl: 15
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    15: '%gp_r_no% %gp_c_me%%player% may be autofishing. %gp_c_ba% %gp_c_se%AutoFish %gp_c_ba% %gp_c_pr%1/2 %gp_c_sm%(15VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    30: '%gp_r_ki% %player% %gp_o_pr%%gp_h_af%%gp_o_su%%gp_n_fp%'
 
 ## AutoBot
 # Checks for automation mods such as Baritone.

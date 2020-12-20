@@ -136,16 +136,16 @@ global_placeholder:
   #   This is useful for different notification commands.
   # c_hm: Hover messages on notifications
   #   Only works when "c_he" is set to "-h"!
-  c_pr: "&6"
-  c_se: "&7"
-  c_me: "&r"
-  c_lw: "&a"
-  c_sm: "&e"
-  c_md: "&6"
-  c_hg: "&4"
-  c_ba: "&8|"
-  c_he: "-h"
-  c_hm: "%gp_c_pr%%component% %gp_c_ba% %gp_c_pr%%ping% Ping %gp_c_ba% %gp_c_pr%%tps% TPS"
+  c_pr: '&6'
+  c_se: '&7'
+  c_me: '&r'
+  c_lw: '&a'
+  c_sm: '&e'
+  c_md: '&6'
+  c_hg: '&4'
+  c_ba: '&8|'
+  c_he: '-h'
+  c_hm: '%gp_c_pr%%component% %gp_c_ba% %gp_c_pr%%version% Client %gp_c_ba% %gp_c_pr%%ping% Ping %gp_c_ba% %gp_c_pr%%tps% TPS'
 
   ## Commands
   # Choose which commands are run.
@@ -157,10 +157,10 @@ global_placeholder:
   #   This is useful for different notification commands.
   # r_cc: Notification click command
   #   Only works when "r_ce" is set to "-c"!
-  r_no: "matrix notify"
-  r_ki: "matrix kick"
-  r_ce: "-c"
-  r_cc: "/tp %player%"
+  r_no: 'matrix notify'
+  r_ki: 'matrix kick'
+  r_ce: '-c'
+  r_cc: '/tp %player%'
 
 ## Commands help description
 # Used in the help command.
