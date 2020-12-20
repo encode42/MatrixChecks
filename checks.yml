@@ -165,9 +165,9 @@ killaura:
   # Run commands once X amount of violations are reached.
   commands:
     8: 'matrix npc %player% 125'
-    14: 'coc %player% if -lp-<30 do %gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 1/4 %gp_c_sm%(14VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    20: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 2/4 %gp_c_md%(20VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    35: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 3/4 %gp_c_hg%(35VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    14: 'coc %player% if -lp-<30 do %gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 1/4 %gp_c_sm%(14VL) %gp_c_hm% %gp_r_cc%'
+    20: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 2/4 %gp_c_md%(20VL) %gp_c_hm% %gp_r_cc%'
+    35: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 3/4 %gp_c_hg%(35VL) %gp_c_hm% %gp_r_cc%'
     42: 'coc %player% if -lp-<25 do %gp_r_ki% %player% %gp_o_pr%%gp_h_ka%%gp_o_su%%gp_n_fp%'
     54: '%gp_r_ki% %player% %gp_o_pr%%gp_h_ka%%gp_o_su%%gp_n_fp%'
 
@@ -222,9 +222,9 @@ hitbox:
   # Run commands once X amount of violations are reached.
   commands:
     6: 'coc %player% if -lp-<30 do matrix npc %player% 120'
-    10: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%HitBox %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    10: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%HitBox %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_hm% %gp_r_cc%'
     13: 'coc %player% if -lp-<35 do matrix npc %player% 125'
-    15: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%HitBox %gp_c_ba% 2/3 %gp_c_hg%(15VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    15: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%HitBox %gp_c_ba% 2/3 %gp_c_hg%(15VL) %gp_c_hm% %gp_r_cc%'
     22: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_hb%%gp_o_su%%gp_n_fp%'
     28: '%gp_r_ki% %player% %gp_o_pr%%gp_h_hb%%gp_o_su%%gp_n_fp%'
 
@@ -264,9 +264,9 @@ speed:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 1/4 %gp_c_lw%(40VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    64: 'coc %player% if -lp-<35 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 2/4 %gp_c_sm%(64VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    82: 'coc %player% if -lp-<45 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 3/4 %gp_c_md%(82VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    40: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 1/4 %gp_c_lw%(40VL) %gp_c_hm% %gp_r_cc%'
+    64: 'coc %player% if -lp-<35 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 2/4 %gp_c_sm%(64VL) %gp_c_hm% %gp_r_cc%'
+    82: 'coc %player% if -lp-<45 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 3/4 %gp_c_md%(82VL) %gp_c_hm% %gp_r_cc%'
     104: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_sp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     130: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -286,9 +286,9 @@ jesus:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    14: 'coc %player% if -lp-<34 do %gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 1/4 %gp_c_sm%(14VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    20: 'coc %player% if -lp-<48 do %gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 2/4 %gp_c_md%(20VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    40: '%gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 3/4 %gp_c_hg%(40VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    14: 'coc %player% if -lp-<34 do %gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 1/4 %gp_c_sm%(14VL) %gp_c_hm% %gp_r_cc%'
+    20: 'coc %player% if -lp-<48 do %gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 2/4 %gp_c_md%(20VL) %gp_c_hm% %gp_r_cc%'
+    40: '%gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 3/4 %gp_c_hg%(40VL) %gp_c_hm% %gp_r_cc%'
     50: 'coc %player% if -lp-<33 do %gp_r_ki% %player% %gp_o_pr%%gp_h_js%%gp_o_su%%gp_n_fp%'
     64: '%gp_r_ki% %player% %gp_o_pr%%gp_h_js%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -314,9 +314,9 @@ velocity:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<25 %gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 1/4 %gp_c_sm%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 2/4 %gp_c_md%(15VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    20: '%gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 3/4 %gp_c_hg%(20VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    10: 'coc %player% if -lp-<25 %gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 1/4 %gp_c_sm%(10VL) %gp_c_hm% %gp_r_cc%'
+    15: '%gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 2/4 %gp_c_md%(15VL) %gp_c_hm% %gp_r_cc%'
+    20: '%gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 3/4 %gp_c_hg%(20VL) %gp_c_hm% %gp_r_cc%'
     24: '%gp_r_ki% %player% %gp_o_pr%%gp_h_vc%%gp_o_su%%gp_n_fp%'
 
 ## Fly
@@ -359,9 +359,9 @@ fly:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    50: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 1/4 %gp_c_lw%(50VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    75: '%gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 2/4 %gp_c_sm%(75VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    92: '%gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 3/4 %gp_c_sm%(92VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    50: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 1/4 %gp_c_lw%(50VL) %gp_c_hm% %gp_r_cc%'
+    75: '%gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 2/4 %gp_c_sm%(75VL) %gp_c_hm% %gp_r_cc%'
+    92: '%gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 3/4 %gp_c_sm%(92VL) %gp_c_hm% %gp_r_cc%'
     110: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     138: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -383,9 +383,9 @@ elytra:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<18 do %gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 1/4 %gp_c_lw%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    16: '%gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 2/4 %gp_c_sm%(16VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    24: '%gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 3/4 %gp_c_md%(24VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    10: 'coc %player% if -lp-<18 do %gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 1/4 %gp_c_lw%(10VL) %gp_c_hm% %gp_r_cc%'
+    16: '%gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 2/4 %gp_c_sm%(16VL) %gp_c_hm% %gp_r_cc%'
+    24: '%gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 3/4 %gp_c_md%(24VL) %gp_c_hm% %gp_r_cc%'
     30: 'coc %player% if -lp-<22 do %gp_r_ki% %player% %gp_o_pr%%gp_h_el%%gp_o_su%%gp_n_fp%'
     48: '%gp_r_ki% %player% %gp_o_pr%%gp_h_el%%gp_o_su%%gp_n_fp%'
 
@@ -425,8 +425,8 @@ vehicle:
  # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Vehicle %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Vehicle %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    5: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Vehicle %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
+    10: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Vehicle %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
     32: '%gp_r_ki% %player% %gp_o_pr%%gp_h_vl%%gp_o_su%%gp_n_fp%'
 
 ## Interact
@@ -461,8 +461,8 @@ interact:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    8: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Interact %gp_c_ba% 1/3 %gp_c_sm%(8VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    12: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Interact %gp_c_ba% 2/3 %gp_c_hg%(12VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    8: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Interact %gp_c_ba% 1/3 %gp_c_sm%(8VL) %gp_c_hm% %gp_r_cc%'
+    12: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Interact %gp_c_ba% 2/3 %gp_c_hg%(12VL) %gp_c_hm% %gp_r_cc%'
     16: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_in%%gp_o_su%%gp_n_fp%'
     21: '%gp_r_ki% %player% %gp_o_pr%%gp_h_in%%gp_o_su%%gp_n_fp%'
 
@@ -493,9 +493,9 @@ phase:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    7: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 1/4 %gp_c_lw%(7VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    13: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 2/4 %gp_c_sm%(13VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    21: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 3/4 %gp_c_hg%(21VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    7: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 1/4 %gp_c_lw%(7VL) %gp_c_hm% %gp_r_cc%'
+    13: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 2/4 %gp_c_sm%(13VL) %gp_c_hm% %gp_r_cc%'
+    21: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 3/4 %gp_c_hg%(21VL) %gp_c_hm% %gp_r_cc%'
     28: 'coc %player% if -lp-<22 do %gp_r_ki% %player% %gp_o_pr%%gp_h_ph%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     38: '%gp_r_ki% %player% %gp_o_pr%%gp_h_ph%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -525,8 +525,8 @@ badpackets:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    80: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% %gp_c_se%BadPackets %gp_c_ba% 1/3 %gp_c_sm%(80VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    150: '%gp_r_no% %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% %gp_c_se%BadPackets %gp_c_ba% 2/3 %gp_c_md%(150VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    80: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% %gp_c_se%BadPackets %gp_c_ba% 1/3 %gp_c_sm%(80VL) %gp_c_hm% %gp_r_cc%'
+    150: '%gp_r_no% %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% %gp_c_se%BadPackets %gp_c_ba% 2/3 %gp_c_md%(150VL) %gp_c_hm% %gp_r_cc%'
     185: 'coc %player% if -lp-<22 do %gp_r_ki% %player% %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     240: '%gp_r_ki% %player% %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -557,8 +557,8 @@ inventory:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<34 do %gp_r_no% %gp_c_me%%player% moved items in an inventory quickly %gp_c_ba% %gp_c_se%ChestSteal %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% moved items in an inventory quickly %gp_c_ba% %gp_c_se%ChestSteal %gp_c_ba% 2/3 %gp_c_hg%(15VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    10: 'coc %player% if -lp-<34 do %gp_r_no% %gp_c_me%%player% moved items in an inventory quickly %gp_c_ba% %gp_c_se%ChestSteal %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_hm% %gp_r_cc%'
+    15: '%gp_r_no% %gp_c_me%%player% moved items in an inventory quickly %gp_c_ba% %gp_c_se%ChestSteal %gp_c_ba% 2/3 %gp_c_hg%(15VL) %gp_c_hm% %gp_r_cc%'
     24: '%gp_r_ki% %player% %gp_o_pr%%gp_h_iv%%gp_o_su%%gp_n_fp%'
 
 ## Block
@@ -612,8 +612,8 @@ block:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<33 do %gp_r_no% %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% %gp_c_se%Block %gp_c_ba% 1/3 %gp_c_sm%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% %gp_c_se%Block %gp_c_ba% 2/3 %gp_c_md%(15VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    10: 'coc %player% if -lp-<33 do %gp_r_no% %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% %gp_c_se%Block %gp_c_ba% 1/3 %gp_c_sm%(10VL) %gp_c_hm% %gp_r_cc%'
+    15: '%gp_r_no% %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% %gp_c_se%Block %gp_c_ba% 2/3 %gp_c_md%(15VL) %gp_c_hm% %gp_r_cc%'
     20: 'coc %player% if -lp-<25 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     32: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -666,9 +666,9 @@ scaffold:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    8: 'coc %player% if -lp-<33 do %gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 1/4 %gp_c_lw%(8VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 2/4 %gp_c_sm%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 3/4 %gp_c_md%(15VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    8: 'coc %player% if -lp-<33 do %gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 1/4 %gp_c_lw%(8VL) %gp_c_hm% %gp_r_cc%'
+    10: '%gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 2/4 %gp_c_sm%(10VL) %gp_c_hm% %gp_r_cc%'
+    15: '%gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 3/4 %gp_c_md%(15VL) %gp_c_hm% %gp_r_cc%'
     20: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     32: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -687,8 +687,8 @@ fastuse:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastUse %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastUse %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    5: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastUse %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
+    10: '%gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastUse %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
     15: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fu%%gp_o_su%%gp_n_fp%'
     21: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fu%%gp_o_su%%gp_n_fp%'
 
@@ -707,8 +707,8 @@ fastbow:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastBow %gp_c_ba% 1/3 %gp_c_hg%(5VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastBow %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    5: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastBow %gp_c_ba% 1/3 %gp_c_hg%(5VL) %gp_c_hm% %gp_r_cc%'
+    10: '%gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastBow %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
     15: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fb%%gp_o_su%%gp_n_fp%'
 
 ## FastHeal
@@ -723,8 +723,8 @@ fastheal:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to regain health quickly %gp_c_ba% %gp_c_se%FastHeal %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    20: '%gp_r_no% %gp_c_me%%player% tried to regain health quickly %gp_c_ba% %gp_c_se%FastHeal %gp_c_ba% 2/3 %gp_c_hg%(20VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    10: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to regain health quickly %gp_c_ba% %gp_c_se%FastHeal %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_hm% %gp_r_cc%'
+    20: '%gp_r_no% %gp_c_me%%player% tried to regain health quickly %gp_c_ba% %gp_c_se%FastHeal %gp_c_ba% 2/3 %gp_c_hg%(20VL) %gp_c_hm% %gp_r_cc%'
     30: 'coc %player% if -lp-<20 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
     45: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
 
@@ -737,8 +737,8 @@ autobot:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: '%gp_r_no% %gp_c_me%%player% may be using a bot %gp_c_ba% %gp_c_se%AutoBot %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% may be using a bot %gp_c_ba% %gp_c_se%AutoBot %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    5: '%gp_r_no% %gp_c_me%%player% may be using a bot %gp_c_ba% %gp_c_se%AutoBot %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
+    10: '%gp_r_no% %gp_c_me%%player% may be using a bot %gp_c_ba% %gp_c_se%AutoBot %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
     15: '%gp_r_ki% %player% %gp_o_pr%%gp_h_ab%%gp_o_su%%gp_n_fp%'
 
 ## Spam
@@ -756,5 +756,5 @@ chat:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    4: '%gp_r_no% %gp_c_me%%player% is spamming the chat %gp_c_ba% %gp_c_se%ChatSpam %gp_c_ba% 1/2 %gp_c_hg%(4VL) %gp_c_he% %gp_c_hm% %gp_r_ce% %gp_r_cc%'
+    4: '%gp_r_no% %gp_c_me%%player% is spamming the chat %gp_c_ba% %gp_c_se%ChatSpam %gp_c_ba% 1/2 %gp_c_hg%(4VL) %gp_c_hm% %gp_r_cc%'
     10: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sm%%gp_o_su%%gp_n_fp%'
