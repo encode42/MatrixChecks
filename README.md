@@ -134,5 +134,5 @@ You can also distribute it all you want or use it on a large network; just pleas
 
 ## 🖥️ Project Sponsor
 <div align="center">
-<a href="https://www.tropicsolutions.net/en"><img src="https://media.discordapp.net/attachments/782561634711240724/790712193821573190/whiteEN.png"></a>
+<a href="https://www.tropicsolutions.net/en"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
 <h3>This project hosts a test server sponsored by <a href="https://www.tropicsolutions.net/en">TropicSolutions</a>.</h3>
