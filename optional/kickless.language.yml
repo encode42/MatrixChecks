@@ -81,16 +81,14 @@ global_placeholder:
   # What a kicked player sees in the kick message.
   # These are shown as the first line of the kick.
   #
-  # h_ka: KillAura  │ h_bp: BadPackets
-  # h_hb: HitBox    │ h_iv: Inventory/ChestSteal
-  # h_sp: Speed     │ h_fp: FastPlace/FastBreak
-  # h_js: Jesus     │ h_sc: Scaffold
-  # h_vc: Velocity  │ h_fu: FastUse
-  # h_fl: Fly       │ h_fb: FastBow
-  # h_el: ElytraFly │ h_fh: FastHeal
-  # h_vl: Vehicle   │ h_af: Autofishing
-  # h_in: Interact  │ h_ab: AutoBot
-  # h_ph: Phase     │ h_sm: Spamming
+  # h_ka: KillAura  │ h_in: Interact
+  # h_hb: HitBox    │ h_ph: Phase
+  # h_sp: Speed     │ h_bp: BadPackets
+  # h_js: Jesus     │ h_fp: Block
+  # h_vc: Velocity  │ h_sc: Scaffold
+  # h_fl: Fly       │ h_de: Delay
+  # h_el: ElytraFly │ h_ab: AutoBot
+  # h_vl: Vehicle   │ h_sm: Spamming
   h_ka: 'using combat related hacks'
   h_hb: 'using combat related hacks'
   h_sp: 'using speed related hacks'
@@ -102,13 +100,9 @@ global_placeholder:
   h_in: 'unusually interacting with blocks or entities'
   h_ph: 'phasing through blocks'
   h_bp: 'sending unusual packets to the server'
-  h_iv: 'manipulating inventories too fast'
   h_fp: 'placing or breaking blocks too fast'
   h_sc: 'placing or breaking blocks too fast'
-  h_fu: 'using items too fast'
-  h_fb: 'using items too fast'
-  h_fh: 'sending unusual packets to the server'
-  h_af: 'autofishing'
+  h_de: 'doing actions too fast'
   h_ab: 'using an auto bot'
   h_sm: 'spamming the chat'
 
@@ -154,7 +148,7 @@ global_placeholder:
   #   Make sure this is prefixed with "-c"!
   r_no: 'matrix notify'
   r_ki: 'matrix notify'
-  r_cc: '-c /tp %player%'
+  r_cc: '-c /matrix spec %player%'
 
 ## Commands help description
 # Used in the help command.

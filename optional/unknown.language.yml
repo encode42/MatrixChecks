@@ -81,34 +81,28 @@ global_placeholder:
   # What a kicked player sees in the kick message.
   # These are shown as the first line of the kick.
   #
-  # h_ka: KillAura  │ h_bp: BadPackets
-  # h_hb: HitBox    │ h_iv: Inventory/ChestSteal
-  # h_sp: Speed     │ h_fp: FastPlace/FastBreak
-  # h_js: Jesus     │ h_sc: Scaffold
-  # h_vc: Velocity  │ h_fu: FastUse
-  # h_fl: Fly       │ h_fb: FastBow
-  # h_el: ElytraFly │ h_fh: FastHeal
-  # h_vl: Vehicle   │ h_af: Autofishing
-  # h_in: Interact  │ h_ab: AutoBot
-  # h_ph: Phase     │ h_sm: Spamming
+  # h_ka: KillAura  │ h_in: Interact
+  # h_hb: HitBox    │ h_ph: Phase
+  # h_sp: Speed     │ h_bp: BadPackets
+  # h_js: Jesus     │ h_fp: Block
+  # h_vc: Velocity  │ h_sc: Scaffold
+  # h_fl: Fly       │ h_de: Delay
+  # h_el: ElytraFly │ h_ab: AutoBot
+  # h_vl: Vehicle   │ h_sm: Spamming
   h_ka: '13'
   h_hb: '3'
   h_sp: '8'
-  h_js: '17'
+  h_js: '16'
   h_vc: '11'
   h_fl: '2'
   h_el: '14'
   h_vl: '1'
   h_in: '5'
-  h_ph: '20'
-  h_bp: '19'
-  h_iv: '4'
+  h_ph: '9'
+  h_bp: '6'
   h_fp: '7'
   h_sc: '12'
-  h_fu: '18'
-  h_fb: '6'
-  h_fh: '16'
-  h_af: '9'
+  h_de: '4'
   h_ab: '10'
   h_sm: '15'
 
@@ -154,7 +148,7 @@ global_placeholder:
   #   Make sure this is prefixed with "-c"!
   r_no: 'matrix notify'
   r_ki: 'matrix kick'
-  r_cc: '-c /tp %player%'
+  r_cc: '-c /matrix spec %player%'
 
 ## Commands help description
 # Used in the help command.

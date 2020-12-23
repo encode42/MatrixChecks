@@ -81,16 +81,14 @@ global_placeholder:
   # What a kicked player sees in the kick message.
   # These are shown as the first line of the kick.
   #
-  # h_ka: KillAura  │ h_bp: BadPackets
-  # h_hb: HitBox    │ h_iv: Inventory/ChestSteal
-  # h_sp: Speed     │ h_fp: FastPlace/FastBreak
-  # h_js: Jesus     │ h_sc: Scaffold
-  # h_vc: Velocity  │ h_fu: FastUse
-  # h_fl: Fly       │ h_fb: FastBow
-  # h_el: ElytraFly │ h_fh: FastHeal
-  # h_vl: Vehicle   │ h_af: Autofishing
-  # h_in: Interact  │ h_ab: AutoBot
-  # h_ph: Phase     │ h_sm: Spamming
+  # h_ka: KillAura  │ h_in: Interact
+  # h_hb: HitBox    │ h_ph: Phase
+  # h_sp: Speed     │ h_bp: BadPackets
+  # h_js: Jesus     │ h_fp: Block
+  # h_vc: Velocity  │ h_sc: Scaffold
+  # h_fl: Fly       │ h_de: Delay
+  # h_el: ElytraFly │ h_ab: AutoBot
+  # h_vl: Vehicle   │ h_sm: Spamming
   h_ka: 'Disconnected'
   h_hb: 'Timed out'
   h_sp: 'java.net.SocketException: Connection reset'
@@ -101,16 +99,12 @@ global_placeholder:
   h_vl: 'Internal Exception: io.netty.handler.codec.DecoderException: java.lang.IndexOutOfBoundsException: readerIndex(4) + length(1) exceeds writer Index(4): UnpooledHeapByteBuf(ridx: 4. widx: 4, cap: 4)'
   h_in: 'Internal Exception: io.netty.handler.codec.DecoderException: com.google.gson.JsonSyntaxException: Expected tag to be a string, was an object {{"nb...b"}}'
   h_ph: 'Internal Exception: io.netty.handler.timeout.ReadTimeoutException'
-  h_bp: 'sending unusual packets to the server'
-  h_iv: 'java.net.SyncException: Object cache desynchronized with server output cache'
-  h_fp: 'placing or breaking blocks too fast'
-  h_sc: 'Disconnected'
-  h_fu: 'Internal Exception: io.netty.handler.codec.DecoderException: java.lang.IndexOutOfBoundsException: readerIndex(4) + length(1) exceeds writer Index(4): UnpooledHeapByteBuf(ridx: 4. widx: 4, cap: 4)'
-  h_fb: 'Failed to connect to server. io.netty.channel.AbstractChannel $AnnotatedConnectException: Connection timed out.'
-  h_fh: 'Internal Exception: io.netty.handler.codec.DecoderException: com.google.gson.JsonSyntaxException: Expected tag to be a string, was an object {{"nb...b"}}'
-  h_af: 'readerIndex(0) + length(1) exceeds writerIndex(0): UnpooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 2, widx: 2, cap: 512)'
-  h_ab: 'Internal Server Error'
-  h_sm: 'java.net.ConnectException: Connection timed out: no further information:'
+  h_bp: 'java.net.SyncException: Object cache desynchronized with server output cache'
+  h_fp: 'Disconnected'
+  h_sc: 'Internal Exception: io.netty.handler.codec.DecoderException: java.lang.IndexOutOfBoundsException: readerIndex(4) + length(1) exceeds writer Index(4): UnpooledHeapByteBuf(ridx: 4. widx: 4, cap: 4)'
+  h_de: 'readerIndex(0) + length(1) exceeds writerIndex(0): UnpooledSlicedByteBuf(ridx: 0, widx: 0, cap: 0/0, unwrapped: PooledUnsafeDirectByteBuf(ridx: 2, widx: 2, cap: 512)'
+  h_ab: 'java.net.ConnectException: Connection timed out: no further information:'
+  h_sm: 'Failed to connect to server. io.netty.channel.AbstractChannel $AnnotatedConnectException: Connection timed out.'
 
   ## Kick Notes
   # These placeholders appear after certain kick reasons.
@@ -154,7 +148,7 @@ global_placeholder:
   #   Make sure this is prefixed with "-c"!
   r_no: 'matrix notify'
   r_ki: 'matrix kick'
-  r_cc: '-c /tp %player%'
+  r_cc: '-c /matrix spec %player%'
 
 ## Commands help description
 # Used in the help command.
