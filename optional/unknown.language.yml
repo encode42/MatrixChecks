@@ -75,7 +75,7 @@ global_placeholder:
   # o_pr: Kick message prefix
   # o_su: Kick reason suffix
   o_pr: '&cKicked for detected hacks! &7('
-  o_su: ')%break%'
+  o_su: ', ID: %id%)%break%'
 
   ## Kick Reasons
   # What a kicked player sees in the kick message.
