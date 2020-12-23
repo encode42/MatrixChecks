@@ -53,7 +53,7 @@ killaura:
       check_protocol_6: true
 
       # How many violations will be added when triggered?
-      vl_weight: 5
+      vl_weight: 7
 
     # Aimbot check: Compare combat to aimbot combat.
     aimbot:
