@@ -61,6 +61,11 @@ database:
 # Setting this too high can cause issues with "matrix.bypass".
 permission_refresh_interval: 120
 
+# GeyserMC support
+# Enable this ONLY if you have GeyserMC for security reasons. (Bedrock support)
+# To enable this feature, install Matrix on Bungee + all sub-servers and enable this option on each instance.
+bungee_geysermc_support: false
+
 # Summon a lightning strike on players who are kicked via /matrix kick.
 kick_strike_lightning: false
 

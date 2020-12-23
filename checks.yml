@@ -85,6 +85,9 @@ killaura:
       check_swing: true
       check_timing: true
 
+      # Add more violations for exceeding CPS.
+      dynamic_cps_vl_weight: true
+
       # How many violations will be added when triggered?
       vl_weight: 8
 
@@ -530,37 +533,6 @@ badpackets:
     185: 'coc %player% if -lp-<22 do %gp_r_ki% %player% %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     240: '%gp_r_ki% %player% %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
-## Inventory
-# Stops players from using illegal inventory modifications such as ChestSteal.
-inventory:
-  enable: true
-  disable_worlds: []
-
-  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  # Keep strict for gamemodes that involve many chests.
-  cancel_vl: 8
-
-  # ChestStealer check: Detects instantly taking items out of chests.
-  chest_stealer: true
-
-  # Ignores items that have color in the name.
-  # This can prevent a false positive for GUIs and shops.
-  ignore_color: false
-
-  # InventoryMove check: Makes sure players cannot move while in inventories.
-  # Note: Only works in 1.12+
-  disable_invmove: false
-
-  # AutoTotem check: Stops totems from automatically moving to the offhand.
-  auto_totem: true
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    10: 'coc %player% if -lp-<34 do %gp_r_no% %gp_c_me%%player% moved items in an inventory quickly %gp_c_ba% %gp_c_se%ChestSteal %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_hm% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% moved items in an inventory quickly %gp_c_ba% %gp_c_se%ChestSteal %gp_c_ba% 2/3 %gp_c_hg%(15VL) %gp_c_hm% %gp_r_cc%'
-    24: '%gp_r_ki% %player% %gp_o_pr%%gp_h_iv%%gp_o_su%%gp_n_fp%'
-
 ## Block
 # Stops players from breaking and placing blocks too fast.
 block:
@@ -672,61 +644,26 @@ scaffold:
     20: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     32: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
-## FastUse
-# Stops players from eating or using items too quickly.
-fastuse:
+## Delay
+# Ensure correct action timings.
+delay:
   enable: true
-  disable_worlds: []
 
-  # How many violations are needed to cancel illegal item use? (-1 = don't cancel)
-  cancel_vl: 1
-
-  # How many violations will be added when triggered?
-  vl_weight: 1
+  # How many violations will be added when triggered? (-1 = disable)
+  check_healing: 1 # FastHeal
+  check_using_items: 1 # FastUse
+  check_using_bow: 1 # FastBow
+  check_auto_splash: 2 # AutoPot
+  check_inventory_action: 1 # Inventory
+  check_auto_totem: 1 # AutoTotem
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastUse %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastUse %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
-    15: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fu%%gp_o_su%%gp_n_fp%'
-    21: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fu%%gp_o_su%%gp_n_fp%'
-
-## FastBow
-# Prevents players from shooting bows too quickly.
-fastbow:
-  enable: true
-  disable_worlds: []
-
-  # How many violations are needed to cancel illegal bow use? (-1 = don't cancel)
-  cancel_vl: 5
-
-  # How many violations will be added when triggered?
-  vl_weight: 1
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    5: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastBow %gp_c_ba% 1/3 %gp_c_hg%(5VL) %gp_c_hm% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% tried to use an item quickly %gp_c_ba% %gp_c_se%FastBow %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
-    15: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fb%%gp_o_su%%gp_n_fp%'
-
-## FastHeal
-# Prevents players from regaining health too quickly.
-fastheal:
-  enable: true
-  disable_worlds: []
-
-  # How many violations will be added when triggered?
-  vl_weight: 2
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    10: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to regain health quickly %gp_c_ba% %gp_c_se%FastHeal %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_hm% %gp_r_cc%'
-    20: '%gp_r_no% %gp_c_me%%player% tried to regain health quickly %gp_c_ba% %gp_c_se%FastHeal %gp_c_ba% 2/3 %gp_c_hg%(20VL) %gp_c_hm% %gp_r_cc%'
-    30: 'coc %player% if -lp-<20 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
-    45: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fh%%gp_o_su%%gp_n_fp%'
+    5: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
+    8: '%gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 2/3 %gp_c_hg%(8VL) %gp_c_hm% %gp_r_cc%'
+    13: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
+    19: '%gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
 
 ## AutoBot
 # Checks for automation mods such as Baritone.
