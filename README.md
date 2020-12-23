@@ -18,7 +18,7 @@
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
 [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)  
-[![Sponsored By TropicSolutions](https://img.shields.io/badge/Sponsored%20By-TropicSolutions-ef9224?style=flat-square)](https://www.tropicsolutions.net/en) [![More Information Below](https://img.shields.io/badge/More%20Information%20Below-ef9224?style=flat-square)](https://github.com/Encode42/MatrixChecks#%EF%B8%8F-project-sponsor)
+[![Sponsored By TropicSolutions](https://img.shields.io/badge/Sponsored%20By-TropicSolutions-ef9224?style=flat-square)](https://www.tropicsolutions.net/=EN) [![More Information Below](https://img.shields.io/badge/More%20Information%20Below-ef9224?style=flat-square)](https://github.com/Encode42/MatrixChecks#%EF%B8%8F-project-sponsor)
 </td>
 <td>
 
@@ -134,5 +134,5 @@ You can also distribute it all you want or use it on a large network; just pleas
 
 ## 🖥️ Project Sponsor
 <div align="center">
-<a href="https://www.tropicsolutions.net/en"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
-<h3>This project hosts a test server sponsored by <a href="https://www.tropicsolutions.net/en">TropicSolutions</a>.</h3>
+<a href="https://www.tropicsolutions.net/=EN"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
+<h3>This project hosts a test server sponsored by <a href="https://www.tropicsolutions.net/=EN">TropicSolutions</a>.</h3>
