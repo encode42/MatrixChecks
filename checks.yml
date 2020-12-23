@@ -650,6 +650,9 @@ delay:
   enable: true
   disable_worlds: []
 
+  # Cancels actions with invalid timings.
+  cancel_action: true
+
   # How many violations will be added when triggered? (-1 = disable)
   check_healing: 2 # FastHeal
   check_using_items: 4 # FastUse
