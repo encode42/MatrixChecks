@@ -243,7 +243,7 @@ speed:
   # Speed prediction tolerance.
   # Turn this down if players are bypassing, up if players are getting false flags.
   # Don't set this to 0! There should always be some slack.
-  tolerance: 0.0225
+  tolerance: 0.022
 
   # Allows Matrix to skip collision checks around players every few ticks and use cached results.
   # Do not set this too large! Too many skips will occur and cause false positives. (0 = no skips)
