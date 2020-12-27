@@ -657,10 +657,11 @@ delay:
   check_healing: 2 # FastHeal
   check_using_items: 4 # FastUse
   check_using_bow: 4 # FastBow
+  check_fast_throw: 3 # Right click CPS
   check_auto_splash: 3 # AutoPot
   check_auto_totem: 3 # AutoTotem
   check_inventory_action: 5 # Inventory
-
+  
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
