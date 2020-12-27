@@ -54,6 +54,10 @@ database:
 
   # Entry name
   db: 'matrix'
+  
+  # Hidden config option: Server name row
+  # This defines the server name row if you utilize mutliple servers.
+  #server_name: 'main'
 
   username: 'root'
   password: ''
