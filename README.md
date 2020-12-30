@@ -1,5 +1,6 @@
 <!--
 EncodedREADME - My personal README style.
+Yes, there is HTML in Markdown, you don't have to tell me.
 This README style is loosely inspired by Akarin's README!
 -->
 
@@ -79,7 +80,7 @@ Tested and configured for survival and minigame servers. Tweak the checks for yo
 ### 1. Checks file types
 #### checks.yml
 The main checks file. Includes all of the advertised features.  
-Conditional commands, optimized checks, increased speed, etc.
+Conditional commands, optimized checks, increased detection speed, etc.
 
 #### language.yml
 The main language file. This file must be installed on every Matrix instance.  
@@ -90,7 +91,7 @@ An optional file that only changes a few things from the original config.
 Includes organization, minor tweaks, and a pre-set cloud config for MatrixChecks.
 
 #### /optional/kickless.language.yml
-Same as `language.yml` but with the kick command disabled.
+Same as `language.yml` but with the kick command disabled.  
 This is helpful for debugging or modifying checks without getting kicked.
 
 #### /optional/unknown.language.yml
@@ -104,9 +105,9 @@ All kick messages are replaced with existing and made-up error messages.
 This confuses hackers since they have no idea what they were kicked for.
 
 #### /cloud/*
-The same as the files above, but minified. These are a lot smaller in file size but are nearly impossible to read.  
-Because of the small file sizes, the files can be automatically updated quickly on server startup.  
-These are optimized for cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
+The exact same as the files above, but minified. These are much smaller in file size but are nearly impossible to read.  
+Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup.  
+These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
 
 ### 2. Suggested changes
 These are just suggestions, don't change them if you don't need to.  
@@ -125,26 +126,37 @@ Root Check | Path                               | Default | Suggestion       | R
 &nbsp;     | `...` = relative path              | &nbsp;  | `X - X` = range  | &nbsp;
 
 ### 3. How do I report a change or false positive?
-**FIRST:**  
-Make sure this isn't an issue with the anticheat itself. Test with the [default Matrix config files](https://github.com/jiangdashao/Matrix-Issues) to see if it's an issue with MatrixChecks. If the issue persists, it's most likely an issue with Matrix. Not all issues can be fixed with a checks file tweak. Head over to [Matrix's support Discord](https://discord.gg/wjheaRj) and ask about the issue, or report the issue at their [issue tracker](https://github.com/jiangdashao/Matrix-Issues/issues).  
-- Matrix's Discord: [Here](https://discord.gg/wjheaRj)  
-- Issue tracker: [Here](https://github.com/jiangdashao/Matrix-Issues/issues)
+**First:**  
+Make sure this isn't an issue with Matrix itself. Test with the [default Matrix config files](https://github.com/jiangdashao/Matrix-Issues). If the issue persists, it's most likely an issue with Matrix. You can report the issue to us, but not everything can be fixed with a checks file tweak. Head over to [Matrix's support Discord](https://discord.gg/wjheaRj) and ask about the issue, or report the issue at their [issue tracker](https://github.com/jiangdashao/Matrix-Issues/issues).  
+- [(Matrix) Discord](https://discord.gg/wjheaRj)  
+- [(Matrix) Issues](https://github.com/jiangdashao/Matrix-Issues/issues)
 
-**THEN:**  
-Make an issue at the [issue page](https://github.com/Encode42/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/Encode42/MatrixChecks/pulls) containing the change and why you made it.  
-- Issue Page: [Here](https://github.com/Encode42/MatrixChecks/issues)  
-- Pull Requests: [Here](https://github.com/Encode42/MatrixChecks/pulls)
+**Then:**  
+Report the issue in the [MatrixChecks support Discord](https://discord.gg/rjSkFyj) or make a report at the [issue page](https://github.com/Encode42/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/Encode42/MatrixChecks/pulls) containing the change and why you made it.  
+- [Discord](https://discord.gg/rjSkFyj)
+- [Issues](https://github.com/Encode42/MatrixChecks/issues)  
+- [Pull Requests](https://github.com/Encode42/MatrixChecks/pulls)
 
-### 4. There are weird things in my kick messages!
-Do the "weird things" look like "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
+### 4. There are weird things in every message!
+Do the "weird things" look like something along the lines of "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
 This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/Encode42/MatrixChecks#server-usage)
 
 ### 5. Can I modify the files in MatrixChecks?
 Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.  
-You can also distribute it all you want or use it on a large network; just please don't claim it all as your own. (Credit the original authors)
+You can also distribute it all you want or use it on a large network; just don't remove copyright notices as that's against the licence.
+
+### 6. How can I contribute?
+Contributions are very welcome! If you created a new optional file or made tweaks for different minigames, feel free to contact me or make a pull request!  
+I don't want to start competition with this project! Having everything in a central repository makes it much easier for the end-user to find what they want.
 
 ## 🖥️ Project Sponsor
 <div align="center">
 <a href="https://www.tropicsolutions.net/=EN"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
-<h3>This project hosts a test server sponsored by <a href="https://www.tropicsolutions.net/=EN">TropicSolutions</a>.</h3>
-<h4>IP: <code>matrix.encode42.dev</code> │ Versions 1.8 - 1.16.4</h4>
+<h3>
+
+This project hosts a test server sponsored by [TropicSolutions](https://www.tropicsolutions.net/=EN).
+</h3>
+<h4>
+
+IP: `matrix.encode42.dev` │ Versions 1.8 - 1.16.4
+</h4>
