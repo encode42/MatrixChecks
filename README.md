@@ -12,8 +12,8 @@
 
 **Make sure to use files compatible with your Matrix version!**  
 <sub>
-  Sometimes Matrix Premium updates faster than Free; there will be a directory if so.  
-  Legacy releases compatible with older versions of Matrix have their own branches.
+Sometimes Matrix Premium updates faster than Free; there will be a directory if so.  
+Legacy releases compatible with older versions of Matrix have their own branches.
 </sub>
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
@@ -45,11 +45,11 @@ Install [`checks.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/m
 ## 🔧 Setup
 ### Server Usage
 1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
-<sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
-2. Rename Matrix's original `checks.yml` and `language.yml` to something else. `checks.old.yml`/`language.old.yml` will work.
+  <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
+2. Rename Matrix's original `checks.yml` and `language.yml` to something else.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
-4. If you downloaded a file besides `checks.yml` or `language.yml`, rename the file to `checks.yml`/`language.yml`.
-5. Run `/matrix reload`!
+4. If you downloaded any optional files, rename them to `checks.yml`/`language.yml`.
+5. Run `/matrix reload` or restart the server!
 
 Alternatively, you can just run `/matrix dlcfg OBCHXARALB` in-game  
 to download the latest stable build of MatrixChecks. (This ID changes!)  
@@ -57,9 +57,9 @@ The downside is that all comments are removed and the file size is reduced.
 
 ### Cloud Usage
 1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
-2. Rename Matrix's original `config.yml` and `language.yml` to something else. `config.old.yml`/`language.old.yml` will work.
+2. Rename Matrix's original `config.yml` and `language.yml` to something else.
 3. Change `cloud_config.enable: false` to `true` in `config.yml`.
-4. Run `/matrix reload`! The checks will now update on every reboot/reload.  
+4. Run `/matrix reload` or restart the server! The checks will now update on every reboot/reload.  
 <sub>For specific Matrix versions, replace `main` in the link with the compatible checks branch.</sub>
 
 ## ❔ FAQ
