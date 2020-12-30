@@ -104,14 +104,19 @@ Because of the small file sizes, the files can be automatically updated quickly 
 These are optimized for cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
 
 ### 2. Suggested changes
-1. `autoclicker.max_cps: 18` → `16 - 24`: The highest human CPS is 24.
-2. `hitbox.max-reach: 3.2` → `3.3`: If you have issues with the hitbox check.
-3. `speed.tolerance: 0.0225` → `0.015 - 0.0325`: Decrease if players are bypass speed checks.
-4. `fly.setback_to_void: true` → `false`: For sky-based servers when players are being teleported to the void.
-5. `nofall.damage: true` → `false`: For servers with fall-damage disabled.
-6. `inventory.cancel_vl: 8` → `8 - 12`: Laggy connections can cause issues with low numbers.
-7. `delay.min_delay: 7` → `5 - 9`: Decrease if there are bypasses.
-8. `fastplace.max_place_per_second: 16` → `9 - 19`: Decrease if there are bypasses.
+These are just suggestions, don't change them if you don't need to.  
+Only use these if you're having issues with the listed checks!
+
+Root Check | Path                               | Default | Suggestion       | Reason
+---------- | ---------------------------------- | ------- | ---------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+`killaura` | `...click.max_cps`                 | `18`    | `16` - `24`      | The highest possible CPS achieved by humans is 24. Lag may affect the accuracy of this value.
+`hitbox`   | `max_reach`                        | `3.2`   | `3.3`            | Increase if there are many false-positives with this check. This value should never be less than 3.1!
+`speed`    | `tolerance`                        | `0.022` | `0.01` - `0.025` | Increase if you have many false-positives when moving, decrease if you have many bypasses. RE recommends keeping this at `0.01`, although I receive many false-positives with that value.
+`fly`      | `setback_to_void`                  | `true`  | `false`          | Change this to `false` if players are being teleported to the void. Players may be able to fly and hover over the abyss if disabled!
+`fly`      | `nofall.setback` & `nofall.damage` | `true`  | `false`          | Change both of these to `false` for servers and minigames where fall-damage is disabled.
+`block`    | `fastplace.max_place_per_second`   | `13`    | `10` - `18`      | Increase if there are many false-positives when placing blocks, decrease if there are many bypasses.
+`scaffold` | `...delay.min_delay`               | `8`     | `5` - `9`        | Decrease if there are many false-positives when pillaring, increase if there are many bypasses.
+`delay`    | `check_inventory_action`           | `5`     | `-1`             | Disable this check if players are getting false-positives when shift-clicking from inventories.
 
 ### 3. How do I report a change or false positive?
 **FIRST:**  
