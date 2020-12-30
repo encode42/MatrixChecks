@@ -1,3 +1,8 @@
+<!--
+EncodedREADME - My personal README style.
+This README style is loosely inspired by Akarin's README!
+-->
+
 <img src="https://repository-images.githubusercontent.com/282035636/2f414480-2e50-11eb-838b-ef0822e416bb" width="200px" align="right">
 <div align="center">
 
@@ -141,3 +146,4 @@ You can also distribute it all you want or use it on a large network; just pleas
 <div align="center">
 <a href="https://www.tropicsolutions.net/=EN"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
 <h3>This project hosts a test server sponsored by <a href="https://www.tropicsolutions.net/=EN">TropicSolutions</a>.</h3>
+<h4>IP: <code>matrix.encode42.dev</code> │ Versions 1.8 - 1.16.4</h4>
