@@ -1,6 +1,6 @@
 <!--
 EncodedREADME - My personal README style.
-Yes, there is HTML in Markdown, you don't have to tell me.
+Yes, there is HTML in Markdown; you don't have to tell me.
 This README style is loosely inspired by Akarin's README!
 -->
 
@@ -143,11 +143,11 @@ This file is required to replace those placeholders with what they're meant to b
 
 ### 5. Can I modify the files in MatrixChecks?
 Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.  
-You can also distribute it all you want or use it on a large network; just don't remove copyright notices as that's against the licence.
+You can also distribute it all you want or use it on a large network; just don't remove copyright notices as that's against the license.
 
 ### 6. How can I contribute?
-Contributions are very welcome! If you created a new optional file or made tweaks for different minigames, feel free to contact me or make a pull request!  
-I don't want to start competition with this project! Having everything in a central repository makes it much easier for the end-user to find what they want.
+Contributions are very welcome! If you created a new optional file or made tweaks for different minigames, feel free to contact me or make a pull request.  
+I don't want to start any competition with this project! Having everything in one central repository makes it much easier for the end-user to find what they want.
 
 ## 🖥️ Project Sponsor
 <div align="center">
