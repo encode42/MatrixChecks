@@ -8,10 +8,10 @@
 # The optimized checks for Matrix Anticheat.
 # Made for and tested on Matrix 5.3+
 #
-#─── !!  NOTE  !! ────────────────────────────╮
-# THIS FILE DOES NOT INCLUDE ANY CHECKS!      │
-# INSTALL "checks.yml" TO UTILIZE THE CHANGES │
-#─────────────────────────────────────────────╯
+#─── !!  NOTE  !! ────────────────────────╮
+# THIS FILE DOES NOT INCLUDE ANY CHECKS!  │
+# INSTALL "checks.yml" TO UTILIZE CHANGES │
+#─────────────────────────────────────────╯
 #
 # The changes in this file are only for organization,
 # minor tweaks, and a pre-set cloud config for MatrixChecks.
