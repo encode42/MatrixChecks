@@ -699,3 +699,6 @@ chat:
   commands:
     4: '%gp_r_no% %gp_c_me%%player% is spamming the chat %gp_c_ba% %gp_c_se%ChatSpam %gp_c_ba% 1/2 %gp_c_hg%(4VL) %gp_c_hm% %gp_r_cc%'
     10: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sm%%gp_o_su%%gp_n_fp%'
+
+# Don't change!
+matrix-version: "5.6.2"
