@@ -13,14 +13,11 @@
 # INSTALL "checks.yml" TO UTILIZE CHANGES │
 #─────────────────────────────────────────╯
 #
-# The changes in this file are required by checks.yml.
-# It contains the global placeholders used in commands.
+# This file is required by all messages in the checks.
+# It contains global placeholders used in most commands.
 #
-# ┌─────────────────────────────────────────────┐
-# │                  Issues?                    │
-# │ Follow the FAQs in README.md. (Question #3) │
-# └─────────────────────────────────────────────┘
-# GitHub: https://github.com/Encode42/MatrixChecks
+# Website: https://encode42.dev/MatrixChecks
+# GitHub:  https://github.com/Encode42/MatrixChecks
 # Discord: https://discord.gg/rjSkFyj
 
 # Message Prefix

@@ -16,11 +16,8 @@
 # The changes in this file are only for organization,
 # minor tweaks, and a pre-set cloud config for MatrixChecks.
 #
-# ┌─────────────────────────────────────────────┐
-# │                  Issues?                    │
-# │ Follow the FAQs in README.md. (Question #3) │
-# └─────────────────────────────────────────────┘
-# GitHub: https://github.com/Encode42/MatrixChecks
+# Website: https://encode42.dev/MatrixChecks
+# GitHub:  https://github.com/Encode42/MatrixChecks
 # Discord: https://discord.gg/rjSkFyj
 
 # Premium user credentials.
