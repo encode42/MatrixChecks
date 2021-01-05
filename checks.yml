@@ -658,7 +658,9 @@ delay:
   check_fast_throw: 3 # Right click CPS
   check_auto_splash: 3 # AutoPot
   check_auto_totem: 3 # AutoTotem
-  check_inventory_action: 5 # Inventory
+  check_inventory_action: -1 # Inventory (ChestSteal-esk hacks)
+  # Inventory checks are disabled due to false-positives regarding
+  # shift-clicking in and out of chests with high pings.
   
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.

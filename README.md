@@ -122,7 +122,7 @@ Root Check | Path                               | Default | Suggestion       | R
 `fly`      | `nofall.setback` & `nofall.damage` | `true`  | `false`          | Change both of these to `false` for servers and minigames where fall-damage is disabled.
 `block`    | `fastplace.max_place_per_second`   | `13`    | `10` - `18`      | Increase if there are many false-positives when placing blocks, decrease if there are many bypasses.
 `scaffold` | `...delay.min_delay`               | `8`     | `5` - `9`        | Decrease if there are many false-positives when pillaring, increase if there are many bypasses.
-`delay`    | `check_inventory_action`           | `5`     | `-1`             | Disable this check if players are getting false-positives when shift-clicking from inventories.
+`delay`    | `check_inventory_action`           | `-1`    | `4` - `5`        | Enable this check for minigame servers with chest mechanics such as survival games, skywars, etc.
 &nbsp;     | `...` = relative path              | &nbsp;  | `X - X` = range  | &nbsp;
 
 ### 3. How do I report a change or false positive?
