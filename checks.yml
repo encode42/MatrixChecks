@@ -653,11 +653,11 @@ delay:
 
   # How many violations will be added when triggered? (-1 = disable)
   check_healing: 2 # FastHeal
-  check_using_items: 4 # FastUse
-  check_using_bow: 4 # FastBow
-  check_fast_throw: 3 # Right click CPS
-  check_auto_splash: 3 # AutoPot
-  check_auto_totem: 3 # AutoTotem
+  check_using_items: 6 # FastUse
+  check_using_bow: 6 # FastBow
+  check_fast_throw: 5 # Right click CPS
+  check_auto_splash: 4 # AutoPot
+  check_auto_totem: 5 # AutoTotem
   check_inventory_action: -1 # Inventory (ChestSteal-esk hacks)
   # Inventory checks are disabled due to false-positives regarding
   # shift-clicking in and out of chests with high pings.
@@ -665,10 +665,10 @@ delay:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 2/3 %gp_c_hg%(8VL) %gp_c_hm% %gp_r_cc%'
-    17: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
-    21: '%gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
+    15: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
+    24: '%gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 2/3 %gp_c_hg%(8VL) %gp_c_hm% %gp_r_cc%'
+    30: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
+    35: '%gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
 
 ## AutoBot
 # Checks for automation mods such as Baritone.
