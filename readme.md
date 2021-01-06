@@ -110,8 +110,8 @@ Because of the small file sizes, these can be automatically downloaded and updat
 These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
 
 #### /.github, license.md, readme.md
-These are files that are only important for the Git repository.  
-You can completely ignore these files and folders as they have nothing of importance for the end-user.
+These are files that are only important for and used in this GitHub repository.  
+You can completely ignore these files as they have nothing of importance for the end-user.
 
 ### 2. Suggested changes
 These are just suggestions, don't change them if you don't need to.  
