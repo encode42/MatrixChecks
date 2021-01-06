@@ -104,10 +104,14 @@ Same as `language.yml` but with different kick messages based on confusion.
 All kick messages are replaced with existing and made-up error messages.
 This confuses hackers since they have no idea what they were kicked for.
 
-#### /cloud/*
+#### /cloud
 The exact same as the files above, but minified. These are much smaller in file size but are nearly impossible to read.  
 Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup.  
 These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
+
+#### /.github, license.md, readme.md
+These are files that are only important for the Git repository.  
+You can completely ignore these files and folders as they have nothing of importance for the end-user.
 
 ### 2. Suggested changes
 These are just suggestions, don't change them if you don't need to.  
