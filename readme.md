@@ -4,7 +4,7 @@ Yes, there is HTML in Markdown; you don't have to tell me.
 This README style is loosely inspired by Akarin's README!
 -->
 
-<img src="https://repository-images.githubusercontent.com/282035636/2f414480-2e50-11eb-838b-ef0822e416bb" width="200px" align="right">
+<img src="https://repository-images.githubusercontent.com/282035636/2a845100-608a-11eb-9580-e492464bea91" width="200px" align="right">
 <div align="center">
 
 # MatrixChecks
