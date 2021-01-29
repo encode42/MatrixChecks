@@ -1,12 +1,11 @@
-#      ___
-#  ___╱   ╲   ┌─────┐┌───╮
-# ╱   ╲___╱   │     ││ ┌─╯
-# ╲___╱   ╲   │ ├─┤ ││ └─╮
-#     ╲___╱   └─┘ └─┘└───╯
-#             MatrixChecks
+# ┌─────┐┌───╮
+# │     ││ ┌─╯
+# │ ├─┤ ││ └─╮
+# └─┘ └─┘└───╯
+# MatrixChecks
 #
 # The optimized checks for Matrix Anticheat.
-# Made for and tested on Matrix 5.6.2+
+# Made for and tested on Matrix 6+
 #
 #─── !!  NOTE  !! ────────────────────────╮
 # THIS FILE DOES NOT INCLUDE ANY CHECKS!  │
@@ -80,15 +79,17 @@ global_placeholder:
   #
   # h_ka: KillAura  │ h_in: Interact
   # h_hb: HitBox    │ h_ph: Phase
-  # h_sp: Speed     │ h_bp: BadPackets
-  # h_js: Jesus     │ h_fp: Block
-  # h_vc: Velocity  │ h_sc: Scaffold
-  # h_fl: Fly       │ h_de: Delay
-  # h_el: ElytraFly │ h_ab: AutoBot
-  # h_vl: Vehicle   │ h_sm: Spamming
+  # h_cl: Click     │ h_bp: BadPackets
+  # h_mv: Move      │ h_fp: Block
+  # h_js: Jesus     │ h_sc: Scaffold
+  # h_vc: Velocity  │ h_de: Delay
+  # h_fl: Fly       │ h_ab: AutoBot
+  # h_el: ElytraFly │ h_sm: Spamming
+  # h_vl: Vehicle
   h_ka: 'using combat related hacks'
   h_hb: 'using combat related hacks'
-  h_sp: 'using speed related hacks'
+  h_cl: 'unusual click patterns'
+  h_mv: 'using movement related hacks'
   h_js: 'using water related hacks'
   h_vc: 'using knockback related hacks'
   h_fl: 'using fly related hacks'
@@ -125,7 +126,6 @@ global_placeholder:
   # c_hg: "High" chance color
   # c_ba: Separation bar character
   # c_hm: Hover messages on notifications
-  #   Make sure this is prefixed with "-h"!
   c_pr: '&6'
   c_se: '&7'
   c_me: '&r'
@@ -134,18 +134,15 @@ global_placeholder:
   c_md: '&6'
   c_hg: '&4'
   c_ba: '&8|%gp_c_pr%'
-  c_hm: '-h %gp_c_pr%%component% %gp_c_ba% %version% Client %gp_c_ba% %ping% Ping %gp_c_ba% %tps% TPS'
+  c_hm: '%gp_c_pr% %version% Client %gp_c_ba% %ping% Ping %gp_c_ba% %tps% TPS %gp_c_ba% %component% %gp_c_ba%'
 
   ## Commands
   # Choose which commands are run.
   #
-  # r_no: Staff notify command
   # r_ki: Kick/punishment command
   # r_cc: Notification click command
-  #   Make sure this is prefixed with "-c"!
-  r_no: 'matrix notify'
   r_ki: 'matrix kick'
-  r_cc: '-c /matrix spec %player%'
+  r_cc: '/matrix spec %player%'
 
 ## Commands help description
 # Used in the help command.
@@ -163,5 +160,5 @@ commands:
   msg: 'Send warning messages to a player'
 
 # Don't change!
-checks-version: "1.6.2"
-matrix-version: "5.6.2"
+checks-version: "1.7"
+matrix-version: "6"

@@ -1,12 +1,11 @@
-#      ___
-#  ___╱   ╲   ┌─────┐┌───╮
-# ╱   ╲___╱   │     ││ ┌─╯
-# ╲___╱   ╲   │ ├─┤ ││ └─╮
-#     ╲___╱   └─┘ └─┘└───╯
-#             MatrixChecks
+# ┌─────┐┌───╮
+# │     ││ ┌─╯
+# │ ├─┤ ││ └─╮
+# └─┘ └─┘└───╯
+# MatrixChecks
 #
 # The optimized checks for Matrix Anticheat.
-# Made for and tested on Matrix 5.3+
+# Made for and tested on Matrix 6+
 #
 #─── !!  NOTE  !! ────────────────────────╮
 # THIS FILE DOES NOT INCLUDE ANY CHECKS!  │
@@ -71,10 +70,6 @@ relog_time: 15
 # Enable if you want EVERYONE to be checked.
 disable_bypass_permission: false
 
-# If enabled, Matrix will never do any setbacks/cancels.
-# Staff will still be notified of violations.
-ghost_mode: false
-
 # Reduce violations/flags triggered by players with high ping.
 # This can be disabled to prevent PingSpoof and rely on conditional commands.
 player_latency_protection:
@@ -118,5 +113,5 @@ disabled_components: []
 custom_vl_weight: []
 
 # Don't change!
-checks-version: "1.6.2"
-matrix-version: "5.6.2"
+checks-version: "1.7"
+matrix-version: "6"

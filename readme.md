@@ -119,11 +119,8 @@ Only use these if you're having issues with the listed checks!
 
 Root Check | Path                               | Default | Suggestion       | Reason
 ---------- | ---------------------------------- | ------- | ---------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`killaura` | `...click.max_cps`                 | `18`    | `16` - `24`      | The highest possible CPS achieved by humans is 24. Lag may affect the accuracy of this value.
-`hitbox`   | `max_reach`                        | `3.2`   | `3.3`            | Increase if there are many false-positives with this check. This value should never be less than 3.1!
-`speed`    | `tolerance`                        | `0.022` | `0.01` - `0.025` | Increase if you have many false-positives when moving, decrease if you have many bypasses. RE recommends keeping this at `0.01`, although I receive many false-positives with that value.
-`fly`      | `setback_to_void`                  | `true`  | `false`          | Change this to `false` if players are being teleported to the void. Players may be able to fly and hover over the abyss if disabled!
-`fly`      | `nofall.setback` & `nofall.damage` | `true`  | `false`          | Change both of these to `false` for servers and minigames where fall-damage is disabled.
+`click`    | `max_cps`                          | `18`    | `16` - `24`      | The highest possible CPS achieved by humans is 24. Lag may affect the accuracy of this value.
+`hitbox`   | `max_reach`                        | `3.18`   | `3.2` - `3.3`   | Increase if there are many false-positives with this check. This value should never be less than 3.1!
 `block`    | `fastplace.max_place_per_second`   | `13`    | `10` - `18`      | Increase if there are many false-positives when placing blocks, decrease if there are many bypasses.
 `scaffold` | `...delay.min_delay`               | `8`     | `5` - `9`        | Decrease if there are many false-positives when pillaring, increase if there are many bypasses.
 `delay`    | `check_inventory_action`           | `-1`    | `4` - `5`        | Enable this check for minigame servers with chest mechanics such as survival games, skywars, etc.

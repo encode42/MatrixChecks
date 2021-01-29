@@ -1,12 +1,11 @@
-#      ___
-#  ___╱   ╲   ┌─────┐┌───╮
-# ╱   ╲___╱   │     ││ ┌─╯
-# ╲___╱   ╲   │ ├─┤ ││ └─╮
-#     ╲___╱   └─┘ └─┘└───╯
-#             MatrixChecks
+# ┌─────┐┌───╮
+# │     ││ ┌─╯
+# │ ├─┤ ││ └─╮
+# └─┘ └─┘└───╯
+# MatrixChecks
 #
 # The optimized checks for Matrix Anticheat.
-# Made for and tested on Matrix 5.6.2+
+# Made for and tested on Matrix 6+
 #
 #─── !!  NOTE  !! ───────────────────────────────────────╮
 # YOU *MUST* INSTALL "language.yml" TO USE PLACEHOLDERS! │
@@ -49,6 +48,7 @@ killaura:
       check_protocol_4: true
       check_protocol_5: true
       check_protocol_6: true
+      check_protocol_7: true
 
       # How many violations will be added when triggered?
       vl_weight: 7
@@ -62,32 +62,11 @@ killaura:
       check_aimbot_snap: true         # Aim suddenly snapping to entities
       check_aimbot_sensitivity: true  # High aim accuracy/sensitivity
       check_aimbot_acceleration: true # Sudden or unexpected aim acceleration
-      check_aimbot_magic_a: true      # Unknown and "secret" checks
-      check_aimbot_magic_b: true      # Unknown and "secret" checks
+      check_aimbot_bad_rotation: true # Check for invalid or unexpected rotation
+      check_aimbot_mouse_speed: true  # Analyze mouse movement speed
 
       # How many violations will be added when triggered?
       vl_weight: 10
-
-    # Click check: Detects abnormal clicking.
-    click:
-      buffer_size: 20 # Do not modify!
-      # Players can click 22 times per second if they jitter clicking.
-      # The average player clicks at 8 CPS, and only a minuscule amount of people get to 16 CPS.
-      #
-      # Decrease if players are bypassing, increase if legit players are getting flagged.
-      # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
-      check_cps: true
-      max_cps: 18
-
-      # Timing-related checks
-      check_swing: true
-      check_timing: true
-
-      # Add more violations for exceeding CPS.
-      dynamic_cps_vl_weight: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 8
 
     # Critical check: Prevents players from making abnormal crit attacks.
     critical:
@@ -95,6 +74,16 @@ killaura:
 
       # How many violations will be added when triggered?
       vl_weight: 5
+
+    # Strafe check: Analyze player strafing while in combat
+    strafe:
+      enable: true
+
+      # Should illegal movements be cancelled?
+      cancel_move: true
+
+      # How many violations will be added when triggered?
+      vl_weight: 3
 
     # Combine check: Additional violations if multiple checks are triggered at once.
     combine:
@@ -105,7 +94,7 @@ killaura:
 
         # What conditions to combine.
         condition:
-          - 'ka.abt.ma'
+          - 'ka.abt.magic'
           - 'hb.reach'
 
         # How many violations will be added when triggered?
@@ -166,15 +155,14 @@ killaura:
   # Run commands once X amount of violations are reached.
   commands:
     8: 'matrix npc %player% 125'
-    14: 'coc %player% if -lp-<30 do %gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 1/4 %gp_c_sm%(14VL) %gp_c_hm% %gp_r_cc%'
-    20: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 2/4 %gp_c_md%(20VL) %gp_c_hm% %gp_r_cc%'
-    35: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%KillAura %gp_c_ba% 3/4 %gp_c_hg%(35VL) %gp_c_hm% %gp_r_cc%'
+    14: 'coc %player% if -lp-<30 do matrix notify %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% 1/4 %gp_c_sm%(14VL) -h %gp_c_hm% KillAura -c %gp_r_cc%'
+    20: 'matrix notify %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% 2/4 %gp_c_md%(20VL) -h %gp_c_hm% KillAura -c %gp_r_cc%'
+    35: 'matrix notify %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% 3/4 %gp_c_hg%(35VL) -h %gp_c_hm% KillAura -c %gp_r_cc%'
     42: 'coc %player% if -lp-<25 do %gp_r_ki% %player% %gp_o_pr%%gp_h_ka%%gp_o_su%%gp_n_fp%'
     54: '%gp_r_ki% %player% %gp_o_pr%%gp_h_ka%%gp_o_su%%gp_n_fp%'
 
 ## HitBox
 # Prevents players from using HitBox, Angle, and Reach hacks.
-# Note: This check is strict in PvP and loose in PvE.
 hitbox:
   enable: true
   disable_worlds: []
@@ -182,16 +170,11 @@ hitbox:
   # Maximum reach distance.
   # The max reach is 4 blocks; however, with latency and strange calculations, most players won't reach that far.
   # Anything farther than 3.4 blocks should be considered hacks, but some high ping players may reach that distance.
-  max_reach: 3.2
+  max_reach: 3.18
 
   # How many moves should be traced back to the player?
   # Set this higher to reduce false positives but weaken detection.
-  # Do not set higher than 10, as that'll make this check useless.
-  trace_back_length: 4
-
-  # When should this check ignore players with high ping?
-  # Players with high ping may trigger false flags.
-  max_ping: 275
+  trace_back_length: 5
   
   # How the hack will be canceled (none, silent, cancel)
   # none: Doesn't do anything to the player. (Not recommended)
@@ -207,7 +190,6 @@ hitbox:
     miss_player_hitbox: 2
     reach_target_standing: 10
     reach_target_moving: 3
-    reach_simple: 3
 
   # Dynamic violations change the VL weights based on the amount of reach.
   # Players could receive X vl when using 3.5 reach, and X + 10 vl when using 5.0.
@@ -223,53 +205,69 @@ hitbox:
   # Run commands once X amount of violations are reached.
   commands:
     6: 'coc %player% if -lp-<30 do matrix npc %player% 120'
-    10: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%HitBox %gp_c_ba% 1/3 %gp_c_md%(10VL) %gp_c_hm% %gp_r_cc%'
+    10: 'matrix notify %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% 1/3 %gp_c_md%(10VL) -h %gp_c_hm% HitBox -c %gp_r_cc%'
     13: 'coc %player% if -lp-<35 do matrix npc %player% 125'
-    15: '%gp_r_no% %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% %gp_c_se%HitBox %gp_c_ba% 2/3 %gp_c_hg%(15VL) %gp_c_hm% %gp_r_cc%'
+    15: 'matrix notify %gp_c_me%%gp_c_me%%player% may be using combat hacks %gp_c_ba% 2/3 %gp_c_hg%(15VL) -h %gp_c_hm% HitBox -c %gp_r_cc%'
     22: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_hb%%gp_o_su%%gp_n_fp%'
     28: '%gp_r_ki% %player% %gp_o_pr%%gp_h_hb%%gp_o_su%%gp_n_fp%'
 
-## Movement Speed Check
-# Prevents players from moving too fast.
-speed:
+# Click check
+# Detects abnormal clicking.
+click:
   enable: true
   disable_worlds: []
 
-  # Ignores unloaded chunks.
-  ignore_unloaded_chunks: true
+  buffer_size: 20 # Do not modify!
+  # Players can click 22 times per second if they jitter clicking.
+  # The average player clicks at 8 CPS, and only a minuscule amount of people get to 16 CPS.
+  #
+  # Decrease if players are bypassing, increase if legit players are getting flagged.
+  # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
+  max_cps: 18
 
-  # Speed prediction tolerance.
-  # Turn this down if players are bypassing, up if players are getting false flags.
-  # Don't set this to 0! There should always be some slack.
-  tolerance: 0.022
+  # Timing-related checks
+  check_cps: true
+  check_swing: true
+  check_timing: true
 
-  # Allows Matrix to skip collision checks around players every few ticks and use cached results.
-  # Do not set this too large! Too many skips will occur and cause false positives. (0 = no skips)
-  skip_rate: 2
+  # Add more violations for exceeding CPS.
+  dynamic_cps_vl_weight: true
+
+  # Violation Thresholds.
+  # Run commands once X amount of violations are reached.
+  commands:
+    4: 'coc %player% if -lp-<20 do matrix notify %gp_c_me%%player% tried to macro %gp_c_ba% 1/4 %gp_c_lw%(4VL) -h %gp_c_hm% Click -c %gp_r_cc%'
+    8: 'matrix notify %gp_c_me%%player% tried to macro %gp_c_ba% 2/4 %gp_c_sm%(8VL) -h %gp_c_hm% Click -c %gp_r_cc%'
+    14: 'coc %player% if -lp-<25 do %gp_r_ki% %player% %gp_o_pr%%gp_h_cl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    20: '%gp_r_ki% %player% %gp_o_pr%%gp_h_cl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+
+# Movement
+# Detects many movement related hacks
+move:
+  enable: true
+  disable_worlds: []
 
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 48
+  cancel_vl: 42
 
-  # Ensures correct sprint direction.
-  sprint_direction: true
+  # Deals the correct amount of damage after detection.
+  apply_damage: true
 
-  # Ensures correct strafe movement.
-  strafe: true
+  # This decreases server load, but may introduce unknown issues.
+  # Only compatible with server versions 1.8, 1.12, and 1.16.
+  async_mode: false
 
-  # Checks for FastClimb/FastLadder
-  fastclimb: true
-
-  # Checks for NoSlow.
+  # NoSlow check: Prevent bypassing slowdowns from cobwebs, bushes, etc.
   check_noslow: true
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    40: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 1/4 %gp_c_lw%(40VL) %gp_c_hm% %gp_r_cc%'
-    64: 'coc %player% if -lp-<35 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 2/4 %gp_c_sm%(64VL) %gp_c_hm% %gp_r_cc%'
-    82: 'coc %player% if -lp-<45 do %gp_r_no% %gp_c_me%%player% tried to illegally move %gp_c_ba% %gp_c_se%Speed %gp_c_ba% 3/4 %gp_c_md%(82VL) %gp_c_hm% %gp_r_cc%'
-    104: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_sp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
-    130: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    40: 'coc %player% if -lp-<25 do matrix notify %gp_c_me%%player% tried to illegally move %gp_c_ba% 1/4 %gp_c_lw%(40VL) -h %gp_c_hm% Move -c %gp_r_cc%'
+    64: 'coc %player% if -lp-<35 do matrix notify %gp_c_me%%player% tried to illegally move %gp_c_ba% 2/4 %gp_c_sm%(64VL) -h %gp_c_hm% Move -c %gp_r_cc%'
+    82: 'coc %player% if -lp-<45 do matrix notify %gp_c_me%%player% tried to illegally move %gp_c_ba% 3/4 %gp_c_md%(82VL) -h %gp_c_hm% Move -c %gp_r_cc%'
+    104: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_mp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    130: '%gp_r_ki% %player% %gp_o_pr%%gp_h_mo%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Jesus
 # Prevents players from walking and moving too quickly on liquids.
@@ -287,9 +285,9 @@ jesus:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    14: 'coc %player% if -lp-<34 do %gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 1/4 %gp_c_sm%(14VL) %gp_c_hm% %gp_r_cc%'
-    20: 'coc %player% if -lp-<48 do %gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 2/4 %gp_c_md%(20VL) %gp_c_hm% %gp_r_cc%'
-    40: '%gp_r_no% %gp_c_me%%player% illegally moved in liquid %gp_c_ba% %gp_c_se%Jesus %gp_c_ba% 3/4 %gp_c_hg%(40VL) %gp_c_hm% %gp_r_cc%'
+    14: 'coc %player% if -lp-<34 do matrix notify %gp_c_me%%player% illegally moved in liquid %gp_c_ba% 1/4 %gp_c_sm%(14VL) -h %gp_c_hm% Jesus -c %gp_r_cc%'
+    20: 'coc %player% if -lp-<48 do matrix notify %gp_c_me%%player% illegally moved in liquid %gp_c_ba% 2/4 %gp_c_md%(20VL) -h %gp_c_hm% Jesus -c %gp_r_cc%'
+    40: 'matrix notify %gp_c_me%%player% illegally moved in liquid %gp_c_ba% 3/4 %gp_c_hg%(40VL) -h %gp_c_hm% Jesus -c %gp_r_cc%'
     50: 'coc %player% if -lp-<33 do %gp_r_ki% %player% %gp_o_pr%%gp_h_js%%gp_o_su%%gp_n_fp%'
     64: '%gp_r_ki% %player% %gp_o_pr%%gp_h_js%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -315,56 +313,10 @@ velocity:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<25 %gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 1/4 %gp_c_sm%(10VL) %gp_c_hm% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 2/4 %gp_c_md%(15VL) %gp_c_hm% %gp_r_cc%'
-    20: '%gp_r_no% %gp_c_me%%player% did not take knockback %gp_c_ba% %gp_c_se%Velocity %gp_c_ba% 3/4 %gp_c_hg%(20VL) %gp_c_hm% %gp_r_cc%'
+    10: 'coc %player% if -lp-<25 matrix notify %gp_c_me%%player% did not take knockback %gp_c_ba% 1/4 %gp_c_sm%(10VL) -h %gp_c_hm% Velocity -c %gp_r_cc%'
+    15: 'matrix notify %gp_c_me%%player% did not take knockback %gp_c_ba% 2/4 %gp_c_md%(15VL) -h %gp_c_hm% Velocity -c %gp_r_cc%'
+    20: 'matrix notify %gp_c_me%%player% did not take knockback %gp_c_ba% 3/4 %gp_c_hg%(20VL) -h %gp_c_hm% Velocity -c %gp_r_cc%'
     24: '%gp_r_ki% %player% %gp_o_pr%%gp_h_vc%%gp_o_su%%gp_n_fp%'
-
-## Fly
-# Prevents players from using fly hacks.
-fly:
-  # Note: The speed check must also be enabled.
-  enable: true
-  disable_worlds: []
-
-  # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
-  cancel_vl: 48
-
-  # Setback method (back, ground)
-  # back: Teleport to the last valid location
-  # ground: Teleports to the ground under the player
-  setback: back
-
-  # Teleports players to the void if they are close to it and set back.
-  # May cause NoFall/BugUp bypasses if disabled and won't teleport players in sky-based gamemodes.
-  setback_to_void: true
-
-  # Checks if players are allowed to fly.
-  # Note: Might not be compatible with some plugins.
-  ability:
-    enable: true
-    vl_weight: 20
-
-  # NoFall check: Makes sure players receive damage after falling.
-  # Recommended to disable these for minigame servers that don't have fall damage enabled.
-  nofall:
-    # Teleports players back to the original position.
-    setback: true
-
-    # Deals the same amount of damage after detection.
-    damage: true
-
-  # How many violations will be added when trident boost hacks are triggered?
-  trident_boost_vl_weight: 17
-
-  # Violation Thresholds.
-  # Run commands once X amount of violations are reached.
-  commands:
-    50: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 1/4 %gp_c_lw%(50VL) %gp_c_hm% %gp_r_cc%'
-    75: '%gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 2/4 %gp_c_sm%(75VL) %gp_c_hm% %gp_r_cc%'
-    92: '%gp_r_no% %gp_c_me%%player% tried to illegally fly %gp_c_ba% %gp_c_se%Fly %gp_c_ba% 3/4 %gp_c_sm%(92VL) %gp_c_hm% %gp_r_cc%'
-    110: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
-    138: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fl%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Elytra
 # Stops players using elytra related hacks.
@@ -384,9 +336,9 @@ elytra:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<18 do %gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 1/4 %gp_c_lw%(10VL) %gp_c_hm% %gp_r_cc%'
-    16: '%gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 2/4 %gp_c_sm%(16VL) %gp_c_hm% %gp_r_cc%'
-    24: '%gp_r_no% %gp_c_me%%player% might be using elytra hacks %gp_c_ba% %gp_c_se%Elytra %gp_c_ba% 3/4 %gp_c_md%(24VL) %gp_c_hm% %gp_r_cc%'
+    10: 'coc %player% if -lp-<18 do matrix notify %gp_c_me%%player% might be using elytra hacks %gp_c_ba% 1/4 %gp_c_lw%(10VL) -h %gp_c_hm% Elytra -c %gp_r_cc%'
+    16: 'matrix notify %gp_c_me%%player% might be using elytra hacks %gp_c_ba% 2/4 %gp_c_sm%(16VL) -h %gp_c_hm% Elytra -c %gp_r_cc%'
+    24: 'matrix notify %gp_c_me%%player% might be using elytra hacks %gp_c_ba% 3/4 %gp_c_md%(24VL) -h %gp_c_hm% Elytra -c %gp_r_cc%'
     30: 'coc %player% if -lp-<22 do %gp_r_ki% %player% %gp_o_pr%%gp_h_el%%gp_o_su%%gp_n_fp%'
     48: '%gp_r_ki% %player% %gp_o_pr%%gp_h_el%%gp_o_su%%gp_n_fp%'
 
@@ -426,8 +378,8 @@ vehicle:
  # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Vehicle %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Vehicle %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
+    5: 'matrix notify %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% 1/3 %gp_c_md%(5VL) -h %gp_c_hm% Vehicle -c %gp_r_cc%'
+    10: 'matrix notify %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Vehicle %gp_c_ba% 2/3 %gp_c_hg%(10VL) -h %gp_c_hm% Vehicle -c %gp_r_cc%'
     32: '%gp_r_ki% %player% %gp_o_pr%%gp_h_vl%%gp_o_su%%gp_n_fp%'
 
 ## Interact
@@ -436,34 +388,16 @@ interact:
   enable: true
   disable_worlds: []
 
-   # Modules used in the interact checks
-  modules:
-    # Block reach check: Detects players interacting with blocks too far away.
-    block_reach:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 1
-
-    # Break block check: Detects players breaking blocks through walls.
-    break_block:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 1
-
-    # Attack check: Detects players attacking entities through walls.
-    attack:
-      enable: true
-
-      # How many violations will be added when triggered?
-      vl_weight: 1
+  check_break_block: true # Breaking blocks through walls.
+  check_place_block: true # Placing blocks through walls.
+  check_interact_block: true # Interacting with blocks through walls.
+  check_attack: true # Attacking through walls.
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    8: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Interact %gp_c_ba% 1/3 %gp_c_sm%(8VL) %gp_c_hm% %gp_r_cc%'
-    12: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Interact %gp_c_ba% 2/3 %gp_c_hg%(12VL) %gp_c_hm% %gp_r_cc%'
+    8: 'coc %player% if -lp-<28 do matrix notify %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% 1/3 %gp_c_sm%(8VL) -h %gp_c_hm% Interact -c %gp_r_cc%'
+    12: 'matrix notify %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% 2/3 %gp_c_hg%(12VL) -h %gp_c_hm% Interact -c %gp_r_cc%'
     16: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_in%%gp_o_su%%gp_n_fp%'
     21: '%gp_r_ki% %player% %gp_o_pr%%gp_h_in%%gp_o_su%%gp_n_fp%'
 
@@ -494,9 +428,9 @@ phase:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    7: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 1/4 %gp_c_lw%(7VL) %gp_c_hm% %gp_r_cc%'
-    13: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 2/4 %gp_c_sm%(13VL) %gp_c_hm% %gp_r_cc%'
-    21: '%gp_r_no% %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% %gp_c_se%Phase %gp_c_ba% 3/4 %gp_c_hg%(21VL) %gp_c_hm% %gp_r_cc%'
+    7: 'coc %player% if -lp-<28 do matrix notify %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% 1/4 %gp_c_lw%(7VL) -h %gp_c_hm% Phase -c %gp_r_cc%'
+    13: 'matrix notify %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% 2/4 %gp_c_sm%(13VL) -h %gp_c_hm% Phase -c %gp_r_cc%'
+    21: 'matrix notify %gp_c_me%%player% illegally interacted with blocks/entities %gp_c_ba% 3/4 %gp_c_hg%(21VL) -h %gp_c_hm% Phase -c %gp_r_cc%'
     28: 'coc %player% if -lp-<22 do %gp_r_ki% %player% %gp_o_pr%%gp_h_ph%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     38: '%gp_r_ki% %player% %gp_o_pr%%gp_h_ph%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -526,8 +460,8 @@ badpackets:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    80: 'coc %player% if -lp-<28 do %gp_r_no% %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% %gp_c_se%BadPackets %gp_c_ba% 1/3 %gp_c_sm%(80VL) %gp_c_hm% %gp_r_cc%'
-    150: '%gp_r_no% %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% %gp_c_se%BadPackets %gp_c_ba% 2/3 %gp_c_md%(150VL) %gp_c_hm% %gp_r_cc%'
+    80: 'coc %player% if -lp-<28 do matrix notify %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% 1/3 %gp_c_sm%(80VL) -h %gp_c_hm% BadPackets -c %gp_r_cc%'
+    150: 'matrix notify %gp_c_me%%player% is sending unusual packets to the server %gp_c_ba% 2/3 %gp_c_md%(150VL) h %gp_c_hm% BadPackets -c %gp_r_cc%'
     185: 'coc %player% if -lp-<22 do %gp_r_ki% %player% %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     240: '%gp_r_ki% %player% %gp_o_pr%%gp_h_bp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -582,8 +516,8 @@ block:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    10: 'coc %player% if -lp-<33 do %gp_r_no% %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% %gp_c_se%Block %gp_c_ba% 1/3 %gp_c_sm%(10VL) %gp_c_hm% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% %gp_c_se%Block %gp_c_ba% 2/3 %gp_c_md%(15VL) %gp_c_hm% %gp_r_cc%'
+    10: 'coc %player% if -lp-<33 do matrix notify %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% 1/3 %gp_c_sm%(10VL) -h %gp_c_hm% Block -c %gp_r_cc%'
+    15: 'matrix notify %gp_c_me%%player% tried to place/break blocks quickly %gp_c_ba% 2/3 %gp_c_md%(15VL) -h %gp_c_hm% Block -c %gp_r_cc%'
     20: 'coc %player% if -lp-<25 do %gp_r_ki% %player% %gp_o_pr%%gp_h_fp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     32: '%gp_r_ki% %player% %gp_o_pr%%gp_h_fp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -614,7 +548,7 @@ scaffold:
 
       # Minimum amount of time between bridge block placement (ticks)
       # Turn this down if there are too many false positives.
-      min_delay: 8
+      min_delay: 7
 
       # How many violations will be added when triggered?
       vl_weight: 6
@@ -636,9 +570,9 @@ scaffold:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    8: 'coc %player% if -lp-<33 do %gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 1/4 %gp_c_lw%(8VL) %gp_c_hm% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 2/4 %gp_c_sm%(10VL) %gp_c_hm% %gp_r_cc%'
-    15: '%gp_r_no% %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% %gp_c_se%Scaffold %gp_c_ba% 3/4 %gp_c_md%(15VL) %gp_c_hm% %gp_r_cc%'
+    8: 'coc %player% if -lp-<33 do matrix notify %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% 1/4 %gp_c_lw%(8VL) -h %gp_c_hm% Scaffold -c %gp_r_cc%'
+    10: 'matrix notify %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% 2/4 %gp_c_sm%(10VL) -h %gp_c_hm% Scaffold -c %gp_r_cc%'
+    15: 'matrix notify %gp_c_me%%player% tried to bridge blocks quickly %gp_c_ba% 3/4 %gp_c_md%(15VL) -h %gp_c_hm% Scaffold -c %gp_r_cc%'
     20: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
     32: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sc%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
@@ -665,8 +599,8 @@ delay:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    15: 'coc %player% if -lp-<25 do %gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
-    24: '%gp_r_no% %gp_c_me%%player% tried to increase action speed %gp_c_ba% %gp_c_se%Delay %gp_c_ba% 2/3 %gp_c_hg%(8VL) %gp_c_hm% %gp_r_cc%'
+    15: 'coc %player% if -lp-<25 do matrix notify %gp_c_me%%player% tried to increase action speed %gp_c_ba% 1/3 %gp_c_md%(5VL) -h %gp_c_hm% Delay -c %gp_r_cc%'
+    24: 'matrix notify %gp_c_me%%player% tried to increase action speed %gp_c_ba% 2/3 %gp_c_hg%(8VL) -h %gp_c_hm% Delay -c %gp_r_cc%'
     30: 'coc %player% if -lp-<21 do %gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
     35: '%gp_r_ki% %player% %gp_o_pr%%gp_h_de%%gp_o_su%%gp_n_fp%'
 
@@ -679,8 +613,8 @@ autobot:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    5: '%gp_r_no% %gp_c_me%%player% may be using a bot %gp_c_ba% %gp_c_se%AutoBot %gp_c_ba% 1/3 %gp_c_md%(5VL) %gp_c_hm% %gp_r_cc%'
-    10: '%gp_r_no% %gp_c_me%%player% may be using a bot %gp_c_ba% %gp_c_se%AutoBot %gp_c_ba% 2/3 %gp_c_hg%(10VL) %gp_c_hm% %gp_r_cc%'
+    5: 'matrix notify %gp_c_me%%player% may be using a bot %gp_c_ba% 1/3 %gp_c_md%(5VL) -h %gp_c_hm% AutoBot -c %gp_r_cc%'
+    10: 'matrix notify %gp_c_me%%player% may be using a bot %gp_c_ba% 2/3 %gp_c_hg%(10VL) -h %gp_c_hm% AutoBot -c %gp_r_cc%'
     15: '%gp_r_ki% %player% %gp_o_pr%%gp_h_ab%%gp_o_su%%gp_n_fp%'
 
 ## Spam
@@ -698,9 +632,9 @@ chat:
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
-    4: '%gp_r_no% %gp_c_me%%player% is spamming the chat %gp_c_ba% %gp_c_se%ChatSpam %gp_c_ba% 1/2 %gp_c_hg%(4VL) %gp_c_hm% %gp_r_cc%'
+    4: 'matrix notify %gp_c_me%%player% is spamming the chat %gp_c_ba% 1/2 %gp_c_hg%(4VL) -h %gp_c_hm% Chat -c %gp_r_cc%'
     10: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sm%%gp_o_su%%gp_n_fp%'
 
 # Don't change!
-checks-version: "1.6.2"
-matrix-version: "5.6.2"
+checks-version: "1.7"
+matrix-version: "6"

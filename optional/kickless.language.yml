@@ -82,15 +82,17 @@ global_placeholder:
   #
   # h_ka: KillAura  │ h_in: Interact
   # h_hb: HitBox    │ h_ph: Phase
-  # h_sp: Speed     │ h_bp: BadPackets
-  # h_js: Jesus     │ h_fp: Block
-  # h_vc: Velocity  │ h_sc: Scaffold
-  # h_fl: Fly       │ h_de: Delay
-  # h_el: ElytraFly │ h_ab: AutoBot
-  # h_vl: Vehicle   │ h_sm: Spamming
+  # h_cl: Click     │ h_bp: BadPackets
+  # h_mv: Move      │ h_fp: Block
+  # h_js: Jesus     │ h_sc: Scaffold
+  # h_vc: Velocity  │ h_de: Delay
+  # h_fl: Fly       │ h_ab: AutoBot
+  # h_el: ElytraFly │ h_sm: Spamming
+  # h_vl: Vehicle
   h_ka: 'using combat related hacks'
   h_hb: 'using combat related hacks'
-  h_sp: 'using speed related hacks'
+  h_cl: 'unusual click patterns'
+  h_mv: 'using movement related hacks'
   h_js: 'using water related hacks'
   h_vc: 'using knockback related hacks'
   h_fl: 'using fly related hacks'
