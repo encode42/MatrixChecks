@@ -266,8 +266,8 @@ move:
     40: 'coc %player% if -lp-<25 do matrix notify %gp_c_me%%player% tried to illegally move %gp_c_ba% 1/4 %gp_c_lw%(40VL) -h %gp_c_hm% Move -c %gp_r_cc%'
     64: 'coc %player% if -lp-<35 do matrix notify %gp_c_me%%player% tried to illegally move %gp_c_ba% 2/4 %gp_c_sm%(64VL) -h %gp_c_hm% Move -c %gp_r_cc%'
     82: 'coc %player% if -lp-<45 do matrix notify %gp_c_me%%player% tried to illegally move %gp_c_ba% 3/4 %gp_c_md%(82VL) -h %gp_c_hm% Move -c %gp_r_cc%'
-    104: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_mp%%gp_o_su%%gp_n_ui%%gp_n_fp%'
-    130: '%gp_r_ki% %player% %gp_o_pr%%gp_h_mo%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    104: 'coc %player% if -lp-<30 do %gp_r_ki% %player% %gp_o_pr%%gp_h_mv%%gp_o_su%%gp_n_ui%%gp_n_fp%'
+    130: '%gp_r_ki% %player% %gp_o_pr%%gp_h_mv%%gp_o_su%%gp_n_ui%%gp_n_fp%'
 
 ## Jesus
 # Prevents players from walking and moving too quickly on liquids.
