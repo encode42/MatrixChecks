@@ -68,13 +68,17 @@ verbose-format: '&7%player% failed &6%check% &8(%component%) | &7%message% &8| &
 #   25: 'matrix kick %player% Kicked for hacks! %gp_fp%'
 global_placeholder:
   ## Optional
-  # Small changes that will be added to every kick message.
+  # Small changes that will be added to various messages.
   # Set these values to '' if you do not want to use them.
   #
   # o_pr: Kick message prefix
   # o_su: Kick reason suffix
+  # o_an: Content after notification message
+  #   Ex. o_an: ' OH NO! '
+  #       Encode42 illegally moved! OH NO! (50VL)
   o_pr: '&cKicked for detected hacks! &7('
   o_su: ', ID: %id%)%break%'
+  o_an: ' '
 
   ## Kick Reasons
   # What a kicked player sees in the kick message.
