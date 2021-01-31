@@ -112,9 +112,9 @@ global_placeholder:
   # n_fp: Report false-kick message
   # n_ui: Kicks based on bad ping
   # n_sp: Chat spamming message
-  n_fp: '%break%&7If this is a false kick, please report this to the server''s admins.'
+  n_fp: '%break%&7If you were falsely kicked, please report this to the server''s admins.'
   n_ui: '%break%&7This may be caused by an unstable internet connection.'
-  n_sp: '%break%&7Slow down a bit. Nobody wants their chat to be flooded.'
+  n_sp: '%break%&7Slow down a bit! Nobody wants their chat to be flooded.'
 
   ## Customization
   # Changes for commands, colors, etc.
