@@ -3,9 +3,7 @@
 # │ ├─┤ ││ └─╮
 # └─┘ └─┘└───╯
 # MatrixChecks
-#
-# The optimized checks for Matrix Anticheat.
-# Made for and tested on Matrix 6+
+# Maintained by Encode42
 #
 #─── !!  NOTE  !! ────────────────────────╮
 # THIS FILE DOES NOT INCLUDE ANY CHECKS!  │
@@ -112,6 +110,8 @@ disabled_components: []
 #   - 'vel.ana:4'
 custom_vl_weight: []
 
-# Don't change!
-checks-version: "1.7"
-matrix-version: "6"
+# Do not change these values unless you know what you're doing!
+# These are used in the MatrixChecks plugin companion.
+version:
+  checks: "1.8"
+  matrix: "6"
