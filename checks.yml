@@ -253,8 +253,12 @@ move:
   # Deals the correct amount of damage after detection.
   apply_damage: true
 
+  # Teleports players to the void if required for any setback.
+  allow_setback_to_void: true
+
   # This decreases server load, but may introduce unknown issues.
-  # Only compatible with server versions 1.8, 1.12, and 1.16.
+  # Please don't enable this unless necessary! You will not receive support if enabled.
+  # Only compatible with server versions 1.8, 1.12, and the latest Minecraft release.
   async_mode: false
 
   # NoSlow check: Prevent bypassing slowdowns from cobwebs, bushes, etc.
