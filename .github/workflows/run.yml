@@ -13,6 +13,13 @@ jobs:
         with:
           node-version: 14
 
+      - name: Grab the NPM cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: ${{ runner.os }}-node-
+
       - name: Download modules
         run: |
           cd .github/scripts
