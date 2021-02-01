@@ -39,7 +39,7 @@ files.forEach(e => {
 		.replace(/, /g, ",")       // Remove space after comma
 		.trim();
 
-	fs.writeFileSync(`${fileName}`, yamlMini);
+	fs.writeFileSync(`${fileName}`, minified);
 
 	console.log(`Minified ${e}! Before: ${file.length} | After: ${minified.length}`);
 
