@@ -1,8 +1,9 @@
-name: Minify files
+name: File automation
 on: [push]
 jobs:
   minify:
     runs-on: ubuntu-latest
+    if: "!endsWith(github.event.head_commit.message, '*')"
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -12,21 +13,20 @@ jobs:
         with:
           node-version: 14
 
-      - name: Download required modules
+      - name: Download modules
         run: |
           cd .github/scripts
-          npm i
+          npm i --production
 
-      - name: Run scripts
-        run: |
-          node .github/scripts/minify.js
+      - name: Minify files
+        run: node .github/scripts/minify.js
 
-      - name: Commit files
+      - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add optional/*.yml cloud/*.yml
-          git commit -m "Minify files" || echo "No changes were found."
+          git config --local user.name "actions-user"
+          git add cloud/*.yml
+          git commit -m "Minify files" || echo "No changes were made."
 
       - name: Push changes
         uses: ad-m/github-push-action@master

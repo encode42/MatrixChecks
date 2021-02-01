@@ -1,19 +1,15 @@
 /*
-     ___
- ___╱   ╲   ┌─────┐┌───╮
-╱   ╲___╱   │     ││  ┌╯
-╲___╱   ╲   │ │─│ ││  └╮
-    ╲___╱   └─┘ └─┘└───╯
-            MatrixChecks
-
-        Tools for developers
-  This file isn't related to Matrix.
+┌─────┐┌───╮
+│     ││  ┌╯
+│ │─│ ││  └╮
+└─┘ └─┘└───╯
+MatrixChecks
 */
 
-const yaml = require("js-yaml");
-const fs   = require("fs");
+const yaml = require("js-yaml"),
+	  fs   = require("fs");
 
-// Files that get minified
+// Files to minify
 const files = [
 	"./checks.yml",
 	"./free.checks.yml",
@@ -24,10 +20,11 @@ const files = [
 	"./optional/unknown.language.yml"
 ];
 
-// Minify each file
-let minifiedAmount = 0;
+// Run through each file
+let minifiedAmount, totalAmount;
+minifiedAmount = totalAmount = 0;
 files.forEach(e => {
-	if (!fs.existsSync(e)) return console.log(`${e} does not exist! Skipping...\n`);
+	if (!fs.existsSync(e)) return console.log(`${e} cannot be found!`);
 
 	// Get the path and destination
 	const filePath = e.split("/");
@@ -35,16 +32,19 @@ files.forEach(e => {
 
 	console.log(`Minifying ${e}...`);
 
-	// Read and write the file
-	const yamlFile = fs.readFileSync(e, "utf-8");
-	const yamlMini = yaml.safeDump(yaml.safeLoad(yamlFile), { "flowLevel": 0 })
-		.replace(/'(\d*)'/g, "$1") // Remove '' around numbers
-		.replace(/, /g, ",")       // Remove space after ,
+	// Minify the file
+	const file     = fs.readFileSync(e, "utf-8");
+	const minified = yaml.safeDump(yaml.safeLoad(file), { "flowLevel": 0 })
+		.replace(/'(\d*)'/g, "$1") // Remove quotes around numbers
+		.replace(/, /g, ",")       // Remove space after comma
 		.trim();
+
 	fs.writeFileSync(`${fileName}`, yamlMini);
 
-	console.log(`Minified ${e}! Before: ${yamlFile.length} | After: ${yamlMini.length}\n`);
-	minifiedAmount = minifiedAmount + (yamlFile.length - yamlMini.length);
+	console.log(`Minified ${e}! Before: ${file.length} | After: ${minified.length}`);
+
+	minifiedAmount += minified.length;
+	totalAmount    += file.length;
 });
 
-console.log(`Done! ${minifiedAmount} Total lines minified.`);
+console.log(`Finished! ${totalAmount - minifiedAmount} total characters saved.`);
