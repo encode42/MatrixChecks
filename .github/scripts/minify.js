@@ -41,7 +41,7 @@ files.forEach(e => {
 
 	fs.writeFileSync(`${fileName}`, minified);
 
-	console.log(`Minified ${e}! Before: ${file.length} | After: ${minified.length}`);
+	console.log(`Done! (${file.length} → ${minified.length} characters)`);
 
 	minifiedAmount += minified.length;
 	totalAmount    += file.length;
