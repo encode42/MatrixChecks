@@ -47,6 +47,7 @@ killaura:
       check_protocol_5: true
       check_protocol_6: true
       check_protocol_7: true
+      check_protocol_8: true
 
       # How many violations will be added when triggered?
       vl_weight: 7
@@ -166,9 +167,9 @@ hitbox:
   disable_worlds: []
 
   # Maximum reach distance.
-  # The max reach is 4 blocks; however, with latency and strange calculations, most players won't reach that far.
-  # Anything farther than 3.4 blocks should be considered hacks, but some high ping players may reach that distance.
-  max_reach: 3.18
+  # The max client reach distance is 3.0. Lag and other factors may influence this value.
+  # This shouldn't be set to exactly 3.0, though it shouldn't be set much higher as well.
+  max_reach: 3.075
 
   # How many moves should be traced back to the player?
   # Set this higher to reduce false positives but weaken detection.
