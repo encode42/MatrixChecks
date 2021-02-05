@@ -150,20 +150,19 @@ global_placeholder:
   r_ki: 'matrix kick'
   r_cc: '/matrix spec %player%'
 
-## Commands help description
+## Command help descriptions
 # Used in the help command.
 commands:
-  verbose: 'Toggle verbose messages (Show every suspicion)'
-  reload: 'Reload all configs'
+  gui: 'Open the information and control panel'
   notify: 'Send a message to players with the notify permission'
-  toggle-notify: 'Toggle the notify output'
-  gui: 'Open the control panel'
-  violations: 'Open the violations GUI'
-  npc: 'Spawn a hack detection NPC behind a player'
+  verbose: 'Toggle verbose messages (Show every flag)'
+  toggle-notify: 'Toggle the notify command output'
   kick: 'Use Matrix to kick a player'
-  ping: 'Get a player''s latency value'
-  cps: 'Monitor a player''s CPS for X seconds'
   msg: 'Send warning messages to a player'
+  npc: 'Spawn a detection NPC behind a player'
+  violations: 'Open the violations GUI'
+  ping: 'Get a player''s latency value'
+  reload: 'Reload all configs'
 
 # Do not change these values unless you know what you're doing!
 # These are used in the MatrixChecks plugin companion.
