@@ -171,6 +171,10 @@ hitbox:
   # This shouldn't be set to exactly 3.0, though it shouldn't be set much higher as well.
   max_reach: 3.075
 
+  # The maximum amount of violations to add in the first five seconds of combat.
+  # Lowering this may decrease false positives due to lag.
+  max_burst_vl: 12
+
   # How many moves should be traced back to the player?
   # Set this higher to reduce false positives but weaken detection.
   trace_back_length: 5
@@ -254,6 +258,14 @@ move:
 
   # Teleports players to the void if required for any setback.
   allow_setback_to_void: true
+
+  # Increases the sensitivity of knockback checks.
+  strict_kb_handling: false
+
+  # Prevent fly-related hacks even when a player is in creative mode.
+  # This will stop players from flying at insane speeds.
+  # Keep in mind that some clients increase the creative fly speed.
+  check_flying_players: true
 
   # This decreases server load, but may introduce unknown issues.
   # Please don't enable this unless necessary! You will not receive support if enabled.
@@ -641,5 +653,5 @@ chat:
 # Do not change these values unless you know what you're doing!
 # These are used in the MatrixChecks plugin companion.
 version:
-  checks: "1.8"
-  matrix: "6.0.1"
+  checks: "1.9"
+  matrix: "6"

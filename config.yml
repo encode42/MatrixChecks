@@ -113,5 +113,5 @@ custom_vl_weight: []
 # Do not change these values unless you know what you're doing!
 # These are used in the MatrixChecks plugin companion.
 version:
-  checks: "1.8"
+  checks: "1.9"
   matrix: "6"
