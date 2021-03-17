@@ -1,9 +1,3 @@
-<!--
-EncodedREADME - My personal README style.
-Yes, there is HTML in Markdown; you don't have to tell me.
-This README style is loosely inspired by Akarin's README!
--->
-
 <img src="https://repository-images.githubusercontent.com/282035636/d9c52600-6092-11eb-8077-b8c0eedfa2c4" width="200px" align="right">
 <div align="center">
 
@@ -40,13 +34,29 @@ Legacy releases compatible with older versions of Matrix have their own branches
 </table>
 
 ⚠ **REQUIRED INSTALLATION NOTE:**  
-You **must** install [`language.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) to use placeholders!  
-Otherwise, many messages will be unreadable! Every message  
-contains placeholders that require the language file.
+You **must** install [`language.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) to use this configuration!  
+Otherwise, all messages will be unreadable and commands will not work!  
+Every message contains placeholders that require the language file.
 
-⚠ **GENERAL NOTE:**  
-`config.yml` and `language.yml` **do not** include any checks!  
-Install [`checks.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) to utilize the main detection changes.
+## 📷 Previews
+### Improved messages
+Every single message has been modified to be easily read and understood.  
+Messages have also been greatly reduced in length to reduce notification spam.  
+Notifications, kick messages, comments, everywhere with text has been modified!  
+<img src=".github/assets/notifications.png" width="450">  
+<img src=".github/assets/kick.png" width="450">
+
+### Hover messages and click commands
+You can hover over notification messages to see more details!  
+This includes client version, ping, server TPS, and the root check/component.  
+When you click notifications, you'll instantly spectate the suspected player!  
+And of course, these are customizable in `language.yml`.  
+<img src=".github/assets/hover.png" width="450">
+
+### Customization
+Every aspect of the configuration is easily customizable via `language.yml`!  
+Changes you make will take effect everywhere the variable is used.  
+<img src=".github/assets/customization.png" width="450">
 
 ## 🔧 Setup
 ### Server Usage
@@ -77,43 +87,66 @@ Matrix Anticheat, like most, isn't a perfect anticheat. It itself has bugs that 
 These checks aim to mitigate those issues and improve what works well, but there's only so much we can do.  
 Tested and configured for survival and minigame servers. Tweak the checks for your own server!
 
-### 1. Checks file types
+<details>
+<summary>
+
+### What each configuration files does
+</summary>
+
 #### checks.yml
-The main checks file. Includes all of the advertised features.  
-Conditional commands, optimized checks, increased detection speed, etc.
+The main checks configuration file. Includes all the advertised features.  
+Conditional commands, optimized checks, increased detection speed, etc.  
+⚠ Use this file alongside `language.yml`!
 
 #### language.yml
 The main language file. This file must be installed on every Matrix instance.  
-It contains all of the global placeholders used in `checks.yml`.
+It contains every global placeholder used extensively in `checks.yml`.  
+You'll be able to configure many aspects of the checks in this file!
 
 #### config.yml
-An optional file that only changes a few things from the original config.  
-Includes organization, minor tweaks, and a pre-set cloud config for MatrixChecks.
+Optional file that changes a few values and organizes the original config.  
+Includes comment and key organization, minor tweaks, and a ready-to-use cloud config.  
+⚠ This file does not include any **major** changes!
 
-#### /optional/kickless.language.yml
-Same as `language.yml` but with the kick command disabled.  
-This is helpful for debugging or modifying checks without getting kicked.
+### Variations
+The files listed below are variations of the default configuration.  
+These variations are pre-made customizations for different uses.  
+To use these, download the files in the variation directory in place of the main files!
 
-#### /optional/unknown.language.yml
-Same as `language.yml` but with different kick messages based on confusion.  
+#### /variations/fake-error
+All kick messages are replaced with existing and made-up error messages.  
+This confuses hackers since kick messages are replaced with generic errors.
+
+#### /variations/kickless
+Replaces all kick commands with a simple notification.  
+Helpful for debugging or modifying checks without getting kicked.
+
+#### /variations/unknown-reason
 All kick messages are replaced with a generic message and a number for staff.  
 This allows staff to know why a player was kicked without letting the player knowing which hacks to disable.
 
-#### /optional/error.language.yml
-Same as `language.yml` but with different kick messages based on confusion.  
-All kick messages are replaced with existing and made-up error messages.
-This confuses hackers since they have no idea what they were kicked for.
+### Miscellaneous
+These are files that don't fit a category.
 
 #### /cloud
-The exact same as the files above, but minified. These are much smaller in file size but are nearly impossible to read.  
+A directory that contains all of the files above, but minified. These are much smaller in file size but are impossible to read.  
 Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup.  
 These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
 
-#### /.github, license.md, readme.md
-These are files that are only important for and used in this GitHub repository.  
-You can completely ignore these files as they have nothing of importance for the end-user.
+#### /scripts
+Contains various scripts used for repository automation that make everything easier.  
+You don't need to worry about this directory unless you're interested in the development of these checks.
 
-### 2. Suggested changes
+#### /.github, license.md, readme.md
+These are files that are only utilized by GitHub and meant for repository information.  
+You can completely ignore these files as they have nothing of importance for the end-user.
+</details>
+
+<details>
+<summary>
+
+### Suggested (optional) changes
+</summary>
 These are just suggestions, don't change them if you don't need to.  
 Only use these if you're having issues with the listed checks!
 
@@ -125,8 +158,14 @@ Root Check | Path                               | Default | Suggestion       | R
 `scaffold` | `...delay.min_delay`               | `8`     | `5` - `9`        | Decrease if there are many false-positives when pillaring, increase if there are many bypasses.
 `delay`    | `check_inventory_action`           | `-1`    | `4` - `5`        | Enable this check for minigame servers with chest mechanics such as survival games, skywars, etc.
 &nbsp;     | `...` = relative path              | &nbsp;  | `X - X` = range  | &nbsp;
+</details>
 
-### 3. How do I report a change or false positive?
+<details>
+<summary>
+
+### How do I report a bypass or false positive?
+</summary>
+
 **First:**  
 Make sure this isn't an issue with Matrix itself. Test with the [default Matrix config files](https://github.com/jiangdashao/Matrix-Issues). If the issue persists, it's most likely an issue with Matrix. You can report the issue to us, but not everything can be fixed with a checks file tweak. Head over to [Matrix's support Discord](https://discord.gg/wjheaRj) and ask about the issue, or report the issue at their [issue tracker](https://github.com/jiangdashao/Matrix-Issues/issues).  
 - [(Matrix) Discord](https://discord.gg/wjheaRj)  
@@ -137,18 +176,37 @@ Report the issue in the [MatrixChecks support Discord](https://discord.gg/rjSkFy
 - [Discord](https://discord.gg/rjSkFyj)
 - [Issues](https://github.com/Encode42/MatrixChecks/issues)  
 - [Pull Requests](https://github.com/Encode42/MatrixChecks/pulls)
+</details>
 
-### 4. There are weird things in every message!
+<details>
+<summary>
+
+### There are weird symbols in every message!
+</summary>
+
 Do the "weird things" look like something along the lines of "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
 This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/Encode42/MatrixChecks#server-usage)
+</details>
 
-### 5. Can I modify the files in MatrixChecks?
+<details>
+<summary>
+
+### Can I modify the files in MatrixChecks?
+</summary>
+
 Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.  
 You can also distribute it all you want or use it on a large network; just don't remove copyright notices as that's against the license.
+</details>
 
-### 6. How can I contribute?
+<details>
+<summary>
+
+### How can I contribute?
+</summary>
+
 Contributions are very welcome! If you created a new optional file or made tweaks for different minigames, feel free to contact me or make a pull request.  
 I don't want to start any competition with this project! Having everything in one central repository makes it much easier for the end-user to find what they want.
+</details>
 
 ## 🖥️ Project Sponsor
 <div align="center">
