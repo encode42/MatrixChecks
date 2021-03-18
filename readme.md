@@ -133,12 +133,9 @@ A directory that contains all of the files above, but minified. These are much s
 Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup.  
 These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
 
-#### /scripts
-Contains various scripts used for repository automation that make everything easier.  
-You don't need to worry about this directory unless you're interested in the development of these checks.
-
 #### /.github, license.md, readme.md
 These are files that are only utilized by GitHub and meant for repository information.  
+Contains various scripts used for repository automation that make everything easier.  
 You can completely ignore these files as they have nothing of importance for the end-user.
 </details>
 
