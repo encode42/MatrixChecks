@@ -49,12 +49,13 @@ Notifications, kick messages, comments, everywhere with text has been modified!
 ### Hover messages and click commands
 You can hover over notification messages to see more details!  
 This includes client version, ping, server TPS, and the root check/component.  
-When you click notifications, you'll instantly spectate the suspected player!  
-And of course, these are customizable in `language.yml`.  
+When you click on notifications, you'll instantly spectate the suspected hacker!  
+And of course, the commands and visuals are customizable in `language.yml`.  
 <img src=".github/assets/hover.png" width="450">
 
 ### Customization
 Every aspect of the configuration is easily customizable via `language.yml`!  
+Commands, notification format, kick message, anything you'd ever need to change.  
 Changes you make will take effect everywhere the variable is used.  
 <img src=".github/assets/customization.png" width="450">
 
@@ -89,8 +90,7 @@ Tested and configured for survival and minigame servers. Tweak the checks for yo
 
 <details>
 <summary>
-
-### What each configuration files does
+What each configuration files does
 </summary>
 
 #### checks.yml
@@ -144,8 +144,7 @@ You can completely ignore these files as they have nothing of importance for the
 
 <details>
 <summary>
-
-### Suggested (optional) changes
+Suggested (optional) changes
 </summary>
 These are just suggestions, don't change them if you don't need to.  
 Only use these if you're having issues with the listed checks!
@@ -162,8 +161,7 @@ Root Check | Path                               | Default | Suggestion       | R
 
 <details>
 <summary>
-
-### How do I report a bypass or false positive?
+How do I report a bypass or false positive?
 </summary>
 
 **First:**  
@@ -180,8 +178,7 @@ Report the issue in the [MatrixChecks support Discord](https://discord.gg/rjSkFy
 
 <details>
 <summary>
-
-### There are weird symbols in every message!
+There are weird symbols in every message!
 </summary>
 
 Do the "weird things" look like something along the lines of "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
@@ -190,8 +187,7 @@ This file is required to replace those placeholders with what they're meant to b
 
 <details>
 <summary>
-
-### Can I modify the files in MatrixChecks?
+Can I modify the files in MatrixChecks?
 </summary>
 
 Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.  
@@ -200,8 +196,7 @@ You can also distribute it all you want or use it on a large network; just don't
 
 <details>
 <summary>
-
-### How can I contribute?
+How can I contribute?
 </summary>
 
 Contributions are very welcome! If you created a new optional file or made tweaks for different minigames, feel free to contact me or make a pull request.  
