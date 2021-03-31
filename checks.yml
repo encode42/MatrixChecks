@@ -253,27 +253,40 @@ move:
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   cancel_vl: 42
 
-  # Deals the correct amount of damage after detection.
-  apply_damage: true
-
   # Teleports players to the void if required for any setback.
   allow_setback_to_void: true
 
+  # Checks which setback players on detection
+  force_setback_situations:
+    step: true              # Block step hack
+    high_jump: true         # Illegal jump height
+    ground_spoof_jump: true # Jumping from fake blocks
+    bad_jumps: true         # General jump hacks
+    air_accel: true         # Air speed/acceleration
+    air_mdf: true           # General air hacks
+
+  # Deals the correct amount of damage after detection.
+  apply_damage: true
+
   # Increases the sensitivity of knockback checks.
   strict_kb_handling: false
+
+  # Prevent bypassing slowdowns from cobwebs, bushes, etc.
+  check_noslow: true
 
   # Prevent fly-related hacks even when a player is in creative mode.
   # This will stop players from flying at insane speeds.
   # Keep in mind that some clients increase the creative fly speed.
   check_flying_players: true
 
+  # Prevent the player from bridging on cancelled blocks. (WorldGuard, Gadgets, etc.)
+  # Enabling will negatively affect performance and introduce bypasses.
+  allow_bpe_bridge: false
+
   # This decreases server load, but may introduce unknown issues.
   # Please don't enable this unless necessary! You will not receive support if enabled.
   # Only compatible with server versions 1.8, 1.12, and the latest Minecraft release.
   async_mode: false
-
-  # NoSlow check: Prevent bypassing slowdowns from cobwebs, bushes, etc.
-  check_noslow: true
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -403,8 +416,6 @@ interact:
   enable: true
   disable_worlds: []
 
-  check_break_block: true # Breaking blocks through walls.
-  check_place_block: true # Placing blocks through walls.
   check_interact_block: true # Interacting with blocks through walls.
   check_attack: true # Attacking through walls.
 
@@ -653,5 +664,5 @@ chat:
 # Do not change these values unless you know what you're doing!
 # These are used in the MatrixChecks plugin companion.
 version:
-  checks: "1.9"
-  matrix: "6"
+  checks: "1.10"
+  matrix: "6.1"
