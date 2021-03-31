@@ -146,14 +146,14 @@ Suggested (optional) changes
 These are just suggestions, don't change them if you don't need to.  
 Only use these if you're having issues with the listed checks!
 
-Root Check | Path                               | Default | Suggestion       | Reason
----------- | ---------------------------------- | ------- | ---------------- | -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-`click`    | `max_cps`                          | `18`    | `16` - `24`      | The highest possible CPS achieved by humans is 24. Lag may affect the accuracy of this value.
-`hitbox`   | `max_reach`                        | `3.18`   | `3.2` - `3.3`   | Increase if there are many false-positives with this check. This value should never be less than 3.1!
-`block`    | `fastplace.max_place_per_second`   | `13`    | `10` - `18`      | Increase if there are many false-positives when placing blocks, decrease if there are many bypasses.
-`scaffold` | `...delay.min_delay`               | `8`     | `5` - `9`        | Decrease if there are many false-positives when pillaring, increase if there are many bypasses.
-`delay`    | `check_inventory_action`           | `-1`    | `4` - `5`        | Enable this check for minigame servers with chest mechanics such as survival games, skywars, etc.
-&nbsp;     | `...` = relative path              | &nbsp;  | `X - X` = range  | &nbsp;
+Root Check | Path                             | Default | Suggestion      | Reason
+---------- | -------------------------------- | ------- | --------------- | -----------------------------------------------------------------------------------------------------
+`click`    | `max_cps`                        | `18`    | `16` - `24`     | The highest possible CPS achieved by humans is 24. Lag may affect the accuracy of this value.
+`hitbox`   | `max_reach`                      | `3.18`  | `3.2` - `3.3`   | Increase if there are many false-positives with this check. This value should never be less than 3.1!
+`block`    | `fastplace.max_place_per_second` | `13`    | `10` - `18`     | Increase if there are many false-positives when placing blocks, decrease if there are many bypasses.
+`scaffold` | `...delay.min_delay`             | `8`     | `5` - `9`       | Decrease if there are many false-positives when pillaring, increase if there are many bypasses.
+`delay`    | `check_inventory_action`         | `4`     | `-1`            | Disable this check if players receive many false-positives when shift-clicking in inventories.
+&nbsp;     | `...` = relative path            | &nbsp;  | `X - X` = range | &nbsp;
 </details>
 
 <details>
