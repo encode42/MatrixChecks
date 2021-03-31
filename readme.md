@@ -202,12 +202,12 @@ I don't want to start any competition with this project! Having everything in on
 
 ## 🖥️ Project Sponsor
 <div align="center">
-<a href="https://www.tropicsolutions.net/=EN"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
+<a href="https://www.tropicsolutions.net/"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
 <h3>
 
-This project hosts a test server sponsored by [TropicSolutions](https://www.tropicsolutions.net/=EN).
+<!-- This project hosts a test server sponsored by [TropicSolutions](https://www.tropicsolutions.net/=EN). -->
 </h3>
 <h4>
 
-IP: `matrix.encode42.dev` │ Versions 1.8 - 1.16.4
+<!-- IP: `matrix.encode42.dev` │ Versions 1.8 - 1.16.4 -->
 </h4>
