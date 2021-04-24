@@ -1,4 +1,4 @@
-<img src="https://repository-images.githubusercontent.com/282035636/d9c52600-6092-11eb-8077-b8c0eedfa2c4" width="200px" align="right">
+<img src=".github/assets/badge.png" width="200px" align="right">
 <div align="center">
 
 # MatrixChecks
