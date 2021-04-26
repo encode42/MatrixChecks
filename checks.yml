@@ -53,16 +53,29 @@ killaura:
       vl_weight: 7
 
     # Aimbot check: Compare combat to aimbot combat.
+    # The checks that are compared.
+    # These are best-guesses as they are undocumented.
     aimbot:
-      # The checks that are compared.
-      # These are best-guesses as they are undocumented.
-      check_aimbot_sync: true         # Unknown and "secret" checks
-      check_aimbot_shake: true        # Sporadic and uncontrollable shaking
-      check_aimbot_snap: true         # Aim suddenly snapping to entities
-      check_aimbot_sensitivity: true  # High aim accuracy/sensitivity
-      check_aimbot_acceleration: true # Sudden or unexpected aim acceleration
-      check_aimbot_bad_rotation: true # Check for invalid or unexpected rotation
-      check_aimbot_mouse_speed: true  # Analyze mouse movement speed
+      # Unknown and "secret" checks.
+      check_aimbot_sync: true
+
+      # Sporadic and uncontrollable shaking.
+      check_aimbot_shake: true
+
+      # Aim suddenly snapping to entities.
+      check_aimbot_snap: true
+
+      # High aim accuracy/sensitivity.
+      check_aimbot_sensitivity: true
+
+      # Sudden or unexpected aim acceleration.
+      check_aimbot_acceleration: true
+
+      # Check for invalid or unexpected rotation.
+      check_aimbot_bad_rotation: true
+
+      # Analyze mouse movement speed.
+      check_aimbot_mouse_speed: true
 
       # How many violations will be added when triggered?
       vl_weight: 10
@@ -74,7 +87,7 @@ killaura:
       # How many violations will be added when triggered?
       vl_weight: 5
 
-    # Strafe check: Analyze player strafing while in combat
+    # Strafe check: Analyze player strafing while in combat.
     strafe:
       enable: true
 
@@ -125,24 +138,29 @@ killaura:
       # To make the NPCs support random names with teams, you must use the API.
       force_random_name: true
 
-      # NPC existence time (ticks)
-      # base: The base existence time.
-      # attack_add: Time added when attacked.
-      # hit_box_add: Time added when hit.
+      # Settings for the NPC's existence time (ticks)
       check_ticks:
+        # The starting existence time.
         base: 100
+
+        # Time added when attacked.
         attack_add: 30
+
+        # Time added when hit.
         hit_bot_add: 55
 
-      # NPC motion settings
-      # distance_base: The base player distance.
-      # distance_random_size: RNG applied to the base distance.
-      # distance_attack_base: Distance from the player to attack.
-      # move_up_after_attack: Moves the NPC upwards after attacks.
+      # Settings for the NPC's movement.
       movement:
+        # The base player distance.
         distance_base: 3.2
+
+        # RNG applied to the base distance.
         distance_random_size: 0.75
+
+        # Distance from the player to attack.
         distance_attack_base: 3.0
+
+        # Moves the NPC upwards after attacks.
         move_up_after_attack: false
 
       # How many violations will be added when triggered?
@@ -228,7 +246,7 @@ click:
   # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
   max_cps: 18
 
-  # Timing-related checks
+  # Timing and click speed related checks.
   check_cps: true
   check_swing: true
   check_timing: true
@@ -256,14 +274,25 @@ move:
   # Teleports players to the void if required for any setback.
   allow_setback_to_void: true
 
-  # Checks which setback players on detection
+  # Checks which setback players on detection.
   force_setback_situations:
-    step: true              # Block step hack
-    high_jump: true         # Illegal jump height
-    ground_spoof_jump: true # Jumping from fake blocks
-    bad_jumps: true         # General jump hacks
-    air_accel: true         # Air speed/acceleration
-    air_mdf: true           # General air hacks
+    # Step (teleport) up blocks.
+    step: true
+
+    # Illegal jump height.
+    high_jump: true
+
+    # Jumping from or interacting with invalid blocks.
+    ground_spoof_jump: true
+
+    # General jump related hacks.
+    bad_jumps: true
+
+    # Invalid speed and acceleration in air.
+    air_accel: true
+
+    # General air related hacks.
+    air_mdf: true
 
   # Deals the correct amount of damage after detection.
   apply_damage: true
@@ -612,13 +641,27 @@ delay:
   cancel_action: true
 
   # How many violations will be added when triggered? (-1 = disable)
-  check_healing: 1          # FastHeal
-  check_using_items: 6      # FastUse
-  check_using_bow: 6        # FastBow
-  check_fast_throw: 5       # Right click CPS
-  check_auto_splash: 4      # AutoPot
-  check_auto_totem: 5       # AutoTotem
-  check_inventory_action: 3 # Inventory (ChestSteal, Sort, etc.)
+
+  # Invalid and fast heal speed.
+  check_healing: 1
+
+  # Interacting with items illegally.
+  check_using_items: 6
+
+  # Preparing and shooting bows at abnormal speeds.
+  check_using_bow: 6
+
+  # Throwing throwables (snowballs, potions, etc) at high speeds.
+  check_fast_throw: 5
+
+  # Automatically throwing potions at certain conditions.
+  check_auto_splash: 4
+
+  # Automatically placing totems in offhand before death.
+  check_auto_totem: 5
+
+  # Prevent abnormally fast inventory actions.
+  check_inventory_action: 3
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
