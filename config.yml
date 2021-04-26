@@ -38,6 +38,12 @@ cloud_config:
   links:
     - 'https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml'
 
+# Register commands from other anticheats.
+# Prevents finding the anticheat your server uses via commands.
+fake_anticheat:
+  aac: true
+  spartan: true
+
 # Log all violations to a MySQL database.
 # This allows you to view violations across servers.
 database:
