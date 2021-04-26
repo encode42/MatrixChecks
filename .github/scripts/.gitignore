@@ -1,3 +1,6 @@
-# Node files
-/.npm
-/node_modules
+# Generated ZIP file
+/*.zip
+
+# Temporary files
+old
+src/share

@@ -3,40 +3,33 @@ on: [push]
 jobs:
   minify:
     runs-on: ubuntu-latest
-    if: "!endsWith(github.event.head_commit.message, '*')"
+    if: "!contains(github.event.head_commit.message, '\\[ci[ -]skip\\]')"
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js 14
-        uses: actions/setup-node@v1
-        with:
-          node-version: 14
+    - uses: denoland/setup-deno@main
+      with:
+        deno-version: v1.x
 
-      - name: Grab the NPM cache
-        uses: actions/cache@v2
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: ${{ runner.os }}-node-
+    - name: Run the scripts
+      run: ./run.sh
 
-      - name: Download modules
-        run: |
-          cd .github/scripts
-          npm i --production
+    - name: Upload ZIP
+      uses: actions/upload-artifact@v2
+      with:
+        name: MatrixChecks
+        path: .github/scripts/*.zip
 
-      - name: Minify files
-        run: node .github/scripts/minify.js
+    - name: Commit changes
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "actions-user"
+        git add cloud/*.yml
+        git commit -m "Automation" || echo "No changes were made."
 
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "actions-user"
-          git add cloud/*.yml
-          git commit -m "Minify files" || echo "No changes were made."
-
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: ${{ github.ref }}
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
