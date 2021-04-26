@@ -178,7 +178,7 @@ hitbox:
   # How many moves should be traced back to the player?
   # Set this higher to reduce false positives but weaken detection.
   trace_back_length: 5
-  
+
   # How the hack will be canceled (none, silent, cancel)
   # none: Doesn't do anything to the player. (Not recommended)
   # silent: Damage the opposing player, but set the damage to 0.
@@ -516,7 +516,7 @@ block:
 
       # This is similar to the AutoClicker/macro check.
       # The average player clicks at 8 CPS, and only a minuscule amount of people get to 16 CPS.
-      # 
+      #
       # Decrease if players are bypassing, increase if legit players are getting flagged.
       # Lag may influence the detected CPS; set this number 1-2 higher than what you want.
       # The max blocks placed per second when holding right-click is five BPS.
@@ -619,7 +619,7 @@ delay:
   check_auto_splash: 4      # AutoPot
   check_auto_totem: 5       # AutoTotem
   check_inventory_action: 3 # Inventory (ChestSteal, Sort, etc.)
-  
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:

@@ -120,7 +120,7 @@ global_placeholder:
 
   ## Customization
   # Changes for commands, colors, etc.
-  # 
+  #
   # c_pr: Primary color
   # c_se: Secondary color
   # c_me: Message color
