@@ -16,8 +16,8 @@
 # It contains global placeholders used in most commands.
 #
 # GitHub:  https://github.com/Encode42/MatrixChecks
-# Website: https://encode42.dev/MatrixChecks
-# Discord: https://discord.gg/rjSkFyj
+# Website: https://encode42.dev/MatrixSuite
+# Discord: https://discaptcha.com/matrixsuite
 
 # Message Prefix
 # The prefix of most Matrix messages.
@@ -167,5 +167,5 @@ commands:
 # Do not change these values unless you know what you're doing!
 # These are used in the MatrixChecks plugin companion.
 version:
-  checks: "1.9"
-  matrix: "6"
+  checks: '1.10.1'
+  matrix: '6'

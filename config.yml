@@ -14,8 +14,8 @@
 # minor tweaks, and a pre-set cloud config for MatrixChecks.
 #
 # GitHub:  https://github.com/Encode42/MatrixChecks
-# Website: https://encode42.dev/MatrixChecks
-# Discord: https://discord.gg/rjSkFyj
+# Website: https://encode42.dev/MatrixSuite
+# Discord: https://discaptcha.com/matrixsuite
 
 # Premium user credentials.
 # These are obtained after DMing RE, the owner, with proof of purchase. (Don't share this!)
@@ -119,5 +119,5 @@ custom_vl_weight: []
 # Do not change these values unless you know what you're doing!
 # These are used in the MatrixChecks plugin companion.
 version:
-  checks: "1.9"
-  matrix: "6"
+  checks: '1.10.1'
+  matrix: '6'

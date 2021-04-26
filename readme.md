@@ -1,8 +1,14 @@
+[matrix-page]: https://matrix.rip
+[matrix-discord]: https://discaptcha.com/matrix
+[matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
+[suite-discord]: https://discaptcha.com/matrixsuite
+[tropic-page]: https://www.tropicsolutions.net
+
 <img src=".github/assets/badge.png" width="200px" align="right">
 <div align="center">
 
 # MatrixChecks
-### The highly customizable, organized, and optimized checks configuration for [Matrix Anticheat](https://www.mc-market.org/resources/13999), a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
+### The highly customizable, organized, and optimized checks configuration for [Matrix Anticheat][matrix-page], a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
 <br/>
 </div>
 
@@ -16,9 +22,9 @@ Sometimes Matrix Premium updates faster than Free; there will be a directory if 
 Legacy releases compatible with older versions of Matrix have their own branches.
 </sub>
 
-[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)](https://www.mc-market.org/resources/13999) ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
-[![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)](https://discord.gg/rjSkFyj) [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)](https://discord.gg/rGhYma6)  
-[![Sponsored By TropicSolutions](https://img.shields.io/badge/Sponsored%20By-TropicSolutions-ef9224?style=flat-square)](https://www.tropicsolutions.net/=EN) [![More Information Below](https://img.shields.io/badge/More%20Information%20Below-ef9224?style=flat-square)](https://github.com/Encode42/MatrixChecks#%EF%B8%8F-project-sponsor)
+[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
+[![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]  
+[![Sponsored By TropicSolutions](https://img.shields.io/badge/Sponsored%20By-TropicSolutions-ef9224?style=flat-square)][tropic-page] [![More Information Below](https://img.shields.io/badge/More%20Information%20Below-ef9224?style=flat-square)](https://github.com/Encode42/MatrixChecks#%EF%B8%8F-project-sponsor)
 </td>
 <td>
 
@@ -162,13 +168,13 @@ How do I report a bypass or false positive?
 </summary>
 
 **First:**  
-Make sure this isn't an issue with Matrix itself. Test with the [default Matrix config files](https://github.com/jiangdashao/Matrix-Issues). If the issue persists, it's most likely an issue with Matrix. You can report the issue to us, but not everything can be fixed with a checks file tweak. Head over to [Matrix's support Discord](https://discord.gg/wjheaRj) and ask about the issue, or report the issue at their [issue tracker](https://github.com/jiangdashao/Matrix-Issues/issues).  
-- [(Matrix) Discord](https://discord.gg/wjheaRj)  
-- [(Matrix) Issues](https://github.com/jiangdashao/Matrix-Issues/issues)
+Make sure this isn't an issue with Matrix itself. Test with the [default Matrix config files](https://github.com/jiangdashao/Matrix-Issues/blob/master/checks.yml). If the issue persists, it's most likely an issue with Matrix. You can report the issue to us, but not everything can be fixed with a checks file tweak. Head over to [Matrix's support Discord][matrix-discord] and ask about the issue, or report the issue at their [issue tracker][matrix-issues].  
+- [(Matrix) Discord][matrix-discord]  
+- [(Matrix) Issues][matrix-issues]
 
 **Then:**  
-Report the issue in the [MatrixChecks support Discord](https://discord.gg/rjSkFyj) or make a report at the [issue page](https://github.com/Encode42/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/Encode42/MatrixChecks/pulls) containing the change and why you made it.  
-- [Discord](https://discord.gg/rjSkFyj)
+Report the issue in the [MatrixChecks support Discord][suite-discord] or make a report at the [issue page](https://github.com/Encode42/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/Encode42/MatrixChecks/pulls) containing the change and why you made it.  
+- [Discord][suite-discord]
 - [Issues](https://github.com/Encode42/MatrixChecks/issues)  
 - [Pull Requests](https://github.com/Encode42/MatrixChecks/pulls)
 </details>
