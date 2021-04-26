@@ -13,7 +13,9 @@ jobs:
         deno-version: v1.x
 
     - name: Run the scripts
-      run: ./run.sh
+      run: |
+        cd .github/scripts
+        ./run.sh
 
     - name: Upload ZIP
       uses: actions/upload-artifact@v2
