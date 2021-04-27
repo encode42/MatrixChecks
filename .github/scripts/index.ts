@@ -1,4 +1,3 @@
-
 import { createZipAll } from "./src/zip/createZip.ts";
 import { minifyAll } from "./src/patch/minify.ts";
 
@@ -11,10 +10,3 @@ console.log("Done!");
 console.log("Minifying all important YAML files...");
 minifyAll();
 console.log("Done!");
-
-// Generate the share ID
-/*
-import { startServer } from "./src/share/startServer.ts";
-const server = startServer();
-console.log(server.status());
-*/

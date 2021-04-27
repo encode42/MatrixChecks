@@ -1,4 +1,5 @@
-import { yamlDump, ensureFileSync } from "../../deps.ts";
+import { stringify } from "encoding/yaml.ts";
+import { ensureFileSync } from "fs/mod.ts";
 import { parseYAML } from "../util/yaml.ts";
 
 const rootDir = `${Deno.cwd()}/../../cloud/`;
@@ -14,7 +15,7 @@ function minify(...files: string[]): void {
 	for (const file of files) {
 		const yamlFile = parseYAML(`${Deno.cwd()}/../../${file}`);
 
-		const minified = yamlDump(yamlFile as Record<string, unknown>, {
+		const minified = stringify(yamlFile as Record<string, unknown>, {
 			"flowLevel": 0
 		}).replace(/'(\d*)'/g, "$1") // Remove quotes around numbers
 			.replace(/, /g, ",")     // Remove space after comma

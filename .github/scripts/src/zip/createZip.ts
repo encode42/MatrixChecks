@@ -1,4 +1,4 @@
-import { JSZip } from "../../deps.ts";
+import { JSZip } from "jszip/mod.ts";
 import { addFiles } from "../util/util.ts";
 import { getChecksVersion } from "../version/getVersion.ts";
 
@@ -21,4 +21,4 @@ function createZipAll(): void {
 	createZip("checks.yml", "config.yml", "language.yml", "license.md");
 }
 
-export { createZip, createZipAll }
+export { createZip, createZipAll };

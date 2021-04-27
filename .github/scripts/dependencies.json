@@ -1,0 +1,7 @@
+{
+	"imports": {
+		"encoding/": "https://deno.land/std@0.95.0/encoding/",
+		"fs/": "https://deno.land/std@0.95.0/fs/",
+		"jszip/": "https://deno.land/x/jszip@0.9.0/"
+	}
+}
