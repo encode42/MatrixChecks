@@ -15,7 +15,7 @@ jobs:
     - name: Run the scripts
       run: |
         cd .github/scripts
-        deno run --unstable --allow-all index.ts
+        ./run.sh
 
     - name: Upload ZIP
       uses: actions/upload-artifact@v2
