@@ -3,25 +3,22 @@
 # │ ├─┤ ││ └─╮
 # └─┘ └─┘└───╯
 # MatrixChecks
-# Maintained by Encode42
 #
-#─── !!  NOTE  !! ───────────────────────────────────────╮
-# YOU *MUST* INSTALL "language.yml" TO USE PLACEHOLDERS! │
-# OTHERWISE, EVERY MESSAGE WILL BE UNREADABLE!           │
-#────────────────────────────────────────────────────────╯
+#─── !!  NOTE  !! ───────────────────────────────────╮
+# YOU MUST INSTALL "language.yml" TO USE THE CHECKS! │
+#────────────────────────────────────────────────────╯
 #
 # This isn't a drag-and-drop solution! Values will need changing to work best with your setup.
-# Plugins, software, and performance can all affect how well the anticheat and checks work.
+# Plugins, software, and performance can all affect how well the anticheat will work.
 #
-# Tested on survival and minigame servers. *Tweak the checks for your own server!*
-# If you find any false-positives, bypasses, or issues, make sure to report them!
+# Tested on survival and minigame servers. Tweak the checks for your own server!
+# Make sure to report any false-positives, bypasses, or issues you find!
 #
-# ┌──────────────────────────────────────────┐
-# │       False positives or bypasses?       │
-# │ Follow the FAQs to report. (Question #3) │
-# └──────────────────────────────────────────┘
+# ┌──────────────────────────────┐
+# │ False positives or bypasses? │
+# │  Follow the FAQs to report.  │
+# └──────────────────────────────┘
 # GitHub:  https://github.com/Encode42/MatrixChecks
-# Website: https://encode42.dev/MatrixSuite
 # Discord: https://discaptcha.com/matrixsuite
 
 ## KillAura
@@ -702,8 +699,7 @@ chat:
     4: 'matrix notify %gp_c_me%%player% is spamming the chat%gp_o_an%%gp_c_hg%(4VL) -h %gp_c_hm% Chat -c %gp_r_cc%'
     10: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sm%%gp_o_su%%gp_n_fp%'
 
-# Do not change these values unless you know what you're doing!
-# These are used in the MatrixChecks plugin companion.
+# Do not change these values!
 version:
-  checks: '1.10.1'
-  matrix: '6.1'
+  checks: '1.10.2'
+  matrix: '6'

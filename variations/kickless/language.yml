@@ -3,23 +3,15 @@
 # │ ├─┤ ││ └─╮
 # └─┘ └─┘└───╯
 # MatrixChecks
-# Maintained by Encode42
 #
-# "kickless" config variation.
+# This file contains global placeholders used in most commands.
+# Install "checks.yml" to utilize the improved cheat detection!
 #
-#─── !!  NOTE  !! ────────────────────────╮
-# THIS FILE DOES NOT INCLUDE ANY CHECKS!  │
-# INSTALL "checks.yml" TO UTILIZE CHANGES │
-#─────────────────────────────────────────╯
-#
-# This file is required by all messages in the checks.
-# It contains global placeholders used in most commands.
+# "kickless" file variant
 #
 # GitHub:  https://github.com/Encode42/MatrixChecks
-# Website: https://encode42.dev/MatrixSuite
 # Discord: https://discaptcha.com/matrixsuite
 
-# Message Prefix
 # The prefix of most Matrix messages.
 # Shows up in violations, broadcasts, and commands.
 prefix: '&7[&6Matrix&7]&r '
@@ -27,7 +19,8 @@ prefix: '&7[&6Matrix&7]&r '
 # Message sent to players who are spamming.
 spam-warning: '&cPlease stop spamming the chat!'
 
-## Kick Message
+## Kick messages
+# Broadcast the kick message.
 kick-broadcast: true
 
 # Message sent to staff when a player is kicked.
@@ -164,8 +157,7 @@ commands:
   ping: 'Get a player''s latency value'
   reload: 'Reload all configs'
 
-# Do not change these values unless you know what you're doing!
-# These are used in the MatrixChecks plugin companion.
+# Do not change these values!
 version:
-  checks: '1.9'
+  checks: '1.10.2'
   matrix: '6'

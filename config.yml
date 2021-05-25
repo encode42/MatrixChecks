@@ -3,22 +3,16 @@
 # │ ├─┤ ││ └─╮
 # └─┘ └─┘└───╯
 # MatrixChecks
-# Maintained by Encode42
 #
-#─── !!  NOTE  !! ────────────────────────╮
-# THIS FILE DOES NOT INCLUDE ANY CHECKS!  │
-# INSTALL "checks.yml" TO UTILIZE CHANGES │
-#─────────────────────────────────────────╯
-#
-# The changes in this file are only for organization,
-# minor tweaks, and a pre-set cloud config for MatrixChecks.
+# The changes in this file are only for organization and minor tweaks.
+# Install "checks.yml" to utilize the improved cheat detection!
 #
 # GitHub:  https://github.com/Encode42/MatrixChecks
-# Website: https://encode42.dev/MatrixSuite
 # Discord: https://discaptcha.com/matrixsuite
 
 # Premium user credentials.
-# These are obtained after DMing RE, the owner, with proof of purchase. (Don't share this!)
+# These are obtained after messaging Matrix's developer with proof of purchase.
+# Don't share this information! Your Matrix account will be terminated.
 premium_user:
   user: ''
   password: ''
@@ -27,9 +21,9 @@ premium_user:
 check_update: true
 
 # Downloads checks.yml from an external web server on server start.
-# Of course, I recommend using this with MatrixChecks#cloud, the minified files in the repository.
+# I recommend using this with MatrixChecks to automatically update the checks.
 # To enable this feature, just change "cloud_config.enable: false" to "true".
-# This will ignore your local checks.yml and update every reboot/reload!
+# This will ignore your local checks.yml and update on every server restart!
 cloud_config:
   enable: false
 
@@ -38,8 +32,14 @@ cloud_config:
   links:
     - 'https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml'
 
+# GeyserMC support
+# Enable this ONLY if you have GeyserMC for security reasons. (Bedrock support)
+# To enable this feature, install Matrix on Bungee + all sub-servers and enable this option on each instance.
+bungee_geysermc_support: false
+
 # Register commands from other anticheats.
 # Prevents finding the anticheat your server uses via commands.
+# I recommend CommandWhitelist to block players from seeing the Matrix commands.
 fake_anticheat:
   aac: true
   spartan: true
@@ -56,26 +56,18 @@ database:
   db: 'matrix'
 
   # Hidden config option: Server name row
-  # This defines the server name row if you utilize mutliple servers.
+  # This defines the server name row if you utilize multiple servers.
   #server_name: 'main'
 
   username: 'root'
   password: ''
 
-# GeyserMC support
-# Enable this ONLY if you have GeyserMC for security reasons. (Bedrock support)
-# To enable this feature, install Matrix on Bungee + all sub-servers and enable this option on each instance.
-bungee_geysermc_support: false
-
 # Stops players from re-logging right after being kicked. (seconds)
+# This should be increased if you don't want hackers to re-join quickly.
 relog_time: 15
 
-# Disables the "matrix.bypass" permission.
-# Enable if you want EVERYONE to be checked.
-disable_bypass_permission: false
-
 # Reduce violations/flags triggered by players with high ping.
-# This can be disabled to prevent PingSpoof and rely on conditional commands.
+# This can be disabled to prevent PingSpoof and instead rely on conditional commands (LagPoint).
 player_latency_protection:
   enable: true
 
@@ -90,10 +82,6 @@ tps_protection:
   # If the server doesn't respond within this amount of time, cancel the check. (ms)
   lag_threshold: 750
 
-# Time between permission cache refresh. (seconds)
-# Setting this too high can cause issues with "matrix.bypass".
-permission_refresh_interval: 120
-
 # Logs all violations to the Matrix/logs directory.
 # Recommended to enable if you are debugging/monitoring checks.
 log_file: true
@@ -103,6 +91,14 @@ delete_time: 7
 
 # Summon a lightning strike on players who are kicked via /matrix kick.
 kick_strike_lightning: false
+
+# Disables the "matrix.bypass" permission.
+# Enable if you want every player to be checked.
+disable_bypass_permission: false
+
+# Time between permission cache refresh. (seconds)
+# Setting this too high can cause issues with the bypass permission.
+permission_refresh_interval: 120
 
 # Disable specific components used in checks.
 # Example:
@@ -116,8 +112,7 @@ disabled_components: []
 #   - 'vel.ana:4'
 custom_vl_weight: []
 
-# Do not change these values unless you know what you're doing!
-# These are used in the MatrixChecks plugin companion.
+# Do not change these values!
 version:
-  checks: '1.10.1'
+  checks: '1.10.2'
   matrix: '6'
