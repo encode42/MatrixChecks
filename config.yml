@@ -41,8 +41,8 @@ bungee_geysermc_support: false
 # Prevents finding the anticheat your server uses via commands.
 # I recommend CommandWhitelist to block players from seeing the Matrix commands.
 fake_anticheat:
-  aac: true
-  spartan: true
+  aac: false
+  spartan: false
 
 # Log all violations to a MySQL database.
 # This allows you to view violations across servers.
