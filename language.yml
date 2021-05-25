@@ -152,8 +152,3 @@ commands:
   violations: 'Open the violations GUI'
   ping: 'Get a player''s latency value'
   reload: 'Reload all configs'
-
-# Do not change these values!
-version:
-  checks: '1.10.2'
-  matrix: '6'

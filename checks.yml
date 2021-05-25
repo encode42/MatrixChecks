@@ -698,8 +698,3 @@ chat:
   commands:
     4: 'matrix notify %gp_c_me%%player% is spamming the chat%gp_o_an%%gp_c_hg%(4VL) -h %gp_c_hm% Chat -c %gp_r_cc%'
     10: '%gp_r_ki% %player% %gp_o_pr%%gp_h_sm%%gp_o_su%%gp_n_fp%'
-
-# Do not change these values!
-version:
-  checks: '1.10.2'
-  matrix: '6'

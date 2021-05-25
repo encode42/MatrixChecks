@@ -111,8 +111,3 @@ disabled_components: []
 # custom_vl_weight:
 #   - 'vel.ana:4'
 custom_vl_weight: []
-
-# Do not change these values!
-version:
-  checks: '1.10.2'
-  matrix: '6'
