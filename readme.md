@@ -2,7 +2,6 @@
 [matrix-discord]: https://discaptcha.com/matrix
 [matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
 [suite-discord]: https://discaptcha.com/matrixsuite
-[tropic-page]: https://www.tropicsolutions.net
 
 <img src=".github/assets/badge.png" width="200px" align="right">
 <div align="center">
@@ -23,8 +22,7 @@ Legacy releases compatible with older versions of Matrix have their own branches
 </sub>
 
 [![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
-[![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]  
-[![Sponsored By TropicSolutions](https://img.shields.io/badge/Sponsored%20By-TropicSolutions-ef9224?style=flat-square)][tropic-page] [![More Information Below](https://img.shields.io/badge/More%20Information%20Below-ef9224?style=flat-square)](https://github.com/Encode42/MatrixChecks#%EF%B8%8F-project-sponsor)
+[![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
 </td>
 <td>
 
@@ -205,15 +203,3 @@ How can I contribute?
 Contributions are very welcome! If you created a new optional file or made tweaks for different minigames, feel free to contact me or make a pull request.  
 I don't want to start any competition with this project! Having everything in one central repository makes it much easier for the end-user to find what they want.
 </details>
-
-## 🖥️ Project Sponsor
-<div align="center">
-<a href="https://www.tropicsolutions.net/"><img src="https://cdn.discordapp.com/attachments/365455168583499779/791342416224714752/darkModeEN.png"></a>
-<h3>
-
-<!-- This project hosts a test server sponsored by [TropicSolutions](https://www.tropicsolutions.net/=EN). -->
-</h3>
-<h4>
-
-<!-- IP: `matrix.encode42.dev` │ Versions 1.8 - 1.16.4 -->
-</h4>

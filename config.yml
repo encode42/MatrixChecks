@@ -52,6 +52,9 @@ database:
   # Database IP
   address: 'localhost'
 
+  # Connection options
+  option: 'useSSL=false&autoReconnect=true'
+
   # Entry name
   db: 'matrix'
 
