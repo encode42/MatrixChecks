@@ -21,7 +21,7 @@ Sometimes Matrix Premium updates faster than Free; there will be a directory if 
 Legacy releases compatible with older versions of Matrix have their own branches.
 </sub>
 
-[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] ![Commits since release](https://img.shields.io/github/commits-since/Encode42/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
+[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] ![Commits since release](https://img.shields.io/github/commits-since/QuantumSuite/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
 [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
 </td>
 <td>
@@ -38,7 +38,7 @@ Legacy releases compatible with older versions of Matrix have their own branches
 </table>
 
 ⚠ **REQUIRED INSTALLATION NOTE:**  
-You **must** install [`language.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) to use this configuration!  
+You **must** install [`language.yml`](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml) to use this configuration!  
 Otherwise, all messages will be unreadable and commands will not work!  
 Every message contains placeholders that require the language file.
 
@@ -65,8 +65,8 @@ Changes you make will take effect everywhere the variable is used.
 
 ## 🔧 Setup
 ### Server Usage
-1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
-  <sub>For specific Matrix versions, head to the [releases page](https://github.com/Encode42/MatrixChecks/releases).</sub>
+1. Download [checks.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).  
+  <sub>For specific Matrix versions, head to the [releases page](https://github.com/QuantumSuite/MatrixChecks/releases).</sub>
 2. Rename Matrix's original `checks.yml` and `language.yml` to something else.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
 4. If you downloaded any optional files, rename them to `checks.yml`/`language.yml`.
@@ -77,7 +77,10 @@ to download the latest stable build of MatrixChecks. (This ID changes!)
 The downside is that all comments are removed and the file size is reduced.
 
 ### Cloud Usage
-1. Download [config.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).  
+⚠ **NOTE:**
+The cloud configuration files are currently unavailable due to an issue with scripting. This message will be removed once this method is available.
+
+1. Download [config.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).  
 2. Rename Matrix's original `config.yml` and `language.yml` to something else.
 3. Change `cloud_config.enable: false` to `true` in `config.yml`.
 4. Run `/matrix reload` or restart the server! The checks will now update on every reboot/reload.  
@@ -135,7 +138,7 @@ These are files that don't fit a category.
 #### /cloud
 A directory that contains all of the files above, but minified. These are much smaller in file size but are impossible to read.  
 Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup.  
-These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/Encode42/MatrixChecks#cloud-usage).
+These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/QuantumSuite/MatrixChecks#cloud-usage).
 
 #### /.github, license.md, readme.md
 These are files that are only utilized by GitHub and meant for repository information.  
@@ -171,10 +174,10 @@ Make sure this isn't an issue with Matrix itself. Test with the [default Matrix 
 - [(Matrix) Issues][matrix-issues]
 
 **Then:**  
-Report the issue in the [MatrixChecks support Discord][suite-discord] or make a report at the [issue page](https://github.com/Encode42/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/Encode42/MatrixChecks/pulls) containing the change and why you made it.  
+Report the issue in the [MatrixChecks support Discord][suite-discord] or make a report at the [issue page](https://github.com/QuantumSuite/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/QuantumSuite/MatrixChecks/pulls) containing the change and why you made it.  
 - [Discord][suite-discord]
-- [Issues](https://github.com/Encode42/MatrixChecks/issues)  
-- [Pull Requests](https://github.com/Encode42/MatrixChecks/pulls)
+- [Issues](https://github.com/QuantumSuite/MatrixChecks/issues)  
+- [Pull Requests](https://github.com/QuantumSuite/MatrixChecks/pulls)
 </details>
 
 <details>
@@ -183,7 +186,7 @@ There are weird symbols in every message!
 </summary>
 
 Do the "weird things" look like something along the lines of "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
-This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/Encode42/MatrixChecks#server-usage)
+This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/QuantumSuite/MatrixChecks#server-usage)
 </details>
 
 <details>
