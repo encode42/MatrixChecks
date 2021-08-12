@@ -1,0 +1,36 @@
+plugins {
+    id("application")
+    id("com.github.johnrengelman.shadow") version "5.2.0"
+}
+
+mainClassName = "dev.encode42.matrixchecks.Main"
+group = "dev.encode42"
+version = "1.0-SNAPSHOT"
+
+compileJava.options.encoding = "UTF-8"
+sourceCompatibility = JavaVersion.toVersion(16)
+targetCompatibility = JavaVersion.toVersion(16)
+
+repositories {
+    mavenCentral()
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+        maven {
+            name = "jitpack"
+            url = "https://jitpack.io"
+        }
+    }
+}
+
+dependencies {
+    implementation(group: "me.carleslc.Simple-YAML", name: "Simple-Yaml", version: "1.7.2")
+}
+
+task launch(type: JavaExec) {
+    dependsOn("shadowJar")
+    main = "-jar"
+    args(shadowJar.archiveFile.get())
+}
