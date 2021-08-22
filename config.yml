@@ -44,35 +44,9 @@ fake_anticheat:
   aac: false
   spartan: false
 
-# Log all violations to a MySQL database.
-# This allows you to view violations across servers.
-database:
-  enable: false
-
-  # Database IP
-  address: 'localhost'
-
-  # Connection options
-  option: 'useSSL=false&autoReconnect=true'
-
-  # Entry name
-  db: 'matrix'
-
-  # Hidden config option: Server name row
-  # This defines the server name row if you utilize multiple servers.
-  #server_name: 'main'
-
-  username: 'root'
-  password: ''
-
 # Stops players from re-logging right after being kicked. (seconds)
 # This should be increased if you don't want hackers to re-join quickly.
 relog_time: 15
-
-# Reduce violations/flags triggered by players with high ping.
-# This can be disabled to prevent PingSpoof and instead rely on conditional commands (LagPoint).
-player_latency_protection:
-  enable: true
 
 # Automatically disables some checks when the server TPS drops.
 # This prevents some false positives for checks that require little lag.

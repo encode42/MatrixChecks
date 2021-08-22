@@ -492,23 +492,6 @@ badpackets:
   enable: true
   disable_worlds: []
 
-  # Freeze time (ms)
-  # How long to freeze players if they try to send too many movement packets.
-  freeze_time: 500
-
-  # Buffer Size (ticks)
-  # The larger the value, the slower the detection, but the more stable.
-  # Don't set this less than 10.
-  buffer_size: 32
-
-  # How many extra packets can players send?
-  max_extra_packets: 20
-
-  # How many violations will be added when triggered?
-  vl_weights:
-    limit: 10
-    timer: 10
-
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
