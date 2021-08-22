@@ -120,7 +120,7 @@ The files listed below are variations of the default configuration.
 These variations are pre-made customizations for different uses.  
 To use these, download the files in the variation directory in place of the main files!
 
-#### /variations/fake-error
+#### /variations/error
 All kick messages are replaced with existing and made-up error messages.  
 This confuses hackers since kick messages are replaced with generic errors.
 
@@ -128,7 +128,7 @@ This confuses hackers since kick messages are replaced with generic errors.
 Replaces all kick commands with a simple notification.  
 Helpful for debugging or modifying checks without getting kicked.
 
-#### /variations/unknown-reason
+#### /variations/secret
 All kick messages are replaced with a generic message and a number for staff.  
 This allows staff to know why a player was kicked without letting the player knowing which hacks to disable.
 
