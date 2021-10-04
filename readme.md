@@ -3,19 +3,13 @@
 [matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
 [suite-discord]: https://discord.gg/rjSkFyj
 
-<img src=".github/assets/badge.png" width="200px" align="right">
-<div align="center">
+<img src=".github/assets/badge.png" width="200px" align="left">
 
-<table>
-<tr>
-<td align="center">
+<div align="right">
 
 # MatrixChecks
 ### The highly customizable, organized, and optimized checks configuration for [Matrix Anticheat][matrix-page], a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
-[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] ![Commits since release](https://img.shields.io/github/commits-since/QuantumSuite/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square) [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
-</td>
-</tr>
-</table>
+[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
 </div>
 
 - **Works on free & premium Matrix!**
