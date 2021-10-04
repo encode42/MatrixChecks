@@ -1,41 +1,22 @@
 [matrix-page]: https://matrix.rip
 [matrix-discord]: https://discaptcha.com/matrix
 [matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
-[suite-discord]: https://discaptcha.com/matrixsuite
+[suite-discord]: https://discord.gg/rjSkFyj
 
 <img src=".github/assets/badge.png" width="200px" align="right">
 <div align="center">
 
 # MatrixChecks
 ### The highly customizable, organized, and optimized checks configuration for [Matrix Anticheat][matrix-page], a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
-<br/>
+[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] ![Commits since release](https://img.shields.io/github/commits-since/QuantumSuite/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square) [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
 </div>
 
-<table align="center">
-<tr>
-<td>
-
-**Make sure to use files compatible with your Matrix version!**  
-<sub>
-Sometimes Matrix Premium updates faster than Free; there will be a directory if so.  
-Legacy releases compatible with older versions of Matrix have their own branches.
-</sub>
-
-[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] ![Commits since release](https://img.shields.io/github/commits-since/QuantumSuite/MatrixChecks/latest/main?label=Commits%20since%20release&style=flat-square)  
-[![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
-</td>
-<td>
-
-#### Features
-- Works on free & premium Matrix.
-- Tons of customization.
+- **Works on free & premium Matrix!**
 - Improved violation & kick messages.
 - Lower amount of false positives.
 - Stricter checks. *(Faster detection)*
-- Multiple file types to suit your needs.
-</td>
-</tr>
-</table>
+- Multiple file types to suit your needs!
+- Tons of customization options.
 
 ⚠ **REQUIRED INSTALLATION NOTE:**  
 You **must** install [`language.yml`](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml) to use this configuration!  
