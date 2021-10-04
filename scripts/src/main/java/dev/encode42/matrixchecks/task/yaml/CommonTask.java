@@ -1,4 +1,4 @@
-package dev.encode42.matrixchecks.tasks;
+package dev.encode42.matrixchecks.task.yaml;
 
 import dev.encode42.matrixchecks.util.IO;
 import dev.encode42.matrixchecks.util.RecursiveFile;
@@ -9,14 +9,14 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 
-public abstract class Task {
+public abstract class CommonTask {
     protected final RecursiveFile[] directories;
 
     /**
      * A task to run.
      * @param directories Directories to iterate
      */
-    public Task(RecursiveFile ...directories) {
+    public CommonTask(RecursiveFile ...directories) {
         this.directories = directories;
         iterate();
     }
@@ -30,7 +30,11 @@ public abstract class Task {
                 // Walk the directory
                 Files.walk(directory.toPath(), directory.isRecursive() ? Integer.MAX_VALUE : 1).forEach(path -> {
                     // Run the task
-                    run(path.toFile());
+                    try {
+                        run(path.toFile());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
                 });
             } catch (IOException e) {
                 e.printStackTrace();
@@ -43,7 +47,7 @@ public abstract class Task {
      * @param file File to load
      * @return Loaded YAML file
      */
-    protected YamlFile loadYaml(File file) {
+    public static YamlFile loadYaml(File file) {
         if (!IO.isType(file, "yml")) {
             return null;
         }
@@ -51,7 +55,7 @@ public abstract class Task {
         YamlFile yamlFile = new YamlFile(file);
 
         try {
-            yamlFile.load();
+            yamlFile.loadWithComments();
         } catch (InvalidConfigurationException | IOException e) {
             e.printStackTrace();
         }
@@ -63,5 +67,5 @@ public abstract class Task {
      * Primary task method to run.
      * @param file File to run with
      */
-    protected abstract void run(File file);
+    protected abstract void run(File file) throws IOException;
 }

@@ -1,11 +1,11 @@
-package dev.encode42.matrixchecks.tasks;
+package dev.encode42.matrixchecks.task.yaml;
 
 import dev.encode42.matrixchecks.util.RecursiveFile;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.File;
 
-public class MinifyTask extends Task {
+public class MinifyTask extends CommonTask {
     public MinifyTask(RecursiveFile ...directories) {
         super(directories);
     }

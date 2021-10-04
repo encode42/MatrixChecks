@@ -7,8 +7,6 @@
 # This file contains global placeholders used in most commands.
 # Install "checks.yml" to utilize the improved cheat detection!
 #
-# "kickless" file variant
-#
 # GitHub:  https://github.com/QuantumSuite/MatrixChecks
 # Discord: https://discord.gg/rjSkFyj
 
@@ -42,7 +40,8 @@ relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seco
 # %ping%: The player's ping
 # %lp%: The player's LagPoint
 # %tps%: The server's TPS
-verbose-format: '&7%player% failed &6%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl% &7client:%version% ping:%ping% lp:%lp% tps:%tps%'
+verbose-format: '&7%player% failed &6%check% &8(%component%) | &7%message% &8| &7vl:%vl%&8+%add_vl%
+  &7client:%version% ping:%ping% lp:%lp% tps:%tps%'
 
 ## Global Placeholders
 # Phrases that will be replaced with what they're set to.
@@ -83,23 +82,23 @@ global_placeholder:
   # h_fl: Fly       │ h_ab: AutoBot
   # h_el: ElytraFly │ h_sm: Spamming
   # h_vl: Vehicle
-  h_ka: 'using combat related hacks'
-  h_hb: 'using combat related hacks'
-  h_cl: 'unusual click patterns'
-  h_mv: 'using movement related hacks'
-  h_js: 'using water related hacks'
-  h_vc: 'using knockback related hacks'
-  h_fl: 'using fly related hacks'
-  h_el: 'using fly related hacks'
-  h_vl: 'unusually interacting with entity vehicles'
-  h_in: 'unusually interacting with blocks or entities'
-  h_ph: 'phasing through blocks'
-  h_bp: 'sending unusual packets to the server'
-  h_fp: 'placing or breaking blocks too fast'
-  h_sc: 'placing or breaking blocks too fast'
-  h_de: 'doing actions too fast'
-  h_ab: 'using an auto bot'
-  h_sm: 'spamming the chat'
+  h_ka: using combat related hacks
+  h_hb: using combat related hacks
+  h_cl: unusual click patterns
+  h_mv: using movement related hacks
+  h_js: using water related hacks
+  h_vc: using knockback related hacks
+  h_fl: using fly related hacks
+  h_el: using fly related hacks
+  h_vl: unusually interacting with entity vehicles
+  h_in: unusually interacting with blocks or entities
+  h_ph: phasing through blocks
+  h_bp: sending unusual packets to the server
+  h_fp: placing or breaking blocks too fast
+  h_sc: placing or breaking blocks too fast
+  h_de: doing actions too fast
+  h_ab: using an auto bot
+  h_sm: spamming the chat
 
   ## Kick Notes
   # These placeholders appear after certain kick reasons.
@@ -131,28 +130,28 @@ global_placeholder:
   c_md: '&6'
   c_hg: '&4'
   c_ba: '&8|%gp_c_pr%'
-  c_hm: '%gp_c_pr%%version% Client %gp_c_ba% %ping% Ping %gp_c_ba% %tps% TPS %component% %gp_c_ba%'
+  c_hm: '%gp_c_pr%%version% Client %gp_c_ba% %ping% Ping %gp_c_ba% %tps% TPS %component%
+    %gp_c_ba%'
 
   ## Commands
   # Choose which commands are run.
   #
-  # r_no: Staff notify command
   # r_ki: Kick/punishment command
   # r_cc: Notification click command
-  r_no: 'matrix notify'
-  r_ki: 'matrix notify'
-  r_cc: '/matrix spec %player%'
+  r_ki: matrix notify
+  r_cc: /matrix spec %player%
 
 ## Command help descriptions
 # Used in the help command.
 commands:
-  gui: 'Open the information and control panel'
-  notify: 'Send a message to players with the notify permission'
-  verbose: 'Toggle verbose messages (Show every flag)'
-  toggle-notify: 'Toggle the notify command output'
-  kick: 'Use Matrix to kick a player'
-  msg: 'Send warning messages to a player'
-  npc: 'Spawn a detection NPC behind a player'
-  violations: 'Open the violations GUI'
-  ping: 'Get a player''s latency value'
-  reload: 'Reload all configs'
+  gui: Open the information and control panel
+  notify: Send a message to players with the notify permission
+  verbose: Toggle verbose messages (Show every flag)
+  toggle-notify: Toggle the notify command output
+  kick: Use Matrix to kick a player
+  msg: Send warning messages to a player
+  npc: Spawn a detection NPC behind a player
+  violations: Open the violations GUI
+  ping: Get a player's latency value
+  reload: Reload all configs
+variation: Kickless # Variation type utilized
