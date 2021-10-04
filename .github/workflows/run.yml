@@ -10,14 +10,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Validate wrapper
-        uses: gradle/wrapper-validation-action@v1
-
       - name: Set up JDK 16
         uses: actions/setup-java@v2
         with:
           distribution: "adopt"
           java-version: "16"
+          cache: "gradle"
 
       - name: Process scripts
         run: |
@@ -28,7 +26,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add variations/*.yml cloud/*.yml
+          git add variations/*.yml # cloud/*.yml
           git commit -m "Process scripts (Variations & Minifications)" || echo "No changes were found."
 
       - name: Push changes
