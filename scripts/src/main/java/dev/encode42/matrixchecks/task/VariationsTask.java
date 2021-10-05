@@ -1,5 +1,7 @@
-package dev.encode42.matrixchecks.task.yaml;
+package dev.encode42.matrixchecks.task;
 
+import dev.encode42.copper.logger.OmniLogger;
+import dev.encode42.copper.util.Util;
 import dev.encode42.matrixchecks.util.RecursiveFile;
 import dev.encode42.matrixchecks.util.ValidFiles;
 import org.simpleyaml.configuration.MemorySection;
@@ -16,7 +18,8 @@ public class VariationsTask extends CommonTask {
     }
 
     @Override
-    protected void run(File file) throws IOException {
+    protected void run(File file) {
+        // Get the YAML files
         List<YamlFile> files = getFiles(file);
 
         if (!files.isEmpty()) {
@@ -27,19 +30,33 @@ public class VariationsTask extends CommonTask {
             YamlFile override = files.get(0);
             YamlFile variations = files.get(1);
 
+            // Set the variation type comment
             variations.set("variation", override.getString("name"));
             variations.setComment("variation", "Variation type utilized", CommentType.SIDE);
 
+            // Set each key in the variation from overrides
             for (Map.Entry<String, Object> line : override.getValues(true).entrySet()) {
                 if (isValid(line)) {
                     variations.set(line.getKey(), line.getValue());
                 }
             }
 
-            variations.save();
+            // Save the variation
+            try {
+                variations.save();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+
+        OmniLogger.info("Variations for " + file.getName() + " have been applied successfully!");
     }
 
+    /**
+     * Get the files provided by the override.
+     * @param file Override to get files from
+     * @return Files provided by the override
+     */
     private List<YamlFile> getFiles(File file) {
         File configuration = new File(file, "override.yml");
 
@@ -76,9 +93,12 @@ public class VariationsTask extends CommonTask {
         return files;
     }
 
+    /**
+     * Check if a section entry is valid for override transfers.
+     * @param section Section to check
+     * @return Whether the section entry is valid
+     */
     private boolean isValid(Map.Entry<String, Object> section) {
-         return !(section.getValue() instanceof MemorySection ||
-                 section.getKey().equalsIgnoreCase("name") ||
-                 section.getKey().equalsIgnoreCase("source"));
+         return !(section.getValue() instanceof MemorySection || Util.isEqualSome(section.getKey(), "name", "source"));
     }
 }

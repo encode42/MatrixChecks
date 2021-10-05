@@ -1,6 +1,6 @@
-package dev.encode42.matrixchecks.task.yaml;
+package dev.encode42.matrixchecks.task;
 
-import dev.encode42.matrixchecks.util.IO;
+import dev.encode42.copper.util.IO;
 import dev.encode42.matrixchecks.util.RecursiveFile;
 import org.simpleyaml.configuration.file.YamlFile;
 import org.simpleyaml.exceptions.InvalidConfigurationException;
@@ -45,9 +45,10 @@ public abstract class CommonTask {
     /**
      * Load a YAML file.
      * @param file File to load
+     * @param withComments Whether to load the file with comments
      * @return Loaded YAML file
      */
-    public static YamlFile loadYaml(File file) {
+    public static YamlFile loadYaml(File file, boolean withComments) {
         if (!IO.isType(file, "yml")) {
             return null;
         }
@@ -55,7 +56,12 @@ public abstract class CommonTask {
         YamlFile yamlFile = new YamlFile(file);
 
         try {
-            yamlFile.loadWithComments();
+            if (withComments) {
+                yamlFile.loadWithComments();
+            } else {
+                yamlFile.load();
+                yamlFile.options().header("");
+            }
         } catch (InvalidConfigurationException | IOException e) {
             e.printStackTrace();
         }
@@ -64,8 +70,17 @@ public abstract class CommonTask {
     }
 
     /**
+     * Load a YAML file.
+     * @param file File to load
+     * @return Loaded YAML file
+     */
+    public static YamlFile loadYaml(File file) {
+        return loadYaml(file, true);
+    }
+
+    /**
      * Primary task method to run.
      * @param file File to run with
      */
-    protected abstract void run(File file) throws IOException;
+    protected abstract void run(File file);
 }
