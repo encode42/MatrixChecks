@@ -59,14 +59,12 @@ to download the latest stable build of MatrixChecks. (This ID changes!)
 The downside is that all comments are removed and the file size is reduced.
 
 ### Cloud Usage
-⚠ **NOTE:**
-The cloud configuration files are currently unavailable due to an issue with scripting. This message will be removed once this method is available.
 
 1. Download [config.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).  
 2. Rename Matrix's original `config.yml` and `language.yml` to something else.
 3. Change `cloud_config.enable: false` to `true` in `config.yml`.
 4. Run `/matrix reload` or restart the server! The checks will now update on every reboot/reload.  
-<sub>For specific Matrix versions, replace `main` in the link with the compatible checks branch.</sub>
+<sub> For specific Matrix versions, replace `main` in the link with the compatible checks branch. Variations can be used (as long as its based on `checks.yml`) by adding `variations/<variation name>` between `cloud/` and `checks.yml`.</sub>
 
 ## ❔ FAQ
 These checks may not work perfectly with your server.  
@@ -79,53 +77,30 @@ Tested and configured for survival and minigame servers. Tweak the checks for yo
 
 <details>
 <summary>
-What each configuration files does
+What is the X folder/file?
 </summary>
 
-#### checks.yml
-The main checks configuration file. Includes all the advertised features.  
-Conditional commands, optimized checks, increased detection speed, etc.  
-⚠ Use this file alongside `language.yml`!
+#### Variations
+These are modifications of the original checks configuration files (`checks.yml`, `language.yml`, `config.yml`) with pre-configured changes. These changes range from kick obscurity to new detection algorithms.
 
-#### language.yml
-The main language file. This file must be installed on every Matrix instance.  
-It contains every global placeholder used extensively in `checks.yml`.  
-You'll be able to configure many aspects of the checks in this file!
+They're located in the [variations](https://github.com/QuantumSuite/MatrixChecks/tree/main/variations) folder of the repository. Each variation has its own readme file that describes the variation that shows up when you enter the variation's folder. Just click around to figure out what's offered!
 
-#### config.yml
-Optional file that changes a few values and organizes the original config.  
-Includes comment and key organization, minor tweaks, and a ready-to-use cloud config.  
-⚠ This file does not include any **major** changes!
+#### Cloud Files
+A directory that contains all of the configuration files, including variations, but minified. These are much smaller in file size but are impossible to read and modify.
 
-### Variations
-The files listed below are variations of the default configuration.  
-These variations are pre-made customizations for different uses.  
-To use these, download the files in the variation directory in place of the main files!
+Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup. These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/QuantumSuite/MatrixChecks#cloud-usage)!
 
-#### /variations/error
-All kick messages are replaced with existing and made-up error messages.  
-This confuses hackers since kick messages are replaced with generic errors.
+#### Scripts, override.yml, etc
+These are files that are only utilized by GitHub meant for repository information and the scripting system.
 
-#### /variations/kickless
-Replaces all kick commands with a simple notification.  
-Helpful for debugging or modifying checks without getting kicked.
+Namely:
+- `scripts/`
+- `.github/`
+- `readme.md`
+- `license.md`
+- `override.yml`
 
-#### /variations/secret
-All kick messages are replaced with a generic message and a number for staff.  
-This allows staff to know why a player was kicked without letting the player knowing which hacks to disable.
-
-### Miscellaneous
-These are files that don't fit a category.
-
-#### /cloud
-A directory that contains all of the files above, but minified. These are much smaller in file size but are impossible to read.  
-Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup.  
-These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/QuantumSuite/MatrixChecks#cloud-usage).
-
-#### /.github, license.md, readme.md
-These are files that are only utilized by GitHub and meant for repository information.  
-Contains various scripts used for repository automation that make everything easier.  
-You can completely ignore these files as they have nothing of importance for the end-user.
+Contains various scripts used for repository automation that make everything easier. You can completely ignore these files as they have nothing of importance for the end-user.
 </details>
 
 <details>

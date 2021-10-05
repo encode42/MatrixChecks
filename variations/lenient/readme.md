@@ -1,0 +1,2 @@
+# Lenient Detection Variant
+Unfinished
