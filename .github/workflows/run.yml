@@ -26,7 +26,7 @@ jobs:
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add variations/*.yml cloud/*.yml
+          git add variations/* cloud/*
           git commit -m "Process scripts (Variations & Minifications)" || echo "No changes were found."
 
       - name: Push changes
