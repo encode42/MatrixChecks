@@ -13,7 +13,7 @@ import java.io.File;
 import java.io.IOException;
 
 public class MinifyTask extends CommonTask {
-    public MinifyTask(RecursiveFile...directories) {
+    public MinifyTask(RecursiveFile ...directories) {
         super(directories);
     }
 
