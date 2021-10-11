@@ -351,7 +351,7 @@ velocity:
   enable: true
   disable_worlds: []
 
-  # The amount of time to wait for players to respond. (ticks)
+  # The amount of time to wait for players to respond (ticks)
   # Laggy players may take longer to respond to knockback.
   wait_time: 33
 
@@ -491,6 +491,20 @@ phase:
 badpackets:
   enable: true
   disable_worlds: []
+
+  # Timer check: Stops players from speeding up the game's ticks.
+  timer:
+    # Whether to use the legacy timer check.
+    # This check is more stable, but is no longer updated and is easier to bypass.
+    use_legacy_timer_check: false
+
+    # The minimum timer balance threshold (ticks)
+    # Lowering this may decrease false positives, but increase bypasses.
+    min_balance: -15.0
+
+    # Whether to end the timer check as soon as possible.
+    # Checks if a player's packet interval shows a trend, and casts a result.
+    accelerate_timer_check: true
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.

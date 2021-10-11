@@ -4,7 +4,7 @@ on:
   pull_request:
   workflow_dispatch:
 jobs:
-  build:
+  run:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
