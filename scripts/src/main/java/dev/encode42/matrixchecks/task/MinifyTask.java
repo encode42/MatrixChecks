@@ -1,22 +1,19 @@
 package dev.encode42.matrixchecks.task;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
+import dev.encode42.copper.io.IO;
+import dev.encode42.copper.io.RecursiveFile;
 import dev.encode42.copper.logger.OmniLogger;
-import dev.encode42.copper.util.IO;
 import dev.encode42.copper.util.Util;
-import dev.encode42.matrixchecks.util.RecursiveFile;
-import org.simpleyaml.configuration.MemorySection;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Map;
 
 public class MinifyTask extends CommonTask {
-    public MinifyTask(RecursiveFile ...directories) {
+    public MinifyTask(RecursiveFile...directories) {
         super(directories);
     }
 
@@ -82,8 +79,7 @@ public class MinifyTask extends CommonTask {
             target.mkdirs();
 
             File minified = new File(target, file.getName());
-            IO.createFile(minified, true);
-            IO.writeFile(minified, sanitized);
+            IO.writeFile(minified, sanitized, true);
 
             OmniLogger.info(file.getName() + " has been minified successfully!");
         }
@@ -95,6 +91,6 @@ public class MinifyTask extends CommonTask {
      * @return Whether the filename is valid
      */
     private boolean isValid(String filename) {
-        return !(Util.isEqualSome(filename, "override.yml", "source"));
+        return !(Util.isEqualSome(filename, "overrides.yml", "source"));
     }
 }

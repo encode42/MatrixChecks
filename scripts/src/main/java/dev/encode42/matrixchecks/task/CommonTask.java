@@ -1,7 +1,7 @@
 package dev.encode42.matrixchecks.task;
 
-import dev.encode42.copper.util.IO;
-import dev.encode42.matrixchecks.util.RecursiveFile;
+import dev.encode42.copper.io.IO;
+import dev.encode42.copper.io.RecursiveFile;
 import org.simpleyaml.configuration.file.YamlFile;
 import org.simpleyaml.exceptions.InvalidConfigurationException;
 
