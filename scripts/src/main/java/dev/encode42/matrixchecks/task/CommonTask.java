@@ -14,11 +14,23 @@ public abstract class CommonTask {
 
     /**
      * A task to run.
+     * @param iterate Whether to iterate on initialization
+     * @param directories Directories to iterate
+     */
+    public CommonTask(boolean iterate, RecursiveFile ...directories) {
+        this.directories = directories;
+
+        if (iterate) {
+            iterate();
+        }
+    }
+
+    /**
+     * A task to run.
      * @param directories Directories to iterate
      */
     public CommonTask(RecursiveFile ...directories) {
-        this.directories = directories;
-        iterate();
+        this(true, directories);
     }
 
     /**
@@ -40,6 +52,8 @@ public abstract class CommonTask {
                 e.printStackTrace();
             }
         }
+
+        finish();
     }
 
     /**
@@ -83,4 +97,9 @@ public abstract class CommonTask {
      * @param file File to run with
      */
     protected abstract void run(File file);
+
+    /**
+     * Method called when the task is finished.
+     */
+    protected abstract void finish();
 }

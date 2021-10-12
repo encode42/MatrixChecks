@@ -22,6 +22,7 @@ dependencies {
     implementation(files("libs/core.jar")) // https://github.com/Encode42/Copper
     implementation(group: "me.carleslc.Simple-YAML", name: "Simple-Yaml", version: "1.7.2")
     implementation(group: "com.fasterxml.jackson.dataformat", name: "jackson-dataformat-yaml", version: "2.12.2")
+    implementation(group: "net.lingala.zip4j", name: "zip4j", version: "2.9.0")
 }
 
 jar {

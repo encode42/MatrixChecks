@@ -173,4 +173,9 @@ public class VariationsTask extends CommonTask {
     private boolean isValid(String key) {
          return !Util.isEqualSome(key, "name", "source");
     }
+
+    @Override
+    protected void finish() {
+        OmniLogger.info("Finished variation of files.");
+    }
 }

@@ -7,6 +7,7 @@ import dev.encode42.copper.io.IO;
 import dev.encode42.copper.io.RecursiveFile;
 import dev.encode42.copper.logger.OmniLogger;
 import dev.encode42.copper.util.Util;
+import dev.encode42.matrixchecks.util.RootIO;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.File;
@@ -60,19 +61,7 @@ public class MinifyTask extends CommonTask {
             String sanitized = json.replaceAll("([{,])\"(.*?)\"", "$1$2");
 
             // Get the target cloud path
-            StringBuilder targetPath = new StringBuilder();
-            File currentPath = file.getParentFile();
-
-            try {
-                while (!currentPath.getCanonicalPath().equals(root.getCanonicalPath())) {
-                    targetPath.insert(0, File.separator + currentPath.getName());
-                    currentPath = currentPath.getParentFile();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-                return;
-            }
-
+            String targetPath = RootIO.getRelativeDirectory(root, file);
 
             // Create and write to the file
             File target = new File(cloudFile, targetPath.toString());
@@ -92,5 +81,10 @@ public class MinifyTask extends CommonTask {
      */
     private boolean isValid(String filename) {
         return !(Util.isEqualSome(filename, "overrides.yml", "source"));
+    }
+
+    @Override
+    protected void finish() {
+        OmniLogger.info("Finished minification of files.");
     }
 }

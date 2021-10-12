@@ -4,6 +4,7 @@ import dev.encode42.copper.io.RecursiveFile;
 import dev.encode42.copper.logger.OmniLogger;
 import dev.encode42.matrixchecks.task.MinifyTask;
 import dev.encode42.matrixchecks.task.VariationsTask;
+import dev.encode42.matrixchecks.task.ZipTask;
 
 import java.util.logging.Logger;
 
@@ -21,6 +22,7 @@ public class Main {
             // Run the tasks
             new VariationsTask(new RecursiveFile("../variations", true));
             new MinifyTask(new RecursiveFile("../"), new RecursiveFile("../variations", true));
+            new ZipTask(new RecursiveFile("../"), new RecursiveFile("../variations", true));
         }
     }
 }
