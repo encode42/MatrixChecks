@@ -16,7 +16,12 @@ public enum ValidFiles {
     /**
      * The primary language file.
      */
-    LANGUAGE("../language.yml");
+    LANGUAGE("../language.yml"),
+
+    /**
+     * A variation of another variation.
+     */
+    COMBO("");
 
     private final File file;
 

@@ -4,12 +4,8 @@
 # ╚════════════════════════════════════════════╝
 
 overrides:
-- name: "Kickless"
-  source: LANGUAGE
-  global_placeholder:
-    o_pr: 'would''ve been kicked for '
-    o_su: '!'
-    n_fp: ''
-    n_ui: ''
-    n_sp: ''
-    r_ki: 'matrix notify'
+- name: "Lenient Error"
+  source: COMBO
+  from:
+    - "../../lenient"
+    - "../../error"

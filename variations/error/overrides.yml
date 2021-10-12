@@ -3,9 +3,9 @@
 # ║ The average user has no use for this file. ║
 # ╚════════════════════════════════════════════╝
 
-name: "Fake Error"
 overrides:
-- source: LANGUAGE
+- name: "Fake Error"
+  source: LANGUAGE
   global_placeholder:
     o_pr: ''
     o_su: ''

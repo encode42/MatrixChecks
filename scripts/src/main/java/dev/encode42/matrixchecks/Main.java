@@ -19,7 +19,7 @@ public class Main {
             OmniLogger.setLogger(Logger.getLogger(this.getClass().getName()), true);
 
             // Run the tasks
-            new VariationsTask(new RecursiveFile("../variations"));
+            new VariationsTask(new RecursiveFile("../variations", true));
             new MinifyTask(new RecursiveFile("../"), new RecursiveFile("../variations", true));
         }
     }
