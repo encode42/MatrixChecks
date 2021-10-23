@@ -53,6 +53,9 @@ killaura:
     # The checks that are compared.
     # These are best-guesses as they are undocumented.
     aimbot:
+      # Should illegal hits be cancelled?
+      cancel_hit: true
+    
       # Unknown and "secret" checks.
       check_aimbot_sync: true
 
