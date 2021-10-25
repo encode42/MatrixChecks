@@ -54,9 +54,11 @@ Changes you make will take effect everywhere the variable is used.
 4. If you downloaded any optional files, rename them to `checks.yml`/`language.yml`.
 5. Run `/matrix reload` or restart the server!
 
+<!--
 Alternatively, you can just run `/matrix dlcfg OBCHXARALB` in-game  
 to download the latest stable build of MatrixChecks. (This ID changes!)  
 The downside is that all comments are removed and the file size is reduced.
+-->
 
 ### Cloud Usage
 
