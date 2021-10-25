@@ -168,6 +168,15 @@ killaura:
       # Though network delay and asynchronous mode may allow vanilla players to hit the NPC while turning.
       vl_weight: 12
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 5
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -222,6 +231,15 @@ hitbox:
     min_vl: 5
     max_vl: 19
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 5
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -253,6 +271,15 @@ click:
 
   # Add more violations for exceeding CPS.
   dynamic_cps_vl_weight: true
+
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 5
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -317,6 +344,15 @@ move:
   # Only compatible with server versions 1.8, 1.12, and the latest Minecraft release.
   async_mode: false
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 25
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -335,9 +371,18 @@ jesus:
   # How many violations are needed to cancel illegal movements? (-1 = don't cancel)
   cancel_vl: 15
 
-  # Ignore whether or not players are in the swimming animation.
+  # Ignore whether players are in the swimming animation.
   # Enabling can prevent client-server desync but causes issues with 1.13+ swimming.
   ignore_swim_pose: false
+
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 7
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -367,6 +412,15 @@ velocity:
     analyser: 3 # Players do not correctly take general knockback.
     vertical: 1 # Players do not correctly take vertical knockback.
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 3
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -389,6 +443,15 @@ elytra:
 
   # How many violations are needed to take players out of gliding? (-1 = don't cancel)
   unequip_vl: 20
+
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 7
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -432,7 +495,16 @@ vehicle:
     # How many violations are needed to kick players off vehicles? (-1 = don't kick)
     leave_vehicle: 8
 
- # Violation Thresholds.
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 5
+
+  # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
     5: 'matrix notify %gp_c_me%%player% illegally interacted with surroundings%gp_o_an%%gp_c_md%(5VL) -h %gp_c_hm% Vehicle -c %gp_r_cc%'
@@ -447,6 +519,15 @@ interact:
 
   check_interact_block: true # Interacting with blocks through walls.
   check_attack: true # Attacking through walls.
+
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 5
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -480,6 +561,15 @@ phase:
   #   - BEDROCK
   exclude_types: []
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 10
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -508,6 +598,15 @@ badpackets:
     # Whether to end the timer check as soon as possible.
     # Checks if a player's packet interval shows a trend, and casts a result.
     accelerate_timer_check: true
+
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 25
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -565,6 +664,15 @@ block:
       # How many violations will be added when triggered?
       vl_weight: 0
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 8
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -619,6 +727,15 @@ scaffold:
       # How many violations will be added when triggered?
       vl_weight: 2
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 6
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -660,6 +777,15 @@ delay:
   # Prevent abnormally fast inventory actions.
   check_inventory_action: 3
 
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 2
+
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
   commands:
@@ -673,6 +799,15 @@ delay:
 autobot:
   enable: true
   disable_worlds: []
+
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 15
+
+    # How many violations to remove.
+    amount: 2
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -692,6 +827,15 @@ chat:
 
   # How many violations are needed to cancel spam? (-1 = don't cancel)
   cancel_vl: 4
+
+  # Decay time and amount for violations.
+  # Controls the speed in which violations expire.
+  decay:
+    # Time it takes before removing violations.
+    interval: 5
+
+    # How many violations to remove.
+    amount: 2
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
