@@ -7,8 +7,8 @@ group = "dev.encode42"
 version = "1.0-SNAPSHOT"
 
 compileJava.options.encoding = "UTF-8"
-sourceCompatibility = JavaVersion.toVersion(16)
-targetCompatibility = JavaVersion.toVersion(16)
+sourceCompatibility = JavaVersion.toVersion(17)
+targetCompatibility = JavaVersion.toVersion(17)
 
 repositories {
     mavenCentral()
