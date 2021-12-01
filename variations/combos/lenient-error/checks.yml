@@ -355,10 +355,10 @@ move:
   # Controls the speed in which violations expire.
   decay:
     # Time it takes before removing violations.
-    interval: 15
+    interval: 10
 
     # How many violations to remove.
-    amount: 25
+    amount: 45
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
@@ -389,10 +389,10 @@ jesus:
   # Controls the speed in which violations expire.
   decay:
     # Time it takes before removing violations.
-    interval: 15
+    interval: 10
 
     # How many violations to remove.
-    amount: 7
+    amount: 10
 
   # Violation Thresholds.
   # Run commands once X amount of violations are reached.
