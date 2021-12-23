@@ -1,9 +1,9 @@
 package dev.encode42.matrixchecks.task;
 
+import dev.encode42.copper.io.IO;
 import dev.encode42.copper.io.RecursiveFile;
 import dev.encode42.copper.logger.OmniLogger;
 import dev.encode42.copper.util.Util;
-import dev.encode42.matrixchecks.util.RootIO;
 import net.lingala.zip4j.ZipFile;
 import net.lingala.zip4j.exception.ZipException;
 import net.lingala.zip4j.model.ZipParameters;
@@ -31,7 +31,7 @@ public class ZipTask extends CommonTask {
             try {
                 // Get the target directory structure
                 File root = new File("../");
-                String targetPath = RootIO.getRelativeDirectory(root, file);
+                String targetPath = IO.getRelativeDirectory(root, file);
 
                 // Create the zip parameters
                 ZipParameters parameters = new ZipParameters();

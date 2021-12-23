@@ -59,7 +59,7 @@ public class VariationsTask extends CommonTask {
                 // Ensure all file combos are combined
                 for (ValidFiles validFile : ValidFiles.values()) {
                     if (!validFile.name().equals("COMBO")) {
-                        List<Map<String, Object>> combos = new ArrayList<>();
+                        Set<Map<String, Object>> combos = new HashSet<>();
 
                         // Add all combos for file type
                         for (Map<String, Object> combo : comboOverrides) {
@@ -69,12 +69,7 @@ public class VariationsTask extends CommonTask {
                         }
 
                         // Merge the maps
-                        // https://blog.knoldus.com/merge-lists-of-map-to-map-java-8-style/
-                        final Optional<Map<String, Object>> reduce = combos.stream().reduce((firstMap, secondMap) ->
-                                Stream.concat(firstMap.entrySet().stream(), secondMap.entrySet().stream())
-                                        .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue, (key1, key2) -> key1)));
-
-                        reduce.ifPresent(allOverrides::add);
+                        allOverrides.add(MapUtil.merge(combos));
                     }
                 }
             } else {

@@ -1,16 +1,14 @@
 plugins {
     id("java")
-    id("com.github.johnrengelman.shadow") version "7.0.0"
+    id("application")
+    id("com.github.johnrengelman.shadow") version "7.1.1"
 }
 
 group = "dev.encode42"
 version = "1.0-SNAPSHOT"
 
-compileJava.options.encoding = "UTF-8"
-sourceCompatibility = JavaVersion.toVersion(17)
-targetCompatibility = JavaVersion.toVersion(17)
-
 repositories {
+    mavenLocal()
     mavenCentral()
     maven {
         name = "jitpack"
@@ -19,10 +17,26 @@ repositories {
 }
 
 dependencies {
-    implementation(files("libs/core.jar")) // https://github.com/Encode42/Copper
+    implementation(group: "dev.encode42.copper", name: "copper-cloud", version: "2.0-SNAPSHOT")
     implementation(group: "me.carleslc.Simple-YAML", name: "Simple-Yaml", version: "1.7.2")
     implementation(group: "com.fasterxml.jackson.dataformat", name: "jackson-dataformat-yaml", version: "2.12.2")
     implementation(group: "net.lingala.zip4j", name: "zip4j", version: "2.9.0")
+}
+
+def targetJavaVersion = 17
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release = targetJavaVersion
+    }
 }
 
 jar {
@@ -31,7 +45,6 @@ jar {
     }
 }
 
-task launch(type: JavaExec) {
-    dependsOn("shadowJar")
-    classpath = files(shadowJar.archiveFile.get());
+application {
+    mainClass.set("dev.encode42.matrixchecks.Main")
 }

@@ -7,7 +7,6 @@ import dev.encode42.copper.io.IO;
 import dev.encode42.copper.io.RecursiveFile;
 import dev.encode42.copper.logger.OmniLogger;
 import dev.encode42.copper.util.Util;
-import dev.encode42.matrixchecks.util.RootIO;
 import org.simpleyaml.configuration.file.YamlFile;
 
 import java.io.File;
@@ -61,10 +60,10 @@ public class MinifyTask extends CommonTask {
             String sanitized = json.replaceAll("([{,])\"(.*?)\"", "$1$2");
 
             // Get the target cloud path
-            String targetPath = RootIO.getRelativeDirectory(root, file);
+            String targetPath = IO.getRelativeDirectory(root, file);
 
             // Create and write to the file
-            File target = new File(cloudFile, targetPath.toString());
+            File target = new File(cloudFile, targetPath);
             target.mkdirs();
 
             File minified = new File(target, file.getName());
