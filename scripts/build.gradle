@@ -11,6 +11,10 @@ repositories {
     mavenLocal()
     mavenCentral()
     maven {
+        name = "encode42-repo"
+        url = "https://repo.encode42.dev/snapshots"
+    }
+    maven {
         name = "jitpack"
         url = "https://jitpack.io"
     }
