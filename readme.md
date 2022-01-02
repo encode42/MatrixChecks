@@ -1,7 +1,7 @@
 [matrix-page]: https://matrix.rip
-[matrix-discord]: https://discaptcha.com/matrix
+[matrix-discord]: https://discord.matrix.rip
 [matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
-[suite-discord]: https://discord.gg/rjSkFyj
+[suite-discord]: https://discord.encode42.dev/quantumsuite
 
 <img src=".github/assets/badge.png" width="200px" align="left">
 
