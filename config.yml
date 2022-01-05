@@ -4,24 +4,23 @@
 # └─┘ └─┘└───╯
 # MatrixChecks
 #
-# The changes in this file are only for organization and minor tweaks.
+# This file contains organizational changes and minor tweaks.
 # Install "checks.yml" to utilize the improved cheat detection!
 #
-# GitHub:  https://github.com/QuantumSuite/MatrixChecks
-# Discord: https://discord.gg/rjSkFyj
+# Website: https://quantumsuite.org
+# Support: https://quantumsuite.org/support
 
 # Premium user credentials.
 # These are obtained after messaging Matrix's developer with proof of purchase.
-# Don't share this information! Your Matrix account will be terminated.
+# Don't share this sensitive information!
 premium_user:
   user: ''
   password: ''
 
-# Check for updates on server start.
+# Whether to check for plugin updates.
 check_update: true
 
-# Downloads checks.yml from an external web server on server start.
-# I recommend using this with MatrixChecks to automatically update the checks.
+# Whether to downloads checks.yml from an external web server.
 # To enable this feature, just change "cloud_config.enable: false" to "true".
 # This will ignore your local checks.yml and update on every server restart!
 cloud_config:
@@ -32,20 +31,19 @@ cloud_config:
   links:
     - 'https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/cloud/checks.yml'
 
-# GeyserMC support
-# Enable this ONLY if you have GeyserMC for security reasons. (Bedrock support)
-# To enable this feature, install Matrix on Bungee + all sub-servers and enable this option on each instance.
+# Whether to enable GeyserMC support. (Bedrock support)
+# Enable this ONLY if you have GeyserMC for security reasons.
+# For more information: https://github.com/re-ovo/Matrix-Issues/wiki/GeyserMC-Support
 bungee_geysermc_support: false
 
-# Register commands from other anticheats.
-# Prevents finding the anticheat your server uses via commands.
-# I recommend CommandWhitelist to block players from seeing the Matrix commands.
+# Whether to register inactive commands from other anticheats.
+# Prevents finding the anticheat your server uses via command completions.
+# It's recommended to use the CommandWhitelist plugin instead.
 fake_anticheat:
   aac: false
   spartan: false
 
 # Stops players from re-logging right after being kicked. (seconds)
-# This should be increased if you don't want hackers to re-join quickly.
 relog_time: 15
 
 # Automatically disables some checks when the server TPS drops.
@@ -60,16 +58,16 @@ tps_protection:
   lag_threshold: 750
 
 # Logs all violations to the Matrix/logs directory.
-# Recommended to enable if you are debugging/monitoring checks.
-log_file: true
+# Recommended enabling if you are debugging/monitoring checks.
+log_file: false
 
 # Delete old Matrix log files. (days)
 delete_time: 7
 
-# Summon a lightning strike on players who are kicked via /matrix kick.
+# Whether to summon a lightning strike on players who are kicked.
 kick_strike_lightning: false
 
-# Disables the "matrix.bypass" permission.
+# Whether to disable the "matrix.bypass" permission.
 # Enable if you want every player to be checked.
 disable_bypass_permission: false
 
@@ -78,13 +76,15 @@ disable_bypass_permission: false
 permission_refresh_interval: 120
 
 # Disable specific components used in checks.
+#
 # Example:
 # disabled_components:
-#   - 'vel.ana'
+# - 'vel.ana'
 disabled_components: []
 
 # Sets a custom vl_weight for specific components.
+#
 # Example:
 # custom_vl_weight:
-#   - 'vel.ana:4'
+# - 'vel.ana:4'
 custom_vl_weight: []

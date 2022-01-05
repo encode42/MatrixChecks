@@ -7,8 +7,8 @@
 # This file contains global placeholders used in most commands.
 # Install "checks.yml" to utilize the improved cheat detection!
 #
-# GitHub:  https://github.com/QuantumSuite/MatrixChecks
-# Discord: https://discord.gg/rjSkFyj
+# Website: https://quantumsuite.org
+# Support: https://quantumsuite.org/support
 
 # The prefix of most Matrix messages.
 # Shows up in violations, broadcasts, and commands.
@@ -18,17 +18,17 @@ prefix: '&7[&6Matrix&7]&r '
 spam-warning: '&cPlease stop spamming the chat!'
 
 ## Kick messages
-# Broadcast the kick message.
+# Whether to broadcast the kick message.
 kick-broadcast: true
 
 # Message sent to staff when a player is kicked.
 kick-format: '%player% has been kicked for potentially hacking!'
 
-# Relog message
+# Message shown when a player re-logs too fast.
 relog-message: '&cKicked for logging in too fast! &7Please wait %time_left% seconds.'
 
 ## Verbose Messages
-# How "/matrix verbose" messages are formatted.
+# How Matrix verbose messages are formatted.
 #
 # %check%: Check that was triggered
 # %message%: Information on the check
@@ -49,10 +49,11 @@ verbose-format: '&7%player% failed &6%check% &8(%component%) | &7%message% &8| &
 # PlaceholderAPI placeholders are supported in every global placeholder.
 #
 # Example:
+### language.yml
 # global_placeholder:
 #   fp: "Contact an admin."
 #
-# // checks.yml
+### checks.yml
 # commands:
 #   25: 'matrix kick %player% Kicked for hacks! %gp_fp%'
 global_placeholder:
@@ -69,7 +70,7 @@ global_placeholder:
   o_su: ''
   o_an: ' '
 
-  ## Kick Reasons
+  ## Kick reasons
   # What a kicked player sees in the kick message.
   # These are shown as the first line of the kick.
   #
@@ -109,7 +110,7 @@ global_placeholder:
   h_sm: 'Failed to connect to server. io.netty.channel.AbstractChannel $AnnotatedConnectException:
     Connection timed out.'
 
-  ## Kick Notes
+  ## Kick notes
   # These placeholders appear after certain kick reasons.
   #
   # n_fp: Report false-kick message
@@ -143,7 +144,7 @@ global_placeholder:
     %gp_c_ba%'
 
   ## Commands
-  # Choose which commands are run.
+  # Choose which commands are utilized.
   #
   # r_ki: Kick/punishment command
   # r_cc: Notification click command
