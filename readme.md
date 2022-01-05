@@ -92,15 +92,14 @@ A directory that contains all of the configuration files, including variations, 
 
 Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup. These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/QuantumSuite/MatrixChecks#cloud-usage)!
 
-#### Scripts, override.yml, etc
+#### Repository files
 These are files that are only utilized by GitHub meant for repository information and the scripting system.
 
 Namely:
-- `scripts/`
 - `.github/`
+- `overrides/`
 - `readme.md`
 - `license.md`
-- `override.yml`
 
 Contains various scripts used for repository automation that make everything easier. You can completely ignore these files as they have nothing of importance for the end-user.
 </details>
