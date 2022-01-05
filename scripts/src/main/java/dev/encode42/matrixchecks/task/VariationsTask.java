@@ -79,8 +79,10 @@ public class VariationsTask extends CommonTask {
 
         // Process all the overrides
         for (Map<String, Object> override : allOverrides) {
-            File sourceFile = ValidFiles.valueOf(override.get("source").toString()).getFile();
-            processOverride(file, sourceFile, override);
+            if (override != null) {
+                File sourceFile = ValidFiles.valueOf(override.get("source").toString()).getFile();
+                processOverride(file, sourceFile, override);
+            }
         }
 
         OmniLogger.info("Variations for " + file.getName() + " have been applied successfully!");
