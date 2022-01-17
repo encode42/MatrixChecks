@@ -1,0 +1,20 @@
+{
+    "roots": [
+        "matrixchecks",
+        "matrixplus"
+    ],
+    "matrixchecks": {
+        "target": "../../../",
+        "title": "MatrixChecks",
+        "assets": [[
+            ".github/assets", "assets"
+        ]],
+        "output": "./public/"
+    },
+    "private": {
+        "target": "private",
+        "excludeFiles": [
+            "template.html"
+        ]
+    }
+}

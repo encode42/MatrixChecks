@@ -1,0 +1,36 @@
+name: Generate site
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+defaults:
+  run:
+    working-directory: .github/tuotta
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: 17
+        cache: yarn
+
+    - name: Build
+      run: |
+        git clone https://github.com/QuantumSuite/Tuottaa
+        cd Tuotta
+        yarn install
+        node src/index.js --config ../config.json
+
+    - name: Deploy pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: .github/tuotta/Tuottaa/public
+        publish_branch: gh-pages
+        git-config-name: GitHub Action
+        git-config-email: action@github.com

@@ -1,0 +1,9 @@
+name: Bypass
+description: Report a bypass caused by the checks.
+labels:
+- "category │ bypass"
+body:
+- type: markdown
+  attributes:
+    value: "Before reporting a bypass, ensure you've read [the FAQs](https://github.com/QuantumSuite/MatrixChecks#-faq)!"
+- type:

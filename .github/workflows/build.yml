@@ -1,10 +1,10 @@
-name: Run Scripts
+name: Build files
 #on:
 #  push:
 #  pull_request:
 #  workflow_dispatch:
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -17,7 +17,7 @@ jobs:
           java-version: "17"
           cache: "gradle"
 
-      - name: Process scripts
+      - name: Build
         run: |
           cd .github/scripts
           ./gradlew runShadow
