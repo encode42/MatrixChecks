@@ -4,15 +4,15 @@
         "matrixplus"
     ],
     "matrixchecks": {
-        "target": "../../../",
+        "target": "../../..",
         "title": "MatrixChecks",
         "assets": [[
             ".github/assets", "assets"
         ]],
-        "output": "./public/"
+        "output": "./public"
     },
     "private": {
-        "target": "private",
+        "target": "../private",
         "excludeFiles": [
             "template.html"
         ]
