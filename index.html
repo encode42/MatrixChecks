@@ -1,0 +1,203 @@
+<html lang="en"><head>
+        <meta charset="UTF-8">
+        <title>MatrixChecks</title>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/speed-highlight/core@1.1.4/dist/themes/github-dark.css">
+        <link rel="stylesheet" href="/index.css">
+    </head>
+    <body>
+        <main>
+            <img src="./assets/badge-lq.png" align="left">
+<div align="right">
+<h1>MatrixChecks</h1>
+<h3>The highly customizable, organized, and optimized checks configuration for <a href="https://matrix.rip">Matrix Anticheat</a>, a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.</h3>
+<p><a href="https://matrix.rip"><img src="https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square" alt="Matrix Anticheat"></a> <a href="https://discord.encode42.dev/quantumsuite"><img src="https://img.shields.io/discord/707330384328654869?color=7289DA&amp;label=Checks%20Support&amp;style=flat-square" alt="Checks Support"></a> <a href="https://discord.matrix.rip"><img src="https://img.shields.io/discord/392904793758367745?color=7289DA&amp;label=Matrix%20Support&amp;style=flat-square" alt="Matrix Support"></a></p>
+</div>
+<ul>
+<li><strong>Works on free &amp; premium Matrix!</strong></li>
+<li>Improved violation &amp; kick messages.</li>
+<li>Lower amount of false positives.</li>
+<li>Stricter checks. <em>(Faster detection)</em></li>
+<li>Multiple file types to suit your needs!</li>
+<li>Tons of customization options.</li>
+</ul>
+<p>⚠ <strong>REQUIRED INSTALLATION NOTE:</strong><br>
+You <strong>must</strong> install <a href="https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml"><code>language.yml</code></a> to use this configuration!<br>
+Otherwise, all messages will be unreadable and commands will not work!<br>
+Every message contains placeholders that require the language file.</p>
+<h2>📷 Previews</h2>
+<h3>Improved messages</h3>
+<p>Every single message has been modified to be easily read and understood.<br>
+Messages have also been greatly reduced in length to reduce notification spam.<br>
+Notifications, kick messages, comments, everywhere with text has been modified!<br>
+<img src="./assets/notifications.png" width="450"><br>
+<img src="./assets/kick.png" width="450"></p>
+<h3>Hover messages and click commands</h3>
+<p>You can hover over notification messages to see more details!<br>
+This includes client version, ping, server TPS, and the root check/component.<br>
+When you click on notifications, you'll instantly spectate the suspected hacker!<br>
+And of course, the commands and visuals are customizable in <code>language.yml</code>.<br>
+<img src="./assets/hover.png" width="450"></p>
+<h3>Customization</h3>
+<p>Every aspect of the configuration is easily customizable via <code>language.yml</code>!<br>
+Commands, notification format, kick message, anything you'd ever need to change.<br>
+Changes you make will take effect everywhere the variable is used.<br>
+<img src="./assets/customization.png" width="450"></p>
+<h2>🔧 Setup</h2>
+<h3>Server Usage</h3>
+<ol>
+<li>Download <a href="https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/checks.yml">checks.yml</a> and <a href="https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml">language.yml</a>.<br>
+<sub>For specific Matrix versions, head to the <a href="https://github.com/QuantumSuite/MatrixChecks/releases">releases page</a>.</sub></li>
+<li>Rename Matrix's original <code>checks.yml</code> and <code>language.yml</code> to something else.</li>
+<li>Upload/move the new files to your Matrix plugin folder. (<code>/plugins/Matrix/</code>)</li>
+<li>If you downloaded any optional files, rename them to <code>checks.yml</code>/<code>language.yml</code>.</li>
+<li>Run <code>/matrix reload</code> or restart the server!</li>
+</ol>
+<!--
+Alternatively, you can just run `/matrix dlcfg OBCHXARALB` in-game  
+to download the latest stable build of MatrixChecks. (This ID changes!)  
+The downside is that all comments are removed and the file size is reduced.
+-->
+<h3>Cloud Usage</h3>
+<ol>
+<li>Download <a href="https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/config.yml">config.yml</a> and <a href="https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml">language.yml</a>.</li>
+<li>Rename Matrix's original <code>config.yml</code> and <code>language.yml</code> to something else.</li>
+<li>Change <code>cloud_config.enable: false</code> to <code>true</code> in <code>config.yml</code>.</li>
+<li>Run <code>/matrix reload</code> or restart the server! The checks will now update on every reboot/reload.<br>
+<sub> For specific Matrix versions, replace <code>main</code> in the link with the compatible checks branch. Variations can be used (as long as its based on <code>checks.yml</code>) by adding <code>variations/&lt;variation name&gt;</code> between <code>cloud/</code> and <code>checks.yml</code>.</sub></li>
+</ol>
+<h2>❔ FAQ</h2>
+<p>These checks may not work perfectly with your server.<br>
+Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.<br>
+<strong>This is not a drag-and-drop solution!</strong> Some values may need to be changed to work best with your setup.</p>
+<p>Matrix Anticheat, like most, isn't a perfect anticheat. It itself has bugs that we cannot fix.<br>
+These checks aim to mitigate those issues and improve what works well, but there's only so much we can do.<br>
+Tested and configured for survival and minigame servers. Tweak the checks for your own server!</p>
+<details>
+<summary>
+What is the X folder/file?
+</summary>
+<h4>Variations</h4>
+<p>These are modifications of the original checks configuration files (<code>checks.yml</code>, <code>language.yml</code>, <code>config.yml</code>) with pre-configured changes. These changes range from kick obscurity to new detection algorithms.</p>
+<p>They're located in the <a href="https://github.com/QuantumSuite/MatrixChecks/tree/main/variations">variations</a> folder of the repository. Each variation has its own readme file that describes the variation that shows up when you enter the variation's folder. Just click around to figure out what's offered!</p>
+<h4>Cloud Files</h4>
+<p>A directory that contains all of the configuration files, including variations, but minified. These are much smaller in file size but are impossible to read and modify.</p>
+<p>Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup. These are optimized for Matrix cloud usage with <code>config.yml</code>. For instructions, read <a href="https://github.com/QuantumSuite/MatrixChecks#cloud-usage">Cloud Usage</a>!</p>
+<h4>Repository files</h4>
+<p>These are files that are only utilized by GitHub meant for repository information and the scripting system.</p>
+<p>Namely:</p>
+<ul>
+<li><code>.github/</code></li>
+<li><code>overrides/</code></li>
+<li><code>readme.md</code></li>
+<li><code>license.md</code></li>
+</ul>
+<p>Contains various scripts used for repository automation that make everything easier. You can completely ignore these files as they have nothing of importance for the end-user.</p>
+</details>
+<details>
+<summary>
+Suggested (optional) changes
+</summary>
+These are just suggestions, don't change them if you don't need to.  
+Only use these if you're having issues with the listed checks!
+<table>
+<thead>
+<tr>
+<th>Root Check</th>
+<th>Path</th>
+<th>Default</th>
+<th>Suggestion</th>
+<th>Reason</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>click</code></td>
+<td><code>max_cps</code></td>
+<td><code>18</code></td>
+<td><code>16</code> - <code>24</code></td>
+<td>The highest possible CPS achieved by humans is 24. Lag may affect the accuracy of this value.</td>
+</tr>
+<tr>
+<td><code>hitbox</code></td>
+<td><code>max_reach</code></td>
+<td><code>3.18</code></td>
+<td><code>3.2</code> - <code>3.3</code></td>
+<td>Increase if there are many false-positives with this check. This value should never be less than 3.1!</td>
+</tr>
+<tr>
+<td><code>block</code></td>
+<td><code>fastplace.max_place_per_second</code></td>
+<td><code>13</code></td>
+<td><code>10</code> - <code>18</code></td>
+<td>Increase if there are many false-positives when placing blocks, decrease if there are many bypasses.</td>
+</tr>
+<tr>
+<td><code>scaffold</code></td>
+<td><code>...delay.min_delay</code></td>
+<td><code>8</code></td>
+<td><code>5</code> - <code>9</code></td>
+<td>Decrease if there are many false-positives when pillaring, increase if there are many bypasses.</td>
+</tr>
+<tr>
+<td><code>delay</code></td>
+<td><code>check_inventory_action</code></td>
+<td><code>4</code></td>
+<td><code>-1</code></td>
+<td>Disable this check if players receive many false-positives when shift-clicking in inventories.</td>
+</tr>
+<tr>
+<td>&nbsp;</td>
+<td><code>...</code> = relative path</td>
+<td>&nbsp;</td>
+<td><code>X - X</code> = range</td>
+<td>&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details>
+<summary>
+How do I report a bypass or false positive?
+</summary>
+<p><strong>First:</strong><br>
+Make sure this isn't an issue with Matrix itself. Test with the <a href="https://github.com/jiangdashao/Matrix-Issues/blob/master/checks.yml">default Matrix config files</a>. If the issue persists, it's most likely an issue with Matrix. You can report the issue to us, but not everything can be fixed with a checks file tweak. Head over to <a href="https://discord.matrix.rip">Matrix's support Discord</a> and ask about the issue, or report the issue at their <a href="https://github.com/jiangdashao/Matrix-Issues">issue tracker</a>.</p>
+<ul>
+<li><a href="https://discord.matrix.rip">(Matrix) Discord</a></li>
+<li><a href="https://github.com/jiangdashao/Matrix-Issues">(Matrix) Issues</a></li>
+</ul>
+<p><strong>Then:</strong><br>
+Report the issue in the <a href="https://discord.encode42.dev/quantumsuite">MatrixChecks support Discord</a> or make a report at the <a href="https://github.com/QuantumSuite/MatrixChecks/issues">issue page</a> with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a <a href="https://github.com/QuantumSuite/MatrixChecks/pulls">pull request</a> containing the change and why you made it.</p>
+<ul>
+<li><a href="https://discord.encode42.dev/quantumsuite">Discord</a></li>
+<li><a href="https://github.com/QuantumSuite/MatrixChecks/issues">Issues</a></li>
+<li><a href="https://github.com/QuantumSuite/MatrixChecks/pulls">Pull Requests</a></li>
+</ul>
+</details>
+<details>
+<summary>
+There are weird symbols in every message!
+</summary>
+<p>Do the "weird things" look like something along the lines of "<code>%gp_o_pr%</code>"? If so, you have not installed <code>language.yml</code>.<br>
+This file is required to replace those placeholders with what they're meant to be. <a href="https://github.com/QuantumSuite/MatrixChecks#server-usage">Installation</a></p>
+</details>
+<details>
+<summary>
+Can I modify the files in MatrixChecks?
+</summary>
+<p>Yes! I encourage you to do so. Since all servers are different, you most likely will have to modify the files anyway.<br>
+You can also distribute it all you want or use it on a large network; just don't remove copyright notices as that's against the license.</p>
+</details>
+<details>
+<summary>
+How can I contribute?
+</summary>
+<p>Contributions are very welcome! If you created a new optional file or made tweaks for different minigames, feel free to contact me or make a pull request.<br>
+I don't want to start any competition with this project! Having everything in one central repository makes it much easier for the end-user to find what they want.</p>
+</details>
+
+        </main>
+    
+
+</body></html>
