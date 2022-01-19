@@ -3,7 +3,7 @@
 [matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
 [suite-discord]: https://discord.encode42.dev/quantumsuite
 
-<img src=".github/assets/badge-lq.png" align="left">
+<img src=".github/assets/badge-lq.png" align="left" id="header">
 
 <div align="right">
 

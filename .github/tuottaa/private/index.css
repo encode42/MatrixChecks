@@ -48,6 +48,10 @@ main input {
     color: var(--text-muted);
 }
 
+#header {
+    padding: 10px;
+}
+
 #result-structure-parent {
     display: flex;
     flex-direction: column;
