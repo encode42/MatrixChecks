@@ -50,8 +50,7 @@ Changes you make will take effect everywhere the variable is used.
 1. Download [checks.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).
 2. Rename Matrix's original `checks.yml` and `language.yml` to something else.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
-4. If you downloaded any optional files, rename them to `checks.yml`/`language.yml`.
-5. Run `/matrix reload` or restart the server!
+4. Run `/matrix reload` or restart the server!
 
 <!--
 Alternatively, you can just run `/matrix dlcfg OBCHXARALB` in-game  
