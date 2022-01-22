@@ -47,8 +47,7 @@ Changes you make will take effect everywhere the variable is used.
 
 ## 🔧 Setup
 ### Server Usage
-1. Download [checks.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).  
-  <sub>For specific Matrix versions, head to the [releases page](https://github.com/QuantumSuite/MatrixChecks/releases).</sub>
+1. Download [checks.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).
 2. Rename Matrix's original `checks.yml` and `language.yml` to something else.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
 4. If you downloaded any optional files, rename them to `checks.yml`/`language.yml`.
@@ -65,8 +64,7 @@ The downside is that all comments are removed and the file size is reduced.
 1. Download [config.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).  
 2. Rename Matrix's original `config.yml` and `language.yml` to something else.
 3. Change `cloud_config.enable: false` to `true` in `config.yml`.
-4. Run `/matrix reload` or restart the server! The checks will now update on every reboot/reload.  
-<sub> For specific Matrix versions, replace `main` in the link with the compatible checks branch. Variations can be used (as long as its based on `checks.yml`) by adding `variations/<variation name>` between `cloud/` and `checks.yml`.</sub>
+4. Run `/matrix reload` or restart the server! The checks will now update on every reboot/reload.
 
 ## ❔ FAQ
 These checks may not work perfectly with your server.  
