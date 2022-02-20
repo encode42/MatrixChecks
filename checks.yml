@@ -688,9 +688,13 @@ scaffold:
       # Whether to cancel illegal block placement.
       cancel_place: true
 
-      # Minimum amount of time between bridge block placement (ticks)
+      # Minimum amount of time between straight bridge block placement (ticks)
       # Turn this down if there are too many false positives.
-      min_delay: 7
+      min_delay: 6
+
+      # Minimum amount of time between diagonal bridge block placement (ticks)
+      # Turn this down if there are too many false positives.
+      min_delay_diagonal: 4
 
       # Amount of violations that will be added when detected.
       vl_weight: 6
