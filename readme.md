@@ -52,19 +52,6 @@ Changes you make will take effect everywhere the variable is used.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
 4. Run `/matrix reload` or restart the server!
 
-<!--
-Alternatively, you can just run `/matrix dlcfg OBCHXARALB` in-game  
-to download the latest stable build of MatrixChecks. (This ID changes!)  
-The downside is that all comments are removed and the file size is reduced.
--->
-
-### Cloud Usage
-
-1. Download [config.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/config.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).  
-2. Rename Matrix's original `config.yml` and `language.yml` to something else.
-3. Change `cloud_config.enable: false` to `true` in `config.yml`.
-4. Run `/matrix reload` or restart the server! The checks will now update on every reboot/reload.
-
 ## ❔ FAQ
 These checks may not work perfectly with your server.  
 Plugins, software, and performance can all affect how well these checks and the anticheat, in general, will work.  
