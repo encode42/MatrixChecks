@@ -46,7 +46,6 @@ Changes you make will take effect everywhere the variable is used.
 <img src=".github/assets/customization.png" width="450">
 
 ## 🔧 Setup
-### Server Usage
 1. Download [checks.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).
 2. Rename Matrix's original `checks.yml` and `language.yml` to something else.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
@@ -74,7 +73,7 @@ They're located in the [variations](https://github.com/QuantumSuite/MatrixChecks
 #### Cloud Files
 A directory that contains all of the configuration files, including variations, but minified. These are much smaller in file size but are impossible to read and modify.
 
-Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup. These are optimized for Matrix cloud usage with `config.yml`. For instructions, read [Cloud Usage](https://github.com/QuantumSuite/MatrixChecks#cloud-usage)!
+Because of the small file sizes, these can be automatically downloaded and updated very quickly on server startup. These are optimized for Matrix cloud usage with `config.yml`.
 
 #### Repository files
 These are files that are only utilized by GitHub meant for repository information and the scripting system.
