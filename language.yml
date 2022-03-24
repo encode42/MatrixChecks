@@ -153,3 +153,37 @@ commands:
   violations: 'Open the violations GUI'
   ping: 'Get a player''s latency value'
   reload: 'Reload all configs'
+
+gui:
+  main:
+    toggle-checks:
+      name: '&aToggle Checks'
+      description: '&7Click to open checks GUI'
+    show-violations:
+      name: '&aShow Violations'
+      description: '&7Click to open Violations GUI'
+    toggle-verbose:
+      name: '&aToggle Verbose'
+      description: '&7Click to enable/disable verbose message'
+    reload-matrix:
+      name: '&cReload Matrix'
+      description: '&7Click to reload plugin'
+    server-status:
+      name: '&bServer Status'
+    support-links:
+      name: '&bSupport Links'
+    premium-user:
+      name: '&bPremium User'
+    close-gui:
+      name: '&cClose GUI'
+
+misc:
+  update:
+    start-checking: 'Start checking update....'
+    updater: '§a> Matrix Updater:'
+    has-update: '§cMatrix has an update: §f%latest%  §ccurrent version: §2%current%'
+    latest: '§aYou are using the latest version of Matrix-AntiCheat <3'
+    download-link: '§cDownload link'
+  premium:
+    pass: 'Premium version verification has passed!'
+    expire-time: 'Expire Time: %time%' 
