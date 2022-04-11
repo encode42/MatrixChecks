@@ -1,7 +1,7 @@
 [matrix-page]: https://matrix.rip
 [matrix-discord]: https://discord.matrix.rip
 [matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
-[suite-discord]: https://discord.encode42.dev/quantumsuite
+[support-discord]: https://encode42.dev/support
 
 <img src=".github/assets/badge-lq.png" align="left" id="header">
 
@@ -9,7 +9,7 @@
 
 # MatrixChecks
 ### The highly customizable, organized, and optimized checks configuration for [Matrix Anticheat][matrix-page], a powerful, modern, and lightweight anticheat for Minecraft 1.8 and higher.
-[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] [![Checks Support](https://img.shields.io/discord/707330384328654869?color=7289DA&label=Checks%20Support&style=flat-square)][suite-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
+[![Matrix Anticheat](https://img.shields.io/badge/Plugin-Matrix%20Anticheat-%237009ac?style=flat-square)][matrix-page] [![Checks Support](https://img.shields.io/discord/646517284453613578?color=7289DA&label=Support&style=flat-square)][support-discord] [![Matrix Support](https://img.shields.io/discord/392904793758367745?color=7289DA&label=Matrix%20Support&style=flat-square)][matrix-discord]
 </div>
 
 - **Works on free & premium Matrix!**
@@ -20,7 +20,7 @@
 - Tons of customization options.
 
 ⚠ **REQUIRED INSTALLATION NOTE:**  
-You **must** install [`language.yml`](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml) to use this configuration!  
+You **must** install [`language.yml`](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml) to use this configuration!  
 Otherwise, all messages will be unreadable and commands will not work!  
 Every message contains placeholders that require the language file.
 
@@ -46,7 +46,7 @@ Changes you make will take effect everywhere the variable is used.
 <img src=".github/assets/customization.png" width="450">
 
 ## 🔧 Setup
-1. Download [checks.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/language.yml).
+1. Download [checks.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/checks.yml) and [language.yml](https://raw.githubusercontent.com/Encode42/MatrixChecks/main/language.yml).
 2. Rename Matrix's original `checks.yml` and `language.yml` to something else.
 3. Upload/move the new files to your Matrix plugin folder. (`/plugins/Matrix/`)
 4. Run `/matrix reload` or restart the server!
@@ -68,7 +68,7 @@ What is the X folder/file?
 #### Variations
 These are modifications of the original checks configuration files (`checks.yml`, `language.yml`, `config.yml`) with pre-configured changes. These changes range from kick obscurity to new detection algorithms.
 
-They're located in the [variations](https://github.com/QuantumSuite/MatrixChecks/tree/main/variations) folder of the repository. Each variation has its own readme file that describes the variation that shows up when you enter the variation's folder. Just click around to figure out what's offered!
+They're located in the [variations](https://github.com/Encode42/MatrixChecks/tree/main/variations) folder of the repository. Each variation has its own readme file that describes the variation that shows up when you enter the variation's folder. Just click around to figure out what's offered!
 
 #### Cloud Files
 A directory that contains all of the configuration files, including variations, but minified. These are much smaller in file size but are impossible to read and modify.
@@ -115,10 +115,10 @@ Make sure this isn't an issue with Matrix itself. Test with the [default Matrix 
 - [(Matrix) Issues][matrix-issues]
 
 **Then:**  
-Report the issue in the [MatrixChecks support Discord][suite-discord] or make a report at the [issue page](https://github.com/QuantumSuite/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/QuantumSuite/MatrixChecks/pulls) containing the change and why you made it.  
-- [Discord][suite-discord]
-- [Issues](https://github.com/QuantumSuite/MatrixChecks/issues)  
-- [Pull Requests](https://github.com/QuantumSuite/MatrixChecks/pulls)
+Report the issue in the [MatrixChecks support Discord][support-discord] or make a report at the [issue page](https://github.com/Encode42/MatrixChecks/issues) with the right template. If you describe what you want to be changed/fixed thoroughly, the chances are that it'll be taken care of quickly. If you already know what the issue is or how to fix it, feel free to make a [pull request](https://github.com/Encode42/MatrixChecks/pulls) containing the change and why you made it.  
+- [Discord][support-discord]
+- [Issues](https://github.com/Encode42/MatrixChecks/issues)  
+- [Pull Requests](https://github.com/Encode42/MatrixChecks/pulls)
 </details>
 
 <details>
@@ -127,7 +127,7 @@ There are weird symbols in every message!
 </summary>
 
 Do the "weird things" look like something along the lines of "`%gp_o_pr%`"? If so, you have not installed `language.yml`.  
-This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/QuantumSuite/MatrixChecks#server-usage)
+This file is required to replace those placeholders with what they're meant to be. [Installation](https://github.com/Encode42/MatrixChecks#server-usage)
 </details>
 
 <details>

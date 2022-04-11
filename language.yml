@@ -7,8 +7,7 @@
 # This file contains global placeholders used in most commands.
 # Install "checks.yml" to utilize the improved cheat detection!
 #
-# Website: https://quantumsuite.org
-# Support: https://quantumsuite.org/support
+# Support: https://encode42.dev/support
 
 # The prefix of most Matrix messages.
 # Shows up in violations, broadcasts, and commands.
@@ -154,36 +153,40 @@ commands:
   ping: 'Get a player''s latency value'
   reload: 'Reload all configs'
 
+## GUI entries
+# Used in /matrix gui.
 gui:
   main:
     toggle-checks:
-      name: '&aToggle Checks'
-      description: '&7Click to open checks GUI'
+      name: 'Checks'
+      description: 'Temporarily enable or disable checks'
     show-violations:
-      name: '&aShow Violations'
-      description: '&7Click to open Violations GUI'
+      name: 'Violations'
+      description: 'List every check violation'
     toggle-verbose:
-      name: '&aToggle Verbose'
-      description: '&7Click to enable/disable verbose message'
+      name: 'Toggle verbose'
+      description: 'Click to toggle verbose messages'
     reload-matrix:
-      name: '&cReload Matrix'
-      description: '&7Click to reload plugin'
+      name: 'Reload'
+      description: 'Click to reload all configs'
     server-status:
-      name: '&bServer Status'
+      name: 'Stats'
     support-links:
-      name: '&bSupport Links'
+      name: 'Support'
     premium-user:
-      name: '&bPremium User'
+      name: 'Account'
     close-gui:
-      name: '&cClose GUI'
+      name: '&cClose'
 
+## Miscellaneous messages
+# Used in various messages
 misc:
   update:
-    start-checking: 'Start checking update....'
-    updater: '§a> Matrix Updater:'
-    has-update: '§cMatrix has an update: §f%latest%  §ccurrent version: §2%current%'
-    latest: '§aYou are using the latest version of Matrix-AntiCheat <3'
-    download-link: '§cDownload link'
+    start-checking: 'Checking for updates...'
+    updater: '§7[§6Matrix§7]§r Update status:'
+    has-update: 'Update %latest% is available! Currently running %current%.'
+    latest: 'No available updates.'
+    download-link: '§bDownload link'
   premium:
-    pass: 'Premium version verification has passed!'
-    expire-time: 'Expire Time: %time%' 
+    pass: 'Somehow, you have outlived your premium verification!'
+    expire-time: '§7Premium accounts will never expire.'

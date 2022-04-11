@@ -7,8 +7,7 @@
 # This file contains global placeholders used in most commands.
 # Install "checks.yml" to utilize the improved cheat detection!
 #
-# Website: https://quantumsuite.org
-# Support: https://quantumsuite.org/support
+# Support: https://encode42.dev/support
 
 # The prefix of most Matrix messages.
 # Shows up in violations, broadcasts, and commands.
@@ -164,4 +163,43 @@ commands:
   violations: Open the violations GUI
   ping: Get a player's latency value
   reload: Reload all configs
+
+## GUI entries
+# Used in /matrix gui.
+gui:
+  main:
+    toggle-checks:
+      name: 'Checks'
+      description: 'Temporarily enable or disable checks'
+    show-violations:
+      name: 'Violations'
+      description: 'List every check violation'
+    toggle-verbose:
+      name: 'Toggle verbose'
+      description: 'Click to toggle verbose messages'
+    reload-matrix:
+      name: 'Reload'
+      description: 'Click to reload all configs'
+    server-status:
+      name: 'Stats'
+    support-links:
+      name: 'Support'
+    premium-user:
+      name: 'Account'
+    close-gui:
+      name: '&cClose'
+
+## Miscellaneous messages
+# Used in various messages
+misc:
+  update:
+    start-checking: 'Checking for updates...'
+    updater: '§7[§6Matrix§7]§r Update status:'
+    has-update: 'Update %latest% is available! Currently running %current%.'
+    latest: 'No available updates.'
+    download-link: '§bDownload link'
+  premium:
+    pass: 'Somehow, you have outlived your premium verification!'
+    expire-time: '§7Premium accounts will never expire.'
+
 variation: Lenient Error # Variation type utilized

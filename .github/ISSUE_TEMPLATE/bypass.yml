@@ -5,5 +5,5 @@ labels:
 body:
 - type: markdown
   attributes:
-    value: "Before reporting a bypass, ensure you've read [the FAQs](https://github.com/QuantumSuite/MatrixChecks#-faq)!"
+    value: "Before reporting a bypass, ensure you've read [the FAQs](https://github.com/Encode42/MatrixChecks#-faq)!"
 - type:

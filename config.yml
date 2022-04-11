@@ -7,8 +7,7 @@
 # This file contains organizational changes and minor tweaks.
 # Install "checks.yml" to utilize the improved cheat detection!
 #
-# Website: https://quantumsuite.org
-# Support: https://quantumsuite.org/support
+# Support: https://encode42.dev/support
 
 # Premium user credentials.
 # These are obtained after messaging Matrix's developer with proof of purchase.
@@ -29,7 +28,7 @@ cloud_config:
   # The links to download checks from.
   # You can have multiple links in case one goes down. (Only the first valid link is used)
   links:
-    - 'https://raw.githubusercontent.com/QuantumSuite/MatrixChecks/main/cloud/checks.yml'
+    - 'https://raw.githubusercontent.com/Encode42/MatrixChecks/main/cloud/checks.yml'
 
 # Whether to enable GeyserMC support. (Bedrock support)
 # Enable this ONLY if you have GeyserMC for security reasons.
