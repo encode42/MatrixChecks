@@ -3,6 +3,16 @@
 [matrix-issues]: https://github.com/jiangdashao/Matrix-Issues
 [support-discord]: https://encode42.dev/support
 
+> ### ⚠️ Archival Notice
+> This is being archived and requires a new maintainer.
+>
+> I have fallen out-of-date within the anticheat community.  
+> I'm no longer familiar with the methods clients use, and how to prevent them.  
+> As such, I do not feel comfortable maintaining this repository.  
+>
+> If you're willing to maintain, update, and improve this repository,  
+> feel free to make a fork and [notify me via email](mailto:me@encode42.dev)!
+
 <img src=".github/assets/badge-lq.png" align="left" id="header">
 
 <div align="right">
